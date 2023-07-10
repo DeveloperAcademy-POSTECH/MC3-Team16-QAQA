@@ -51,9 +51,12 @@
 		B87998502A5BACBE00167597 /* QAQA */ = {
 			isa = PBXGroup;
 			children = (
+				B87998632A5BB3C400167597 /* Utils */,
+				B87998622A5BB3B200167597 /* Resources */,
+				B87998612A5BB3A900167597 /* Model */,
+				B87998602A5BB39C00167597 /* ViewModel */,
+				B879985F2A5BB39700167597 /* View */,
 				B87998512A5BACBE00167597 /* QAQAApp.swift */,
-				B87998532A5BACBE00167597 /* ContentView.swift */,
-				B87998552A5BACBF00167597 /* Assets.xcassets */,
 				B87998572A5BACBF00167597 /* Preview Content */,
 			);
 			path = QAQA;
@@ -65,6 +68,43 @@
 				B87998582A5BACBF00167597 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B879985F2A5BB39700167597 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B87998532A5BACBE00167597 /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B87998602A5BB39C00167597 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B87998612A5BB3A900167597 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B87998622A5BB3B200167597 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B87998552A5BACBF00167597 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B87998632A5BB3C400167597 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
