@@ -8,8 +8,18 @@
 import SwiftUI
 
 struct QuestionMain: View {
+    
+    @State private var showModal = false
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack{
+            Button("Easy") {
+                showModal = true
+            }
+            Button("Hard") {
+                
+            }
+        }
     }
 }
 
