@@ -16,9 +16,13 @@ struct QuestionMain: View {
         HStack{
             Button("Easy") {
                 showEasyModal = true
+            }.sheet(isPresented: $showEasyModal) {
+                EasyModal()
             }
             Button("Hard") {
                 showHardModal = true
+            }.sheet(isPresented: $showHardModal) {
+                HardModal()
             }
         }
     }

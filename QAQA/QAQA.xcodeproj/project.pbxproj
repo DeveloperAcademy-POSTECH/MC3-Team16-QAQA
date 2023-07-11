@@ -198,7 +198,6 @@
 				B8B506872A5CF51700B3EAED /* Model.swift in Sources */,
 				B87998542A5BACBE00167597 /* ContentView.swift in Sources */,
 				B8B506832A5CF4FA00B3EAED /* ViewModel.swift in Sources */,
-				C5C89C362A5CF88200218E40 /* QuestionMain.swift in Sources */,
 				B87998522A5BACBE00167597 /* QAQAApp.swift in Sources */,
 				B8B506852A5CF50400B3EAED /* Utils.swift in Sources */,
 				C5C89C3A2A5D00B900218E40 /* HardModal.swift in Sources */,

@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct EasyModal: View {
+    
+    @Environment(\.presentationMode) var presentation
+    
     var body: some View {
-        Text("Easy Hint")
+        VStack{
+            Text("Easy Hint")
+        }
     }
 }
 
