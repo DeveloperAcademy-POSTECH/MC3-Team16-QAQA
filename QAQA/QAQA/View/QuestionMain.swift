@@ -9,15 +9,16 @@ import SwiftUI
 
 struct QuestionMain: View {
     
-    @State private var showModal = false
+    @State private var showEasyModal = false
+    @State private var showHardModal = false
     
     var body: some View {
         HStack{
             Button("Easy") {
-                showModal = true
+                showEasyModal = true
             }
             Button("Hard") {
-                
+                showHardModal = true
             }
         }
     }
