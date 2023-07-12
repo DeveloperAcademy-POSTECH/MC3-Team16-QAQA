@@ -178,7 +178,7 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
         }
             
         // Increment the achievement to play 10 games.
-//        reportProgress()
+        reportProgress()
     }
     
     /// Takes the player's turn.
@@ -194,12 +194,12 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
         }
         
         // Otherwise, send the game data to the other player.
-//        do {
-//            let data = encode(score: myScore)
-//            try myMatch?.sendData(toAllPlayers: data!, with: GKMatch.SendDataMode.unreliable)
-//        } catch {
-//            print("Error: \(error.localizedDescription).")
-//        }
+        do {
+            let data = encode(score: myScore)
+            try myMatch?.sendData(toAllPlayers: data!, with: GKMatch.SendDataMode.unreliable)
+        } catch {
+            print("Error: \(error.localizedDescription).")
+        }
     }
     
     /// Quits a match and saves the game data.
@@ -223,32 +223,18 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
             opponentWon = true
         }
     }
-//
-//    /// Forfeits a match without saving the score.
-//    /// - Tag:forfeitMatch
-//    func forfeitMatch() {
-//        // Notify the opponent that you forfeit the game.
-//        do {
-//            let data = encode(outcome: "forfeit")
-//            try myMatch?.sendData(toAllPlayers: data!, with: GKMatch.SendDataMode.unreliable)
-//        } catch {
-//            print("Error: \(error.localizedDescription).")
-//        }
-//
-//        youForfeit = true
-//    }
-//
-//    /// Saves the local player's score.
-//    /// - Tag:saveScore
-//    func saveScore() {
-//        GKLeaderboard.submitScore(myScore, context: 0, player: GKLocalPlayer.local,
-//            leaderboardIDs: ["123"]) { error in
-//            if let error {
-//                print("Error: \(error.localizedDescription).")
-//            }
-//        }
-//    }
-//
+
+    /// Saves the local player's score.
+    /// - Tag:saveScore
+    func saveScore() {
+        GKLeaderboard.submitScore(myScore, context: 0, player: GKLocalPlayer.local,
+            leaderboardIDs: ["123"]) { error in
+            if let error {
+                print("Error: \(error.localizedDescription).")
+            }
+        }
+    }
+
 //    /// Resets a match after players reach an outcome or cancel the game.
     func resetMatch() {
         // Reset the game data.
@@ -270,43 +256,43 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
         myScore = 0
         opponentScore = 0
     }
-//
-//    // Rewarding players with achievements.
-//
-//    /// Reports the local player's progress toward an achievement.
-//    // 로컬 플레이어의 성과를 보고하는 함수입니다.
-//    func reportProgress() {
-//        GKAchievement.loadAchievements(completionHandler: { (achievements: [GKAchievement]?, error: Error?) in
-//            let achievementID = "1234"
-//            var achievement: GKAchievement? = nil
-//
-//            // 존재하는 성과를 찾는 코드입니다.
-//            // Find an existing achievement.
-//            achievement = achievements?.first(where: { $0.identifier == achievementID })
-//
-//            // Otherwise, create a new achievement.
-//            if achievement == nil {
-//                achievement = GKAchievement(identifier: achievementID)
-//            }
-//
-//            // Create an array containing the achievement.
-//            let achievementsToReport: [GKAchievement] = [achievement!]
-//
-//            // Set the progress for the achievement.
-//            achievement?.percentComplete = achievement!.percentComplete + 10.0
-//
-//            // Report the progress to Game Center.
-//            // 게임센터에 프로그레스를 보고합니다.
-//            GKAchievement.report(achievementsToReport, withCompletionHandler: {(error: Error?) in
-//                if let error {
-//                    print("Error: \(error.localizedDescription).")
-//                }
-//            })
-//
-//            if let error {
-//                print("Error: \(error.localizedDescription).")
-//            }
-//        })
-//    }
+
+    // Rewarding players with achievements.
+
+    /// Reports the local player's progress toward an achievement.
+    // 로컬 플레이어의 성과를 보고하는 함수입니다.
+    func reportProgress() {
+        GKAchievement.loadAchievements(completionHandler: { (achievements: [GKAchievement]?, error: Error?) in
+            let achievementID = "1234"
+            var achievement: GKAchievement? = nil
+
+            // 존재하는 성과를 찾는 코드입니다.
+            // Find an existing achievement.
+            achievement = achievements?.first(where: { $0.identifier == achievementID })
+
+            // Otherwise, create a new achievement.
+            if achievement == nil {
+                achievement = GKAchievement(identifier: achievementID)
+            }
+
+            // Create an array containing the achievement.
+            let achievementsToReport: [GKAchievement] = [achievement!]
+
+            // Set the progress for the achievement.
+            achievement?.percentComplete = achievement!.percentComplete + 10.0
+
+            // Report the progress to Game Center.
+            // 게임센터에 프로그레스를 보고합니다.
+            GKAchievement.report(achievementsToReport, withCompletionHandler: {(error: Error?) in
+                if let error {
+                    print("Error: \(error.localizedDescription).")
+                }
+            })
+
+            if let error {
+                print("Error: \(error.localizedDescription).")
+            }
+        })
+    }
 }
 

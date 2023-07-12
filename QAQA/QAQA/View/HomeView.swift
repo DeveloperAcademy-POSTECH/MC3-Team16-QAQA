@@ -8,11 +8,26 @@
 import SwiftUI
 import GameKit
 
-struct TestView: View {
+struct HomeView: View {
     @StateObject private var game = RealTimeGame()
     
     var body: some View {
         VStack {
+            HStack {
+                VStack (alignment: .leading) {
+                    Spacer()
+                        .frame(height: 30)
+                    Text("QAQA")
+                        .font(.system(size: 42))
+                        .fontWeight(.bold)
+                        .padding(.bottom, 8)
+                    Text("팀 온보딩을 위한 10분 질문폭격!")
+                        .foregroundColor(.gray)
+                }
+                .padding(.leading, 16)
+                Spacer()
+            }
+            Image()
             Spacer()
             Button { // 플레이어 선택 -> 플레이어 초대, 오토매칭
                 if game.automatch { // TODO: 이거 없어도 되는건가??
@@ -23,10 +38,11 @@ struct TestView: View {
                 game.choosePlayer()
             } label: {
                 Text("시작하기")
+                    .fontWeight(.bold)
                     .frame(maxWidth: .infinity)
                     .padding()
-                    .foregroundColor(.black)
-                    .background(Color.testWhite.opacity(0.5))
+                    .foregroundColor(.white)
+                    .background(Color.testBlue)
                     .cornerRadius(16)
             }
             .padding([.leading,.trailing], 16)
@@ -45,8 +61,8 @@ struct TestView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        TestView()
+        HomeView()
     }
 }

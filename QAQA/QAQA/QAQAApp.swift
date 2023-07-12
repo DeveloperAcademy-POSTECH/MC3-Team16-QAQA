@@ -11,7 +11,7 @@ import SwiftUI
 struct QAQAApp: App {
     var body: some Scene {
         WindowGroup {
-            TestView()
+            HomeView()
         }
     }
 }
