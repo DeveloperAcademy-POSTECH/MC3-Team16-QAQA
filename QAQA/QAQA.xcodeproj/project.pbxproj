@@ -108,8 +108,8 @@
 		B87998612A5BB3A900167597 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B8B506962A5E276300B3EAED /* Game */,
 				B8B506862A5CF51700B3EAED /* Model.swift */,
-				B8B506892A5D00BE00B3EAED /* RealTimeGame.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -139,6 +139,14 @@
 				B8B506902A5D01F000B3EAED /* RealTimeGame+GKGameCenterViewController.swift */,
 			);
 			path = GameCenter;
+			sourceTree = "<group>";
+		};
+		B8B506962A5E276300B3EAED /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				B8B506892A5D00BE00B3EAED /* RealTimeGame.swift */,
+			);
+			path = Game;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
