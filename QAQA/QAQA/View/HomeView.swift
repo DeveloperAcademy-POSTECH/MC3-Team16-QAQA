@@ -49,7 +49,7 @@ struct HomeView: View {
             }
             .padding([.leading,.trailing], 16)
             Spacer()
-                .frame(height: 62)
+                .frame(height: 18)
         }
         .onAppear {
             if !game.playingGame {
