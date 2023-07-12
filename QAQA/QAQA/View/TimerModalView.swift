@@ -47,6 +47,9 @@ struct TimerModalView: View {
                 Text("종료하기").foregroundColor(restartButtonColor) // 종료하기를 누르면 어디로 가는지?
             })
         }
+        .onAppear{
+            timerModel.isTimer.toggle()
+        }
     }
 }
 
@@ -56,3 +59,4 @@ struct TimerModalView_Previews: PreviewProvider {
             .environmentObject(TimerModel())
     }
 }
+
