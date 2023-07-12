@@ -18,7 +18,7 @@ extension RealTimeGame: GKMatchmakerViewControllerDelegate {
         
         // Start the game with the player.
         // 게임을 시작하는 함수
-        if !playingGame && match.expectedPlayerCount == 0 { // TODO: 왜 expectedPlayerCount가 0이어야하지??
+        if !playingGame && match.expectedPlayerCount == 0 { // TODO: 왜 expectedPlayerCount가 0이어야하지?? -> 예상 참여 플레이어가 0이어야 게임이 끝났다는 뜻이라서
             startMyMatchWith(match: match)
         }
     }

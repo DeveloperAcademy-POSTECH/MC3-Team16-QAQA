@@ -11,7 +11,7 @@ import SwiftUI
 
 /// - Tag:RealTimeGame
 @MainActor
-class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject, GKLocalPlayerListener {
+class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
     
     // The local player's friends, if they grant access.
     @Published var friends: [Friend] = []
@@ -32,7 +32,6 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject, 
     @Published var myAvatar = Image(systemName: "person.crop.circle")
     @Published var opponentAvatar = Image(systemName: "person.crop.circle")
     @Published var opponent: GKPlayer? = nil
-//    @Published var messages: [Message] = []
     @Published var myScore = 0
     @Published var opponentScore = 0
     
@@ -110,7 +109,7 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject, 
     func findPlayer() async { // 플레이어 찾는 함수
         let request = GKMatchRequest()
         request.minPlayers = 2
-        request.maxPlayers = 6
+        request.maxPlayers = 2
         let match: GKMatch
         
         // Start automatch.
@@ -137,7 +136,7 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject, 
         // Create a match request.
         let request = GKMatchRequest() // real-time or turn-based match를 위한 파라미터들을 캡슐화한 object
         request.minPlayers = 2 // 최소, 최대 플레이어 수 지정 (여기서 지정해줘야함)
-        request.maxPlayers = 6
+        request.maxPlayers = 2
         
         // Present the interface where the player selects opponents and starts the game.
         // GKMatchmakerViewController는 플레이어가 상대를 선택하고, 게임을 시작하는 인터페이스를 보여줍니다.
@@ -163,8 +162,8 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject, 
         myMatch?.delegate = self
         
         // For automatch, check whether the opponent connected to the match before loading the avatar.
-        // 오토매치는 필요 없음.
-        if myMatch?.expectedPlayerCount == 0 {
+        // 오토매치
+        if myMatch?.expectedPlayerCount == 0 { // 예상 참여 Player
             opponent = myMatch?.players[0]
             
             // Load the opponent's avatar.
