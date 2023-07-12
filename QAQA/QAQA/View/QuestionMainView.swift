@@ -18,8 +18,11 @@ struct QuestionMainView: View {
                 showEasyModal = true
             }.sheet(isPresented: $showEasyModal) {
                 EasyModal()
-                    .presentationDetents([.large, .medium, .fraction(0.75)])
+//                    .presentationDetents([.fraction(0.5)])
+                    .presentationDetents([.height(311)])
+                    .presentationCornerRadius(40)
             }
+            .cornerRadius(100)
             Button("Hard") {
                 showHardModal = true
             }.sheet(isPresented: $showHardModal) {
