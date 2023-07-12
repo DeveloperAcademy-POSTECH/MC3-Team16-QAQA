@@ -19,6 +19,7 @@
 		B8B5068F2A5D01C700B3EAED /* RealTimeGame+GKMatchmakerViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B5068E2A5D01C700B3EAED /* RealTimeGame+GKMatchmakerViewControllerDelegate.swift */; };
 		B8B506912A5D01F000B3EAED /* RealTimeGame+GKGameCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B506902A5D01F000B3EAED /* RealTimeGame+GKGameCenterViewController.swift */; };
 		B8B506952A5D2B2600B3EAED /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B506942A5D2B2600B3EAED /* GameView.swift */; };
+		B8B506992A5E2C9500B3EAED /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B506982A5E2C9500B3EAED /* Color+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		B8B5068E2A5D01C700B3EAED /* RealTimeGame+GKMatchmakerViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealTimeGame+GKMatchmakerViewControllerDelegate.swift"; sourceTree = "<group>"; };
 		B8B506902A5D01F000B3EAED /* RealTimeGame+GKGameCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealTimeGame+GKGameCenterViewController.swift"; sourceTree = "<group>"; };
 		B8B506942A5D2B2600B3EAED /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		B8B506982A5E2C9500B3EAED /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 		B87998632A5BB3C400167597 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				B8B506972A5E2C7600B3EAED /* Color */,
 				B8B5068B2A5D013100B3EAED /* GameCenter */,
 			);
 			path = Utils;
@@ -147,6 +150,14 @@
 				B8B506892A5D00BE00B3EAED /* RealTimeGame.swift */,
 			);
 			path = Game;
+			sourceTree = "<group>";
+		};
+		B8B506972A5E2C7600B3EAED /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				B8B506982A5E2C9500B3EAED /* Color+Extension.swift */,
+			);
+			path = Color;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,6 +239,7 @@
 				B8B5068D2A5D019900B3EAED /* RealTimeGame+Friends.swift in Sources */,
 				B87998522A5BACBE00167597 /* QAQAApp.swift in Sources */,
 				B8B5068A2A5D00BE00B3EAED /* RealTimeGame.swift in Sources */,
+				B8B506992A5E2C9500B3EAED /* Color+Extension.swift in Sources */,
 				B8B506852A5CF50400B3EAED /* RealTimeGame+GKMatchDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

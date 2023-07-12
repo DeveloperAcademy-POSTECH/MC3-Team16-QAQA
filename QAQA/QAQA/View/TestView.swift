@@ -13,16 +13,22 @@ struct TestView: View {
     
     var body: some View {
         VStack {
-            Button("Choose Player") { // 플레이어 선택 -> 초대, SharePlay가 존재함
+            Button { // 플레이어 선택 -> 플레이어 초대,
                 if game.automatch {
                     // Turn automatch off.
                     GKMatchmaker.shared().cancel()
                     game.automatch = false
                 }
                 game.choosePlayer()
+            } label: {
+                Text("시작하기")
+                    .padding()
+                    .foregroundColor(.black)
+                    .background(.background)
+                    .cornerRadius(16)
             }
+            .padding([.leading,.trailing], 16)
         }
-        .padding()
         .onAppear {
             if !game.playingGame {
                 game.authenticatePlayer()
