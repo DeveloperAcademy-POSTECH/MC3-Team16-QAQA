@@ -110,7 +110,7 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject, 
     func findPlayer() async { // 플레이어 찾는 함수
         let request = GKMatchRequest()
         request.minPlayers = 2
-        request.maxPlayers = 2
+        request.maxPlayers = 6
         let match: GKMatch
         
         // Start automatch.
