@@ -13,23 +13,26 @@ struct TimerView: View {
     @State var countSecond = 0
     @State var isTimer = false
     @State var timeContainerWidth = UIScreen.width * 0.31
+    @State var circleBackgroundColor: Color = Color.blue.opacity(0.15)
+    @State var playPauseColor: Color = Color.blue.opacity(0.8)
+    @State var timerSizeMultiplier:CGFloat = 1
     
     var body: some View {
         ZStack{
-            VStack(spacing: 10){
+            VStack(spacing: 10 * timerSizeMultiplier){
                 Button(action: {isTimer.toggle()}, label: {  ZStack{
-                    Circle().foregroundColor(.blue.opacity(0.15))
-                        .frame(width: UIScreen.width * 0.13)
+                    Circle().foregroundColor(circleBackgroundColor)
+                        .frame(width: UIScreen.width * 0.13 * timerSizeMultiplier)
                     Image(systemName: isTimer ? "pause.fill" : "play.fill")
-                        .font(.system(size: UIScreen.width * 0.06))
-                        .foregroundColor(.blue.opacity(0.8))
+                        .font(.system(size: UIScreen.width * 0.06 * timerSizeMultiplier))
+                        .foregroundColor(playPauseColor)
                 }})
                 
                 if countSecond < 10 {
-                    Text("\(countMin):0\(countSecond)").font(.system(size: 45).bold()).frame(width: timeContainerWidth)
+                    Text("\(countMin):0\(countSecond)").font(.system(size: 45 * timerSizeMultiplier).bold()).frame(width: timeContainerWidth * timerSizeMultiplier)
                 }
                 else {
-                    Text("\(countMin):\(countSecond)").font(.system(size: 45).bold()).frame(width: timeContainerWidth)
+                    Text("\(countMin):\(countSecond)").font(.system(size: 45 * timerSizeMultiplier).bold()).frame(width: timeContainerWidth * timerSizeMultiplier)
                 }
                 
             }
