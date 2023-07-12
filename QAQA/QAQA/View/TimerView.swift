@@ -30,9 +30,11 @@ struct TimerView: View {
                 
                 if countSecond < 10 {
                     Text("\(countMin):0\(countSecond)").font(.system(size: 45 * timerSizeMultiplier).bold()).frame(width: timeContainerWidth * timerSizeMultiplier)
+                        .foregroundColor(.black)
                 }
                 else {
                     Text("\(countMin):\(countSecond)").font(.system(size: 45 * timerSizeMultiplier).bold()).frame(width: timeContainerWidth * timerSizeMultiplier)
+                        .foregroundColor(.black)
                 }
                 
             }

@@ -42,6 +42,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		60EB427C2A5ED5490030286C /* UIScreen */ = {
+			isa = PBXGroup;
+			children = (
+				60EB427A2A5E44880030286C /* UIScreen+Extension.swift */,
+			);
+			path = UIScreen;
+			sourceTree = "<group>";
+		};
 		B87998452A5BACBE00167597 = {
 			isa = PBXGroup;
 			children = (
@@ -116,8 +124,8 @@
 		B87998632A5BB3C400167597 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				60EB427C2A5ED5490030286C /* UIScreen */,
 				B8B506842A5CF50400B3EAED /* Utils.swift */,
-				60EB427A2A5E44880030286C /* UIScreen+Extension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
