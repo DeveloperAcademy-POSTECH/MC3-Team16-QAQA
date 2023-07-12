@@ -11,6 +11,7 @@ struct QuestionMainView: View {
     
     @State private var showEasyModal = false
     @State private var showHardModal = false
+    @State private var showHintModal = false
     
     var body: some View {
         HStack{
@@ -28,6 +29,11 @@ struct QuestionMainView: View {
             }.sheet(isPresented: $showHardModal) {
                 HardModal()
                     .presentationDetents([.large, .medium, .fraction(0.75)])
+            }
+            Button("Modal") {
+                showHintModal = true
+            }.sheet(isPresented: $showHintModal) {
+                HintModal()
             }
         }
     }
