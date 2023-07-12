@@ -137,7 +137,7 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject, 
         // Create a match request.
         let request = GKMatchRequest() // real-time or turn-based match를 위한 파라미터들을 캡슐화한 object
         request.minPlayers = 2 // 최소, 최대 플레이어 수 지정 (여기서 지정해줘야함)
-        request.maxPlayers = 2
+        request.maxPlayers = 6
         
         // Present the interface where the player selects opponents and starts the game.
         // GKMatchmakerViewController는 플레이어가 상대를 선택하고, 게임을 시작하는 인터페이스를 보여줍니다.

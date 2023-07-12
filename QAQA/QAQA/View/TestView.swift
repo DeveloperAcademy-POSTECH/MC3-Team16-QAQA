@@ -13,7 +13,8 @@ struct TestView: View {
     
     var body: some View {
         VStack {
-            Button { // 플레이어 선택 -> 플레이어 초대,
+            Spacer()
+            Button { // 플레이어 선택 -> 플레이어 초대, 오토매칭
                 if game.automatch {
                     // Turn automatch off.
                     GKMatchmaker.shared().cancel()
@@ -22,12 +23,15 @@ struct TestView: View {
                 game.choosePlayer()
             } label: {
                 Text("시작하기")
+                    .frame(maxWidth: .infinity)
                     .padding()
                     .foregroundColor(.black)
-                    .background(.background)
+                    .background(Color.testWhite.opacity(0.5))
                     .cornerRadius(16)
             }
             .padding([.leading,.trailing], 16)
+            Spacer()
+                .frame(height: 62)
         }
         .onAppear {
             if !game.playingGame {
