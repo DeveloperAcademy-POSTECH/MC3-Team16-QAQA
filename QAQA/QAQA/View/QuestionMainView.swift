@@ -2,12 +2,12 @@
 //  QuestionMainView.swift
 //  QAQA
 //
-//  Created by 김혜린 on 2023/07/11.
+//  Created by 김혜린 on 2023/07/12.
 //
 
 import SwiftUI
 
-struct QuestionMain: View {
+struct QuestionMainView: View {
     
     @State private var showEasyModal = false
     @State private var showHardModal = false
@@ -30,8 +30,9 @@ struct QuestionMain: View {
     }
 }
 
-struct QuestionMain_Previews: PreviewProvider {
+
+struct QuestionMainView_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionMain()
+        QuestionMainView()
     }
 }
