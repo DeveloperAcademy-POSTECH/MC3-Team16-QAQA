@@ -18,11 +18,13 @@ struct QuestionMain: View {
                 showEasyModal = true
             }.sheet(isPresented: $showEasyModal) {
                 EasyModal()
+                    .presentationDetents([.large, .medium, .fraction(0.75)])
             }
             Button("Hard") {
                 showHardModal = true
             }.sheet(isPresented: $showHardModal) {
                 HardModal()
+                    .presentationDetents([.large, .medium, .fraction(0.75)])
             }
         }
     }
