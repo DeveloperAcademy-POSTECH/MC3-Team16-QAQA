@@ -21,6 +21,7 @@
 		B8B506952A5D2B2600B3EAED /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B506942A5D2B2600B3EAED /* GameView.swift */; };
 		B8B506992A5E2C9500B3EAED /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B506982A5E2C9500B3EAED /* Color+Extension.swift */; };
 		B8B5069B2A5E3C1C00B3EAED /* RealTimeGame+GKLocalPlayerListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B5069A2A5E3C1C00B3EAED /* RealTimeGame+GKLocalPlayerListener.swift */; };
+		B8B5069D2A5E42D600B3EAED /* RealTimeGame+MatchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B5069C2A5E42D600B3EAED /* RealTimeGame+MatchData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		B8B506942A5D2B2600B3EAED /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		B8B506982A5E2C9500B3EAED /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		B8B5069A2A5E3C1C00B3EAED /* RealTimeGame+GKLocalPlayerListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealTimeGame+GKLocalPlayerListener.swift"; sourceTree = "<group>"; };
+		B8B5069C2A5E42D600B3EAED /* RealTimeGame+MatchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealTimeGame+MatchData.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 				B8B5068E2A5D01C700B3EAED /* RealTimeGame+GKMatchmakerViewControllerDelegate.swift */,
 				B8B506902A5D01F000B3EAED /* RealTimeGame+GKGameCenterViewController.swift */,
 				B8B5069A2A5E3C1C00B3EAED /* RealTimeGame+GKLocalPlayerListener.swift */,
+				B8B5069C2A5E42D600B3EAED /* RealTimeGame+MatchData.swift */,
 			);
 			path = GameCenter;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 				B87998542A5BACBE00167597 /* TestView.swift in Sources */,
 				B8B506912A5D01F000B3EAED /* RealTimeGame+GKGameCenterViewController.swift in Sources */,
 				B8B506952A5D2B2600B3EAED /* GameView.swift in Sources */,
+				B8B5069D2A5E42D600B3EAED /* RealTimeGame+MatchData.swift in Sources */,
 				B8B506832A5CF4FA00B3EAED /* ViewModel.swift in Sources */,
 				B8B5068D2A5D019900B3EAED /* RealTimeGame+Friends.swift in Sources */,
 				B8B5069B2A5E3C1C00B3EAED /* RealTimeGame+GKLocalPlayerListener.swift in Sources */,

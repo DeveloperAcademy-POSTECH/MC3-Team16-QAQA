@@ -15,7 +15,7 @@ struct TestView: View {
         VStack {
             Spacer()
             Button { // 플레이어 선택 -> 플레이어 초대, 오토매칭
-                if game.automatch {
+                if game.automatch { // TODO: 이거 없어도 되는건가??
                     // Turn automatch off.
                     GKMatchmaker.shared().cancel()
                     game.automatch = false

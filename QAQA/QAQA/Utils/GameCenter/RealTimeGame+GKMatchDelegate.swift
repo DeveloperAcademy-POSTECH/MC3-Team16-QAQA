@@ -47,33 +47,4 @@ extension RealTimeGame: GKMatchDelegate {
     func match(_ match: GKMatch, shouldReinviteDisconnectedPlayer player: GKPlayer) -> Bool {
         return false
     }
-    
-//    /// Handles receiving a message from another player.
-//    /// - Tag:didReceiveData
-//    func match(_ match: GKMatch, didReceive data: Data, fromRemotePlayer player: GKPlayer) {
-//        // Decode the data representation of the game data.
-//        let gameData = decode(matchData: data)
-//        
-//        // Update the interface from the game data.
-//        if let text = gameData?.message {
-//            // Add the message to the chat view.
-//            let message = Message(content: text, playerName: player.displayName, isLocalPlayer: false)
-//            messages.append(message)
-//        } else if let score = gameData?.score {
-//            // Show the opponent's score.
-//            opponentScore = score
-//        } else if let outcome = gameData?.outcome {
-//            // Show the outcome of the game.
-//            switch outcome {
-//            case "forfeit":
-//                opponentForfeit = true
-//            case "won":
-//                youWon = true
-//            case "lost":
-//                opponentWon = true
-//            default:
-//                return
-//            }
-//        }
-//    }
 }

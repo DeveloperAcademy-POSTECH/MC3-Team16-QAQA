@@ -109,7 +109,7 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
     func findPlayer() async { // 플레이어 찾는 함수
         let request = GKMatchRequest()
         request.minPlayers = 2
-        request.maxPlayers = 2
+        request.maxPlayers = 6
         let match: GKMatch
         
         // Start automatch.
@@ -136,7 +136,7 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
         // Create a match request.
         let request = GKMatchRequest() // real-time or turn-based match를 위한 파라미터들을 캡슐화한 object
         request.minPlayers = 2 // 최소, 최대 플레이어 수 지정 (여기서 지정해줘야함)
-        request.maxPlayers = 2
+        request.maxPlayers = 6
         
         // Present the interface where the player selects opponents and starts the game.
         // GKMatchmakerViewController는 플레이어가 상대를 선택하고, 게임을 시작하는 인터페이스를 보여줍니다.
@@ -202,27 +202,27 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
 //        }
     }
     
-//    /// Quits a match and saves the game data.
-//    /// - Tag:endMatch
-//    func endMatch() {
-//        let myOutcome = myScore >= opponentScore ? "won" : "lost"
-//        let opponentOutcome = opponentScore > myScore ? "won" : "lost"
-//
-//        // Notify the opponent that they won or lost, depending on the score.
-//        do {
-//            let data = encode(outcome: opponentOutcome)
-//            try myMatch?.sendData(toAllPlayers: data!, with: GKMatch.SendDataMode.unreliable)
-//        } catch {
-//            print("Error: \(error.localizedDescription).")
-//        }
-//
-//        // Notify the local player that they won or lost.
-//        if myOutcome == "won" {
-//            youWon = true
-//        } else {
-//            opponentWon = true
-//        }
-//    }
+    /// Quits a match and saves the game data.
+    /// - Tag:endMatch
+    func endMatch() {
+        let myOutcome = myScore >= opponentScore ? "won" : "lost"
+        let opponentOutcome = opponentScore > myScore ? "won" : "lost"
+
+        // Notify the opponent that they won or lost, depending on the score.
+        do {
+            let data = encode(outcome: opponentOutcome) // TODO: - Encode가 뭐하는 애임??
+            try myMatch?.sendData(toAllPlayers: data!, with: GKMatch.SendDataMode.unreliable)
+        } catch {
+            print("Error: \(error.localizedDescription).")
+        }
+
+        // Notify the local player that they won or lost.
+        if myOutcome == "won" {
+            youWon = true
+        } else {
+            opponentWon = true
+        }
+    }
 //
 //    /// Forfeits a match without saving the score.
 //    /// - Tag:forfeitMatch
@@ -250,26 +250,26 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
 //    }
 //
 //    /// Resets a match after players reach an outcome or cancel the game.
-//    func resetMatch() {
-//        // Reset the game data.
-//        playingGame = false
-//        myMatch?.disconnect()
-//        myMatch?.delegate = nil
-//        myMatch = nil
-//        voiceChat = nil
-//        opponent = nil
-//        opponentAvatar = Image(systemName: "person.crop.circle")
+    func resetMatch() {
+        // Reset the game data.
+        playingGame = false
+        myMatch?.disconnect()
+        myMatch?.delegate = nil
+        myMatch = nil
+        voiceChat = nil
+        opponent = nil
+        opponentAvatar = Image(systemName: "person.crop.circle")
 //        messages = []
-//        GKAccessPoint.shared.isActive = true
-//        youForfeit = false
-//        opponentForfeit = false
-//        youWon = false
-//        opponentWon = false
-//
-//        // Reset the score.
-//        myScore = 0
-//        opponentScore = 0
-//    }
+        GKAccessPoint.shared.isActive = true
+        youForfeit = false
+        opponentForfeit = false
+        youWon = false
+        opponentWon = false
+
+        // Reset the score.
+        myScore = 0
+        opponentScore = 0
+    }
 //
 //    // Rewarding players with achievements.
 //
