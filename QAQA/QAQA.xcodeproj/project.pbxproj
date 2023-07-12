@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B87998522A5BACBE00167597 /* QAQAApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87998512A5BACBE00167597 /* QAQAApp.swift */; };
-		B87998542A5BACBE00167597 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87998532A5BACBE00167597 /* TestView.swift */; };
+		B87998542A5BACBE00167597 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87998532A5BACBE00167597 /* HomeView.swift */; };
 		B87998562A5BACBF00167597 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B87998552A5BACBF00167597 /* Assets.xcassets */; };
 		B87998592A5BACBF00167597 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B87998582A5BACBF00167597 /* Preview Assets.xcassets */; };
 		B8B506832A5CF4FA00B3EAED /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B506822A5CF4FA00B3EAED /* ViewModel.swift */; };
@@ -27,7 +27,7 @@
 /* Begin PBXFileReference section */
 		B879984E2A5BACBE00167597 /* QAQA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QAQA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B87998512A5BACBE00167597 /* QAQAApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QAQAApp.swift; sourceTree = "<group>"; };
-		B87998532A5BACBE00167597 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		B87998532A5BACBE00167597 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		B87998552A5BACBF00167597 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B87998582A5BACBF00167597 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B8B506822A5CF4FA00B3EAED /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
@@ -97,7 +97,7 @@
 		B879985F2A5BB39700167597 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B87998532A5BACBE00167597 /* TestView.swift */,
+				B87998532A5BACBE00167597 /* HomeView.swift */,
 				B8B506942A5D2B2600B3EAED /* GameView.swift */,
 			);
 			path = View;
@@ -238,7 +238,7 @@
 			files = (
 				B8B506872A5CF51700B3EAED /* Model.swift in Sources */,
 				B8B5068F2A5D01C700B3EAED /* RealTimeGame+GKMatchmakerViewControllerDelegate.swift in Sources */,
-				B87998542A5BACBE00167597 /* TestView.swift in Sources */,
+				B87998542A5BACBE00167597 /* HomeView.swift in Sources */,
 				B8B506912A5D01F000B3EAED /* RealTimeGame+GKGameCenterViewController.swift in Sources */,
 				B8B506952A5D2B2600B3EAED /* GameView.swift in Sources */,
 				B8B5069D2A5E42D600B3EAED /* RealTimeGame+MatchData.swift in Sources */,

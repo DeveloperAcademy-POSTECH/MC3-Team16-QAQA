@@ -27,7 +27,9 @@ struct HomeView: View {
                 .padding(.leading, 16)
                 Spacer()
             }
-            Image()
+            Spacer()
+                .frame(height: 66)
+            Image("homeQuokka")
             Spacer()
             Button { // 플레이어 선택 -> 플레이어 초대, 오토매칭
                 if game.automatch { // TODO: 이거 없어도 되는건가??
