@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		60EB42792A5E437C0030286C /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EB42782A5E437C0030286C /* TimerView.swift */; };
 		60EB427B2A5E44880030286C /* UIScreen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EB427A2A5E44880030286C /* UIScreen+Extension.swift */; };
+		60EB42802A5ED78A0030286C /* TimerModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EB427F2A5ED78A0030286C /* TimerModalView.swift */; };
+		60EB42822A5ED99E0030286C /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EB42812A5ED99E0030286C /* TimerModel.swift */; };
 		B87998522A5BACBE00167597 /* QAQAApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87998512A5BACBE00167597 /* QAQAApp.swift */; };
 		B87998542A5BACBE00167597 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87998532A5BACBE00167597 /* ContentView.swift */; };
 		B87998562A5BACBF00167597 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B87998552A5BACBF00167597 /* Assets.xcassets */; };
@@ -21,6 +23,8 @@
 /* Begin PBXFileReference section */
 		60EB42782A5E437C0030286C /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		60EB427A2A5E44880030286C /* UIScreen+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extension.swift"; sourceTree = "<group>"; };
+		60EB427F2A5ED78A0030286C /* TimerModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModalView.swift; sourceTree = "<group>"; };
+		60EB42812A5ED99E0030286C /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
 		B879984E2A5BACBE00167597 /* QAQA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QAQA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B87998512A5BACBE00167597 /* QAQAApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QAQAApp.swift; sourceTree = "<group>"; };
 		B87998532A5BACBE00167597 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -93,6 +97,7 @@
 			children = (
 				B87998532A5BACBE00167597 /* ContentView.swift */,
 				60EB42782A5E437C0030286C /* TimerView.swift */,
+				60EB427F2A5ED78A0030286C /* TimerModalView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -109,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				B8B506862A5CF51700B3EAED /* Model.swift */,
+				60EB42812A5ED99E0030286C /* TimerModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -200,6 +206,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60EB42822A5ED99E0030286C /* TimerModel.swift in Sources */,
+				60EB42802A5ED78A0030286C /* TimerModalView.swift in Sources */,
 				60EB42792A5E437C0030286C /* TimerView.swift in Sources */,
 				B8B506872A5CF51700B3EAED /* Model.swift in Sources */,
 				B87998542A5BACBE00167597 /* ContentView.swift in Sources */,

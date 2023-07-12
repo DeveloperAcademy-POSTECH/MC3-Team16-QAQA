@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct TimerView: View {
+    @EnvironmentObject var timerModel: TimerModel
     @State var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    @State var countMin = 10
-    @State var countSecond = 0
-    @State var isTimer = false
+//    @State var countMin = 10
+//    @State var countSecond = 0
+//    @State var isTimer = false
     @State var timeContainerWidth = UIScreen.width * 0.31
     @State var circleBackgroundColor: Color = Color.blue.opacity(0.15)
     @State var playPauseColor: Color = Color.blue.opacity(0.8)
@@ -20,35 +21,35 @@ struct TimerView: View {
     var body: some View {
         ZStack{
             VStack(spacing: 10 * timerSizeMultiplier){
-                Button(action: {isTimer.toggle()}, label: {  ZStack{
+                Button(action: {timerModel.isTimer.toggle()}, label: {  ZStack{
                     Circle().foregroundColor(circleBackgroundColor)
                         .frame(width: UIScreen.width * 0.13 * timerSizeMultiplier)
-                    Image(systemName: isTimer ? "pause.fill" : "play.fill")
+                    Image(systemName: timerModel.isTimer ? "pause.fill" : "play.fill")
                         .font(.system(size: UIScreen.width * 0.06 * timerSizeMultiplier))
                         .foregroundColor(playPauseColor)
                 }})
                 
-                if countSecond < 10 {
-                    Text("\(countMin):0\(countSecond)").font(.system(size: 45 * timerSizeMultiplier).bold()).frame(width: timeContainerWidth * timerSizeMultiplier)
+                if timerModel.countSecond < 10 {
+                    Text("\(timerModel.countMin):0\(timerModel.countSecond)").font(.system(size: 45 * timerSizeMultiplier).bold()).frame(width: timeContainerWidth * timerSizeMultiplier)
                         .foregroundColor(.black)
                 }
                 else {
-                    Text("\(countMin):\(countSecond)").font(.system(size: 45 * timerSizeMultiplier).bold()).frame(width: timeContainerWidth * timerSizeMultiplier)
+                    Text("\(timerModel.countMin):\(timerModel.countSecond)").font(.system(size: 45 * timerSizeMultiplier).bold()).frame(width: timeContainerWidth * timerSizeMultiplier)
                         .foregroundColor(.black)
                 }
                 
             }
             .onReceive(timer , perform: {(_) in
-                if isTimer {
-                    if countSecond == 0 {
-                        if countMin == 0 {
-                            isTimer.toggle()
+                if timerModel.isTimer {
+                    if timerModel.countSecond == 0 {
+                        if timerModel.countMin == 0 {
+                            timerModel.isTimer.toggle()
                         }
-                        countMin -= 1
-                        countSecond = 59
+                        timerModel.countMin -= 1
+                        timerModel.countSecond = 59
                     }
                     else {
-                        countSecond -= 1
+                        timerModel.countSecond -= 1
                     }
                 }
             })
@@ -59,6 +60,7 @@ struct TimerView: View {
 struct TimerView_Previews: PreviewProvider {
     static var previews: some View {
         TimerView()
+            .environmentObject(TimerModel())
     }
 }
 
