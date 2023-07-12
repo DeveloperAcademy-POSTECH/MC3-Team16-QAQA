@@ -95,7 +95,7 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
             GKLocalPlayer.local.register(self)
             
             // Add an access point to the interface.
-            GKAccessPoint.shared.location = .topLeading
+            GKAccessPoint.shared.location = .topTrailing
             GKAccessPoint.shared.showHighlights = true
             GKAccessPoint.shared.isActive = true
             
