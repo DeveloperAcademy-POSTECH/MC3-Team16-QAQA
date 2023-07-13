@@ -34,7 +34,7 @@ struct QuestionView: View {
                 .clipShape(Circle())
             Spacer()
                 .frame(height: 20)
-            Text("오늘의 주인공\n000")
+            Text("오늘의 주인공\n\(game.myName)")
                 .font(.system(size: 32))
                 .multilineTextAlignment(.center)
             Spacer()
