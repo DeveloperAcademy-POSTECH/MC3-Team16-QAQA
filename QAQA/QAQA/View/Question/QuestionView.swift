@@ -12,48 +12,59 @@ struct QuestionView: View {
     
     var body: some View {
         VStack {
-            HStack {
+            Group {
+                HStack {
+                    Spacer()
+                    Button {
+                        // end Game
+                        game.endMatch()
+                        game.resetMatch() // 이 함수에서 game.playingGame을 false로 reset 시켜주면서 창을 닫아줍니다.
+                    } label: {
+                        Image(systemName: "xmark")
+                            .resizable()
+                            .frame(width: 33, height: 33)
+                            .foregroundColor(.black)
+                            .padding(.trailing, 20)
+                    }
+                }
                 Spacer()
+                    .frame(height: 81)
+                game.myAvatar
+                    .resizable()
+                    .frame(width: 200, height: 200)
+                    .clipShape(Circle())
+                Spacer()
+                    .frame(height: 20)
+                Text("오늘의 주인공\n\(game.myName)")
+                    .font(.system(size: 32))
+                    .multilineTextAlignment(.center)
+                Spacer()
+                    .frame(height: 74)
+                
+                HStack {
+                    // Timer
+                    Rectangle()
+                        .frame(width: 150, height: 50)
+                    Spacer().frame(width: 10)
+                    // Pause and Play Button
+                    Button {
+                        // action
+                    } label: {
+                        Image(systemName: "pause.fill")
+                            .foregroundColor(.white)
+                            .padding(15)
+                            .background(Circle())
+                    }
+                }
+                Spacer()
+                    .frame(height: 15)
                 Button {
-                    // end Game
-                    game.endMatch()
-                    game.resetMatch() // 이 함수에서 game.playingGame을 false로 reset 시켜주면서 창을 닫아줍니다.
+                    // Hint Button Action
                 } label: {
-                    Image(systemName: "xmark")
-                        .resizable()
-                        .frame(width: 33, height: 33)
-                        .foregroundColor(.black)
-                        .padding(.trailing, 20)
+                    Text("Hint Button")
                 }
             }
-            Spacer()
-                .frame(height: 81)
-            game.myAvatar
-                .resizable()
-                .frame(width: 200, height: 200)
-                .clipShape(Circle())
-            Spacer()
-                .frame(height: 20)
-            Text("오늘의 주인공\n\(game.myName)")
-                .font(.system(size: 32))
-                .multilineTextAlignment(.center)
-            Spacer()
-                .frame(height: 74)
-            HStack {
-                // Timer
-                Rectangle()
-                    .frame(width: 150, height: 50)
-                Spacer().frame(width: 10)
-                // Pause and Play Button
-                Button {
-                    // action
-                } label: {
-                    Image(systemName: "pause.fill")
-                        .foregroundColor(.white)
-                        .padding(15)
-                        .background(Circle())
-                }
-            }
+            
             Spacer()
                 .frame(height: 36)
             HStack {
@@ -77,8 +88,6 @@ struct QuestionView: View {
                         .background(Circle()
                             .foregroundColor(.green))
                 }
-
-
             }
             Spacer()
         }
