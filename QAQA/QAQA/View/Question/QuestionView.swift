@@ -1,5 +1,5 @@
 //
-//  GameView.swift
+//  QuestionView.swift
 //  QAQA
 //
 //  Created by 박의서 on 2023/07/11.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct GameView: View {
+struct QuestionView: View {
     @ObservedObject var game: RealTimeGame
     
     var body: some View {
@@ -45,6 +45,6 @@ struct GameView: View {
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        GameView(game: RealTimeGame())
+        QuestionView(game: RealTimeGame())
     }
 }
