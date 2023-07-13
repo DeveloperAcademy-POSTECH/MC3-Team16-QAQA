@@ -12,33 +12,84 @@ struct QuestionView: View {
     
     var body: some View {
         VStack {
-            HStack {
+            Group {
+                HStack {
+                    Spacer()
+                    Button {
+                        // end Game
+                        game.endMatch()
+                        game.resetMatch() // 이 함수에서 game.playingGame을 false로 reset 시켜주면서 창을 닫아줍니다.
+                    } label: {
+                        Image(systemName: "xmark")
+                            .resizable()
+                            .frame(width: 33, height: 33)
+                            .foregroundColor(.black)
+                            .padding(.trailing, 20)
+                    }
+                }
                 Spacer()
+                    .frame(height: 81)
                 game.myAvatar
                     .resizable()
-                    .frame(width: 35.0, height: 35.0)
+                    .frame(width: 200, height: 200)
                     .clipShape(Circle())
-                
-                Text(game.myName + " (me)")
-                    .lineLimit(2)
                 Spacer()
-                game.opponentAvatar
-                    .resizable()
-                    .frame(width: 35.0, height: 35.0)
-                    .clipShape(Circle())
-                
-                Text(game.opponentName)
-                    .lineLimit(2)
+                    .frame(height: 20)
+                Text("오늘의 주인공\n\(game.myName)")
+                    .font(.system(size: 32))
+                    .multilineTextAlignment(.center)
                 Spacer()
+                    .frame(height: 74)
+                
+                HStack {
+                    // Timer
+                    Rectangle()
+                        .frame(width: 150, height: 50)
+                    Spacer().frame(width: 10)
+                    // Pause and Play Button
+                    Button {
+                        // action
+                    } label: {
+                        Image(systemName: "pause.fill")
+                            .foregroundColor(.white)
+                            .padding(15)
+                            .background(Circle())
+                    }
+                }
+                Spacer()
+                    .frame(height: 15)
+                Button {
+                    // Hint Button Action
+                } label: {
+                    Text("Hint Button")
+                }
             }
-            Button {
-                // end Game
-                game.endMatch()
-                game.resetMatch() // 이 함수에서 game.playingGame을 false로 reset 시켜주면서 창을 닫아줍니다.
-            } label: {
-                Text("Close")
+            
+            Spacer()
+                .frame(height: 36)
+            HStack {
+                Button {
+                    // Left Button Action
+                } label: {
+                    Text("🥰")
+                        .font(.system(size: 121))
+                        .padding(20)
+                        .background(Circle()
+                            .foregroundColor(.yellow))
+                }
+                Spacer()
+                    .frame(width: 21)
+                Button {
+                    // Right Button Action
+                } label: {
+                    Text("🧐")
+                        .font(.system(size: 121))
+                        .padding(20)
+                        .background(Circle()
+                            .foregroundColor(.green))
+                }
             }
-
+            Spacer()
         }
     }
 }
