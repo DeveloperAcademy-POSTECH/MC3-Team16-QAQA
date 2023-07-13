@@ -9,6 +9,8 @@ import SwiftUI
 
 struct QuestionView: View {
     @ObservedObject var game: RealTimeGame
+    @State var goodReactionCount = 0
+    @State var ummReactionCount = 0
     
     var body: some View {
         VStack {
@@ -67,26 +69,43 @@ struct QuestionView: View {
             
             Spacer()
                 .frame(height: 36)
+            
             HStack {
                 Button {
-                    // Left Button Action
+                    goodReactionCount += 1// Left Button Action
                 } label: {
-                    Text("🥰")
-                        .font(.system(size: 121))
-                        .padding(20)
-                        .background(Circle()
-                            .foregroundColor(.yellow))
-                }
-                Spacer()
-                    .frame(width: 21)
-                Button {
-                    // Right Button Action
-                } label: {
-                    Text("🧐")
-                        .font(.system(size: 121))
-                        .padding(20)
-                        .background(Circle()
-                            .foregroundColor(.green))
+                    ZStack{
+                        Text("🥰")
+                            .font(.system(size: 121))
+                            .padding(20)
+                            .background(Circle()
+                                .foregroundColor(.yellow))
+                        ForEach(0 ..< goodReactionCount, id: \.self){ _ in
+                            Text("🥰")
+                                .font(.system(size: Double.random(in: 50...70)))
+                                .modifier(ReactionModifier())
+                                .offset(y:-80)
+                        }
+                    }
+                    Spacer()
+                        .frame(width: 21)
+                    Button {
+                        ummReactionCount += 1// Right Button Action
+                    } label: {
+                        ZStack{
+                            Text("🧐")
+                                .font(.system(size: 121))
+                                .padding(20)
+                                .background(Circle()
+                                    .foregroundColor(.green))
+                            ForEach(0 ..< ummReactionCount, id: \.self){ _ in
+                                Text("🧐")
+                                    .font(.system(size: Double.random(in: 50...70)))
+                                    .modifier(ReactionModifier())
+                                    .offset(y:-80)
+                            }
+                        }
+                    }
                 }
             }
             Spacer()
