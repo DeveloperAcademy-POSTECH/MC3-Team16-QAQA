@@ -17,7 +17,6 @@
 		B87998592A5BACBF00167597 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B87998582A5BACBF00167597 /* Preview Assets.xcassets */; };
 		B8B506832A5CF4FA00B3EAED /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B506822A5CF4FA00B3EAED /* ViewModel.swift */; };
 		B8B506852A5CF50400B3EAED /* RealTimeGame+GKMatchDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B506842A5CF50400B3EAED /* RealTimeGame+GKMatchDelegate.swift */; };
-		B8B506872A5CF51700B3EAED /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B506862A5CF51700B3EAED /* Model.swift */; };
 		B8B5068A2A5D00BE00B3EAED /* RealTimeGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B506892A5D00BE00B3EAED /* RealTimeGame.swift */; };
 		B8B5068D2A5D019900B3EAED /* RealTimeGame+Friends.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B5068C2A5D019900B3EAED /* RealTimeGame+Friends.swift */; };
 		B8B5068F2A5D01C700B3EAED /* RealTimeGame+GKMatchmakerViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B5068E2A5D01C700B3EAED /* RealTimeGame+GKMatchmakerViewControllerDelegate.swift */; };
@@ -40,7 +39,6 @@
 		B87998582A5BACBF00167597 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B8B506822A5CF4FA00B3EAED /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		B8B506842A5CF50400B3EAED /* RealTimeGame+GKMatchDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealTimeGame+GKMatchDelegate.swift"; sourceTree = "<group>"; };
-		B8B506862A5CF51700B3EAED /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		B8B506882A5CFDAA00B3EAED /* QAQA.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QAQA.entitlements; sourceTree = "<group>"; };
 		B8B506892A5D00BE00B3EAED /* RealTimeGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealTimeGame.swift; sourceTree = "<group>"; };
 		B8B5068C2A5D019900B3EAED /* RealTimeGame+Friends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealTimeGame+Friends.swift"; sourceTree = "<group>"; };
@@ -133,7 +131,6 @@
 			isa = PBXGroup;
 			children = (
 				B8B506962A5E276300B3EAED /* Game */,
-				B8B506862A5CF51700B3EAED /* Model.swift */,
 				60EB42812A5ED99E0030286C /* TimerModel.swift */,
 			);
 			path = Model;
@@ -151,7 +148,6 @@
 			isa = PBXGroup;
 			children = (
 				60EB427C2A5ED5490030286C /* UIScreen */,
-				B8B506842A5CF50400B3EAED /* Utils.swift */,
 				B8B506972A5E2C7600B3EAED /* Color */,
 				B8B5068B2A5D013100B3EAED /* GameCenter */,
 			);
@@ -260,7 +256,6 @@
 				60EB42822A5ED99E0030286C /* TimerModel.swift in Sources */,
 				60EB42802A5ED78A0030286C /* TimerModalView.swift in Sources */,
 				60EB42792A5E437C0030286C /* TimerView.swift in Sources */,
-				B8B506872A5CF51700B3EAED /* Model.swift in Sources */,
 				B8B5068F2A5D01C700B3EAED /* RealTimeGame+GKMatchmakerViewControllerDelegate.swift in Sources */,
 				B87998542A5BACBE00167597 /* HomeView.swift in Sources */,
 				B8B506912A5D01F000B3EAED /* RealTimeGame+GKGameCenterViewController.swift in Sources */,
@@ -270,7 +265,7 @@
 				B8B5068D2A5D019900B3EAED /* RealTimeGame+Friends.swift in Sources */,
 				B8B5069B2A5E3C1C00B3EAED /* RealTimeGame+GKLocalPlayerListener.swift in Sources */,
 				B87998522A5BACBE00167597 /* QAQAApp.swift in Sources */,
-				B8B506852A5CF50400B3EAED /* Utils.swift in Sources */,
+				B8B506852A5CF50400B3EAED /* RealTimeGame+GKMatchDelegate.swift in Sources */,
 				60EB427B2A5E44880030286C /* UIScreen+Extension.swift in Sources */,
 				B8B5068A2A5D00BE00B3EAED /* RealTimeGame.swift in Sources */,
 				B8B506992A5E2C9500B3EAED /* Color+Extension.swift in Sources */,
