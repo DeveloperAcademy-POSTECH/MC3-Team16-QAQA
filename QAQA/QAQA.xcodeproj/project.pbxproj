@@ -16,8 +16,6 @@
 		B8B506872A5CF51700B3EAED /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B506862A5CF51700B3EAED /* Model.swift */; };
 		C5C61B972A5E409C00FB8854 /* QuestionMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C61B962A5E409C00FB8854 /* QuestionMainView.swift */; };
 		C5C61B992A5E583C00FB8854 /* HintModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C61B982A5E583C00FB8854 /* HintModal.swift */; };
-		C5C89C382A5D008300218E40 /* EasyModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C89C372A5D008300218E40 /* EasyModal.swift */; };
-		C5C89C3A2A5D00B900218E40 /* HardModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C89C392A5D00B900218E40 /* HardModal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,8 +29,6 @@
 		B8B506862A5CF51700B3EAED /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		C5C61B962A5E409C00FB8854 /* QuestionMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionMainView.swift; sourceTree = "<group>"; };
 		C5C61B982A5E583C00FB8854 /* HintModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintModal.swift; sourceTree = "<group>"; };
-		C5C89C372A5D008300218E40 /* EasyModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyModal.swift; sourceTree = "<group>"; };
-		C5C89C392A5D00B900218E40 /* HardModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardModal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,8 +84,6 @@
 			isa = PBXGroup;
 			children = (
 				B87998532A5BACBE00167597 /* ContentView.swift */,
-				C5C89C372A5D008300218E40 /* EasyModal.swift */,
-				C5C89C392A5D00B900218E40 /* HardModal.swift */,
 				C5C61B982A5E583C00FB8854 /* HintModal.swift */,
 				C5C61B962A5E409C00FB8854 /* QuestionMainView.swift */,
 			);
@@ -205,8 +199,6 @@
 				B8B506832A5CF4FA00B3EAED /* ViewModel.swift in Sources */,
 				B87998522A5BACBE00167597 /* QAQAApp.swift in Sources */,
 				B8B506852A5CF50400B3EAED /* Utils.swift in Sources */,
-				C5C89C3A2A5D00B900218E40 /* HardModal.swift in Sources */,
-				C5C89C382A5D008300218E40 /* EasyModal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
