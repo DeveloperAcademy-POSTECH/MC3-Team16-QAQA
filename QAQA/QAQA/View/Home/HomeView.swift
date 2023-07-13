@@ -58,7 +58,7 @@ struct HomeView: View {
         }
         // Display the game interface if a match is ongoing.
         .fullScreenCover(isPresented: $game.playingGame) {
-            GameView(game: game)
+            QuestionView(game: game)
         }
     }
 }
