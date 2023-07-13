@@ -11,8 +11,7 @@ import SwiftUI
 struct QAQAApp: App {
     var body: some Scene {
         WindowGroup {
-            TimerView()
-                .environmentObject(TimerModel())
+            HomeView()
         }
     }
 }

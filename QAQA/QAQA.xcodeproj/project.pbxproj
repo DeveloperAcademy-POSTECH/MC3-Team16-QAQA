@@ -12,11 +12,20 @@
 		60EB42802A5ED78A0030286C /* TimerModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EB427F2A5ED78A0030286C /* TimerModalView.swift */; };
 		60EB42822A5ED99E0030286C /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EB42812A5ED99E0030286C /* TimerModel.swift */; };
 		B87998522A5BACBE00167597 /* QAQAApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87998512A5BACBE00167597 /* QAQAApp.swift */; };
+		B87998542A5BACBE00167597 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87998532A5BACBE00167597 /* HomeView.swift */; };
 		B87998562A5BACBF00167597 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B87998552A5BACBF00167597 /* Assets.xcassets */; };
 		B87998592A5BACBF00167597 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B87998582A5BACBF00167597 /* Preview Assets.xcassets */; };
 		B8B506832A5CF4FA00B3EAED /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B506822A5CF4FA00B3EAED /* ViewModel.swift */; };
-		B8B506852A5CF50400B3EAED /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B506842A5CF50400B3EAED /* Utils.swift */; };
+		B8B506852A5CF50400B3EAED /* RealTimeGame+GKMatchDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B506842A5CF50400B3EAED /* RealTimeGame+GKMatchDelegate.swift */; };
 		B8B506872A5CF51700B3EAED /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B506862A5CF51700B3EAED /* Model.swift */; };
+		B8B5068A2A5D00BE00B3EAED /* RealTimeGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B506892A5D00BE00B3EAED /* RealTimeGame.swift */; };
+		B8B5068D2A5D019900B3EAED /* RealTimeGame+Friends.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B5068C2A5D019900B3EAED /* RealTimeGame+Friends.swift */; };
+		B8B5068F2A5D01C700B3EAED /* RealTimeGame+GKMatchmakerViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B5068E2A5D01C700B3EAED /* RealTimeGame+GKMatchmakerViewControllerDelegate.swift */; };
+		B8B506912A5D01F000B3EAED /* RealTimeGame+GKGameCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B506902A5D01F000B3EAED /* RealTimeGame+GKGameCenterViewController.swift */; };
+		B8B506952A5D2B2600B3EAED /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B506942A5D2B2600B3EAED /* GameView.swift */; };
+		B8B506992A5E2C9500B3EAED /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B506982A5E2C9500B3EAED /* Color+Extension.swift */; };
+		B8B5069B2A5E3C1C00B3EAED /* RealTimeGame+GKLocalPlayerListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B5069A2A5E3C1C00B3EAED /* RealTimeGame+GKLocalPlayerListener.swift */; };
+		B8B5069D2A5E42D600B3EAED /* RealTimeGame+MatchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B5069C2A5E42D600B3EAED /* RealTimeGame+MatchData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,11 +35,21 @@
 		60EB42812A5ED99E0030286C /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
 		B879984E2A5BACBE00167597 /* QAQA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QAQA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B87998512A5BACBE00167597 /* QAQAApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QAQAApp.swift; sourceTree = "<group>"; };
+		B87998532A5BACBE00167597 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		B87998552A5BACBF00167597 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B87998582A5BACBF00167597 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B8B506822A5CF4FA00B3EAED /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		B8B506842A5CF50400B3EAED /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		B8B506842A5CF50400B3EAED /* RealTimeGame+GKMatchDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealTimeGame+GKMatchDelegate.swift"; sourceTree = "<group>"; };
 		B8B506862A5CF51700B3EAED /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		B8B506882A5CFDAA00B3EAED /* QAQA.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QAQA.entitlements; sourceTree = "<group>"; };
+		B8B506892A5D00BE00B3EAED /* RealTimeGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealTimeGame.swift; sourceTree = "<group>"; };
+		B8B5068C2A5D019900B3EAED /* RealTimeGame+Friends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealTimeGame+Friends.swift"; sourceTree = "<group>"; };
+		B8B5068E2A5D01C700B3EAED /* RealTimeGame+GKMatchmakerViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealTimeGame+GKMatchmakerViewControllerDelegate.swift"; sourceTree = "<group>"; };
+		B8B506902A5D01F000B3EAED /* RealTimeGame+GKGameCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealTimeGame+GKGameCenterViewController.swift"; sourceTree = "<group>"; };
+		B8B506942A5D2B2600B3EAED /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		B8B506982A5E2C9500B3EAED /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		B8B5069A2A5E3C1C00B3EAED /* RealTimeGame+GKLocalPlayerListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealTimeGame+GKLocalPlayerListener.swift"; sourceTree = "<group>"; };
+		B8B5069C2A5E42D600B3EAED /* RealTimeGame+MatchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealTimeGame+MatchData.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +90,7 @@
 		B87998502A5BACBE00167597 /* QAQA */ = {
 			isa = PBXGroup;
 			children = (
+				B8B506882A5CFDAA00B3EAED /* QAQA.entitlements */,
 				B87998632A5BB3C400167597 /* Utils */,
 				B87998622A5BB3B200167597 /* Resources */,
 				B87998612A5BB3A900167597 /* Model */,
@@ -95,6 +115,8 @@
 			children = (
 				60EB42782A5E437C0030286C /* TimerView.swift */,
 				60EB427F2A5ED78A0030286C /* TimerModalView.swift */,
+				B87998532A5BACBE00167597 /* HomeView.swift */,
+				B8B506942A5D2B2600B3EAED /* GameView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -110,6 +132,7 @@
 		B87998612A5BB3A900167597 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B8B506962A5E276300B3EAED /* Game */,
 				B8B506862A5CF51700B3EAED /* Model.swift */,
 				60EB42812A5ED99E0030286C /* TimerModel.swift */,
 			);
@@ -129,8 +152,39 @@
 			children = (
 				60EB427C2A5ED5490030286C /* UIScreen */,
 				B8B506842A5CF50400B3EAED /* Utils.swift */,
+				B8B506972A5E2C7600B3EAED /* Color */,
+				B8B5068B2A5D013100B3EAED /* GameCenter */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		B8B5068B2A5D013100B3EAED /* GameCenter */ = {
+			isa = PBXGroup;
+			children = (
+				B8B506842A5CF50400B3EAED /* RealTimeGame+GKMatchDelegate.swift */,
+				B8B5068C2A5D019900B3EAED /* RealTimeGame+Friends.swift */,
+				B8B5068E2A5D01C700B3EAED /* RealTimeGame+GKMatchmakerViewControllerDelegate.swift */,
+				B8B506902A5D01F000B3EAED /* RealTimeGame+GKGameCenterViewController.swift */,
+				B8B5069A2A5E3C1C00B3EAED /* RealTimeGame+GKLocalPlayerListener.swift */,
+				B8B5069C2A5E42D600B3EAED /* RealTimeGame+MatchData.swift */,
+			);
+			path = GameCenter;
+			sourceTree = "<group>";
+		};
+		B8B506962A5E276300B3EAED /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				B8B506892A5D00BE00B3EAED /* RealTimeGame.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		B8B506972A5E2C7600B3EAED /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				B8B506982A5E2C9500B3EAED /* Color+Extension.swift */,
+			);
+			path = Color;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,10 +261,20 @@
 				60EB42802A5ED78A0030286C /* TimerModalView.swift in Sources */,
 				60EB42792A5E437C0030286C /* TimerView.swift in Sources */,
 				B8B506872A5CF51700B3EAED /* Model.swift in Sources */,
+				B8B5068F2A5D01C700B3EAED /* RealTimeGame+GKMatchmakerViewControllerDelegate.swift in Sources */,
+				B87998542A5BACBE00167597 /* HomeView.swift in Sources */,
+				B8B506912A5D01F000B3EAED /* RealTimeGame+GKGameCenterViewController.swift in Sources */,
+				B8B506952A5D2B2600B3EAED /* GameView.swift in Sources */,
+				B8B5069D2A5E42D600B3EAED /* RealTimeGame+MatchData.swift in Sources */,
 				B8B506832A5CF4FA00B3EAED /* ViewModel.swift in Sources */,
+				B8B5068D2A5D019900B3EAED /* RealTimeGame+Friends.swift in Sources */,
+				B8B5069B2A5E3C1C00B3EAED /* RealTimeGame+GKLocalPlayerListener.swift in Sources */,
 				B87998522A5BACBE00167597 /* QAQAApp.swift in Sources */,
 				B8B506852A5CF50400B3EAED /* Utils.swift in Sources */,
 				60EB427B2A5E44880030286C /* UIScreen+Extension.swift in Sources */,
+				B8B5068A2A5D00BE00B3EAED /* RealTimeGame.swift in Sources */,
+				B8B506992A5E2C9500B3EAED /* Color+Extension.swift in Sources */,
+				B8B506852A5CF50400B3EAED /* RealTimeGame+GKMatchDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,17 +400,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = QAQA/QAQA.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"QAQA/Preview Content\"";
 				DEVELOPMENT_TEAM = 82Q43H4UQQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSGKFriendListUsageDescription = "Accessing your friends to identify them during gameplay.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = gamekit;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -365,17 +433,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = QAQA/QAQA.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"QAQA/Preview Content\"";
 				DEVELOPMENT_TEAM = 82Q43H4UQQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSGKFriendListUsageDescription = "Accessing your friends to identify them during gameplay.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = gamekit;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
