@@ -15,11 +15,14 @@ struct HintModal: View {
     }
     
     @State private var selectedHint: HintMode = .fun
+    @State private var randomFunQuestion : String = "0"
+    @State private var randomSeriousQuestion : String = "00"
     
-    let funhints = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
-    let serioushints = ["00", "11", "22", "33", "44", "55", "66", "77", "88", "99"]
+    private let funHints = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+    private let seriousHints = ["00", "11", "22", "33", "44", "55", "66", "77", "88", "99"]
     
     var body: some View {
+        
         VStack{
             Picker("HintMode", selection: $selectedHint) {
                 ForEach(HintMode.allCases) { hintMode in
@@ -27,26 +30,36 @@ struct HintModal: View {
                 }
             }
             .pickerStyle(.segmented)
+            .onChange(of: selectedHint, perform: { _ in
+                switch selectedHint {
+                case .fun :
+                    randomFunQuestion = funHints.randomElement()!
+                case .serious :
+                    randomSeriousQuestion = seriousHints.randomElement()!
+                }
+            })
+            
             .padding()
             Spacer()
                 .frame(height: 90)
-            Text("\(selectedHint.rawValue)")
-                .font(.system(size: 30))
-            if selectedHint == .fun {
-                if let funhint = funhints.randomElement() {
-                    Text("\(funhint)")
-                        .font(.system(size: 30))
-                }
-            }else {
-                if let serioushint = serioushints.randomElement() {
-                    Text("\(serioushint)")
-                        .font(.system(size: 30))
-                }
+            
+            switch selectedHint {
+            case .fun :
+                Text("\(randomFunQuestion)")
+                    .font(.system(size: 30))
+            case .serious :
+                Text("\(randomSeriousQuestion)")
+                    .font(.system(size: 30))
             }
             Spacer()
                 .frame(height: 90)
             Button ("질문 다시 뽑기") {
-                // Qustion Random Button Action
+                switch selectedHint {
+                case .fun :
+                    randomFunQuestion = funHints.randomElement()!
+                case .serious :
+                    randomSeriousQuestion = seriousHints.randomElement()!
+                }
             }
             .buttonStyle(.borderedProminent)
             .font(.system(size: 25))
