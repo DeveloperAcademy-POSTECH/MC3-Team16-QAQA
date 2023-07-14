@@ -12,6 +12,7 @@ struct QuestionView: View {
     @ObservedObject var game: RealTimeGame
     @State var goodReactionCount = 0
     @State var ummReactionCount = 0
+    @State var showTimerModal = false
     
     var body: some View {
         VStack {
@@ -47,18 +48,29 @@ struct QuestionView: View {
                 HStack {
                     // Timer
                     TimerView(width:130)
-//                    Rectangle()
-//                        .frame(width: 150, height: 50)
+                    //                    Rectangle()
+                    //                        .frame(width: 150, height: 50)
                     Spacer().frame(width: 10)
                     // Pause and Play Button
                     Button {
-                        timerModel.isTimer.toggle()// action
+                        timerModel.isTimer.toggle()
+                        showTimerModal = true// action
                     } label: {
-                        Image(systemName: timerModel.isTimer ? "pause.fill" : "play.fill")
+                        Image(systemName: "pause.fill" )
                             .foregroundColor(.white)
                             .padding(15)
                             .background(Circle())
                     }
+                    .sheet(isPresented: $showTimerModal){
+                        TimerModalView()
+                            .presentationDetents([.height(257)])
+                            .presentationCornerRadius(32)
+                            .padding(.top, 30)
+                        
+                        
+                        
+                    }
+                    
                 }
                 Spacer()
                     .frame(height: 15)
