@@ -24,7 +24,6 @@
 		B8B506992A5E2C9500B3EAED /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B506982A5E2C9500B3EAED /* Color+Extension.swift */; };
 		B8B5069B2A5E3C1C00B3EAED /* RealTimeGame+GKLocalPlayerListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B5069A2A5E3C1C00B3EAED /* RealTimeGame+GKLocalPlayerListener.swift */; };
 		B8B5069D2A5E42D600B3EAED /* RealTimeGame+MatchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B5069C2A5E42D600B3EAED /* RealTimeGame+MatchData.swift */; };
-		C5C61B972A5E409C00FB8854 /* QuestionMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C61B962A5E409C00FB8854 /* QuestionMainView.swift */; };
 		C5C61B992A5E583C00FB8854 /* HintModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C61B982A5E583C00FB8854 /* HintModal.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,7 +47,6 @@
 		B8B506982A5E2C9500B3EAED /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		B8B5069A2A5E3C1C00B3EAED /* RealTimeGame+GKLocalPlayerListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealTimeGame+GKLocalPlayerListener.swift"; sourceTree = "<group>"; };
 		B8B5069C2A5E42D600B3EAED /* RealTimeGame+MatchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealTimeGame+MatchData.swift"; sourceTree = "<group>"; };
-		C5C61B962A5E409C00FB8854 /* QuestionMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionMainView.swift; sourceTree = "<group>"; };
 		C5C61B982A5E583C00FB8854 /* HintModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintModal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,7 +83,6 @@
 				60EB427F2A5ED78A0030286C /* TimerModalView.swift */,
 				B8B506942A5D2B2600B3EAED /* QuestionView.swift */,
 				C5C61B982A5E583C00FB8854 /* HintModal.swift */,
-				C5C61B962A5E409C00FB8854 /* QuestionMainView.swift */,
 			);
 			path = Question;
 			sourceTree = "<group>";
@@ -272,7 +269,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5C61B972A5E409C00FB8854 /* QuestionMainView.swift in Sources */,
 				C5C61B992A5E583C00FB8854 /* HintModal.swift in Sources */,
 				B87998542A5BACBE00167597 /* HomeView.swift in Sources */,
 				60EB42822A5ED99E0030286C /* TimerModel.swift in Sources */,

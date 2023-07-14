@@ -66,8 +66,8 @@ struct QuestionView: View {
                     Text("Hint Button")
                 } .sheet(isPresented: $showHintModal) {
                     HintModal()
-                        .presentationDetents([.height(311)])
-                        .presentationCornerRadius(40)
+                        .presentationDetents([.height(400)])
+                        .presentationCornerRadius(32)
                 }
             }
             
