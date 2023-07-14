@@ -13,28 +13,29 @@ struct TimerView: View {
 //    @State var countMin = 10
 //    @State var countSecond = 0
 //    @State var isTimer = false
-    @State var timeContainerWidth = UIScreen.width * 0.31
     @State var circleBackgroundColor: Color = Color.blue.opacity(0.15)
     @State var playPauseColor: Color = Color.blue.opacity(0.8)
+    @State var width:CGFloat = 150
+    @State var height:CGFloat = 50
     @State var timerSizeMultiplier:CGFloat = 1
     
     var body: some View {
         ZStack{
             VStack(spacing: 10 * timerSizeMultiplier){
-                Button(action: {timerModel.isTimer.toggle()}, label: {  ZStack{
-                    Circle().foregroundColor(circleBackgroundColor)
-                        .frame(width: UIScreen.width * 0.13 * timerSizeMultiplier)
-                    Image(systemName: timerModel.isTimer ? "pause.fill" : "play.fill")
-                        .font(.system(size: UIScreen.width * 0.06 * timerSizeMultiplier))
-                        .foregroundColor(playPauseColor)
-                }})
+//                Button(action: {timerModel.isTimer.toggle()}, label: {  ZStack{
+//                    Circle().foregroundColor(circleBackgroundColor)
+//                        .frame(width: UIScreen.width * 0.13 * timerSizeMultiplier)
+//                    Image(systemName: timerModel.isTimer ? "pause.fill" : "play.fill")
+//                        .font(.system(size: UIScreen.width * 0.06 * timerSizeMultiplier))
+//                        .foregroundColor(playPauseColor)
+//                }})
                 
                 if timerModel.countSecond < 10 {
-                    Text("\(timerModel.countMin):0\(timerModel.countSecond)").font(.system(size: 45 * timerSizeMultiplier).bold()).frame(width: timeContainerWidth * timerSizeMultiplier)
+                    Text("\(timerModel.countMin):0\(timerModel.countSecond)").font(.system(size: 45 * timerSizeMultiplier).bold()).frame(width: width * timerSizeMultiplier, height: height * timerSizeMultiplier)
                         .foregroundColor(.black)
                 }
                 else {
-                    Text("\(timerModel.countMin):\(timerModel.countSecond)").font(.system(size: 45 * timerSizeMultiplier).bold()).frame(width: timeContainerWidth * timerSizeMultiplier)
+                    Text("\(timerModel.countMin):\(timerModel.countSecond)").font(.system(size: 45 * timerSizeMultiplier).bold()).frame(width: width * timerSizeMultiplier, height: height * timerSizeMultiplier)
                         .foregroundColor(.black)
                 }
                 
