@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct QuestionView: View {
+    @EnvironmentObject var timerModel: TimerModel
     @ObservedObject var game: RealTimeGame
     @State var goodReactionCount = 0
     @State var ummReactionCount = 0
@@ -45,14 +46,15 @@ struct QuestionView: View {
                 
                 HStack {
                     // Timer
-                    Rectangle()
-                        .frame(width: 150, height: 50)
+                    TimerView(width:130)
+//                    Rectangle()
+//                        .frame(width: 150, height: 50)
                     Spacer().frame(width: 10)
                     // Pause and Play Button
                     Button {
-                        // action
+                        timerModel.isTimer.toggle()// action
                     } label: {
-                        Image(systemName: "pause.fill")
+                        Image(systemName: timerModel.isTimer ? "pause.fill" : "play.fill")
                             .foregroundColor(.white)
                             .padding(15)
                             .background(Circle())
@@ -110,11 +112,15 @@ struct QuestionView: View {
             }
             Spacer()
         }
+        .onAppear{
+            timerModel.isTimer.toggle()
+        }
     }
 }
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
         QuestionView(game: RealTimeGame())
+            .environmentObject(TimerModel())
     }
 }
