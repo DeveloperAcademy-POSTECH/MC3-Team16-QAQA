@@ -44,7 +44,8 @@ struct TimerView: View {
                 if timerModel.isTimer {
                     if timerModel.countSecond == 0 {
                         if timerModel.countMin == 0 {
-                            timerModel.isTimer.toggle()
+                            timerModel.isTimer = false
+                            return
                         }
                         timerModel.countMin -= 1
                         timerModel.countSecond = 59
