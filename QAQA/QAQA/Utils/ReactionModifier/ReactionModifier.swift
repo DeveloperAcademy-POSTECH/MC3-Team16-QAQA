@@ -10,14 +10,14 @@ import SwiftUI
 
 struct ReactionModifier: ViewModifier {
     @State var time = 0.0
-    let duration = 1.0
+    let duration = 2.0
 
     func body(content: Content) -> some View {
         ZStack {
             content
                 .foregroundColor(.red)
                 .modifier(ReactionEffect(time: time))
-                .opacity(time == 1.0 ? 0 : 1)
+                .opacity(time == 2.0 ? 0 : 1)
         }
         .onAppear {
             withAnimation(.easeOut(duration: duration)) {
@@ -29,9 +29,11 @@ struct ReactionModifier: ViewModifier {
 
 struct ReactionEffect: GeometryEffect {
     var time: Double
-    var speed = Double.random(in: 200 ... 250)
+//    var speed = Double.random(in: 350 ... 410)
+    var speed:Double = 200
     var xDirection = Double.random(in: -0.2 ... 0.2)
-    var yDirection = Double.random(in: -Double.pi ... 0)
+//    var yDirection = Double.random(in: -Double.pi ... 0)
+    var yDirection:Double = -Double.pi / 2
 
     var animatableData: Double {
         get { time }
