@@ -9,6 +9,7 @@ import SwiftUI
 
 struct QuestionView: View {
     @ObservedObject var game: RealTimeGame
+    @State private var showHintModal = false
     
     var body: some View {
         VStack {
@@ -60,8 +61,13 @@ struct QuestionView: View {
                     .frame(height: 15)
                 Button {
                     // Hint Button Action
+                    showHintModal = true
                 } label: {
                     Text("Hint Button")
+                } .sheet(isPresented: $showHintModal) {
+                    HintModal()
+                        .presentationDetents([.height(311)])
+                        .presentationCornerRadius(40)
                 }
             }
             
