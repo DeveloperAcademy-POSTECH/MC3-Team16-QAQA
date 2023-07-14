@@ -9,23 +9,16 @@ import SwiftUI
 
 struct HintModal: View {
     
-    enum HintMode: String, CaseIterable, Identifiable {
-        case fun, serious
-        var id: Self { self }
-    }
-    
-    @State private var selectedHint: HintMode = .fun
+    @StateObject private var hintViewModel = HintViewModel()
+    @State private var selectedHint: HintState = .fun
     @State private var randomFunQuestion : String = "0"
     @State private var randomSeriousQuestion : String = "00"
-    
-    private let funHints = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
-    private let seriousHints = ["00", "11", "22", "33", "44", "55", "66", "77", "88", "99"]
     
     var body: some View {
         
         VStack{
             Picker("HintMode", selection: $selectedHint) {
-                ForEach(HintMode.allCases) { hintMode in
+                ForEach(HintState.allCases) { hintMode in
                     Text(hintMode.rawValue.capitalized)
                 }
             }
@@ -33,9 +26,9 @@ struct HintModal: View {
             .onChange(of: selectedHint, perform: { _ in
                 switch selectedHint {
                 case .fun :
-                    randomFunQuestion = funHints.randomElement()!
+                    randomFunQuestion = hintViewModel.createRandomFunHints()
                 case .serious :
-                    randomSeriousQuestion = seriousHints.randomElement()!
+                    randomSeriousQuestion = hintViewModel.createRandomSeriousHints()
                 }
             })
             
@@ -56,9 +49,9 @@ struct HintModal: View {
             Button ("질문 다시 뽑기") {
                 switch selectedHint {
                 case .fun :
-                    randomFunQuestion = funHints.randomElement()!
+                    randomFunQuestion = hintViewModel.createRandomFunHints()
                 case .serious :
-                    randomSeriousQuestion = seriousHints.randomElement()!
+                    randomSeriousQuestion = hintViewModel.createRandomSeriousHints()
                 }
             }
             .buttonStyle(.borderedProminent)
