@@ -15,24 +15,12 @@ struct TimerModalView: View {
     @State var restartButtonColor: Color = Color.blue.opacity(0.8)
     var body: some View {
         VStack(alignment: .center){
-            if timerModel.countSecond < 10 {
-                Text("\(timerModel.countMin):0\(timerModel.countSecond)")
-                    .font(.system(size: 70))
-                    .fontWeight(.bold)
-                    .foregroundColor(.black)
-                    .frame(width: timeContainerWidth)
-                    .padding(.bottom, paddingHeight)
-                
-            }
-            else {
-                Text("\(timerModel.countMin):\(timerModel.countSecond)")
-                    .font(.system(size: 70))
-                    .fontWeight(.bold)
-                    .foregroundColor(.black)
-                    .frame(width: timeContainerWidth)
-                    .padding(.bottom, paddingHeight)
-                
-            }
+            timerModel.displayTime(false)
+                .font(.system(size: 70))
+                .fontWeight(.bold)
+                .foregroundColor(.black)
+                .frame(width: timeContainerWidth)
+                .padding(.bottom, paddingHeight)
             Text("일시정지")
                 .frame(width: timeContainerWidth)
                 .padding(.bottom, 20)
