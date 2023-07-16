@@ -17,7 +17,7 @@ struct OutroEndingView: View {
             VStack {
                 Spacer()
                     .frame(height: 63)
-                Text("\(userName) 님,")
+                Text("\(userName) 님이")
                     .font(.system(size: 20))
                     .foregroundColor(.gray)
                 Spacer()
@@ -34,15 +34,17 @@ struct OutroEndingView: View {
                 Spacer()
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
-                        Rectangle()
-                            .frame(width: 192, height: 246)
+                        OutroCardView(text: "가장 많이 반응한 분", profile: Image(systemName: "circle.fill"), username: "username", isShowingCrown: true) // TODO: 모델로 변환, 모델 리스트 만들어서 받아온 후 값 집어넣기
                         Spacer()
                             .frame(width: 20)
-                        Rectangle()
-                            .frame(width: 192, height: 246)
+                    OutroCardView(text: "킹정~ 많이한 분", profile: Image(systemName: "circle.fill"), username: "username", isShowingCrown: false)
+                        Spacer()
+                            .frame(width: 20)
+                    OutroCardView(text: "에바~ 많이한 분", profile: Image(systemName: "circle.fill"), username: "username", isShowingCrown: false)
                     }
                     .padding([.leading, .trailing], 16)
                     .padding([.top, .bottom], 70)
+                    // TODO: 자동 스크롤 효과
                 }
                 Spacer()
                     .frame(height: 10)
