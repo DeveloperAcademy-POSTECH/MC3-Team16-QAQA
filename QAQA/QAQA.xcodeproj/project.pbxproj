@@ -26,6 +26,7 @@
 		B8B5069B2A5E3C1C00B3EAED /* RealTimeGame+GKLocalPlayerListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B5069A2A5E3C1C00B3EAED /* RealTimeGame+GKLocalPlayerListener.swift */; };
 		B8B5069D2A5E42D600B3EAED /* RealTimeGame+MatchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B5069C2A5E42D600B3EAED /* RealTimeGame+MatchData.swift */; };
 		B8F5747F2A63B4860028A46A /* OutroInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F5747E2A63B4860028A46A /* OutroInfoView.swift */; };
+		B8F574812A63BAB90028A46A /* OutroEndingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F574802A63BAB90028A46A /* OutroEndingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		B8B5069A2A5E3C1C00B3EAED /* RealTimeGame+GKLocalPlayerListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealTimeGame+GKLocalPlayerListener.swift"; sourceTree = "<group>"; };
 		B8B5069C2A5E42D600B3EAED /* RealTimeGame+MatchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealTimeGame+MatchData.swift"; sourceTree = "<group>"; };
 		B8F5747E2A63B4860028A46A /* OutroInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutroInfoView.swift; sourceTree = "<group>"; };
+		B8F574802A63BAB90028A46A /* OutroEndingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutroEndingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				B8F5747E2A63B4860028A46A /* OutroInfoView.swift */,
+				B8F574802A63BAB90028A46A /* OutroEndingView.swift */,
 			);
 			path = Outro;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				B8B506912A5D01F000B3EAED /* RealTimeGame+GKGameCenterViewController.swift in Sources */,
 				B8B506952A5D2B2600B3EAED /* QuestionView.swift in Sources */,
 				B8B5069D2A5E42D600B3EAED /* RealTimeGame+MatchData.swift in Sources */,
+				B8F574812A63BAB90028A46A /* OutroEndingView.swift in Sources */,
 				B8B506832A5CF4FA00B3EAED /* ViewModel.swift in Sources */,
 				B8B5068D2A5D019900B3EAED /* RealTimeGame+Friends.swift in Sources */,
 				B8F5747F2A63B4860028A46A /* OutroInfoView.swift in Sources */,
