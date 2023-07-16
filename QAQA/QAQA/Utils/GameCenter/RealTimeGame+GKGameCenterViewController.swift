@@ -31,6 +31,6 @@ extension RealTimeGame {
     /// Cleans up the view's state when the local player closes the dashboard.
     func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
         // Dismiss the view controller.
-//        gameCenterViewController.dismiss(animated: true)
+        gameCenterViewController.dismiss(animated: true)
     }
 }
