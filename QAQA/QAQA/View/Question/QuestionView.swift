@@ -60,7 +60,6 @@ struct QuestionView: View {
                 Spacer()
                     .frame(height: 15)
                 Button {
-                    // Hint Button Action
                     showHintModal = true
                 } label: {
                     Text("Hint Button")

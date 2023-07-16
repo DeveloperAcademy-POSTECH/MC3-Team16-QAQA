@@ -31,31 +31,44 @@ struct HintModal: View {
                     randomSeriousQuestion = hintViewModel.createRandomSeriousHints()
                 }
             })
-            
             .padding()
+            
             Spacer()
-                .frame(height: 90)
+                .frame(height: 65)
             
             switch selectedHint {
             case .fun :
                 Text("\(randomFunQuestion)")
-                    .font(.system(size: 30))
+                    .font(.system(size: 32, weight: .bold))
+                    .frame(width: 327, height: 114)
+                    .minimumScaleFactor(0.5)
+                    .multilineTextAlignment(.center)
             case .serious :
                 Text("\(randomSeriousQuestion)")
-                    .font(.system(size: 30))
+                    .font(.system(size: 32, weight: .bold))
+                    .frame(width: 327, height: 114)
+                    .minimumScaleFactor(0.5)
+                    .multilineTextAlignment(.center)
             }
             Spacer()
-                .frame(height: 90)
-            Button ("질문 다시 뽑기") {
+                .frame(height: 55)
+            Button(action: {
                 switch selectedHint {
                 case .fun :
                     randomFunQuestion = hintViewModel.createRandomFunHints()
                 case .serious :
                     randomSeriousQuestion = hintViewModel.createRandomSeriousHints()
                 }
+            }) {
+                HStack {
+                    Image(systemName: "dice.fill")
+                    Text("질문 다시 뽑기")
+                } .font(.system(size: 20, weight: .bold))
+                    .foregroundColor(.white)
+                    .frame(width: 199, height: 52)
+                    .background(Color(red: 0, green: 0.64, blue: 1))
+                    .cornerRadius(16)
             }
-            .buttonStyle(.borderedProminent)
-            .font(.system(size: 25))
         }
     }
 }
