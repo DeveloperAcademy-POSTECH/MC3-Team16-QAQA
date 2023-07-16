@@ -25,6 +25,7 @@
 		B8B506992A5E2C9500B3EAED /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B506982A5E2C9500B3EAED /* Color+Extension.swift */; };
 		B8B5069B2A5E3C1C00B3EAED /* RealTimeGame+GKLocalPlayerListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B5069A2A5E3C1C00B3EAED /* RealTimeGame+GKLocalPlayerListener.swift */; };
 		B8B5069D2A5E42D600B3EAED /* RealTimeGame+MatchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B5069C2A5E42D600B3EAED /* RealTimeGame+MatchData.swift */; };
+		B8F5747F2A63B4860028A46A /* OutroInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F5747E2A63B4860028A46A /* OutroInfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		B8B506982A5E2C9500B3EAED /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		B8B5069A2A5E3C1C00B3EAED /* RealTimeGame+GKLocalPlayerListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealTimeGame+GKLocalPlayerListener.swift"; sourceTree = "<group>"; };
 		B8B5069C2A5E42D600B3EAED /* RealTimeGame+MatchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealTimeGame+MatchData.swift"; sourceTree = "<group>"; };
+		B8F5747E2A63B4860028A46A /* OutroInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutroInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 		B879985F2A5BB39700167597 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B8F5747D2A63B3C20028A46A /* Outro */,
 				60EB42842A5F948B0030286C /* Question */,
 				60EB42832A5F94840030286C /* Home */,
 			);
@@ -197,6 +200,14 @@
 				B8B506982A5E2C9500B3EAED /* Color+Extension.swift */,
 			);
 			path = Color;
+			sourceTree = "<group>";
+		};
+		B8F5747D2A63B3C20028A46A /* Outro */ = {
+			isa = PBXGroup;
+			children = (
+				B8F5747E2A63B4860028A46A /* OutroInfoView.swift */,
+			);
+			path = Outro;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,6 +290,7 @@
 				B8B5069D2A5E42D600B3EAED /* RealTimeGame+MatchData.swift in Sources */,
 				B8B506832A5CF4FA00B3EAED /* ViewModel.swift in Sources */,
 				B8B5068D2A5D019900B3EAED /* RealTimeGame+Friends.swift in Sources */,
+				B8F5747F2A63B4860028A46A /* OutroInfoView.swift in Sources */,
 				B8B5069B2A5E3C1C00B3EAED /* RealTimeGame+GKLocalPlayerListener.swift in Sources */,
 				B87998522A5BACBE00167597 /* QAQAApp.swift in Sources */,
 				B8B506852A5CF50400B3EAED /* RealTimeGame+GKMatchDelegate.swift in Sources */,
