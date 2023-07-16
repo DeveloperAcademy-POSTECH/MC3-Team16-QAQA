@@ -15,118 +15,231 @@ struct QuestionView: View {
     @State var showTimerModal = false
     
     var body: some View {
-        VStack {
-            Group {
-                HStack {
-                    Spacer()
-                    Button {
-                        // end Game
-                        game.endMatch()
-                        game.resetMatch() // 이 함수에서 game.playingGame을 false로 reset 시켜주면서 창을 닫아줍니다.
-                    } label: {
-                        Image(systemName: "xmark")
-                            .resizable()
-                            .frame(width: 33, height: 33)
-                            .foregroundColor(.black)
-                            .padding(.trailing, 20)
-                    }
+        VStack{
+            HStack{
+                Spacer()
+                    .frame(width: 16)
+                Button {
+                    timerModel.isTimer.toggle()
+                    showTimerModal = true// action
+                } label: {
+                    Image(systemName: "pause.fill" )
+                        .foregroundColor(Color("pause"))
+                        .padding(15)
+                        .background(Circle().foregroundColor(Color("pauseButton")))
                 }
+                .sheet(isPresented: $showTimerModal){
+                    TimerModalView()
+                        .presentationDetents([.height(257)])
+                        .presentationCornerRadius(32)
+                        .padding(.top, 30)
+                    
+                }
+                TimerView(width:100)
                 Spacer()
-                    .frame(height: 81)
-                game.myAvatar
-                    .resizable()
-                    .frame(width: 200, height: 200)
-                    .clipShape(Circle())
-                Spacer()
-                    .frame(height: 20)
-                Text("오늘의 주인공\n\(game.myName)")
-                    .font(.system(size: 32))
-                    .multilineTextAlignment(.center)
-                Spacer()
-                    .frame(height: 74)
-                
-                HStack {
-                    // Timer
-                    TimerView(width:130)
-                    //                    Rectangle()
-                    //                        .frame(width: 150, height: 50)
-                    Spacer().frame(width: 10)
-                    // Pause and Play Button
-                    Button {
-                        timerModel.isTimer.toggle()
-                        showTimerModal = true// action
-                    } label: {
-                        Image(systemName: "pause.fill" )
-                            .foregroundColor(.white)
-                            .padding(15)
-                            .background(Circle())
+                Button(action: {
+                    //끝내기 버튼
+                }, label: {
+                    ZStack{
+                        RoundedRectangle(cornerRadius: 12)
+                        .foregroundColor(Color("finishButton"))
+                        .frame(width: 77, height: 44)
+                        Text("끝내기")
+                            .foregroundColor(.red)
+                            .bold()
                     }
-                    .sheet(isPresented: $showTimerModal){
-                        TimerModalView()
-                            .presentationDetents([.height(257)])
-                            .presentationCornerRadius(32)
-                            .padding(.top, 30)
+                    })
+                Spacer()
+                    .frame(width: 16)
+            }
+            Spacer()
+                .frame(height: 70)
+           
+            ZStack{
+                Circle()
+                    .frame(width:220)
+                    .foregroundColor(.blue)
+                    .overlay(
+                        Circle()
+                            .stroke(lineWidth: 5)
+                            .foregroundColor(.white)
+                            .shadow(radius: 10)
+                    )
+                Text("UserProfile")
+                    .foregroundColor(.white)
+                    .font(.system(size: 40))
+            }
+            Text("UserName")
+            Spacer()
+            Button(action: {}, label: {
+                ZStack{
+                    RoundedRectangle(cornerRadius: 30)
+                        .frame(width:159, height: 33)
+                        .foregroundColor(Color("pauseButton"))
                         
-                        
+                    HStack{
+                        Text("?")
+                            .foregroundColor(.white)
+                            .background(Circle()
+                                .frame(width: 18))
+                        Text("내 질문을 도와줘!")
+                            .font(.system(size:16))
+                            .padding(3)
                         
                     }
                     
                 }
-                Spacer()
-                    .frame(height: 15)
-                Button {
-                    // Hint Button Action
-                } label: {
-                    Text("Hint Button")
+            })
+            
+            ZStack{
+                RoundedRectangle(cornerRadius: 103)
+                    .foregroundColor(.gray.opacity(0.1))
+                    .frame(width: 393, height: 206)
+                HStack{
+                    Button(action: {}, label: {
+                        VStack(alignment:.center){
+                            Image("buttonGood")
+                                .resizable()
+                                .frame(width: 153, height: 138)
+                                .padding(.trailing ,10)
+                            Text("킹정")
+                                .font(.system(size: 20))
+                                .foregroundColor(Color("reactionGood"))
+                                .bold()
+                                .padding(.trailing, 15)
+                                
+                        }
+                    })
+                
+                    Button(action: {}, label: {
+                        VStack(alignment:.center){
+                            Image("buttonQuestion")
+                                .resizable()
+                                .frame(width: 153, height: 138)
+                                .padding(.leading,10)
+                            Text("에바")
+                                .font(.system(size: 20))
+                                .foregroundColor(Color("reactionQuestion"))
+                                .bold()
+                                .padding(.leading, 15)
+                        }
+                    })
                 }
             }
-            
-            Spacer()
-                .frame(height: 36)
-            
-            HStack {
-                Button {
-                    goodReactionCount += 1// Left Button Action
-                } label: {
-                    ZStack{
-                        Text("🥰")
-                            .font(.system(size: 121))
-                            .padding(20)
-                            .background(Circle()
-                                .foregroundColor(.yellow))
-                        ForEach(0 ..< goodReactionCount, id: \.self){ _ in
-                            Text("🥰")
-                                .font(.system(size: Double.random(in: 50...70)))
-                                .modifier(ReactionModifier())
-                                .offset(y:-80)
-                        }
-                    }
-                    Spacer()
-                        .frame(width: 21)
-                    Button {
-                        ummReactionCount += 1// Right Button Action
-                    } label: {
-                        ZStack{
-                            Text("🧐")
-                                .font(.system(size: 121))
-                                .padding(20)
-                                .background(Circle()
-                                    .foregroundColor(.green))
-                            ForEach(0 ..< ummReactionCount, id: \.self){ _ in
-                                Text("🧐")
-                                    .font(.system(size: Double.random(in: 50...70)))
-                                    .modifier(ReactionModifier())
-                                    .offset(y:-80)
-                            }
-                        }
-                    }
-                }
-            }
-            Spacer()
         }
-        .onAppear{
-            timerModel.isTimer.toggle()
-        }
+            //        VStack {
+            //            Group {
+            //                HStack {
+            //                    Spacer()
+            //                    Button {
+            //                        // end Game
+            //                        game.endMatch()
+            //                        game.resetMatch() // 이 함수에서 game.playingGame을 false로 reset 시켜주면서 창을 닫아줍니다.
+            //                    } label: {
+            //                        Image(systemName: "xmark")
+            //                            .resizable()
+            //                            .frame(width: 33, height: 33)
+            //                            .foregroundColor(.black)
+            //                            .padding(.trailing, 20)
+            //                    }
+            //                }
+            //                Spacer()
+            //                    .frame(height: 81)
+            //                game.myAvatar
+            //                    .resizable()
+            //                    .frame(width: 200, height: 200)
+            //                    .clipShape(Circle())
+            //                Spacer()
+            //                    .frame(height: 20)
+            //                Text("오늘의 주인공\n\(game.myName)")
+            //                    .font(.system(size: 32))
+            //                    .multilineTextAlignment(.center)
+            //                Spacer()
+            //                    .frame(height: 74)
+            //
+            //                HStack {
+            //                    // Timer
+            //                    TimerView(width:130)
+            //                    //                    Rectangle()
+            //                    //                        .frame(width: 150, height: 50)
+            //                    Spacer().frame(width: 10)
+            //                    // Pause and Play Button
+            //                    Button {
+            //                        timerModel.isTimer.toggle()
+            //                        showTimerModal = true// action
+            //                    } label: {
+            //                        Image(systemName: "pause.fill" )
+            //                            .foregroundColor(.white)
+            //                            .padding(15)
+            //                            .background(Circle())
+            //                    }
+            //                    .sheet(isPresented: $showTimerModal){
+            //                        TimerModalView()
+            //                            .presentationDetents([.height(257)])
+            //                            .presentationCornerRadius(32)
+            //                            .padding(.top, 30)
+            //
+            //
+            //
+            //                    }
+            //
+            //                }
+            //                Spacer()
+            //                    .frame(height: 15)
+            //                Button {
+            //                    // Hint Button Action
+            //                } label: {
+            //                    Text("Hint Button")
+            //                }
+            //            }
+            //
+            //            Spacer()
+            //                .frame(height: 36)
+            //
+            //            HStack {
+            //                Button {
+            //                    goodReactionCount += 1// Left Button Action
+            //                } label: {
+            //                    ZStack{
+            //                        Text("🥰")
+            //                            .font(.system(size: 121))
+            //                            .padding(20)
+            //                            .background(Circle()
+            //                                .foregroundColor(.yellow))
+            //                        ForEach(0 ..< goodReactionCount, id: \.self){ _ in
+            //                            Text("🥰")
+            //                                .font(.system(size: Double.random(in: 50...70)))
+            //                                .modifier(ReactionModifier())
+            //                                .offset(y:-80)
+            //                        }
+            //                    }
+            //                    Spacer()
+            //                        .frame(width: 21)
+            //                    Button {
+            //                        ummReactionCount += 1// Right Button Action
+            //                    } label: {
+            //                        ZStack{
+            //                            Text("🧐")
+            //                                .font(.system(size: 121))
+            //                                .padding(20)
+            //                                .background(Circle()
+            //                                    .foregroundColor(.green))
+            //                            ForEach(0 ..< ummReactionCount, id: \.self){ _ in
+            //                                Text("🧐")
+            //                                    .font(.system(size: Double.random(in: 50...70)))
+            //                                    .modifier(ReactionModifier())
+            //                                    .offset(y:-80)
+            //                            }
+            //                        }
+            //                    }
+            //                }
+            //            }
+            //            Spacer()
+            //        }
+            //        .onAppear{
+            //            timerModel.isTimer.toggle()
+            //        }
+        
     }
 }
 
