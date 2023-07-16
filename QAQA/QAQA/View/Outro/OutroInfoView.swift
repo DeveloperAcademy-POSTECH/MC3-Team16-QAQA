@@ -9,16 +9,19 @@ import SwiftUI
 
 struct OutroInfoView: View {
     var body: some View {
-        VStack {
-            Spacer()
-                .frame(height: 229)
-            Image("outroCharacter")
-            Spacer()
-                .frame(height: 75)
-            Text("질문폭격 끝!")
-                .font(.system(size: 36))
-                .fontWeight(.bold)
-            Spacer()
+        ZStack {
+            Color.white
+            VStack {
+                Spacer()
+                    .frame(height: 229)
+                Image("outroCharacter")
+                Spacer()
+                    .frame(height: 75)
+                Text("질문폭격 끝!")
+                    .font(.system(size: 36))
+                    .fontWeight(.bold)
+                Spacer()
+            }
         }
     }
 }
