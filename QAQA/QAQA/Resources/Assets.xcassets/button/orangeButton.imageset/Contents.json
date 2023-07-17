@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "goodButton 3.png",
+      "filename" : "orangeButton.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "goodButton 1.png",
+      "filename" : "orangeButton 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "goodButton 2.png",
+      "filename" : "orangeButton 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
