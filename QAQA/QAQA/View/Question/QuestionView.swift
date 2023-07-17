@@ -13,6 +13,8 @@ struct QuestionView: View {
     @State var goodReactionCount = 0
     @State var ummReactionCount = 0
     @State var showTimerModal = false
+    @State var isReaction = false 
+    @State var reactionState = false
     
     var body: some View {
         VStack{
@@ -52,80 +54,132 @@ struct QuestionView: View {
                 Spacer()
                     .frame(width: 16)
             }
-            Spacer()
-                .frame(height: 70)
-           
             ZStack{
-                Circle()
-                    .frame(width:220)
-                    .foregroundColor(.blue)
-                    .overlay(
-                        Circle()
-                            .stroke(lineWidth: 5)
-                            .foregroundColor(.white)
-                            .shadow(radius: 10)
-                    )
-                Text("UserProfile")
-                    .foregroundColor(.white)
-                    .font(.system(size: 40))
-            }
-            Text("UserName")
-            Spacer()
-            Button(action: {}, label: {
-                ZStack{
-                    RoundedRectangle(cornerRadius: 30)
-                        .frame(width:159, height: 33)
-                        .foregroundColor(Color("pauseButton"))
-                        
-                    HStack{
-                        Text("?")
-                            .foregroundColor(.white)
-                            .background(Circle()
-                                .frame(width: 18))
-                        Text("내 질문을 도와줘!")
-                            .font(.system(size:16))
-                            .padding(3)
-                        
-                    }
-                    
-                }
-            })
-            
-            ZStack{
-                RoundedRectangle(cornerRadius: 103)
-                    .foregroundColor(.gray.opacity(0.1))
-                    .frame(width: 393, height: 206)
-                HStack{
-                    Button(action: {}, label: {
-                        VStack(alignment:.center){
-                            Image("buttonGood")
-                                .resizable()
-                                .frame(width: 153, height: 138)
-                                .padding(.trailing ,10)
-                            Text("킹정")
-                                .font(.system(size: 20))
-                                .foregroundColor(Color("reactionGood"))
-                                .bold()
-                                .padding(.trailing, 15)
+               
+                VStack{
+                    Group{
+                        Spacer()
+                            .frame(height: 70)
+                       
+                        ZStack{
+                            Circle()
+                                .frame(width:220)
+                                .foregroundColor(.blue)
+                                .overlay(
+                                    Circle()
+                                        .stroke(lineWidth: 5)
+                                        .foregroundColor(.white)
+                                        .shadow(radius: 10)
+                                )
+                            
+                            Text("UserProfile")
+                                .foregroundColor(.white)
+                                .font(.system(size: 40))
                                 
                         }
-                    })
-                
-                    Button(action: {}, label: {
-                        VStack(alignment:.center){
-                            Image("buttonQuestion")
-                                .resizable()
-                                .frame(width: 153, height: 138)
-                                .padding(.leading,10)
-                            Text("에바")
-                                .font(.system(size: 20))
-                                .foregroundColor(Color("reactionQuestion"))
-                                .bold()
-                                .padding(.leading, 15)
+                        Text("UserName")
+                        Spacer()
+                        Button(action: {}, label: {
+                            ZStack{
+                                RoundedRectangle(cornerRadius: 30)
+                                    .frame(width:159, height: 33)
+                                    .foregroundColor(Color("pauseButton"))
+                                    
+                                HStack{
+                                    Text("?")
+                                        .foregroundColor(.white)
+                                        .background(Circle()
+                                            .frame(width: 18))
+                                    Text("내 질문을 도와줘!")
+                                        .font(.system(size:16))
+                                        .padding(3)
+                                    
+                                }
+                                
+                            }
+                        })
+                        
+                        ZStack{
+                            RoundedRectangle(cornerRadius: 103)
+                                .foregroundColor(.gray.opacity(0.1))
+                                .frame(width: 393, height: 206)
+                            HStack{
+                                Button(action: { //reaaction button action
+                                    reactionState = true
+                                    withAnimation(.spring(response: 0.4,dampingFraction: 0.25,blendDuration: 0.0)){
+                                        isReaction.toggle()
+                                    }
+                                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
+                                        withAnimation(.default){
+                                            isReaction.toggle()
+                                        }
+                                    })
+                                   
+                                    
+                                }, label: { //킹정버튼
+                                    VStack(alignment:.center){
+                                        ZStack{
+                                            Image("greenButton")
+                                                .resizable()
+                                                .frame(width: 153, height: 138)
+                                                .padding(.trailing ,10)
+                                            Image("star")
+                                                .resizable()
+                                                .frame(width:64, height: 61)
+                                                .padding(.trailing,10)
+                                                .padding(.bottom, 15)
+                                        }
+            
+                                        Text("킹정")
+                                            .font(.system(size: 20))
+                                            .foregroundColor(Color("reactionGood"))
+                                            .bold()
+                                            .padding(.trailing, 15)
+                                            
+                                    }
+                                })
+                            
+                                Button(action: {
+                                    reactionState = false
+                                    withAnimation(.spring(response: 0.4,dampingFraction: 0.25,blendDuration: 0.0)){
+                                        isReaction.toggle()
+                                    }
+                                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
+                                        withAnimation(.default){
+                                            isReaction.toggle()
+                                        }
+                                    })//에바버튼 액션
+                                }, label: { //에바버튼
+                                    VStack(alignment:.center){
+                                        ZStack{
+                                            Image("orangeButton")
+                                                .resizable()
+                                                .frame(width: 153, height: 138)
+                                                .padding(.leading ,10)
+                                            Image("questionMark")
+                                                .resizable()
+                                                .frame(width:64, height: 61)
+                                                .padding(.leading,10)
+                                                .padding(.bottom, 15)
+                                        }
+                                        Text("에바")
+                                            .font(.system(size: 20))
+                                            .foregroundColor(Color("reactionQuestion"))
+                                            .bold()
+                                            .padding(.leading, 15)
+                                    }
+                                })
+                            }
                         }
-                    })
+                    }
                 }
+                ReactionView(game: RealTimeGame(),isReaction: self.$isReaction, reactionState: self.$reactionState)
+                    .opacity(isReaction ? 1 : 0)
+                
+                
             }
+            
+           
         }
             //        VStack {
             //            Group {
@@ -145,10 +199,10 @@ struct QuestionView: View {
             //                }
             //                Spacer()
             //                    .frame(height: 81)
-            //                game.myAvatar
-            //                    .resizable()
-            //                    .frame(width: 200, height: 200)
-            //                    .clipShape(Circle())
+//                            game.myAvatar
+//                                .resizable()
+//                                .frame(width: 200, height: 200)
+//                                .clipShape(Circle())
             //                Spacer()
             //                    .frame(height: 20)
             //                Text("오늘의 주인공\n\(game.myName)")
