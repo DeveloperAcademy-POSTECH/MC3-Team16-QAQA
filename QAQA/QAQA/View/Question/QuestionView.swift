@@ -10,11 +10,11 @@ import SwiftUI
 struct QuestionView: View {
     @EnvironmentObject var timerModel: TimerModel
     @ObservedObject var game: RealTimeGame
-    @State var goodReactionCount = 0
-    @State var ummReactionCount = 0
+//    @State var goodReactionCount = 0
+//    @State var ummReactionCount = 0
     @State var showTimerModal = false
-    @State var isReaction = false 
-    @State var reactionState = false
+    @State var isReaction = false //리액션뷰를 온오프하는 변수
+    @State var reactionState = false //킹정인지 에바인지 구분하는 변수
     
     var body: some View {
         VStack{
@@ -40,7 +40,7 @@ struct QuestionView: View {
                 TimerView(width:100)
                 Spacer()
                 Button(action: {
-                    //끝내기 버튼
+                    //끝내기 버튼 액션
                 }, label: {
                     ZStack{
                         RoundedRectangle(cornerRadius: 12)
@@ -53,14 +53,12 @@ struct QuestionView: View {
                     })
                 Spacer()
                     .frame(width: 16)
-            }
-            ZStack{
-               
-                VStack{
+            } //Timer와 끝내기 버튼
+            ZStack{ //QuestionView의 메인 내용과 ReactionView를 ZStack으로 쌓아놓기
+                VStack{ //QuestionView의 메인 내용(프로필과 질문버튼, 리액션버튼)
                     Group{
                         Spacer()
                             .frame(height: 70)
-                       
                         ZStack{
                             Circle()
                                 .frame(width:220)
@@ -79,7 +77,9 @@ struct QuestionView: View {
                         }
                         Text("UserName")
                         Spacer()
-                        Button(action: {}, label: {
+                        Button(action: {
+                            //힌트 모달 버튼 액션
+                        }, label: {
                             ZStack{
                                 RoundedRectangle(cornerRadius: 30)
                                     .frame(width:159, height: 33)
@@ -173,13 +173,10 @@ struct QuestionView: View {
                         }
                     }
                 }
+                //ReactionView
                 ReactionView(game: RealTimeGame(),isReaction: self.$isReaction, reactionState: self.$reactionState)
                     .opacity(isReaction ? 1 : 0)
-                
-                
             }
-            
-           
         }
             //        VStack {
             //            Group {

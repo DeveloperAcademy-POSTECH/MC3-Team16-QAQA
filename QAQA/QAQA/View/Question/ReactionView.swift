@@ -9,11 +9,11 @@ import SwiftUI
 
 struct ReactionView: View {
     @ObservedObject var game: RealTimeGame
-    @Binding var isReaction: Bool
-    @Binding var reactionState: Bool
+    @Binding var isReaction: Bool //리액션뷰 온오프하는 변수
+    @Binding var reactionState: Bool //킹정인지 에바인지 고르는 변수 true면 킹정 false면 에바
     var body: some View {
         ZStack{
-            Rectangle()
+            Rectangle() //퀘스쳔뷰를 덮을 흰 배경
                 .foregroundColor(.white)
                 .ignoresSafeArea()
                 .frame(width: UIScreen.width, height: UIScreen.height * 0.82)
@@ -48,7 +48,7 @@ struct ReactionView: View {
                     .resizable()
                     .frame(width: 192, height:90)
                     .padding(55)
-                Text("by Euiseo Park")
+                Text("by Euiseo Park") //리액션을 누를 사람의 이름 뜨는 곳
                     .font(.system(size:20))
                     .foregroundColor(.gray)
                 game.myAvatar
