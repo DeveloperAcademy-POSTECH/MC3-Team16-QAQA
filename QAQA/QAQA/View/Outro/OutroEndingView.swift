@@ -9,6 +9,9 @@ import SwiftUI
 
 struct OutroEndingView: View {
     @StateObject private var outroViewModel = OutroViewModel()
+    
+    @Binding var mainViewNavLinkActive: Bool
+    
     @State private var isShowingInfoView = true
     @State private var userName = "웃쾌마"
     @State private var reactionNum = 24
@@ -40,7 +43,7 @@ struct OutroEndingView: View {
                 Spacer()
                     .frame(height: 10)
                 Button {
-                    // action
+                    mainViewNavLinkActive.toggle()
                 } label: {
                     Text("수고하셨습니다!")
                         .foregroundColor(.white)
@@ -54,7 +57,7 @@ struct OutroEndingView: View {
             if (isShowingInfoView) { // TODO: animation
                 OutroInfoView()
                     .onAppear() {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
                             isShowingInfoView.toggle()
                         }
                     }
@@ -64,7 +67,7 @@ struct OutroEndingView: View {
 }
 
 extension OutroEndingView {
-    func makeCardViews() -> some View {
+    private func makeCardViews() -> some View {
         HStack {
             ForEach(outroViewModel.cardModels) { model in
                 OutroCardView(text: model.cardText, profile: model.cardProfile, username: model.cardUserName, isShowingCrown: model.isShowingCrown)
@@ -78,6 +81,6 @@ extension OutroEndingView {
 
 struct OutroEndingView_Previews: PreviewProvider {
     static var previews: some View {
-        OutroEndingView()
+        OutroEndingView(mainViewNavLinkActive: .constant(false))
     }
 }

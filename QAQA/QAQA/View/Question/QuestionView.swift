@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct QuestionView: View {
+    @Binding var mainViewNavLinkActive: Bool
     @ObservedObject var game: RealTimeGame
     
     var body: some View {
@@ -96,6 +97,6 @@ struct QuestionView: View {
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionView(game: RealTimeGame())
+        QuestionView(mainViewNavLinkActive: .constant(false), game: RealTimeGame())
     }
 }
