@@ -30,6 +30,7 @@
 		B8F574872A63D3800028A46A /* OutroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F574862A63D3800028A46A /* OutroViewModel.swift */; };
 		B8F574892A6440CF0028A46A /* OutroCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F574882A6440CF0028A46A /* OutroCardView.swift */; };
 		B8F5748C2A64C8D30028A46A /* OutroCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F5748B2A64C8D30028A46A /* OutroCardModel.swift */; };
+		B8F574902A64DDF80028A46A /* TopicUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F5748F2A64DDF80028A46A /* TopicUserModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		B8F574862A63D3800028A46A /* OutroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutroViewModel.swift; sourceTree = "<group>"; };
 		B8F574882A6440CF0028A46A /* OutroCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutroCardView.swift; sourceTree = "<group>"; };
 		B8F5748B2A64C8D30028A46A /* OutroCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutroCardModel.swift; sourceTree = "<group>"; };
+		B8F5748F2A64DDF80028A46A /* TopicUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicUserModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				B8B506892A5D00BE00B3EAED /* RealTimeGame.swift */,
+				B8F5748F2A64DDF80028A46A /* TopicUserModel.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				60EB42792A5E437C0030286C /* TimerView.swift in Sources */,
 				B8B5068F2A5D01C700B3EAED /* RealTimeGame+GKMatchmakerViewControllerDelegate.swift in Sources */,
 				B87998542A5BACBE00167597 /* HomeView.swift in Sources */,
+				B8F574902A64DDF80028A46A /* TopicUserModel.swift in Sources */,
 				B8F574892A6440CF0028A46A /* OutroCardView.swift in Sources */,
 				B8B506912A5D01F000B3EAED /* RealTimeGame+GKGameCenterViewController.swift in Sources */,
 				B8F5748C2A64C8D30028A46A /* OutroCardModel.swift in Sources */,
