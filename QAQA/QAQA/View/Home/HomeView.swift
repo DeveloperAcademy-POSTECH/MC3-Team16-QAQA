@@ -39,7 +39,7 @@ struct HomeView: View {
                 }
                 game.choosePlayer()
             } label: {
-                Text("시작하기")
+                Text("팀 찾기")
                     .fontWeight(.bold)
                     .frame(maxWidth: .infinity)
                     .padding()

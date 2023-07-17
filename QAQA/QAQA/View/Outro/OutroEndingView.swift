@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct OutroEndingView: View {
+    @StateObject private var outroViewModel = OutroViewModel()
     @State private var isShowingInfoView = true
     @State private var userName = "웃쾌마"
     @State private var reactionNum = 24
@@ -33,17 +34,7 @@ struct OutroEndingView: View {
                     .foregroundColor(.gray)
                 Spacer()
                 ScrollView(.horizontal, showsIndicators: false) {
-                    HStack {
-                        OutroCardView(text: "가장 많이 반응한 분", profile: Image(systemName: "circle.fill"), username: "username", isShowingCrown: true) // TODO: 모델로 변환, 모델 리스트 만들어서 받아온 후 값 집어넣기
-                        Spacer()
-                            .frame(width: 20)
-                    OutroCardView(text: "킹정~ 많이한 분", profile: Image(systemName: "circle.fill"), username: "username", isShowingCrown: false)
-                        Spacer()
-                            .frame(width: 20)
-                    OutroCardView(text: "에바~ 많이한 분", profile: Image(systemName: "circle.fill"), username: "username", isShowingCrown: false)
-                    }
-                    .padding([.leading, .trailing], 16)
-                    .padding([.top, .bottom], 70)
+                    makeCardViews()
                     // TODO: 자동 스크롤 효과
                 }
                 Spacer()
@@ -69,6 +60,19 @@ struct OutroEndingView: View {
                     }
             }
         }
+    }
+}
+
+extension OutroEndingView {
+    func makeCardViews() -> some View {
+        HStack {
+            ForEach(outroViewModel.cardModels) { model in
+                OutroCardView(text: model.cardText, profile: model.cardProfile, username: model.cardUserName, isShowingCrown: model.isShowingCrown)
+                    .padding(.trailing, 20)
+            }
+        }
+        .padding([.leading, .trailing], 16)
+        .padding([.top, .bottom], 70)
     }
 }
 
