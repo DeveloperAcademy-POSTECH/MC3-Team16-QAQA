@@ -12,7 +12,7 @@ struct QAQAApp: App {
     var body: some Scene {
         WindowGroup {
 //            HomeView()
-            OutroEndingView()
+            OutroEndingView(mainViewNavLinkActive: .constant(false))
                 .environmentObject(TimerModel())
         }
     }

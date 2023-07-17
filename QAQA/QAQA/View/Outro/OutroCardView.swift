@@ -47,7 +47,6 @@ struct OutroCardView: View {
                 Text(username)
                     .font(.system(size: 24))
                     .fontWeight(.bold)
-                
             }
         }
     }
