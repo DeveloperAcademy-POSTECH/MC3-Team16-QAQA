@@ -196,6 +196,10 @@ class HapticFeedbackManager: ObservableObject {
         }
     }
     //verygood 모스부호 끝
+    
+    
+    
+    
 
 
 }
