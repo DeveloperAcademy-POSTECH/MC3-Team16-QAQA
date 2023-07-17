@@ -38,7 +38,7 @@ struct ReactionView: View {
                     else{
                         Image("questionMark")
                             .resizable()
-                            .frame(width:137, height:129)
+                            .frame(width:137, height:137)
                             .offset(x: isReaction ? 0 : 100, y: isReaction ? 0 : 380)
                     }
                     
