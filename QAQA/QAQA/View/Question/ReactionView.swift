@@ -15,7 +15,8 @@ struct ReactionView: View {
         ZStack{
             Rectangle()
                 .foregroundColor(.white)
-                .frame(width: UIScreen.width, height: UIScreen.height * 0.8)
+                .ignoresSafeArea()
+                .frame(width: UIScreen.width, height: UIScreen.height * 0.82)
                 
             VStack{
                
