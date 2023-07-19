@@ -95,8 +95,6 @@
 		60EB42842A5F948B0030286C /* Question */ = {
 			isa = PBXGroup;
 			children = (
-				60EB42782A5E437C0030286C /* TimerView.swift */,
-				60EB427F2A5ED78A0030286C /* TimerModalView.swift */,
 				B8B506942A5D2B2600B3EAED /* QuestionView.swift */,
 				C5C61B982A5E583C00FB8854 /* HintModal.swift */,
 				602BD3022A6456BF00F9E345 /* ReactionView.swift */,
@@ -146,6 +144,7 @@
 		B879985F2A5BB39700167597 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C5C7E7E62A676A06000A3CCC /* Timer */,
 				60EB42842A5F948B0030286C /* Question */,
 				60EB42832A5F94840030286C /* Home */,
 				B87998532A5BACBE00167597 /* HomeView.swift */,
@@ -164,10 +163,9 @@
 		B87998612A5BB3A900167597 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C5C7E7E82A676A34000A3CCC /* Question */,
+				C5C7E7E72A676A2C000A3CCC /* Timer */,
 				B8B506962A5E276300B3EAED /* Game */,
-				60EB42812A5ED99E0030286C /* TimerModel.swift */,
-				C59F5A062A60F3B6007608AD /* HintModel.swift */,
-				C59F5A082A60F657007608AD /* HintState.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -217,6 +215,32 @@
 				B8B506982A5E2C9500B3EAED /* Color+Extension.swift */,
 			);
 			path = Color;
+			sourceTree = "<group>";
+		};
+		C5C7E7E62A676A06000A3CCC /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				60EB42782A5E437C0030286C /* TimerView.swift */,
+				60EB427F2A5ED78A0030286C /* TimerModalView.swift */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		C5C7E7E72A676A2C000A3CCC /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				60EB42812A5ED99E0030286C /* TimerModel.swift */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		C5C7E7E82A676A34000A3CCC /* Question */ = {
+			isa = PBXGroup;
+			children = (
+				C59F5A062A60F3B6007608AD /* HintModel.swift */,
+				C59F5A082A60F657007608AD /* HintState.swift */,
+			);
+			path = Question;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,11 +330,9 @@
 				B8B5069B2A5E3C1C00B3EAED /* RealTimeGame+GKLocalPlayerListener.swift in Sources */,
 				B87998522A5BACBE00167597 /* QAQAApp.swift in Sources */,
 				602BD3032A6456BF00F9E345 /* ReactionView.swift in Sources */,
-				B8B506852A5CF50400B3EAED /* RealTimeGame+GKMatchDelegate.swift in Sources */,
 				60EB427B2A5E44880030286C /* UIScreen+Extension.swift in Sources */,
 				B8B5068A2A5D00BE00B3EAED /* RealTimeGame.swift in Sources */,
 				B8B506992A5E2C9500B3EAED /* Color+Extension.swift in Sources */,
-				B8B506852A5CF50400B3EAED /* RealTimeGame+GKMatchDelegate.swift in Sources */,
 				602BD2F92A602A3600F9E345 /* ReactionModifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
