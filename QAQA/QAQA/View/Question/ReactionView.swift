@@ -18,7 +18,7 @@ struct ReactionView: View {
                 ZStack{
                     Circle() //reaction용 서클
                         .frame(width:220)
-                        .foregroundColor(reactionState ? Color("reactionGood") : Color("reactionQuestion"))
+                        .foregroundColor(reactionState ? Color("reactionGoodColor") : Color("reactionQuestionColor"))
                         .overlay(
                             Circle()
                                 .stroke(lineWidth: 5)

@@ -13,6 +13,7 @@ struct QuestionView: View {
     @ObservedObject var game: RealTimeGame
     @State private var showHintModal = false
     @State var showTimerModal = false
+    @State var showFinishModal = false
     @State var isReaction = false //리액션뷰를 온오프하는 변수
     @State var reactionState = false //킹정인지 에바인지 구분하는 변수
     
@@ -26,9 +27,9 @@ struct QuestionView: View {
                     showTimerModal = true// action
                 } label: {
                     Image(systemName: "pause.fill" )
-                        .foregroundColor(Color("pause"))
+                        .foregroundColor(Color("pauseTextColor"))
                         .padding(15)
-                        .background(Circle().foregroundColor(Color("pauseButton")))
+                        .background(Circle().foregroundColor(Color("pauseButtonColor")))
                 }
                 .sheet(isPresented: $showTimerModal){
                     TimerModalView()
@@ -51,8 +52,7 @@ struct QuestionView: View {
                             .padding(.top, 13)
                             .padding(.bottom,12)
                             .background(RoundedRectangle(cornerRadius: 12)
-                                .foregroundColor(Color("finishButton"))
-                                
+                                .foregroundColor(Color("finishButtonColor"))
                             )
                             .foregroundColor(.red)
                             .bold()
@@ -88,7 +88,7 @@ struct QuestionView: View {
                             ZStack{
                                 RoundedRectangle(cornerRadius: 30)
                                     .frame(width:159, height: 33)
-                                    .foregroundColor(Color("pauseButton"))
+                                    .foregroundColor(Color("pauseButtonColor"))
                                 HStack{
                                     Text("?")
                                         .foregroundColor(.white)
@@ -135,7 +135,7 @@ struct QuestionView: View {
                                         }
                                         Text("킹정")
                                             .font(.system(size: 20))
-                                            .foregroundColor(Color("reactionGood"))
+                                            .foregroundColor(Color("reactionGoodColor"))
                                             .bold()
                                             .padding(.trailing, 15)
                                     }
@@ -165,7 +165,7 @@ struct QuestionView: View {
                                         }
                                         Text("에바")
                                             .font(.system(size: 20))
-                                            .foregroundColor(Color("reactionQuestion"))
+                                            .foregroundColor(Color("reactionQuestionColor"))
                                             .bold()
                                             .padding(.leading, 15)
                                     }
