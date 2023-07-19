@@ -11,7 +11,7 @@ import SwiftUI
 
 /// - Tag:RealTimeGame
 @MainActor
-class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
+class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject, GKMatchDelegate {
     
     // The local player's friends, if they grant access.
     @Published var friends: [Friend] = []
