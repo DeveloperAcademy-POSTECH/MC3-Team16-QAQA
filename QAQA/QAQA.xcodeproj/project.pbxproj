@@ -63,7 +63,7 @@
 		B8F574802A63BAB90028A46A /* OutroEndingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutroEndingView.swift; sourceTree = "<group>"; };
 		B8F574862A63D3800028A46A /* OutroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutroViewModel.swift; sourceTree = "<group>"; };
 		B8F574882A6440CF0028A46A /* OutroCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutroCardView.swift; sourceTree = "<group>"; };
-		B8F5748B2A64C8D30028A46A /* OutroCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OutroCardModel.swift; path = QAQA/Model/Outro/OutroCardModel.swift; sourceTree = "<group>"; };
+		B8F5748B2A64C8D30028A46A /* OutroCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutroCardModel.swift; sourceTree = "<group>"; };
 		B8F5748F2A64DDF80028A46A /* TopicUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicUserModel.swift; sourceTree = "<group>"; };
 		C59F5A062A60F3B6007608AD /* HintModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintModel.swift; sourceTree = "<group>"; };
 		C59F5A082A60F657007608AD /* HintState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintState.swift; sourceTree = "<group>"; };
@@ -248,9 +248,8 @@
 			children = (
 				B8F5748B2A64C8D30028A46A /* OutroCardModel.swift */,
 			);
-			name = Outro;
-			path = QAQA/Model/Outro;
-			sourceTree = "<unknown>";
+			path = Outro;
+			sourceTree = "<group>";
 		};
 		C5C7E7E62A676A06000A3CCC /* Timer */ = {
 			isa = PBXGroup;

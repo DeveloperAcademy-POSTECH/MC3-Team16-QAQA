@@ -162,6 +162,7 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject, 
     // match는 리얼타임매치를 나타내는 object입니다.
     /// - Tag:startMyMatchWith
     func startMyMatchWith(match: GKMatch) {
+        createRandomTopicUser() // TODO: 랜덤생성 함수 위치 변경 예정
         GKAccessPoint.shared.isActive = false // TODO: ??
         playingGame = true // playingGame 부울값을 true로
         myMatch = match // myMatch는 GKMatch를 전달
