@@ -64,6 +64,12 @@ struct QuestionView: View {
                             .presentationCornerRadius(32)
                             .padding(.top, 44)
                             .padding([.leading, .trailing], 16)
+                            .onAppear{
+                                timerModel.isTimer.toggle()
+                            }
+                            .onDisappear{
+                                timerModel.isTimer.toggle()
+                            }
                     })
 
                 
