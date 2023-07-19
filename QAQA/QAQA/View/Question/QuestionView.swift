@@ -21,8 +21,6 @@ struct QuestionView: View {
     var body: some View {
         VStack{
             HStack{
-                Spacer()
-                    .frame(width: 16)
                 Button {
                     timerModel.isTimer.toggle()
                     showTimerModal = true// action
@@ -37,6 +35,9 @@ struct QuestionView: View {
                         .presentationDetents([.height(257)])
                         .presentationCornerRadius(32)
                         .padding(.top, 30)
+                        .onDisappear{
+                            timerModel.isTimer.toggle()
+                        }
                 }
                 TimerView(width:100)
                 Spacer()
@@ -45,19 +46,21 @@ struct QuestionView: View {
                         game.endMatch()
                         game.reportProgress()
                     }, label: {
-                        ZStack{
-                            RoundedRectangle(cornerRadius: 12)
+                        Text("끝내기")
+                            .padding([.leading,.trailing],16)
+                            .padding(.top, 13)
+                            .padding(.bottom,12)
+                            .background(RoundedRectangle(cornerRadius: 12)
                                 .foregroundColor(Color("finishButton"))
-                                .frame(width: 77, height: 44)
-                            Text("끝내기")
-                                .foregroundColor(.red)
-                                .bold()
-                        }
+                                
+                            )
+                            .foregroundColor(.red)
+                            .bold()
+                                 
                     })
                 }
-                Spacer()
-                    .frame(width: 16)
-            } //Timer와 끝내기 버튼
+            }
+            .padding([.leading, .trailing],16)//Timer와 끝내기 버튼
             ZStack{ //QuestionView의 메인 내용과 ReactionView를 ZStack으로 쌓아놓기
                 VStack{ //QuestionView의 메인 내용(프로필과 질문버튼, 리액션버튼)
                     Group{
@@ -109,10 +112,10 @@ struct QuestionView: View {
                             HStack{
                                 Button(action: { //reaaction button action
                                     reactionState = true
-                                    withAnimation(.spring(response: 0.4,dampingFraction: 0.25,blendDuration: 0.0)){
+                                    withAnimation(.spring(response: 0.2,dampingFraction: 0.25,blendDuration: 0.0)){
                                         isReaction.toggle()
                                     }
-                                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
+                                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8, execute: {
                                         withAnimation(.default){
                                             isReaction.toggle()
                                         }
@@ -139,10 +142,10 @@ struct QuestionView: View {
                                 })
                                 Button(action: {
                                     reactionState = false
-                                    withAnimation(.spring(response: 0.4,dampingFraction: 0.25,blendDuration: 0.0)){
+                                    withAnimation(.spring(response: 0.2,dampingFraction: 0.25,blendDuration: 0.0)){
                                         isReaction.toggle()
                                     }
-                                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
+                                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8, execute: {
                                         withAnimation(.default){
                                             isReaction.toggle()
                                         }
