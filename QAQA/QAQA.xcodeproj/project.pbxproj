@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		602BD2F92A602A3600F9E345 /* ReactionModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602BD2F82A602A3600F9E345 /* ReactionModifier.swift */; };
+		602BD3032A6456BF00F9E345 /* ReactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602BD3022A6456BF00F9E345 /* ReactionView.swift */; };
 		60EB42792A5E437C0030286C /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EB42782A5E437C0030286C /* TimerView.swift */; };
 		60EB427B2A5E44880030286C /* UIScreen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EB427A2A5E44880030286C /* UIScreen+Extension.swift */; };
 		60EB42802A5ED78A0030286C /* TimerModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EB427F2A5ED78A0030286C /* TimerModalView.swift */; };
@@ -28,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		602BD2F82A602A3600F9E345 /* ReactionModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionModifier.swift; sourceTree = "<group>"; };
+		602BD3022A6456BF00F9E345 /* ReactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionView.swift; sourceTree = "<group>"; };
 		60EB42782A5E437C0030286C /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		60EB427A2A5E44880030286C /* UIScreen+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extension.swift"; sourceTree = "<group>"; };
 		60EB427F2A5ED78A0030286C /* TimerModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModalView.swift; sourceTree = "<group>"; };
@@ -61,6 +65,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		602BD2F72A602A1B00F9E345 /* ReactionModifier */ = {
+			isa = PBXGroup;
+			children = (
+				602BD2F82A602A3600F9E345 /* ReactionModifier.swift */,
+			);
+			path = ReactionModifier;
+			sourceTree = "<group>";
+		};
 		60EB427C2A5ED5490030286C /* UIScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +95,7 @@
 				60EB42782A5E437C0030286C /* TimerView.swift */,
 				60EB427F2A5ED78A0030286C /* TimerModalView.swift */,
 				B8B506942A5D2B2600B3EAED /* QuestionView.swift */,
+				602BD3022A6456BF00F9E345 /* ReactionView.swift */,
 			);
 			path = Question;
 			sourceTree = "<group>";
@@ -163,6 +176,7 @@
 		B87998632A5BB3C400167597 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				602BD2F72A602A1B00F9E345 /* ReactionModifier */,
 				60EB427C2A5ED5490030286C /* UIScreen */,
 				B8B506972A5E2C7600B3EAED /* Color */,
 				B8B5068B2A5D013100B3EAED /* GameCenter */,
@@ -281,11 +295,13 @@
 				B8B5068D2A5D019900B3EAED /* RealTimeGame+Friends.swift in Sources */,
 				B8B5069B2A5E3C1C00B3EAED /* RealTimeGame+GKLocalPlayerListener.swift in Sources */,
 				B87998522A5BACBE00167597 /* QAQAApp.swift in Sources */,
+				602BD3032A6456BF00F9E345 /* ReactionView.swift in Sources */,
 				B8B506852A5CF50400B3EAED /* RealTimeGame+GKMatchDelegate.swift in Sources */,
 				60EB427B2A5E44880030286C /* UIScreen+Extension.swift in Sources */,
 				B8B5068A2A5D00BE00B3EAED /* RealTimeGame.swift in Sources */,
 				B8B506992A5E2C9500B3EAED /* Color+Extension.swift in Sources */,
 				B8B506852A5CF50400B3EAED /* RealTimeGame+GKMatchDelegate.swift in Sources */,
+				602BD2F92A602A3600F9E345 /* ReactionModifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,7 +441,7 @@
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = gamekit;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -458,7 +474,7 @@
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = gamekit;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
