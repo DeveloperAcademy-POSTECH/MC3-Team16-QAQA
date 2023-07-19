@@ -11,8 +11,8 @@ struct HintModal: View {
     
     @StateObject private var hintViewModel = HintViewModel()
     @State private var selectedHint: HintState = .fun
-    @State private var randomFunQuestion : String = "0"
-    @State private var randomSeriousQuestion : String = "00"
+    @State private var randomFunQuestion : String = "질문 뽑기 버튼을 눌러보세요!"
+    @State private var randomSeriousQuestion : String = "질문 뽑기 버튼을 눌러보세요!"
     
     var body: some View {
         
@@ -62,10 +62,11 @@ struct HintModal: View {
             }) {
                 HStack {
                     Image(systemName: "dice.fill")
-                    Text("질문 다시 뽑기")
+                    Text("질문 뽑기")
                 } .font(.system(size: 20, weight: .bold))
                     .foregroundColor(.white)
-                    .frame(width: 199, height: 52)
+                    .padding([.leading, .trailing], 30)
+                    .padding([.top, .bottom], 14)
                     .background(Color(red: 0, green: 0.64, blue: 1))
                     .cornerRadius(16)
             }
