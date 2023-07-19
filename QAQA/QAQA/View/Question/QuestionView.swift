@@ -42,11 +42,12 @@ struct QuestionView: View {
                 }
                 TimerView(width:100)
                 Spacer()
-                NavigationLink { OutroEndingView(mainViewNavLinkActive: $mainViewNavLinkActive)} label: {
-                    Button(action: {
+//                NavigationLink { OutroEndingView(mainViewNavLinkActive: $mainViewNavLinkActive)} label: {}
+                    Button{
+                        showFinishModal = true
                         game.endMatch()
                         game.reportProgress()
-                    }, label: {
+                    } label: {
                         Text("끝내기")
                             .padding([.leading,.trailing],16)
                             .padding(.top, 13)
@@ -56,9 +57,16 @@ struct QuestionView: View {
                             )
                             .foregroundColor(.red)
                             .bold()
-                                 
+                    }
+                    .sheet(isPresented: $showFinishModal, content: {
+                        FinishModalView() //TODO: View 바꾸기
+                            .presentationDetents([.height(257)])
+                            .presentationCornerRadius(32)
+                            .padding(.top, 44)
+                            .padding([.leading, .trailing], 16)
                     })
-                }
+
+                
             }
             .padding([.leading, .trailing],16)//Timer와 끝내기 버튼
             ZStack{ //QuestionView의 메인 내용과 ReactionView를 ZStack으로 쌓아놓기
