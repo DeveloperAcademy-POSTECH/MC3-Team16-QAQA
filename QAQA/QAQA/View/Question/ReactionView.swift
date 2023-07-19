@@ -13,13 +13,8 @@ struct ReactionView: View {
     @Binding var reactionState: Bool //킹정인지 에바인지 고르는 변수 true면 킹정 false면 에바
     var body: some View {
         ZStack{
-            Rectangle() //퀘스쳔뷰를 덮을 흰 배경
-                .foregroundColor(.white)
-                .ignoresSafeArea()
-                .frame(width: UIScreen.width, height: UIScreen.height * 0.82)
-                
+            Color.white
             VStack{
-               
                 ZStack{
                     Circle() //reaction용 서클
                         .frame(width:220)
@@ -47,7 +42,7 @@ struct ReactionView: View {
                 Image(reactionState ? "kingjung" : "eva")
                     .resizable()
                     .frame(width: 192, height:90)
-                    .padding(55)
+                    .padding(60)
                 Text("by Your Teammates") //리액션을 누를 사람의 이름 뜨는 곳
                     .font(.system(size:20))
                     .foregroundColor(.gray)
