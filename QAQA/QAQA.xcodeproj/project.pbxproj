@@ -26,6 +26,12 @@
 		B8B506992A5E2C9500B3EAED /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B506982A5E2C9500B3EAED /* Color+Extension.swift */; };
 		B8B5069B2A5E3C1C00B3EAED /* RealTimeGame+GKLocalPlayerListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B5069A2A5E3C1C00B3EAED /* RealTimeGame+GKLocalPlayerListener.swift */; };
 		B8B5069D2A5E42D600B3EAED /* RealTimeGame+MatchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B5069C2A5E42D600B3EAED /* RealTimeGame+MatchData.swift */; };
+		B8F5747F2A63B4860028A46A /* OutroInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F5747E2A63B4860028A46A /* OutroInfoView.swift */; };
+		B8F574812A63BAB90028A46A /* OutroEndingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F574802A63BAB90028A46A /* OutroEndingView.swift */; };
+		B8F574872A63D3800028A46A /* OutroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F574862A63D3800028A46A /* OutroViewModel.swift */; };
+		B8F574892A6440CF0028A46A /* OutroCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F574882A6440CF0028A46A /* OutroCardView.swift */; };
+		B8F5748C2A64C8D30028A46A /* OutroCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F5748B2A64C8D30028A46A /* OutroCardModel.swift */; };
+		B8F574902A64DDF80028A46A /* TopicUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F5748F2A64DDF80028A46A /* TopicUserModel.swift */; };
 		C59F5A072A60F3B6007608AD /* HintModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59F5A062A60F3B6007608AD /* HintModel.swift */; };
 		C59F5A092A60F657007608AD /* HintState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59F5A082A60F657007608AD /* HintState.swift */; };
 		C5C61B992A5E583C00FB8854 /* HintModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C61B982A5E583C00FB8854 /* HintModal.swift */; };
@@ -53,6 +59,12 @@
 		B8B506982A5E2C9500B3EAED /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		B8B5069A2A5E3C1C00B3EAED /* RealTimeGame+GKLocalPlayerListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealTimeGame+GKLocalPlayerListener.swift"; sourceTree = "<group>"; };
 		B8B5069C2A5E42D600B3EAED /* RealTimeGame+MatchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealTimeGame+MatchData.swift"; sourceTree = "<group>"; };
+		B8F5747E2A63B4860028A46A /* OutroInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutroInfoView.swift; sourceTree = "<group>"; };
+		B8F574802A63BAB90028A46A /* OutroEndingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutroEndingView.swift; sourceTree = "<group>"; };
+		B8F574862A63D3800028A46A /* OutroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutroViewModel.swift; sourceTree = "<group>"; };
+		B8F574882A6440CF0028A46A /* OutroCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutroCardView.swift; sourceTree = "<group>"; };
+		B8F5748B2A64C8D30028A46A /* OutroCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutroCardModel.swift; sourceTree = "<group>"; };
+		B8F5748F2A64DDF80028A46A /* TopicUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicUserModel.swift; sourceTree = "<group>"; };
 		C59F5A062A60F3B6007608AD /* HintModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintModel.swift; sourceTree = "<group>"; };
 		C59F5A082A60F657007608AD /* HintState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintState.swift; sourceTree = "<group>"; };
 		C5C61B982A5E583C00FB8854 /* HintModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintModal.swift; sourceTree = "<group>"; };
@@ -144,6 +156,7 @@
 		B879985F2A5BB39700167597 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B8F5747D2A63B3C20028A46A /* Outro */,
 				C5C7E7E62A676A06000A3CCC /* Timer */,
 				60EB42842A5F948B0030286C /* Question */,
 				60EB42832A5F94840030286C /* Home */,
@@ -155,6 +168,7 @@
 		B87998602A5BB39C00167597 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				B8F574862A63D3800028A46A /* OutroViewModel.swift */,
 				B8B506822A5CF4FA00B3EAED /* HintViewModel.swift */,
 			);
 			path = ViewModel;
@@ -163,6 +177,7 @@
 		B87998612A5BB3A900167597 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B8F5748A2A64C8C20028A46A /* Outro */,
 				C5C7E7E82A676A34000A3CCC /* Question */,
 				C5C7E7E72A676A2C000A3CCC /* Timer */,
 				B8B506962A5E276300B3EAED /* Game */,
@@ -205,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				B8B506892A5D00BE00B3EAED /* RealTimeGame.swift */,
+				B8F5748F2A64DDF80028A46A /* TopicUserModel.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -215,6 +231,24 @@
 				B8B506982A5E2C9500B3EAED /* Color+Extension.swift */,
 			);
 			path = Color;
+			sourceTree = "<group>";
+		};
+		B8F5747D2A63B3C20028A46A /* Outro */ = {
+			isa = PBXGroup;
+			children = (
+				B8F5747E2A63B4860028A46A /* OutroInfoView.swift */,
+				B8F574802A63BAB90028A46A /* OutroEndingView.swift */,
+				B8F574882A6440CF0028A46A /* OutroCardView.swift */,
+			);
+			path = Outro;
+			sourceTree = "<group>";
+		};
+		B8F5748A2A64C8C20028A46A /* Outro */ = {
+			isa = PBXGroup;
+			children = (
+				B8F5748B2A64C8D30028A46A /* OutroCardModel.swift */,
+			);
+			path = Outro;
 			sourceTree = "<group>";
 		};
 		C5C7E7E62A676A06000A3CCC /* Timer */ = {
@@ -322,15 +356,22 @@
 				60EB42792A5E437C0030286C /* TimerView.swift in Sources */,
 				B8B5068F2A5D01C700B3EAED /* RealTimeGame+GKMatchmakerViewControllerDelegate.swift in Sources */,
 				B87998542A5BACBE00167597 /* HomeView.swift in Sources */,
+				B8F574902A64DDF80028A46A /* TopicUserModel.swift in Sources */,
+				B8F574892A6440CF0028A46A /* OutroCardView.swift in Sources */,
 				B8B506912A5D01F000B3EAED /* RealTimeGame+GKGameCenterViewController.swift in Sources */,
+				B8F5748C2A64C8D30028A46A /* OutroCardModel.swift in Sources */,
 				B8B506952A5D2B2600B3EAED /* QuestionView.swift in Sources */,
 				B8B5069D2A5E42D600B3EAED /* RealTimeGame+MatchData.swift in Sources */,
+				B8F574812A63BAB90028A46A /* OutroEndingView.swift in Sources */,
+				B8B506832A5CF4FA00B3EAED /* HintViewModel.swift in Sources */,
 				B8B506832A5CF4FA00B3EAED /* HintViewModel.swift in Sources */,
 				B8B5068D2A5D019900B3EAED /* RealTimeGame+Friends.swift in Sources */,
+				B8F5747F2A63B4860028A46A /* OutroInfoView.swift in Sources */,
 				B8B5069B2A5E3C1C00B3EAED /* RealTimeGame+GKLocalPlayerListener.swift in Sources */,
 				B87998522A5BACBE00167597 /* QAQAApp.swift in Sources */,
 				602BD3032A6456BF00F9E345 /* ReactionView.swift in Sources */,
 				60EB427B2A5E44880030286C /* UIScreen+Extension.swift in Sources */,
+				B8F574872A63D3800028A46A /* OutroViewModel.swift in Sources */,
 				B8B5068A2A5D00BE00B3EAED /* RealTimeGame.swift in Sources */,
 				B8B506992A5E2C9500B3EAED /* Color+Extension.swift in Sources */,
 				602BD2F92A602A3600F9E345 /* ReactionModifier.swift in Sources */,

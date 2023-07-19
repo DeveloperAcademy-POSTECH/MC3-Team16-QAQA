@@ -9,6 +9,7 @@ import SwiftUI
 import GameKit
 
 struct HomeView: View {
+    @State var mainViewNavLinkActive = false
     @StateObject private var game = RealTimeGame()
     
     var body: some View {
@@ -39,7 +40,7 @@ struct HomeView: View {
                 }
                 game.choosePlayer()
             } label: {
-                Text("시작하기")
+                Text("팀 찾기")
                     .fontWeight(.bold)
                     .frame(maxWidth: .infinity)
                     .padding()
@@ -58,7 +59,7 @@ struct HomeView: View {
         }
         // Display the game interface if a match is ongoing.
         .fullScreenCover(isPresented: $game.playingGame) {
-            QuestionView(game: game)
+            QuestionView(mainViewNavLinkActive: $mainViewNavLinkActive, game: game)
         }
     }
 }

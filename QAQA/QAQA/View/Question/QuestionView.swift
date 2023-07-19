@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct QuestionView: View {
+    @Binding var mainViewNavLinkActive: Bool
     @EnvironmentObject var timerModel: TimerModel
     @ObservedObject var game: RealTimeGame
     @State private var showHintModal = false
@@ -15,6 +16,7 @@ struct QuestionView: View {
     @State var isReaction = false //리액션뷰를 온오프하는 변수
     @State var reactionState = false //킹정인지 에바인지 구분하는 변수
     
+    @State private var userName = "UserName"
     
     var body: some View {
         VStack{
@@ -38,18 +40,21 @@ struct QuestionView: View {
                 }
                 TimerView(width:100)
                 Spacer()
-                Button(action: {
-                    //끝내기 버튼 액션
-                }, label: {
-                    ZStack{
-                        RoundedRectangle(cornerRadius: 12)
-                            .foregroundColor(Color("finishButton"))
-                            .frame(width: 77, height: 44)
-                        Text("끝내기")
-                            .foregroundColor(.red)
-                            .bold()
-                    }
-                })
+                NavigationLink { OutroEndingView(mainViewNavLinkActive: $mainViewNavLinkActive)} label: {
+                    Button(action: {
+                        game.endMatch()
+                        game.reportProgress()
+                    }, label: {
+                        ZStack{
+                            RoundedRectangle(cornerRadius: 12)
+                                .foregroundColor(Color("finishButton"))
+                                .frame(width: 77, height: 44)
+                            Text("끝내기")
+                                .foregroundColor(.red)
+                                .bold()
+                        }
+                    })
+                }
                 Spacer()
                     .frame(width: 16)
             } //Timer와 끝내기 버튼
@@ -72,7 +77,7 @@ struct QuestionView: View {
                                 .foregroundColor(.white)
                                 .font(.system(size: 40))
                         }
-                        Text("UserName")
+                        Text("\(userName)")
                         Spacer()
                         Button(action: {
                             showHintModal = true
@@ -171,12 +176,15 @@ struct QuestionView: View {
                     .opacity(isReaction ? 1 : 0)
             }
         }
+        .onAppear {
+            userName = game.topicUserName
+        }
     }
 }
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionView(game: RealTimeGame())
+        QuestionView(mainViewNavLinkActive: .constant(false), game: RealTimeGame())
             .environmentObject(TimerModel())
     }
 }
