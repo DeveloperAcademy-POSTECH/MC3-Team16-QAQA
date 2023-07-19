@@ -17,8 +17,7 @@
 		B87998542A5BACBE00167597 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87998532A5BACBE00167597 /* HomeView.swift */; };
 		B87998562A5BACBF00167597 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B87998552A5BACBF00167597 /* Assets.xcassets */; };
 		B87998592A5BACBF00167597 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B87998582A5BACBF00167597 /* Preview Assets.xcassets */; };
-		B8B506832A5CF4FA00B3EAED /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B506822A5CF4FA00B3EAED /* ViewModel.swift */; };
-		B8B506852A5CF50400B3EAED /* RealTimeGame+GKMatchDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B506842A5CF50400B3EAED /* RealTimeGame+GKMatchDelegate.swift */; };
+		B8B506832A5CF4FA00B3EAED /* HintViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B506822A5CF4FA00B3EAED /* HintViewModel.swift */; };
 		B8B5068A2A5D00BE00B3EAED /* RealTimeGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B506892A5D00BE00B3EAED /* RealTimeGame.swift */; };
 		B8B5068D2A5D019900B3EAED /* RealTimeGame+Friends.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B5068C2A5D019900B3EAED /* RealTimeGame+Friends.swift */; };
 		B8B5068F2A5D01C700B3EAED /* RealTimeGame+GKMatchmakerViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B5068E2A5D01C700B3EAED /* RealTimeGame+GKMatchmakerViewControllerDelegate.swift */; };
@@ -27,6 +26,9 @@
 		B8B506992A5E2C9500B3EAED /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B506982A5E2C9500B3EAED /* Color+Extension.swift */; };
 		B8B5069B2A5E3C1C00B3EAED /* RealTimeGame+GKLocalPlayerListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B5069A2A5E3C1C00B3EAED /* RealTimeGame+GKLocalPlayerListener.swift */; };
 		B8B5069D2A5E42D600B3EAED /* RealTimeGame+MatchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B5069C2A5E42D600B3EAED /* RealTimeGame+MatchData.swift */; };
+		C59F5A072A60F3B6007608AD /* HintModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59F5A062A60F3B6007608AD /* HintModel.swift */; };
+		C59F5A092A60F657007608AD /* HintState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59F5A082A60F657007608AD /* HintState.swift */; };
+		C5C61B992A5E583C00FB8854 /* HintModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C61B982A5E583C00FB8854 /* HintModal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,11 +40,10 @@
 		60EB42812A5ED99E0030286C /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
 		B879984E2A5BACBE00167597 /* QAQA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QAQA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B87998512A5BACBE00167597 /* QAQAApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QAQAApp.swift; sourceTree = "<group>"; };
-		B87998532A5BACBE00167597 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		B87998532A5BACBE00167597 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = Home/HomeView.swift; sourceTree = "<group>"; };
 		B87998552A5BACBF00167597 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B87998582A5BACBF00167597 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		B8B506822A5CF4FA00B3EAED /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		B8B506842A5CF50400B3EAED /* RealTimeGame+GKMatchDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealTimeGame+GKMatchDelegate.swift"; sourceTree = "<group>"; };
+		B8B506822A5CF4FA00B3EAED /* HintViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintViewModel.swift; sourceTree = "<group>"; };
 		B8B506882A5CFDAA00B3EAED /* QAQA.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QAQA.entitlements; sourceTree = "<group>"; };
 		B8B506892A5D00BE00B3EAED /* RealTimeGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealTimeGame.swift; sourceTree = "<group>"; };
 		B8B5068C2A5D019900B3EAED /* RealTimeGame+Friends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealTimeGame+Friends.swift"; sourceTree = "<group>"; };
@@ -52,6 +53,9 @@
 		B8B506982A5E2C9500B3EAED /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		B8B5069A2A5E3C1C00B3EAED /* RealTimeGame+GKLocalPlayerListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealTimeGame+GKLocalPlayerListener.swift"; sourceTree = "<group>"; };
 		B8B5069C2A5E42D600B3EAED /* RealTimeGame+MatchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealTimeGame+MatchData.swift"; sourceTree = "<group>"; };
+		C59F5A062A60F3B6007608AD /* HintModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintModel.swift; sourceTree = "<group>"; };
+		C59F5A082A60F657007608AD /* HintState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintState.swift; sourceTree = "<group>"; };
+		C5C61B982A5E583C00FB8854 /* HintModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintModal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +88,6 @@
 		60EB42832A5F94840030286C /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				B87998532A5BACBE00167597 /* HomeView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -92,9 +95,8 @@
 		60EB42842A5F948B0030286C /* Question */ = {
 			isa = PBXGroup;
 			children = (
-				60EB42782A5E437C0030286C /* TimerView.swift */,
-				60EB427F2A5ED78A0030286C /* TimerModalView.swift */,
 				B8B506942A5D2B2600B3EAED /* QuestionView.swift */,
+				C5C61B982A5E583C00FB8854 /* HintModal.swift */,
 				602BD3022A6456BF00F9E345 /* ReactionView.swift */,
 			);
 			path = Question;
@@ -142,8 +144,10 @@
 		B879985F2A5BB39700167597 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C5C7E7E62A676A06000A3CCC /* Timer */,
 				60EB42842A5F948B0030286C /* Question */,
 				60EB42832A5F94840030286C /* Home */,
+				B87998532A5BACBE00167597 /* HomeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -151,7 +155,7 @@
 		B87998602A5BB39C00167597 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				B8B506822A5CF4FA00B3EAED /* ViewModel.swift */,
+				B8B506822A5CF4FA00B3EAED /* HintViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -159,8 +163,9 @@
 		B87998612A5BB3A900167597 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C5C7E7E82A676A34000A3CCC /* Question */,
+				C5C7E7E72A676A2C000A3CCC /* Timer */,
 				B8B506962A5E276300B3EAED /* Game */,
-				60EB42812A5ED99E0030286C /* TimerModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -187,7 +192,6 @@
 		B8B5068B2A5D013100B3EAED /* GameCenter */ = {
 			isa = PBXGroup;
 			children = (
-				B8B506842A5CF50400B3EAED /* RealTimeGame+GKMatchDelegate.swift */,
 				B8B5068C2A5D019900B3EAED /* RealTimeGame+Friends.swift */,
 				B8B5068E2A5D01C700B3EAED /* RealTimeGame+GKMatchmakerViewControllerDelegate.swift */,
 				B8B506902A5D01F000B3EAED /* RealTimeGame+GKGameCenterViewController.swift */,
@@ -211,6 +215,32 @@
 				B8B506982A5E2C9500B3EAED /* Color+Extension.swift */,
 			);
 			path = Color;
+			sourceTree = "<group>";
+		};
+		C5C7E7E62A676A06000A3CCC /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				60EB42782A5E437C0030286C /* TimerView.swift */,
+				60EB427F2A5ED78A0030286C /* TimerModalView.swift */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		C5C7E7E72A676A2C000A3CCC /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				60EB42812A5ED99E0030286C /* TimerModel.swift */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		C5C7E7E82A676A34000A3CCC /* Question */ = {
+			isa = PBXGroup;
+			children = (
+				C59F5A062A60F3B6007608AD /* HintModel.swift */,
+				C59F5A082A60F657007608AD /* HintState.swift */,
+			);
+			path = Question;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,7 +313,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C59F5A072A60F3B6007608AD /* HintModel.swift in Sources */,
+				C5C61B992A5E583C00FB8854 /* HintModal.swift in Sources */,
+				B87998542A5BACBE00167597 /* HomeView.swift in Sources */,
 				60EB42822A5ED99E0030286C /* TimerModel.swift in Sources */,
+				C59F5A092A60F657007608AD /* HintState.swift in Sources */,
 				60EB42802A5ED78A0030286C /* TimerModalView.swift in Sources */,
 				60EB42792A5E437C0030286C /* TimerView.swift in Sources */,
 				B8B5068F2A5D01C700B3EAED /* RealTimeGame+GKMatchmakerViewControllerDelegate.swift in Sources */,
@@ -291,16 +325,14 @@
 				B8B506912A5D01F000B3EAED /* RealTimeGame+GKGameCenterViewController.swift in Sources */,
 				B8B506952A5D2B2600B3EAED /* QuestionView.swift in Sources */,
 				B8B5069D2A5E42D600B3EAED /* RealTimeGame+MatchData.swift in Sources */,
-				B8B506832A5CF4FA00B3EAED /* ViewModel.swift in Sources */,
+				B8B506832A5CF4FA00B3EAED /* HintViewModel.swift in Sources */,
 				B8B5068D2A5D019900B3EAED /* RealTimeGame+Friends.swift in Sources */,
 				B8B5069B2A5E3C1C00B3EAED /* RealTimeGame+GKLocalPlayerListener.swift in Sources */,
 				B87998522A5BACBE00167597 /* QAQAApp.swift in Sources */,
 				602BD3032A6456BF00F9E345 /* ReactionView.swift in Sources */,
-				B8B506852A5CF50400B3EAED /* RealTimeGame+GKMatchDelegate.swift in Sources */,
 				60EB427B2A5E44880030286C /* UIScreen+Extension.swift in Sources */,
 				B8B5068A2A5D00BE00B3EAED /* RealTimeGame.swift in Sources */,
 				B8B506992A5E2C9500B3EAED /* Color+Extension.swift in Sources */,
-				B8B506852A5CF50400B3EAED /* RealTimeGame+GKMatchDelegate.swift in Sources */,
 				602BD2F92A602A3600F9E345 /* ReactionModifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,7 +390,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -412,7 +444,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
