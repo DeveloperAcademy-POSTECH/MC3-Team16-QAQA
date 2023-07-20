@@ -17,11 +17,14 @@ struct HintModal: View {
     var body: some View {
         
         VStack{
+            Spacer()
+                .frame(height: 20)
             Picker("HintMode", selection: $selectedHint) {
                 ForEach(HintState.allCases) { hintMode in
                     Text(hintMode.rawValue.capitalized)
                 }
             }
+            .frame(width: 250)
             .pickerStyle(.segmented)
             .onChange(of: selectedHint, perform: { _ in
                 switch selectedHint {
@@ -34,7 +37,7 @@ struct HintModal: View {
             .padding()
             
             Spacer()
-                .frame(height: 65)
+                .frame(height: 62)
             
             switch selectedHint {
             case .fun :
@@ -51,7 +54,7 @@ struct HintModal: View {
                     .multilineTextAlignment(.center)
             }
             Spacer()
-                .frame(height: 55)
+                .frame(height: 65)
             Button(action: {
                 switch selectedHint {
                 case .fun :
@@ -70,6 +73,8 @@ struct HintModal: View {
                     .background(Color(red: 0, green: 0.64, blue: 1))
                     .cornerRadius(16)
             }
+            Spacer()
+                .frame(height: 24)
         }
     }
 }
