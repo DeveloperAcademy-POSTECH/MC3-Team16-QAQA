@@ -49,7 +49,6 @@ struct QuestionView: View {
                         showFinishModal.toggle()
                         game.endMatch()
                         game.reportProgress()
-//                        isShowingOutroView.toggle()
                     } label: {
                         ZStack{
                             RoundedRectangle(cornerRadius: 12)
@@ -80,46 +79,19 @@ struct QuestionView: View {
                     VStack{ //QuestionView의 메인 내용(프로필과 질문버튼, 리액션버튼)
                         Group{
                             Spacer()
-                                .frame(height: 70)
-                            ZStack{
-                                Circle()
-                                    .frame(width:220)
-                                    .foregroundColor(.blue)
-                                    .overlay(
-                                        Circle()
-                                            .stroke(lineWidth: 5)
-                                            .foregroundColor(.white)
-                                            .shadow(radius: 10)
-                                    )
-                                Text("UserProfile")
-                                    .foregroundColor(.white)
-                                    .font(.system(size: 40))
-                            }
+                                .frame(height: 10)
                             Text("\(userName)")
+                                .font(.system(size: 24, weight: .bold))
                             Spacer()
-                            Button(action: {
-                                showHintModal = true
-                            }, label: {
-                                ZStack{
-                                    RoundedRectangle(cornerRadius: 30)
-                                        .frame(width:159, height: 33)
-                                        .foregroundColor(Color("pauseButtonColor"))
-                                    HStack{
-                                        Text("?")
-                                            .foregroundColor(.white)
-                                            .background(Circle()
-                                                .frame(width: 18))
-                                        Text("내 질문을 도와줘!")
-                                            .font(.system(size:16))
-                                            .padding(3)
-                                    }
-                                }
-                            })
-                            .sheet(isPresented: $showHintModal) {
-                                HintModal()
-                                    .presentationDetents([.height(400)])
-                                    .presentationCornerRadius(32)
+                                .frame(height: 24)
+                            ZStack{
+                                RoundedRectangle(cornerRadius: 40)
+                                    .foregroundColor(.gray.opacity(0.1))
+                                    .frame(width: 361, height: 400)
+                                HintView()
                             }
+                            Spacer()
+                                .frame(height: 30)
                             ZStack{
                                 RoundedRectangle(cornerRadius: 103)
                                     .foregroundColor(.gray.opacity(0.1))
@@ -150,7 +122,7 @@ struct QuestionView: View {
                                             }
                                             Text("킹정")
                                                 .font(.system(size: 20))
-                                                .foregroundColor(Color("reactionGood"))
+                                                .foregroundColor(Color("reactionGoodColor"))
                                                 .bold()
                                                 .padding(.trailing, 15)
                                         }
@@ -180,7 +152,7 @@ struct QuestionView: View {
                                             }
                                             Text("에바")
                                                 .font(.system(size: 20))
-                                                .foregroundColor(Color("reactionQuestion"))
+                                                .foregroundColor(Color("reactionQuestionColor"))
                                                 .bold()
                                                 .padding(.leading, 15)
                                         }

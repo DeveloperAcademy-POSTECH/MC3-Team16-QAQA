@@ -35,7 +35,7 @@
 		B8F574902A64DDF80028A46A /* TopicUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F5748F2A64DDF80028A46A /* TopicUserModel.swift */; };
 		C59F5A072A60F3B6007608AD /* HintModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59F5A062A60F3B6007608AD /* HintModel.swift */; };
 		C59F5A092A60F657007608AD /* HintState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59F5A082A60F657007608AD /* HintState.swift */; };
-		C5C61B992A5E583C00FB8854 /* HintModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C61B982A5E583C00FB8854 /* HintModal.swift */; };
+		C5C61B992A5E583C00FB8854 /* HintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C61B982A5E583C00FB8854 /* HintView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,7 +69,7 @@
 		B8F5748F2A64DDF80028A46A /* TopicUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicUserModel.swift; sourceTree = "<group>"; };
 		C59F5A062A60F3B6007608AD /* HintModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintModel.swift; sourceTree = "<group>"; };
 		C59F5A082A60F657007608AD /* HintState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintState.swift; sourceTree = "<group>"; };
-		C5C61B982A5E583C00FB8854 /* HintModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintModal.swift; sourceTree = "<group>"; };
+		C5C61B982A5E583C00FB8854 /* HintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +111,7 @@
 			children = (
 				B8B506942A5D2B2600B3EAED /* QuestionView.swift */,
 				602BD3082A67E86600F9E345 /* FinishModalView.swift */,
-				C5C61B982A5E583C00FB8854 /* HintModal.swift */,
+				C5C61B982A5E583C00FB8854 /* HintView.swift */,
 				602BD3022A6456BF00F9E345 /* ReactionView.swift */,
 			);
 			path = Question;
@@ -351,7 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C59F5A072A60F3B6007608AD /* HintModel.swift in Sources */,
-				C5C61B992A5E583C00FB8854 /* HintModal.swift in Sources */,
+				C5C61B992A5E583C00FB8854 /* HintView.swift in Sources */,
 				B87998542A5BACBE00167597 /* HomeView.swift in Sources */,
 				60EB42822A5ED99E0030286C /* TimerModel.swift in Sources */,
 				C59F5A092A60F657007608AD /* HintState.swift in Sources */,
