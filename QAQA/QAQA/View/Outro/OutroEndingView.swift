@@ -11,7 +11,6 @@ struct OutroEndingView: View {
     @StateObject private var outroViewModel = OutroViewModel()
     @ObservedObject var game: RealTimeGame
     
-    @Binding var mainViewNavLinkActive: Bool
     @Binding var isShowingOutroView: Bool
     
     @State private var isShowingInfoView = true
@@ -46,7 +45,6 @@ struct OutroEndingView: View {
                 Spacer()
                     .frame(height: 10)
                 Button {
-                    mainViewNavLinkActive.toggle()
                     game.resetMatch()
                     isShowingOutroView.toggle()
                 } label: {
@@ -86,6 +84,6 @@ extension OutroEndingView {
 
 struct OutroEndingView_Previews: PreviewProvider {
     static var previews: some View {
-        OutroEndingView(game: RealTimeGame(), mainViewNavLinkActive: .constant(false), isShowingOutroView: .constant(false))
+        OutroEndingView(game: RealTimeGame(), isShowingOutroView: .constant(false))
     }
 }

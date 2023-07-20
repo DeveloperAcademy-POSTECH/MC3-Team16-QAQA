@@ -44,6 +44,6 @@ struct FinishModalView: View {
 
 struct FinishModalView_Previews: PreviewProvider {
     static var previews: some View {
-        FinishModalView(isShowingOutroView: QuestionView(mainViewNavLinkActive: .constant(false), game: RealTimeGame()).$isShowingOutroView)
+        FinishModalView(isShowingOutroView: QuestionView(game: RealTimeGame()).$isShowingOutroView)
     }
 }

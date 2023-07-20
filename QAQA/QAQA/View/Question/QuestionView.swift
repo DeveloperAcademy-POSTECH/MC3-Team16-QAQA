@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct QuestionView: View {
-    @Binding var mainViewNavLinkActive: Bool
     @EnvironmentObject var timerModel: TimerModel
     @ObservedObject var game: RealTimeGame
     @State private var showHintModal = false
@@ -199,7 +198,7 @@ struct QuestionView: View {
                 userName = game.topicUserName // TODO: 안됨
             }
             if (isShowingOutroView) {
-                OutroEndingView(game: game, mainViewNavLinkActive: $mainViewNavLinkActive, isShowingOutroView: $isShowingOutroView)
+                OutroEndingView(game: game,  isShowingOutroView: $isShowingOutroView)
             }
         }
     }
@@ -207,7 +206,7 @@ struct QuestionView: View {
 
 struct QuestionView_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionView(mainViewNavLinkActive: .constant(false), game: RealTimeGame())
+        QuestionView(game: RealTimeGame())
             .environmentObject(TimerModel())
     }
 }
