@@ -18,6 +18,7 @@ struct OutroEndingView: View {
     
     var body: some View {
         ZStack {
+            Color.white
             VStack {
                 Spacer()
                     .frame(height: 63)
