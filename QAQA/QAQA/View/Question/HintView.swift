@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HintModal: View {
+struct HintView: View {
     
     @StateObject private var hintViewModel = HintViewModel()
     @State private var selectedHint: HintState = .fun
@@ -82,6 +82,6 @@ struct HintModal: View {
 
 struct HintModal_Previews: PreviewProvider {
     static var previews: some View {
-        HintModal()
+        HintView()
     }
 }

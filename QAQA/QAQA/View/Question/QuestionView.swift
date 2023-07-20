@@ -91,7 +91,7 @@ struct QuestionView: View {
                                 RoundedRectangle(cornerRadius: 40)
                                     .foregroundColor(.gray.opacity(0.1))
                                     .frame(width: 361, height: 400)
-                                HintModal()
+                                HintView()
                             }
                             Spacer()
                                 .frame(height: 30)
