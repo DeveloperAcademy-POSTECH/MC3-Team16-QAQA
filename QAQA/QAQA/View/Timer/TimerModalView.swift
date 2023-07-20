@@ -26,7 +26,7 @@ struct TimerModalView: View {
                 .padding(.bottom, 20)
             
             Button(action: {
-                timerModel.isTimer.toggle()
+//                timerModel.isTimer.toggle()
                 presentation.wrappedValue.dismiss()
             }, label: {
                 ZStack{

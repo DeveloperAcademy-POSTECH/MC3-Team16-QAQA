@@ -9,9 +9,9 @@ import SwiftUI
 
 extension Color {
     static let testBlue = Color("testBlue")
-    static let pauseButton = Color("pauseButton")
-    static let pause = Color("pause")
-    static let finishButton = Color("finishButton")
-    static let reactionGood = Color("reactionGood")
-    static let reactionQuestioin = Color("reactionQuestion")
+    static let pauseButtonColor = Color("pauseButtonColor")
+    static let pauseTextColor = Color("pauseTextColor")
+    static let finishButtonColor = Color("finishButtonColor")
+    static let reactionGoodColor = Color("reactionGoodColor")
+    static let reactionQuestionColor = Color("reactionQuestionColor")
 }

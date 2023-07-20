@@ -13,6 +13,7 @@ struct QuestionView: View {
     @ObservedObject var game: RealTimeGame
     @State private var showHintModal = false
     @State var showTimerModal = false
+    @State var showFinishModal = false
     @State var isReaction = false //리액션뷰를 온오프하는 변수
     @State var reactionState = false //킹정인지 에바인지 구분하는 변수
     
@@ -30,31 +31,49 @@ struct QuestionView: View {
                         showTimerModal = true// action
                     } label: {
                         Image(systemName: "pause.fill" )
-                            .foregroundColor(Color("pause"))
+                            .foregroundColor(Color("pauseTextColor"))
                             .padding(15)
-                            .background(Circle().foregroundColor(Color("pauseButton")))
+                            .background(Circle().foregroundColor(Color("pauseButtonColor")))
                     }
                     .sheet(isPresented: $showTimerModal){
                         TimerModalView()
                             .presentationDetents([.height(257)])
                             .presentationCornerRadius(32)
                             .padding(.top, 30)
+                            .onDisappear{
+                                timerModel.isTimer.toggle()
+                            }
                     }
                     TimerView(width:100)
                     Spacer()
-                    Button(action: {
+                    Button{
+                        showFinishModal.toggle()
                         game.endMatch()
                         game.reportProgress()
-                        isShowingOutroView.toggle()
-                    }, label: {
+//                        isShowingOutroView.toggle()
+                        
+                    } label: {
                         ZStack{
                             RoundedRectangle(cornerRadius: 12)
-                                .foregroundColor(Color("finishButton"))
+                                .foregroundColor(Color("finishButtonColor"))
                                 .frame(width: 77, height: 44)
                             Text("끝내기")
                                 .foregroundColor(.red)
                                 .bold()
                         }
+                    }
+                    .sheet(isPresented: $showFinishModal, content: {
+                        FinishModalView(isShowingOutroView: $isShowingOutroView) //TODO: View 바꾸기
+                            .presentationDetents([.height(257)])
+                            .presentationCornerRadius(32)
+                            .padding(.top, 44)
+                            .padding([.leading, .trailing], 16)
+                            .onAppear{
+                                timerModel.isTimer.toggle()
+                            }
+                            .onDisappear{
+                                timerModel.isTimer.toggle()
+                            }
                     })
                     Spacer()
                         .frame(width: 16)
@@ -86,7 +105,7 @@ struct QuestionView: View {
                                 ZStack{
                                     RoundedRectangle(cornerRadius: 30)
                                         .frame(width:159, height: 33)
-                                        .foregroundColor(Color("pauseButton"))
+                                        .foregroundColor(Color("pauseButtonColor"))
                                     HStack{
                                         Text("?")
                                             .foregroundColor(.white)
@@ -110,10 +129,10 @@ struct QuestionView: View {
                                 HStack{
                                     Button(action: { //reaaction button action
                                         reactionState = true
-                                        withAnimation(.spring(response: 0.4,dampingFraction: 0.25,blendDuration: 0.0)){
+                                        withAnimation(.spring(response: 0.2,dampingFraction: 0.25,blendDuration: 0.0)){
                                             isReaction.toggle()
                                         }
-                                        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
+                                        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8, execute: {
                                             withAnimation(.default){
                                                 isReaction.toggle()
                                             }
@@ -140,10 +159,10 @@ struct QuestionView: View {
                                     })
                                     Button(action: {
                                         reactionState = false
-                                        withAnimation(.spring(response: 0.4,dampingFraction: 0.25,blendDuration: 0.0)){
+                                        withAnimation(.spring(response: 0.2,dampingFraction: 0.25,blendDuration: 0.0)){
                                             isReaction.toggle()
                                         }
-                                        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
+                                        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8, execute: {
                                             withAnimation(.default){
                                                 isReaction.toggle()
                                             }
@@ -187,7 +206,7 @@ struct QuestionView: View {
     }
 }
 
-struct GameView_Previews: PreviewProvider {
+struct QuestionView_Previews: PreviewProvider {
     static var previews: some View {
         QuestionView(mainViewNavLinkActive: .constant(false), game: RealTimeGame())
             .environmentObject(TimerModel())

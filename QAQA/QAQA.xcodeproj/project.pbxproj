@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		602BD2F92A602A3600F9E345 /* ReactionModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602BD2F82A602A3600F9E345 /* ReactionModifier.swift */; };
 		602BD3032A6456BF00F9E345 /* ReactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602BD3022A6456BF00F9E345 /* ReactionView.swift */; };
+		602BD3092A67E86600F9E345 /* FinishModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602BD3082A67E86600F9E345 /* FinishModalView.swift */; };
 		60EB42792A5E437C0030286C /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EB42782A5E437C0030286C /* TimerView.swift */; };
 		60EB427B2A5E44880030286C /* UIScreen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EB427A2A5E44880030286C /* UIScreen+Extension.swift */; };
 		60EB42802A5ED78A0030286C /* TimerModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EB427F2A5ED78A0030286C /* TimerModalView.swift */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		602BD2F82A602A3600F9E345 /* ReactionModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionModifier.swift; sourceTree = "<group>"; };
 		602BD3022A6456BF00F9E345 /* ReactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionView.swift; sourceTree = "<group>"; };
+		602BD3082A67E86600F9E345 /* FinishModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishModalView.swift; sourceTree = "<group>"; };
 		60EB42782A5E437C0030286C /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		60EB427A2A5E44880030286C /* UIScreen+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extension.swift"; sourceTree = "<group>"; };
 		60EB427F2A5ED78A0030286C /* TimerModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModalView.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				B8B506942A5D2B2600B3EAED /* QuestionView.swift */,
+				602BD3082A67E86600F9E345 /* FinishModalView.swift */,
 				C5C61B982A5E583C00FB8854 /* HintModal.swift */,
 				602BD3022A6456BF00F9E345 /* ReactionView.swift */,
 			);
@@ -357,6 +360,7 @@
 				B8B5068F2A5D01C700B3EAED /* RealTimeGame+GKMatchmakerViewControllerDelegate.swift in Sources */,
 				B87998542A5BACBE00167597 /* HomeView.swift in Sources */,
 				B8F574902A64DDF80028A46A /* TopicUserModel.swift in Sources */,
+				602BD3092A67E86600F9E345 /* FinishModalView.swift in Sources */,
 				B8F574892A6440CF0028A46A /* OutroCardView.swift in Sources */,
 				B8B506912A5D01F000B3EAED /* RealTimeGame+GKGameCenterViewController.swift in Sources */,
 				B8F5748C2A64C8D30028A46A /* OutroCardModel.swift in Sources */,
