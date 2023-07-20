@@ -59,8 +59,8 @@ struct ReactionView: View {
     }
 }
 
-struct ReactionView_Previews: PreviewProvider {
-    static var previews: some View {
-        ReactionView(game: RealTimeGame(), isReaction: QuestionView(mainViewNavLinkActive: .constant(false), game: RealTimeGame()).$isReaction, reactionState: QuestionView(mainViewNavLinkActive: .constant(false), game: RealTimeGame()).$reactionState)
-    }
-}
+//struct ReactionView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ReactionView(game: RealTimeGame(), isReaction: QuestionView(mainViewNavLinkActive: .constant(false), game: RealTimeGame()).$isReaction, reactionState: QuestionView(mainViewNavLinkActive: .constant(false), game: RealTimeGame()).$reactionState)
+//    }
+//}

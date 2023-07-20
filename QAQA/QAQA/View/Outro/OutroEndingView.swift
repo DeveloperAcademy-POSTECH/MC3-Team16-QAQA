@@ -9,8 +9,10 @@ import SwiftUI
 
 struct OutroEndingView: View {
     @StateObject private var outroViewModel = OutroViewModel()
+    @ObservedObject var game: RealTimeGame
     
     @Binding var mainViewNavLinkActive: Bool
+    @Binding var isShowingOutroView: Bool
     
     @State private var isShowingInfoView = true
     @State private var userName = "웃쾌마"
@@ -45,6 +47,8 @@ struct OutroEndingView: View {
                     .frame(height: 10)
                 Button {
                     mainViewNavLinkActive.toggle()
+                    game.resetMatch()
+                    isShowingOutroView.toggle()
                 } label: {
                     Text("수고하셨습니다!")
                         .foregroundColor(.white)
@@ -82,6 +86,6 @@ extension OutroEndingView {
 
 struct OutroEndingView_Previews: PreviewProvider {
     static var previews: some View {
-        OutroEndingView(mainViewNavLinkActive: .constant(false))
+        OutroEndingView(game: RealTimeGame(), mainViewNavLinkActive: .constant(false), isShowingOutroView: .constant(false))
     }
 }

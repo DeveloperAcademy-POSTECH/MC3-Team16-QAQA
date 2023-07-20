@@ -200,7 +200,7 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject, 
             return
         }
         
-        // Otherwise, 다른 플레이어에게 게임 데이터를 전송합니다.
+        // 그렇지 않으면 다른 플레이어에게 게임 데이터를 전송합니다.
         do {
             let data = encode(score: myScore)
             try myMatch?.sendData(toAllPlayers: data!, with: GKMatch.SendDataMode.unreliable)

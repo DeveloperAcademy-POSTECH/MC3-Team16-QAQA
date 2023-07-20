@@ -51,7 +51,6 @@ struct QuestionView: View {
                         game.endMatch()
                         game.reportProgress()
 //                        isShowingOutroView.toggle()
-                        
                     } label: {
                         ZStack{
                             RoundedRectangle(cornerRadius: 12)
@@ -200,7 +199,7 @@ struct QuestionView: View {
                 userName = game.topicUserName // TODO: 안됨
             }
             if (isShowingOutroView) {
-                OutroEndingView(mainViewNavLinkActive: $mainViewNavLinkActive)
+                OutroEndingView(game: game, mainViewNavLinkActive: $mainViewNavLinkActive, isShowingOutroView: $isShowingOutroView)
             }
         }
     }
