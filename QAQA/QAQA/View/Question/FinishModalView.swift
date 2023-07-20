@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct FinishModalView: View {
+    @Binding var isShowingOutroView: Bool
+    @Environment(\.presentationMode) var presentation
     var body: some View {
         VStack{
             Text("활동을 끝내시겠어요?")
@@ -19,15 +21,21 @@ struct FinishModalView: View {
                 .bold()
                 .font(.system(size: 16))
                 .padding(.bottom, 42)
-            Text("종료하기")
-                .foregroundColor(.white)
-                .font(.system(size: 16))
-                .fontWeight(.bold)
-                .padding([.leading,.trailing],152)
-                .padding([.top,.bottom],20)
-                .background(RoundedRectangle(cornerRadius: 16)
-                    .foregroundColor(.red)
-                )
+            Button{
+                presentation.wrappedValue.dismiss()
+                isShowingOutroView.toggle()
+            } label: {
+                Text("종료하기")
+                    .foregroundColor(.white)
+                    .font(.system(size: 16))
+                    .fontWeight(.bold)
+                    .padding([.leading,.trailing],152)
+                    .padding([.top,.bottom],20)
+                    .background(RoundedRectangle(cornerRadius: 16)
+                        .foregroundColor(.red)
+                    )
+            }
+          
         
         }
         
@@ -36,6 +44,6 @@ struct FinishModalView: View {
 
 struct FinishModalView_Previews: PreviewProvider {
     static var previews: some View {
-        FinishModalView()
+        FinishModalView(isShowingOutroView: QuestionView(mainViewNavLinkActive: .constant(false), game: RealTimeGame()).$isShowingOutroView)
     }
 }

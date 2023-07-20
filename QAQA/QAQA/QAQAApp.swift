@@ -11,8 +11,7 @@ import SwiftUI
 struct QAQAApp: App {
     var body: some Scene {
         WindowGroup {
-//            HomeView()
-            OutroEndingView(mainViewNavLinkActive: .constant(false))
+            HomeView()
                 .environmentObject(TimerModel())
         }
     }
