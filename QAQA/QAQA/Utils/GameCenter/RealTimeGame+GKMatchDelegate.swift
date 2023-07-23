@@ -12,6 +12,7 @@ import SwiftUI
 extension RealTimeGame: GKMatchDelegate {
     /// Handles a connected, disconnected, or unknown player state.
     /// - Tag:didChange
+    ///  connect 상태가 변경될 때!
     func match(_ match: GKMatch, player: GKPlayer, didChange state: GKPlayerConnectionState) {
         switch state {
         case .connected:
@@ -46,5 +47,25 @@ extension RealTimeGame: GKMatchDelegate {
     /// Reinvites a player when they disconnect from the match.
     func match(_ match: GKMatch, shouldReinviteDisconnectedPlayer player: GKPlayer) -> Bool {
         return false
+    }
+    
+    /// Handles receiving a message from another player.
+    /// - Tag:didReceiveData
+    // 데이터 연동해주는 부분 !!!!
+    func match(_ match: GKMatch, didReceive data: Data, fromRemotePlayer player: GKPlayer) {
+        // Decode the data representation of the game data.
+        let gameData = decode(matchData: data)
+        
+        // Update the interface from the game data.
+        if let text = gameData?.message {
+            // Add the message to the chat view.
+//            let message = Message(content: text, playerName: player.displayName, isLocalPlayer: false)
+//            messages.append(message)
+        } else if let score = gameData?.score {
+            // Show the opponent's score.
+            opponentScore = score
+        } else if let outcome = gameData?.outcome {
+            gameIsEnd = true
+        }
     }
 }

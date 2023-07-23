@@ -46,6 +46,7 @@ struct OutroEndingView: View {
                     .frame(height: 10)
                 Button {
                     game.resetMatch()
+                    game.saveScore()
                     isShowingOutroView.toggle()
                 } label: {
                     Text("수고하셨습니다!")

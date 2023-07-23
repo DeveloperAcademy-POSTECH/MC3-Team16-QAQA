@@ -9,6 +9,7 @@ import SwiftUI
 
 struct FinishModalView: View {
     @Binding var isShowingOutroView: Bool
+    @ObservedObject var game: RealTimeGame
     @Environment(\.presentationMode) var presentation
     var body: some View {
         VStack{
@@ -24,6 +25,8 @@ struct FinishModalView: View {
             Button{
                 presentation.wrappedValue.dismiss()
                 isShowingOutroView.toggle()
+                game.endMatch()
+                game.reportProgress() // -> gameIsEnd가 true 됨
             } label: {
                 Text("종료하기")
                     .foregroundColor(.white)
@@ -44,6 +47,6 @@ struct FinishModalView: View {
 
 struct FinishModalView_Previews: PreviewProvider {
     static var previews: some View {
-        FinishModalView(isShowingOutroView: QuestionView(game: RealTimeGame()).$isShowingOutroView)
+        FinishModalView(isShowingOutroView: QuestionView(game: RealTimeGame()).$isShowingOutroView, game: RealTimeGame())
     }
 }

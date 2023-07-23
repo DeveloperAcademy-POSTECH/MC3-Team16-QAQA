@@ -11,7 +11,7 @@ import SwiftUI
 
 /// - Tag:RealTimeGame
 @MainActor
-class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject, GKMatchDelegate {
+class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
     
     // The local player's friends, if they grant access.
     @Published var friends: [Friend] = []
@@ -23,10 +23,10 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject, 
     @Published var automatch = false
     
     // Outcomes of the game for notifing players.
-    @Published var youForfeit = false
-    @Published var opponentForfeit = false
-    @Published var youWon = false
-    @Published var opponentWon = false
+    @Published var gameIsEnd = false
+//    @Published var opponentForfeit = false
+//    @Published var youWon = false
+//    @Published var opponentWon = false
     
     // The match information.
     @Published var myAvatar = Image(systemName: "person.crop.circle")
@@ -42,6 +42,8 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject, 
     // The voice chat properties.
     @Published var voiceChat: GKVoiceChat? = nil
     @Published var opponentSpeaking = false
+
+//    @Published var
     
     /// The name of the match.
     var matchName: String {
@@ -223,12 +225,13 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject, 
             print("Error: \(error.localizedDescription).")
         }
 
-        // Notify the local player that they won or lost.
-        if myOutcome == "won" {
-            youWon = true
-        } else {
-            opponentWon = true
-        }
+//        // Notify the local player that they won or lost.
+//        if myOutcome == "won" {
+//            youWon = true
+//        } else {
+//            opponentWon = true
+//        }
+        gameIsEnd = true
     }
 
     /// Saves the local player's score.
@@ -253,10 +256,10 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject, 
         opponent = nil
         opponentAvatar = Image(systemName: "person.crop.circle")
         GKAccessPoint.shared.isActive = true
-        youForfeit = false
-        opponentForfeit = false
-        youWon = false
-        opponentWon = false
+        gameIsEnd = false
+//        opponentForfeit = false
+//        youWon = false
+//        opponentWon = false
 
         // Reset the score.
         myScore = 0

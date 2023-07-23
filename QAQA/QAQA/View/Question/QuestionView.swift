@@ -47,8 +47,6 @@ struct QuestionView: View {
                     Spacer()
                     Button{
                         showFinishModal.toggle()
-                        game.endMatch()
-                        game.reportProgress()
                     } label: {
                         ZStack{
                             RoundedRectangle(cornerRadius: 12)
@@ -60,7 +58,7 @@ struct QuestionView: View {
                         }
                     }
                     .sheet(isPresented: $showFinishModal, content: {
-                        FinishModalView(isShowingOutroView: $isShowingOutroView) //TODO: View 바꾸기
+                        FinishModalView(isShowingOutroView: $isShowingOutroView, game: game) //TODO: View 바꾸기
                             .presentationDetents([.height(257)])
                             .presentationCornerRadius(32)
                             .padding(.top, 44)
@@ -169,7 +167,7 @@ struct QuestionView: View {
             .onAppear {
                 userName = game.topicUserName // TODO: 안됨
             }
-            if (isShowingOutroView) {
+            if (game.gameIsEnd) {
                 OutroEndingView(game: game,  isShowingOutroView: $isShowingOutroView)
             }
         }
