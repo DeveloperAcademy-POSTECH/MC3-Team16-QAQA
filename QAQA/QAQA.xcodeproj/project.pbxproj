@@ -48,7 +48,7 @@
 		60EB42812A5ED99E0030286C /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
 		B879984E2A5BACBE00167597 /* QAQA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QAQA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B87998512A5BACBE00167597 /* QAQAApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QAQAApp.swift; sourceTree = "<group>"; };
-		B87998532A5BACBE00167597 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = Home/HomeView.swift; sourceTree = "<group>"; };
+		B87998532A5BACBE00167597 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		B87998552A5BACBF00167597 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B87998582A5BACBF00167597 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B8B506822A5CF4FA00B3EAED /* HintViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintViewModel.swift; sourceTree = "<group>"; };
@@ -102,6 +102,7 @@
 		60EB42832A5F94840030286C /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				B87998532A5BACBE00167597 /* HomeView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -163,7 +164,6 @@
 				C5C7E7E62A676A06000A3CCC /* Timer */,
 				60EB42842A5F948B0030286C /* Question */,
 				60EB42832A5F94840030286C /* Home */,
-				B87998532A5BACBE00167597 /* HomeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
