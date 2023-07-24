@@ -63,7 +63,9 @@ extension RealTimeGame: GKMatchDelegate {
         } else if let outcome = gameData?.outcome {
             gameIsEnd = true
         } else if let reaction = gameData?.goodReaction {
-            goodReaction = reaction
+            withAnimation(.spring(response: 0.2,dampingFraction: 0.25,blendDuration: 0.0)){
+                goodReaction = reaction
+            }
         }
     }
 }
