@@ -63,6 +63,7 @@ struct HomeView: View {
                 .onAppear(){
                     gameTimerModel.countMin = 10
                     gameTimerModel.countSecond = 0
+                    gameTimerModel.isTimer = true
                 }
                 
         }

@@ -44,7 +44,7 @@ struct QuestionView: View {
                                 gameTimerModel.isTimer.toggle()
                             }
                     }
-                    TimerView(isShowingOutroView: $isShowingOutroView, width:100)
+                    TimerView(game: game, isShowingOutroView: $isShowingOutroView, width:100)
                         .environmentObject(gameTimerModel)
                     Spacer()
                     Button{
