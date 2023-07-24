@@ -23,7 +23,10 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
     @Published var automatch = false
     
     // Outcomes of the game for notifing players.
+    // 공유될 변수
     @Published var gameIsEnd = false
+    @Published var goodReaction = false
+    @Published var notGoodReaction = false
     
     // The match information.
     @Published var myAvatar = Image(systemName: "person.crop.circle")
@@ -295,6 +298,15 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
             if let error {
                 print("Error: \(error.localizedDescription).")
             }
+        }
+    }
+    
+    func pushGoodReaction() {
+        do {
+            let data = encode(goodReaction: goodReaction) // TODO: - Encode가 뭐하는 애임??
+            try myMatch?.sendData(toAllPlayers: data!, with: GKMatch.SendDataMode.unreliable)
+        } catch {
+            print("Error: \(error.localizedDescription).")
         }
     }
 }

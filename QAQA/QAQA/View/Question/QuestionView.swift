@@ -13,7 +13,7 @@ struct QuestionView: View {
     @State private var showHintModal = false
     @State var showTimerModal = false
     @State var showFinishModal = false
-    @State var isReaction = false //리액션뷰를 온오프하는 변수
+    //    @State var                                             game.goodReaction = false //리액션뷰를 온오프하는 변수
     @State var reactionState = false //킹정인지 에바인지 구분하는 변수
     
     @State private var userName = "UserName"
@@ -96,13 +96,15 @@ struct QuestionView: View {
                                     .frame(width: 393, height: 206)
                                 HStack{
                                     Button(action: { //reaaction button action
-                                        reactionState = true
+                                        reactionState = true // 킹정
                                         withAnimation(.spring(response: 0.2,dampingFraction: 0.25,blendDuration: 0.0)){
-                                            isReaction.toggle()
+                                            game.goodReaction.toggle()
+                                            game.pushGoodReaction()
                                         }
                                         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8, execute: {
                                             withAnimation(.default){
-                                                isReaction.toggle()
+                                                game.goodReaction.toggle()
+                                                game.pushGoodReaction()
                                             }
                                         })
                                     }, label: { //킹정버튼
@@ -128,11 +130,13 @@ struct QuestionView: View {
                                     Button(action: {
                                         reactionState = false
                                         withAnimation(.spring(response: 0.2,dampingFraction: 0.25,blendDuration: 0.0)){
-                                            isReaction.toggle()
+                                            game.goodReaction.toggle()
+                                            game.pushGoodReaction()
                                         }
                                         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8, execute: {
                                             withAnimation(.default){
-                                                isReaction.toggle()
+                                                game.goodReaction.toggle()
+                                                game.pushGoodReaction()
                                             }
                                         })//에바버튼 액션
                                     }, label: { //에바버튼
@@ -160,8 +164,8 @@ struct QuestionView: View {
                         }
                     }
                     //ReactionView
-                    ReactionView(game: RealTimeGame(),isReaction: self.$isReaction, reactionState: self.$reactionState)
-                        .opacity(isReaction ? 1 : 0)
+                    ReactionView(game: RealTimeGame(),isReaction: $game.goodReaction, reactionState: self.$reactionState)
+                        .opacity(                                            game.goodReaction ? 1 : 0)
                 }
             }
             .onAppear {
