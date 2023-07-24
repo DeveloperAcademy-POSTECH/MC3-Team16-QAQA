@@ -98,12 +98,12 @@ struct QuestionView: View {
                                     Button(action: { //reaaction button action
                                         reactionState = true // 킹정
                                         withAnimation(.spring(response: 0.2,dampingFraction: 0.25,blendDuration: 0.0)){
-                                            game.goodReaction.toggle()
+                                            game.playReaction.toggle()
                                             game.pushGoodReaction()
                                         }
                                         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8, execute: {
                                             withAnimation(.default){
-                                                game.goodReaction.toggle()
+                                                game.playReaction.toggle()
                                                 game.pushGoodReaction()
                                             }
                                         })
@@ -130,12 +130,12 @@ struct QuestionView: View {
                                     Button(action: {
                                         reactionState = false
                                         withAnimation(.spring(response: 0.2,dampingFraction: 0.25,blendDuration: 0.0)){
-                                            game.goodReaction.toggle()
+                                            game.playReaction.toggle()
                                             game.pushGoodReaction()
                                         }
                                         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8, execute: {
                                             withAnimation(.default){
-                                                game.goodReaction.toggle()
+                                                game.playReaction.toggle()
                                                 game.pushGoodReaction()
                                             }
                                         })//에바버튼 액션
@@ -164,8 +164,8 @@ struct QuestionView: View {
                         }
                     }
                     //ReactionView
-                    ReactionView(game: RealTimeGame(),isReaction: $game.goodReaction, reactionState: self.$reactionState)
-                        .opacity(                                            game.goodReaction ? 1 : 0)
+                    ReactionView(game: RealTimeGame(),isReaction: $game.playReaction, reactionState: self.$reactionState)
+                        .opacity(                                            game.playReaction ? 1 : 0)
                 }
             }
             .onAppear {

@@ -24,8 +24,8 @@ extension RealTimeGame {
     
     // MARK: Codable Game Data
     
-    func encode(goodReaction: Bool) -> Data? {
-        let gameData = GameData(matchName: matchName, playerName: GKLocalPlayer.local.displayName, goodReaction: goodReaction)
+    func encode(playReaction: Bool) -> Data? {
+        let gameData = GameData(matchName: matchName, playerName: GKLocalPlayer.local.displayName, goodReaction: playReaction)
         return encode(gameData: gameData)
     }
     // 범프 오브 치킨 ??
