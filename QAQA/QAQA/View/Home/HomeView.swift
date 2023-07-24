@@ -9,7 +9,6 @@ import SwiftUI
 import GameKit
 
 struct HomeView: View {
-    @State var mainViewNavLinkActive = false
     @StateObject private var game = RealTimeGame()
     
     var body: some View {
@@ -59,7 +58,7 @@ struct HomeView: View {
         }
         // Display the game interface if a match is ongoing.
         .fullScreenCover(isPresented: $game.playingGame) {
-            QuestionView(mainViewNavLinkActive: $mainViewNavLinkActive, game: game)
+            QuestionView(game: game)
         }
     }
 }
