@@ -13,7 +13,6 @@ struct QuestionView: View {
     @State private var showHintModal = false
     @State var showTimerModal = false
     @State var showFinishModal = false
-    //    @State var                                             game.goodReaction = false //리액션뷰를 온오프하는 변수
     @State var reactionState = false //킹정인지 에바인지 구분하는 변수
     
     @State private var userName = "UserName"
