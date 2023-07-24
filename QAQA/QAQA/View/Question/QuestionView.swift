@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct QuestionView: View {
-    @EnvironmentObject var timerModel: TimerModel
+//    @EnvironmentObject var timerModel: TimerModel
+    @EnvironmentObject var gameTimerModel: RealTimeGame
     @ObservedObject var game: RealTimeGame
     @State private var showHintModal = false
     @State var showTimerModal = false
@@ -26,7 +27,7 @@ struct QuestionView: View {
                     Spacer()
                         .frame(width: 16)
                     Button {
-                        timerModel.isTimer.toggle()
+                        gameTimerModel.isTimer.toggle()
                         showTimerModal = true// action
                     } label: {
                         Image(systemName: "pause.fill" )
@@ -35,15 +36,16 @@ struct QuestionView: View {
                             .background(Circle().foregroundColor(Color("pauseButtonColor")))
                     }
                     .sheet(isPresented: $showTimerModal){
-                        TimerModalView()
+                        TimerModalView(game: _gameTimerModel)
                             .presentationDetents([.height(257)])
                             .presentationCornerRadius(32)
                             .padding(.top, 30)
                             .onDisappear{
-                                timerModel.isTimer.toggle()
+                                gameTimerModel.isTimer.toggle()
                             }
                     }
-                    TimerView(game: game, isShowingOutroView: $isShowingOutroView, width:100)
+                    TimerView(isShowingOutroView: $isShowingOutroView, width:100)
+                        .environmentObject(gameTimerModel)
                     Spacer()
                     Button{
                         showFinishModal.toggle()
@@ -64,10 +66,10 @@ struct QuestionView: View {
                             .padding(.top, 44)
                             .padding([.leading, .trailing], 16)
                             .onAppear{
-                                timerModel.isTimer.toggle()
+                                game.isTimer.toggle()
                             }
                             .onDisappear{
-                                timerModel.isTimer.toggle()
+                                game.isTimer.toggle()
                             }
                     })
                     Spacer()
@@ -176,7 +178,7 @@ struct QuestionView: View {
 
 struct QuestionView_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionView(game: RealTimeGame())
-            .environmentObject(TimerModel())
+        QuestionView(game:RealTimeGame())
+            .environmentObject(RealTimeGame())
     }
 }

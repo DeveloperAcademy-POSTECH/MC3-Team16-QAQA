@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct TimerView: View {
-    @EnvironmentObject var timerModel: TimerModel
-    @ObservedObject var game: RealTimeGame
+//    @EnvironmentObject var timerModel: TimerModel
+    @EnvironmentObject var game: RealTimeGame
     @Binding var isShowingOutroView: Bool
     @State var width:CGFloat = 150
     @State var height:CGFloat = 50
@@ -18,14 +18,14 @@ struct TimerView: View {
     var body: some View {
         ZStack{
             VStack(spacing: 10 * timerSizeMultiplier){
-                timerModel.displayTime()
+                game.displayTime()
                     .font(.system(size: 30 * timerSizeMultiplier).bold())
                     .frame(width: width * timerSizeMultiplier, height: height * timerSizeMultiplier)
                     .foregroundColor(.black)
-                    .onReceive(timerModel.timer, perform: {
+                    .onReceive(game.timer, perform: {
                         _ in
-                        print("\(timerModel.countMin)")
-                        if (timerModel.countMin == 0) && (timerModel.countSecond == 0){
+                        print("\(game.countMin)")
+                        if (game.countMin == 0) && (game.countSecond == 0){
                             print("ssfe")
                             isShowingOutroView.toggle()
                             game.endMatch()
@@ -41,8 +41,8 @@ struct TimerView: View {
 
 struct TimerView_Previews: PreviewProvider {
     static var previews: some View {
-        TimerView(game: RealTimeGame(), isShowingOutroView: QuestionView(game: RealTimeGame()).$isShowingOutroView)
-            .environmentObject(TimerModel())
+        TimerView( isShowingOutroView: QuestionView(game: RealTimeGame()).$isShowingOutroView)
+            .environmentObject(RealTimeGame())
            
     }
 }

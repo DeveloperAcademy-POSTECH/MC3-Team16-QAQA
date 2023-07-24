@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct TimerModalView: View {
-    @EnvironmentObject var timerModel: TimerModel
+//    @EnvironmentObject var timerModel: TimerModel
+    @EnvironmentObject var game: RealTimeGame
     @Environment(\.presentationMode) var presentation
     @State var timeContainerWidth:CGFloat = 250
     @State var paddingHeight:CGFloat = 10
     @State var restartButtonColor: Color = Color.blue.opacity(0.8)
     var body: some View {
         VStack(alignment: .center){
-            timerModel.displayTime(false)
+            game.displayTime(false)
                 .font(.system(size: 70))
                 .fontWeight(.bold)
                 .foregroundColor(.black)
@@ -47,7 +48,7 @@ struct TimerModalView: View {
 struct TimerModalView_Previews: PreviewProvider {
     static var previews: some View {
         TimerModalView()
-            .environmentObject(TimerModel())
+            .environmentObject(RealTimeGame())
     }
 }
 

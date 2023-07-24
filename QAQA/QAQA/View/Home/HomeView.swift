@@ -10,6 +10,7 @@ import GameKit
 
 struct HomeView: View {
     @StateObject private var game = RealTimeGame()
+    @EnvironmentObject var gameTimerModel: RealTimeGame
     
     var body: some View {
         VStack {
@@ -58,7 +59,12 @@ struct HomeView: View {
         }
         // Display the game interface if a match is ongoing.
         .fullScreenCover(isPresented: $game.playingGame) {
-            QuestionView(game: game)
+            QuestionView(game:game)
+                .onAppear(){
+                    gameTimerModel.countMin = 10
+                    gameTimerModel.countSecond = 0
+                }
+                
         }
     }
 }
@@ -66,5 +72,6 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+            .environmentObject(RealTimeGame())
     }
 }
