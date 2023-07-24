@@ -43,7 +43,7 @@ struct QuestionView: View {
                                 timerModel.isTimer.toggle()
                             }
                     }
-                    TimerView(width:100)
+                    TimerView(game: game, isShowingOutroView: $isShowingOutroView, width:100)
                     Spacer()
                     Button{
                         showFinishModal.toggle()
