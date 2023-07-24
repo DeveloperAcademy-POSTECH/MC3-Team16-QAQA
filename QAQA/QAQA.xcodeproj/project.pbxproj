@@ -12,6 +12,10 @@
 		60EB42802A5ED78A0030286C /* TimerModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EB427F2A5ED78A0030286C /* TimerModalView.swift */; };
 		60EB42822A5ED99E0030286C /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EB42812A5ED99E0030286C /* TimerModel.swift */; };
 		AA3192DC2A64EFC30098573D /* HapticMotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3192DB2A64EFC30098573D /* HapticMotion.swift */; };
+		AA9741E72A6EBF8F0027DE48 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9741E62A6EBF8F0027DE48 /* Ball.swift */; };
+		AA9741E92A6EBFAA0027DE48 /* GyroscopeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9741E82A6EBFAA0027DE48 /* GyroscopeManager.swift */; };
+		AA9741EB2A6EBFCE0027DE48 /* BallContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9741EA2A6EBFCE0027DE48 /* BallContainerView.swift */; };
+		AA9741ED2A6EC0290027DE48 /* Content_test.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9741EC2A6EC0290027DE48 /* Content_test.swift */; };
 		AA9CD3FC2A643B3F00B9A030 /* HapticTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9CD3FB2A643B3F00B9A030 /* HapticTestView.swift */; };
 		AA9CD3FE2A643B6200B9A030 /* HapticFeedbackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9CD3FD2A643B6200B9A030 /* HapticFeedbackManager.swift */; };
 		B87998522A5BACBE00167597 /* QAQAApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87998512A5BACBE00167597 /* QAQAApp.swift */; };
@@ -36,6 +40,10 @@
 		60EB427F2A5ED78A0030286C /* TimerModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModalView.swift; sourceTree = "<group>"; };
 		60EB42812A5ED99E0030286C /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
 		AA3192DB2A64EFC30098573D /* HapticMotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticMotion.swift; sourceTree = "<group>"; };
+		AA9741E62A6EBF8F0027DE48 /* Ball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
+		AA9741E82A6EBFAA0027DE48 /* GyroscopeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GyroscopeManager.swift; sourceTree = "<group>"; };
+		AA9741EA2A6EBFCE0027DE48 /* BallContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallContainerView.swift; sourceTree = "<group>"; };
+		AA9741EC2A6EC0290027DE48 /* Content_test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content_test.swift; sourceTree = "<group>"; };
 		AA9CD3FB2A643B3F00B9A030 /* HapticTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticTestView.swift; sourceTree = "<group>"; };
 		AA9CD3FD2A643B6200B9A030 /* HapticFeedbackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedbackManager.swift; sourceTree = "<group>"; };
 		B879984E2A5BACBE00167597 /* QAQA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QAQA.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +99,17 @@
 				B8B506942A5D2B2600B3EAED /* QuestionView.swift */,
 			);
 			path = Question;
+			sourceTree = "<group>";
+		};
+		AA9741E52A6EBF5C0027DE48 /* Gyroscopes */ = {
+			isa = PBXGroup;
+			children = (
+				AA9741E62A6EBF8F0027DE48 /* Ball.swift */,
+				AA9741E82A6EBFAA0027DE48 /* GyroscopeManager.swift */,
+				AA9741EA2A6EBFCE0027DE48 /* BallContainerView.swift */,
+				AA9741EC2A6EC0290027DE48 /* Content_test.swift */,
+			);
+			path = Gyroscopes;
 			sourceTree = "<group>";
 		};
 		AA9CD3FA2A643AFC00B9A030 /* HapticManager */ = {
@@ -179,6 +198,7 @@
 		B87998632A5BB3C400167597 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				AA9741E52A6EBF5C0027DE48 /* Gyroscopes */,
 				AA9CD3FA2A643AFC00B9A030 /* HapticManager */,
 				60EB427C2A5ED5490030286C /* UIScreen */,
 				B8B506972A5E2C7600B3EAED /* Color */,
@@ -289,6 +309,7 @@
 				AA3192DC2A64EFC30098573D /* HapticMotion.swift in Sources */,
 				60EB42822A5ED99E0030286C /* TimerModel.swift in Sources */,
 				60EB42802A5ED78A0030286C /* TimerModalView.swift in Sources */,
+				AA9741EB2A6EBFCE0027DE48 /* BallContainerView.swift in Sources */,
 				60EB42792A5E437C0030286C /* TimerView.swift in Sources */,
 				B8B5068F2A5D01C700B3EAED /* RealTimeGame+GKMatchmakerViewControllerDelegate.swift in Sources */,
 				B87998542A5BACBE00167597 /* HomeView.swift in Sources */,
@@ -298,14 +319,17 @@
 				B8B5069D2A5E42D600B3EAED /* RealTimeGame+MatchData.swift in Sources */,
 				B8B506832A5CF4FA00B3EAED /* ViewModel.swift in Sources */,
 				B8B5068D2A5D019900B3EAED /* RealTimeGame+Friends.swift in Sources */,
+				AA9741E72A6EBF8F0027DE48 /* Ball.swift in Sources */,
 				B8B5069B2A5E3C1C00B3EAED /* RealTimeGame+GKLocalPlayerListener.swift in Sources */,
 				B87998522A5BACBE00167597 /* QAQAApp.swift in Sources */,
+				AA9741E92A6EBFAA0027DE48 /* GyroscopeManager.swift in Sources */,
 				B8B506852A5CF50400B3EAED /* RealTimeGame+GKMatchDelegate.swift in Sources */,
 				60EB427B2A5E44880030286C /* UIScreen+Extension.swift in Sources */,
 				B8B5068A2A5D00BE00B3EAED /* RealTimeGame.swift in Sources */,
 				AA9CD3FE2A643B6200B9A030 /* HapticFeedbackManager.swift in Sources */,
 				B8B506992A5E2C9500B3EAED /* Color+Extension.swift in Sources */,
 				B8B506852A5CF50400B3EAED /* RealTimeGame+GKMatchDelegate.swift in Sources */,
+				AA9741ED2A6EC0290027DE48 /* Content_test.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
