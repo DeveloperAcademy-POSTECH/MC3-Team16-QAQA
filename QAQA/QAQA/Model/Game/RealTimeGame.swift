@@ -36,8 +36,7 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
     @Published var opponentScore = 0
     
     // TopicUser
-    @Published var topicUser: GKPlayer? = nil
-    @Published var topicUserAvatar = Image(systemName: "person.crop.circle")
+    @Published var topicUserName: String = "TopicUserName"
     
     // The voice chat properties.
     @Published var voiceChat: GKVoiceChat? = nil
@@ -56,11 +55,6 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
     /// The opponent's name.
     var opponentName: String {
         opponent?.displayName ?? "Invitation Pending"
-    }
-    
-    /// The topicUser's name.
-    var topicUserName: String {
-        topicUser?.displayName ?? "None"
     }
     
     /// The root view controller of the window.
@@ -162,7 +156,6 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
     // match는 리얼타임매치를 나타내는 object입니다.
     /// - Tag:startMyMatchWith
     func startMyMatchWith(match: GKMatch) {
-        createRandomTopicUser() // TODO: 랜덤생성 함수 위치 변경 예정
         GKAccessPoint.shared.isActive = false // TODO: ??
         playingGame = true // playingGame 부울값을 true로
         myMatch = match // myMatch는 GKMatch를 전달
@@ -171,6 +164,7 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
         // 오토매치일 때, 아바타를 로드하기 전에 상대가 매치에 연결되었는지를 확인합니다.
         if myMatch?.expectedPlayerCount == 0 { // 초대받은 플레이어가 모두 연결된 경우
             opponent = myMatch?.players[0] // 내 매치의 0번째 플레이어를 opponent로 둡니다. - 임의로 두는 것임.. 스코어 기록하려면 이거 구조를 아예 바꿔줘야할 듯??
+            createRandomTopicUser(match: myMatch!)
             
             // 상대방의 아바타를 로드합니다.
             opponent?.loadPhoto(for: GKPlayer.PhotoSize.small) { (image, error) in
@@ -288,17 +282,13 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
         })
     }
     
-    func createRandomTopicUser() {
-        topicUser = myMatch?.players.randomElement() // 이 함수 실행시킨 뒤에 이름, 프로필 불러오면 됨
-        
-        topicUser?.loadPhoto(for: GKPlayer.PhotoSize.small) { (image, error) in
-            if let image {
-                self.topicUserAvatar = Image(uiImage: image)
-            }
-            if let error {
-                print("Error: \(error.localizedDescription).")
-            }
+    func createRandomTopicUser(match: GKMatch) {
+        var allUserName: [String] = []
+        for player in match.players {
+            allUserName.append(player.displayName)
         }
+        allUserName.append(myName)
+        topicUserName = allUserName.randomElement()!
     }
     
     func pushGoodReaction() {
