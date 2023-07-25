@@ -20,10 +20,9 @@ struct HintView: View {
             Spacer()
                 .frame(height: 20)
             Picker("HintMode", selection: $selectedHint) {
-                ForEach(HintState.allCases) { hintMode in
-                    Text(hintMode.rawValue.capitalized)
+                Text("재미").tag(HintState.fun)
+                Text("진지").tag(HintState.serious)
                 }
-            }
             .frame(width: 250)
             .pickerStyle(.segmented)
             .onChange(of: selectedHint, perform: { _ in
