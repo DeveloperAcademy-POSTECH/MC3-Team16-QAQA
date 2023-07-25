@@ -9,14 +9,15 @@ import SwiftUI
 
 struct TimerModalView: View {
 //    @EnvironmentObject var timerModel: TimerModel
-    @EnvironmentObject var game: RealTimeGame
+    @EnvironmentObject var gameTimerModel: RealTimeGame
+    @ObservedObject var game: RealTimeGame
     @Environment(\.presentationMode) var presentation
     @State var timeContainerWidth:CGFloat = 250
     @State var paddingHeight:CGFloat = 10
     @State var restartButtonColor: Color = Color.blue.opacity(0.8)
     var body: some View {
         VStack(alignment: .center){
-            game.displayTime(false)
+            gameTimerModel.displayTime(false)
                 .font(.system(size: 70))
                 .fontWeight(.bold)
                 .foregroundColor(.black)
@@ -28,7 +29,9 @@ struct TimerModalView: View {
             
             Button(action: {
 //                timerModel.isTimer.toggle()
+//                gameTimerModel.showTimerModal.toggle()
                 presentation.wrappedValue.dismiss()
+                print("\(game.showTimerModal)")
             }, label: {
                 ZStack{
                     RoundedRectangle(cornerRadius: 20)
@@ -40,14 +43,19 @@ struct TimerModalView: View {
                 }
             })
             .padding(.bottom,paddingHeight * 0.3)
+            .onChange(of: game.showTimerModal, perform: { _ in
+                game.timerModalController()
+                presentation.wrappedValue.dismiss()
+            })
         }
+        
         
     }
 }
 
 struct TimerModalView_Previews: PreviewProvider {
     static var previews: some View {
-        TimerModalView()
+        TimerModalView(game:RealTimeGame())
             .environmentObject(RealTimeGame())
     }
 }

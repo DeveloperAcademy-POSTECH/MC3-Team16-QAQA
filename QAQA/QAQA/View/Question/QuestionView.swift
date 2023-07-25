@@ -12,7 +12,7 @@ struct QuestionView: View {
     @EnvironmentObject var gameTimerModel: RealTimeGame
     @ObservedObject var game: RealTimeGame
     @State private var showHintModal = false
-    @State var showTimerModal = false
+//    @State var showTimerModal = false
     @State var showFinishModal = false
     @State private var userName = "UserName"
     @State var isShowingOutroView = false
@@ -24,21 +24,29 @@ struct QuestionView: View {
                     Spacer()
                         .frame(width: 16)
                     Button {
-                        gameTimerModel.isTimer.toggle()
-                        showTimerModal = true// action
+                        game.isTimer.toggle()
+                        game.showTimerModal = true  // action
+                        game.timerModalController()
                     } label: {
                         Image(systemName: "pause.fill" )
                             .foregroundColor(Color("pauseTextColor"))
                             .padding(15)
                             .background(Circle().foregroundColor(Color("pauseButtonColor")))
                     }
-                    .sheet(isPresented: $showTimerModal){
-                        TimerModalView(game: _gameTimerModel)
+                    .sheet(isPresented: $game.showTimerModal){
+                        TimerModalView(gameTimerModel: _gameTimerModel, game: RealTimeGame())
                             .presentationDetents([.height(257)])
                             .presentationCornerRadius(32)
                             .padding(.top, 30)
+                            .onAppear{
+                                gameTimerModel.isTimer.toggle()
+                            }
                             .onDisappear{
                                 gameTimerModel.isTimer.toggle()
+                                game.showTimerModal = false 
+                                game.timerModalController()
+                                print("\(game.showTimerModal)")
+                                
                             }
                     }
                     TimerView(game: game, isShowingOutroView: $isShowingOutroView, width:100)
