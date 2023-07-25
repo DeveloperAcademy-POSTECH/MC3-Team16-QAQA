@@ -57,15 +57,16 @@ extension RealTimeGame: GKMatchDelegate {
         let gameData = decode(matchData: data)
         
         // Update the interface from the game data.
-        if let text = gameData?.message {
-            // Add the message to the chat view.
-//            let message = Message(content: text, playerName: player.displayName, isLocalPlayer: false)
-//            messages.append(message)
-        } else if let score = gameData?.score {
+        if let score = gameData?.score {
             // Show the opponent's score.
             opponentScore = score
         } else if let outcome = gameData?.outcome {
             gameIsEnd = true
+        } else if let reaction = gameData?.isPlayingReaction, let reactionState = gameData?.isGoodReaction {
+            withAnimation(.spring(response: 0.2,dampingFraction: 0.25,blendDuration: 0.0)){
+                playReaction = reaction
+                isGoodReaction = reactionState
+            }
         }
     }
 }

@@ -23,10 +23,10 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
     @Published var automatch = false
     
     // Outcomes of the game for notifing players.
+    // 공유될 변수
     @Published var gameIsEnd = false
-//    @Published var opponentForfeit = false
-//    @Published var youWon = false
-//    @Published var opponentWon = false
+    @Published var playReaction = false
+    @Published var isGoodReaction = false
     
     // The match information.
     @Published var myAvatar = Image(systemName: "person.crop.circle")
@@ -42,8 +42,6 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
     // The voice chat properties.
     @Published var voiceChat: GKVoiceChat? = nil
     @Published var opponentSpeaking = false
-
-//    @Published var
     
     /// The name of the match.
     var matchName: String {
@@ -214,7 +212,6 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
     /// Quits a match and saves the game data.
     /// - Tag:endMatch
     func endMatch() {
-        let myOutcome = myScore >= opponentScore ? "won" : "lost"
         let opponentOutcome = opponentScore > myScore ? "won" : "lost"
 
         // Notify the opponent that they won or lost, depending on the score.
@@ -224,13 +221,6 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
         } catch {
             print("Error: \(error.localizedDescription).")
         }
-
-//        // Notify the local player that they won or lost.
-//        if myOutcome == "won" {
-//            youWon = true
-//        } else {
-//            opponentWon = true
-//        }
         gameIsEnd = true
     }
 
@@ -257,9 +247,6 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
         opponentAvatar = Image(systemName: "person.crop.circle")
         GKAccessPoint.shared.isActive = true
         gameIsEnd = false
-//        opponentForfeit = false
-//        youWon = false
-//        opponentWon = false
 
         // Reset the score.
         myScore = 0
@@ -311,6 +298,15 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
             if let error {
                 print("Error: \(error.localizedDescription).")
             }
+        }
+    }
+    
+    func pushGoodReaction() {
+        do {
+            let data = encode(playReaction: playReaction, isGoodReaction: isGoodReaction) // TODO: - Encode가 뭐하는 애임??
+            try myMatch?.sendData(toAllPlayers: data!, with: GKMatch.SendDataMode.unreliable)
+        } catch {
+            print("Error: \(error.localizedDescription).")
         }
     }
 }
