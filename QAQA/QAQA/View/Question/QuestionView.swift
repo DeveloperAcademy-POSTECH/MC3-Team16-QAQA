@@ -75,25 +75,26 @@ struct QuestionView: View {
                 } //Timer와 끝내기 버튼
                 ZStack{ //QuestionView의 메인 내용과 ReactionView를 ZStack으로 쌓아놓기
                     VStack{ //QuestionView의 메인 내용(프로필과 질문버튼, 리액션버튼)
-                        Group{
-                            Spacer()
-                                .frame(height: 10)
-                            Text("\(userName)")
-                                .font(.custom("BMJUAOTF", size: 24))
-                            Spacer()
-                                .frame(height: 50)
+                        Group {
                             ZStack{
-                                RoundedRectangle(cornerRadius: 20)
-                                    .foregroundColor(Color("hintViewYellow"))
-                                    .frame(width: 358, height: 332)
-                                HintView()
+                                Image("questionBubble")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: 211)
+                                VStack{
+                                    Text("오늘의 주인공")
+                                        .font(.custom("BMJUAOTF", size: 15))
+                                    Text("\(userName)")
+                                        .font(.custom("BMJUAOTF", size: 25))
+                                }
                             }
+                              Image("questionQaqa")
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 140)
+                                HintView()
                             Spacer()
                                 .frame(height: 30)
-                            ZStack{
-                                RoundedRectangle(cornerRadius: 103)
-                                    .foregroundColor(.gray.opacity(0.1))
-                                    .frame(width: 393, height: 206)
                                 HStack{
                                     Button(action: { //reaaction button action
                                         reactionState = true
@@ -107,22 +108,15 @@ struct QuestionView: View {
                                         })
                                     }, label: { //킹정버튼
                                         VStack(alignment:.center){
-                                            ZStack{
-                                                Image("greenButton")
+                                                Image("reactionButton_Good")
                                                     .resizable()
                                                     .frame(width: 153, height: 138)
                                                     .padding(.trailing ,10)
-                                                Image("star")
-                                                    .resizable()
-                                                    .frame(width:64, height: 61)
-                                                    .padding(.trailing,10)
-                                                    .padding(.bottom, 15)
-                                            }
-                                            Text("킹정")
-                                                .font(.custom("BMJUAOTF", size: 20))
-                                                .foregroundColor(Color("reactionGoodColor"))
-                                                .bold()
-                                                .padding(.trailing, 15)
+//                                            Text("킹정")
+//                                                .font(.custom("BMJUAOTF", size: 20))
+//                                                .foregroundColor(Color("reactionGoodColor"))
+//                                                .bold()
+//                                                .padding(.trailing, 15)
                                         }
                                     })
                                     Button(action: {
@@ -137,26 +131,18 @@ struct QuestionView: View {
                                         })//에바버튼 액션
                                     }, label: { //에바버튼
                                         VStack(alignment:.center){
-                                            ZStack{
-                                                Image("orangeButton")
+                                                Image("reactionButton_Bad")
                                                     .resizable()
                                                     .frame(width: 153, height: 138)
                                                     .padding(.leading ,10)
-                                                Image("questionMark")
-                                                    .resizable()
-                                                    .frame(width:64, height: 61)
-                                                    .padding(.leading,10)
-                                                    .padding(.bottom, 15)
-                                            }
-                                            Text("에바")
-                                                .font(.custom("BMJUAOTF", size: 20))
-                                                .foregroundColor(Color("reactionQuestionColor"))
-                                                .bold()
-                                                .padding(.leading, 15)
+//                                            Text("에바")
+//                                                .font(.custom("BMJUAOTF", size: 20))
+//                                                .foregroundColor(Color("reactionQuestionColor"))
+//                                                .bold()
+//                                                .padding(.leading, 15)
                                         }
                                     })
                                 }
-                            }
                         }
                     }
                     //ReactionView
