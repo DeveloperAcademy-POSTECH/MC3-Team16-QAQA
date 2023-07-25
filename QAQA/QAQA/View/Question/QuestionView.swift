@@ -13,8 +13,6 @@ struct QuestionView: View {
     @State private var showHintModal = false
     @State var showTimerModal = false
     @State var showFinishModal = false
-    @State var reactionState = false //킹정인지 에바인지 구분하는 변수
-    
     @State private var userName = "UserName"
     @State var isShowingOutroView = false
     
@@ -95,7 +93,7 @@ struct QuestionView: View {
                                     .frame(width: 393, height: 206)
                                 HStack{
                                     Button(action: { //reaaction button action
-                                        reactionState = true // 킹정
+                                        game.isGoodReaction = true // 킹정
                                         withAnimation(.spring(response: 0.2,dampingFraction: 0.25,blendDuration: 0.0)){
                                             game.playReaction.toggle()
                                             game.pushGoodReaction()
@@ -127,7 +125,7 @@ struct QuestionView: View {
                                         }
                                     })
                                     Button(action: {
-                                        reactionState = false
+                                        game.isGoodReaction = false
                                         withAnimation(.spring(response: 0.2,dampingFraction: 0.25,blendDuration: 0.0)){
                                             game.playReaction.toggle()
                                             game.pushGoodReaction()
@@ -163,7 +161,7 @@ struct QuestionView: View {
                         }
                     }
                     //ReactionView
-                    ReactionView(game: RealTimeGame(),isReaction: $game.playReaction, reactionState: self.$reactionState)
+                    ReactionView(game: RealTimeGame(),isReaction: $game.playReaction, reactionState: self.$game.isGoodReaction)
                         .opacity(                                            game.playReaction ? 1 : 0)
                 }
             }

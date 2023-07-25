@@ -26,6 +26,7 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
     // 공유될 변수
     @Published var gameIsEnd = false
     @Published var playReaction = false
+    @Published var isGoodReaction = false
     
     // The match information.
     @Published var myAvatar = Image(systemName: "person.crop.circle")
@@ -302,7 +303,7 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
     
     func pushGoodReaction() {
         do {
-            let data = encode(playReaction: playReaction) // TODO: - Encode가 뭐하는 애임??
+            let data = encode(playReaction: playReaction, isGoodReaction: isGoodReaction) // TODO: - Encode가 뭐하는 애임??
             try myMatch?.sendData(toAllPlayers: data!, with: GKMatch.SendDataMode.unreliable)
         } catch {
             print("Error: \(error.localizedDescription).")
