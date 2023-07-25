@@ -15,12 +15,12 @@ struct FinishModalView: View {
         VStack{
             Text("활동을 끝내시겠어요?")
                 .bold()
-                .font(.system(size: 28))
+                .font(.custom("BMJUAOTF", size: 28))
                 .padding(19)
             Text("팀원들 모두 종료됩니다")
                 .foregroundColor(.gray)
                 .bold()
-                .font(.system(size: 16))
+                .font(.custom("BMJUAOTF", size: 16))
                 .padding(.bottom, 42)
             Button{
                 presentation.wrappedValue.dismiss()
@@ -30,7 +30,7 @@ struct FinishModalView: View {
             } label: {
                 Text("종료하기")
                     .foregroundColor(.white)
-                    .font(.system(size: 16))
+                    .font(.custom("BMJUAOTF", size: 16))
                     .fontWeight(.bold)
                     .frame(width: 361, height: 60)
                     .background(RoundedRectangle(cornerRadius: 16)

@@ -41,13 +41,13 @@ struct HintView: View {
             switch selectedHint {
             case .fun :
                 Text("\(randomFunQuestion)")
-                    .font(.system(size: 32, weight: .bold))
+                    .font(.custom("BMJUAOTF", size: 32))
                     .frame(width: 327, height: 114)
                     .minimumScaleFactor(0.5)
                     .multilineTextAlignment(.center)
             case .serious :
                 Text("\(randomSeriousQuestion)")
-                    .font(.system(size: 32, weight: .bold))
+                    .font(.custom("BMJUAOTF", size: 32))
                     .frame(width: 327, height: 114)
                     .minimumScaleFactor(0.5)
                     .multilineTextAlignment(.center)
@@ -65,7 +65,7 @@ struct HintView: View {
                 HStack {
                     Image(systemName: "dice.fill")
                     Text("질문 뽑기")
-                } .font(.system(size: 20, weight: .bold))
+                } .font(.custom("BMJUAOTF", size: 20))
                     .foregroundColor(.white)
                     .padding([.leading, .trailing], 30)
                     .padding([.top, .bottom], 14)

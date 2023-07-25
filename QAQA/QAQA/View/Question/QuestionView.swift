@@ -22,17 +22,20 @@ struct QuestionView: View {
     var body: some View {
         ZStack {
             VStack{
+                Spacer()
+                    .frame(width: 16)
                 HStack{
                     Spacer()
-                        .frame(width: 16)
+                        .frame(width: 20)
                     Button {
                         timerModel.isTimer.toggle()
                         showTimerModal = true// action
                     } label: {
-                        Image(systemName: "pause.fill" )
-                            .foregroundColor(Color("pauseTextColor"))
+                        Image(systemName: "pause.fill")
+                            .font(.system(size: 20))
+                            .foregroundColor(.white)
                             .padding(15)
-                            .background(Circle().foregroundColor(Color("pauseButtonColor")))
+                            .background(Circle().foregroundColor(Color("pauseButtonYellow")))
                     }
                     .sheet(isPresented: $showTimerModal){
                         TimerModalView()
@@ -43,19 +46,16 @@ struct QuestionView: View {
                                 timerModel.isTimer.toggle()
                             }
                     }
-                    TimerView(width:100)
+                    TimerView(width: 80)
                     Spacer()
+                        .frame(width: 130)
                     Button{
                         showFinishModal.toggle()
                     } label: {
-                        ZStack{
-                            RoundedRectangle(cornerRadius: 12)
-                                .foregroundColor(Color("finishButtonColor"))
-                                .frame(width: 77, height: 44)
-                            Text("끝내기")
-                                .foregroundColor(.red)
-                                .bold()
-                        }
+                        Image("endButton")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 80)
                     }
                     .sheet(isPresented: $showFinishModal, content: {
                         FinishModalView(isShowingOutroView: $isShowingOutroView, game: game) //TODO: View 바꾸기
@@ -79,13 +79,13 @@ struct QuestionView: View {
                             Spacer()
                                 .frame(height: 10)
                             Text("\(userName)")
-                                .font(.system(size: 24, weight: .bold))
+                                .font(.custom("BMJUAOTF", size: 24))
                             Spacer()
-                                .frame(height: 24)
+                                .frame(height: 50)
                             ZStack{
-                                RoundedRectangle(cornerRadius: 40)
-                                    .foregroundColor(.gray.opacity(0.1))
-                                    .frame(width: 361, height: 400)
+                                RoundedRectangle(cornerRadius: 20)
+                                    .foregroundColor(Color("hintViewYellow"))
+                                    .frame(width: 358, height: 332)
                                 HintView()
                             }
                             Spacer()
@@ -119,7 +119,7 @@ struct QuestionView: View {
                                                     .padding(.bottom, 15)
                                             }
                                             Text("킹정")
-                                                .font(.system(size: 20))
+                                                .font(.custom("BMJUAOTF", size: 20))
                                                 .foregroundColor(Color("reactionGoodColor"))
                                                 .bold()
                                                 .padding(.trailing, 15)
@@ -149,7 +149,7 @@ struct QuestionView: View {
                                                     .padding(.bottom, 15)
                                             }
                                             Text("에바")
-                                                .font(.system(size: 20))
+                                                .font(.custom("BMJUAOTF", size: 20))
                                                 .foregroundColor(Color("reactionQuestionColor"))
                                                 .bold()
                                                 .padding(.leading, 15)

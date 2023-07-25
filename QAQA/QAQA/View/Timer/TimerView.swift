@@ -17,7 +17,7 @@ struct TimerView: View {
         ZStack{
             VStack(spacing: 10 * timerSizeMultiplier){
                 timerModel.displayTime()
-                    .font(.system(size: 30 * timerSizeMultiplier).bold())
+                    .font(.custom("BMJUAOTF", size: 30 * timerSizeMultiplier))
                     .frame(width: width * timerSizeMultiplier, height: height * timerSizeMultiplier)
                     .foregroundColor(.black)
                 
