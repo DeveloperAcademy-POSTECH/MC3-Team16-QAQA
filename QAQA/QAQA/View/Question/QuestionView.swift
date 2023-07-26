@@ -8,15 +8,12 @@
 import SwiftUI
 
 struct QuestionView: View {
-    @EnvironmentObject var timerModel: TimerModel
+//    @EnvironmentObject var timerModel: TimerModel
+    @EnvironmentObject var gameTimerModel: RealTimeGame
     @ObservedObject var game: RealTimeGame
     @State private var showHintModal = false
-    @State var showTimerModal = false
+//    @State var showTimerModal = false
     @State var showFinishModal = false
-    @State var isReaction = false //리액션뷰를 온오프하는 변수
-    @State var reactionState = false //킹정인지 에바인지 구분하는 변수
-    
-    @State private var userName = "UserName"
     @State var isShowingOutroView = false
     
     var body: some View {
@@ -28,8 +25,9 @@ struct QuestionView: View {
                     Spacer()
                         .frame(width: 20)
                     Button {
-                        timerModel.isTimer.toggle()
-                        showTimerModal = true// action
+                        game.isTimer.toggle()
+                        game.showTimerModal = true  // action
+                        game.timerModalController()
                     } label: {
                         Image(systemName: "pause.fill")
                             .font(.system(size: 20))
@@ -37,16 +35,24 @@ struct QuestionView: View {
                             .padding(15)
                             .background(Circle().foregroundColor(Color("pauseButtonYellow")))
                     }
-                    .sheet(isPresented: $showTimerModal){
-                        TimerModalView()
+                    .sheet(isPresented: $game.showTimerModal){
+                        TimerModalView(gameTimerModel: _gameTimerModel, game: RealTimeGame())
                             .presentationDetents([.height(257)])
                             .presentationCornerRadius(32)
                             .padding(.top, 30)
+                            .onAppear{
+                                gameTimerModel.isTimer.toggle()
+                            }
                             .onDisappear{
-                                timerModel.isTimer.toggle()
+                                gameTimerModel.isTimer.toggle()
+//                                game.showTimerModal = false
+                                game.timerModalController()
+                                print("\(game.showTimerModal)")
+                                
                             }
                     }
-                    TimerView(width: 80)
+                    TimerView(game: game, isShowingOutroView: $isShowingOutroView, width:100)
+                        .environmentObject(gameTimerModel)
                     Spacer()
                         .frame(width: 130)
                     Button{
@@ -64,10 +70,10 @@ struct QuestionView: View {
                             .padding(.top, 44)
                             .padding([.leading, .trailing], 16)
                             .onAppear{
-                                timerModel.isTimer.toggle()
+                                game.isTimer.toggle()
                             }
                             .onDisappear{
-                                timerModel.isTimer.toggle()
+                                game.isTimer.toggle()
                             }
                     })
                     Spacer()
@@ -76,6 +82,12 @@ struct QuestionView: View {
                 ZStack{ //QuestionView의 메인 내용과 ReactionView를 ZStack으로 쌓아놓기
                     VStack (spacing: 0) { //QuestionView의 메인 내용(프로필과 질문버튼, 리액션버튼)
                         Group {
+                            Spacer()
+                                .frame(height: 10)
+                            Text("\(game.topicUserName)")
+                                .font(.system(size: 24, weight: .bold))
+                            Spacer()
+                                .frame(height: 24)
                             ZStack{
                                 Image("questionBubble")
                                     .resizable()
@@ -99,13 +111,15 @@ struct QuestionView: View {
                                 .frame(height: 30)
                                 HStack{
                                     Button(action: { //reaaction button action
-                                        reactionState = true
+                                        game.isGoodReaction = true // 킹정
                                         withAnimation(.spring(response: 0.2,dampingFraction: 0.25,blendDuration: 0.0)){
-                                            isReaction.toggle()
+                                            game.playReaction.toggle()
+                                            game.pushGoodReaction()
                                         }
                                         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8, execute: {
                                             withAnimation(.default){
-                                                isReaction.toggle()
+                                                game.playReaction.toggle()
+                                                game.pushGoodReaction()
                                             }
                                         })
                                     }, label: { //킹정버튼
@@ -122,13 +136,15 @@ struct QuestionView: View {
                                         }
                                     })
                                     Button(action: {
-                                        reactionState = false
+                                        game.isGoodReaction = false
                                         withAnimation(.spring(response: 0.2,dampingFraction: 0.25,blendDuration: 0.0)){
-                                            isReaction.toggle()
+                                            game.playReaction.toggle()
+                                            game.pushGoodReaction()
                                         }
                                         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8, execute: {
                                             withAnimation(.default){
-                                                isReaction.toggle()
+                                                game.playReaction.toggle()
+                                                game.pushGoodReaction()
                                             }
                                         })//에바버튼 액션
                                     }, label: { //에바버튼
@@ -148,12 +164,12 @@ struct QuestionView: View {
                         }
                     }
                     //ReactionView
-                    ReactionView(game: RealTimeGame(),isReaction: self.$isReaction, reactionState: self.$reactionState)
-                        .opacity(isReaction ? 1 : 0)
+                    ReactionView(game: RealTimeGame(),isReaction: $game.playReaction, reactionState: self.$game.isGoodReaction)
+                        .opacity(                                            game.playReaction ? 1 : 0)
                 }
             }
             .onAppear {
-                userName = game.topicUserName // TODO: 안됨
+                game.topicUserName = game.topicUserName // TODO: 안됨
             }
             if (game.gameIsEnd) {
                 OutroEndingView(game: game,  isShowingOutroView: $isShowingOutroView)
@@ -164,7 +180,7 @@ struct QuestionView: View {
 
 struct QuestionView_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionView(game: RealTimeGame())
-            .environmentObject(TimerModel())
+        QuestionView(game:RealTimeGame())
+            .environmentObject(RealTimeGame())
     }
 }

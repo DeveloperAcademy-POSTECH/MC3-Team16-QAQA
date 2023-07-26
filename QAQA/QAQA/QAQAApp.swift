@@ -13,6 +13,7 @@ struct QAQAApp: App {
         WindowGroup {
             HomeView()
                 .environmentObject(TimerModel())
+                .environmentObject(RealTimeGame())
         }
     }
 }
