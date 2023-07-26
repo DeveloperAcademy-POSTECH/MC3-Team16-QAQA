@@ -21,16 +21,6 @@ extension RealTimeGame: GKMatchDelegate {
             // For automatch, set the opponent and load their avatar.
             if match.expectedPlayerCount == 0 {
                 opponent = match.players[0]
-                
-                // Load the opponent's avatar.
-                opponent?.loadPhoto(for: GKPlayer.PhotoSize.small) { (image, error) in
-                    if let image {
-                        self.opponentAvatar = Image(uiImage: image)
-                    }
-                    if let error {
-                        print("Error: \(error.localizedDescription).")
-                    }
-                }
             }
         case .disconnected:
             print("\(player.displayName) Disconnected")
@@ -60,7 +50,7 @@ extension RealTimeGame: GKMatchDelegate {
         if let score = gameData?.score {
             // Show the opponent's score.
             opponentScore = score
-        } else if let outcome = gameData?.outcome {
+        } else if (gameData?.outcome) != nil {
             gameIsEnd = true
         } else if let reaction = gameData?.isPlayingReaction, let reactionState = gameData?.isGoodReaction {
             withAnimation(.spring(response: 0.2,dampingFraction: 0.25,blendDuration: 0.0)){

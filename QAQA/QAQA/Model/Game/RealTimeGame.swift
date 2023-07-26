@@ -30,17 +30,12 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
     
     // The match information.
     @Published var myAvatar = Image(systemName: "person.crop.circle")
-    @Published var opponentAvatar = Image(systemName: "person.crop.circle")
     @Published var opponent: GKPlayer? = nil
     @Published var myScore = 0
     @Published var opponentScore = 0
     
     // TopicUser
     @Published var topicUserName: String = "TopicUserName"
-    
-    // The voice chat properties.
-    @Published var voiceChat: GKVoiceChat? = nil
-    @Published var opponentSpeaking = false
     
     /// The name of the match.
     var matchName: String {
@@ -165,16 +160,6 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
         if myMatch?.expectedPlayerCount == 0 { // 초대받은 플레이어가 모두 연결된 경우
             opponent = myMatch?.players[0] // 내 매치의 0번째 플레이어를 opponent로 둡니다. - 임의로 두는 것임.. 스코어 기록하려면 이거 구조를 아예 바꿔줘야할 듯??
             createRandomTopicUser(match: myMatch!)
-            
-            // 상대방의 아바타를 로드합니다.
-            opponent?.loadPhoto(for: GKPlayer.PhotoSize.small) { (image, error) in
-                if let image {
-                    self.opponentAvatar = Image(uiImage: image)
-                }
-                if let error {
-                    print("Error: \(error.localizedDescription).")
-                }
-            }
         }
             
         // Increment the achievement to play 10 games.
@@ -236,9 +221,7 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
         myMatch?.disconnect()
         myMatch?.delegate = nil
         myMatch = nil
-        voiceChat = nil
         opponent = nil
-        opponentAvatar = Image(systemName: "person.crop.circle")
         GKAccessPoint.shared.isActive = true
         gameIsEnd = false
 
