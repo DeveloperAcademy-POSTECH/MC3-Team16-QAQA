@@ -12,7 +12,7 @@ struct QuestionView: View {
     @EnvironmentObject var gameTimerModel: RealTimeGame
     @ObservedObject var game: RealTimeGame
     @State private var showHintModal = false
-    //    @State var showTimerModal = false
+//        @State var showTimerModal = false
     @State var showFinishModal = false
     @State var isShowingOutroView = false
     
@@ -36,10 +36,13 @@ struct QuestionView: View {
                             .background(Circle().foregroundColor(.pauseButtonYellow))
                     }
                     .sheet(isPresented: $game.showTimerModal){
-                        TimerModalView(gameTimerModel: _gameTimerModel, game: RealTimeGame())
+                        TimerModalView()
+                            .presentationBackground(.clear)
                             .presentationDetents([.height(257)])
-                            .presentationCornerRadius(32)
                             .padding(.top, 30)
+//                            .onTapGesture {
+//                                showTimerModal = false
+//                            }
                             .onAppear{
                                 gameTimerModel.isTimer.toggle()
                             }
