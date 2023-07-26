@@ -115,7 +115,8 @@ struct QuestionView: View {
                 }
                 
                 HStack{
-                    Button(action: { //reaaction button action
+                    Button(action: { //reaction button action
+                        SoundSetting.instance.playSound(sound: .kingjung)
                         game.isGoodReaction = true // 킹정
                         withAnimation(.spring(response: 0.2, blendDuration: 0.0)){
                             game.playReaction.toggle()
@@ -141,6 +142,7 @@ struct QuestionView: View {
                         }
                     })
                     Button(action: {
+                        SoundSetting.instance.playSound(sound: .eva)
                         game.isGoodReaction = false
                         withAnimation(.spring(response: 0.2, blendDuration: 0.0)){
                             game.playReaction.toggle()
