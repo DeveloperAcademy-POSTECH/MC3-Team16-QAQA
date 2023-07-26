@@ -15,34 +15,15 @@ struct ReactionView: View {
         ZStack{
             Color.white
             VStack{
-                ZStack{
-                    Circle() //reaction용 서클
-                        .frame(width:220)
-                        .foregroundColor(reactionState ? Color("reactionGoodColor") : Color("reactionQuestionColor"))
-                        .overlay(
-                            Circle()
-                                .stroke(lineWidth: 5)
-                                .foregroundColor(.white)
-                        )
-                    if reactionState == true {
-                        Image("star")
-                            .resizable()
-                            .frame(width:137, height:129)
-                            .offset(x: isReaction ? 0 : -100, y: isReaction ? 0 : 380)
-                    }
-                    else{
-                        Image("questionMark")
-                            .resizable()
-                            .frame(width:137, height:137)
-                            .offset(x: isReaction ? 0 : 100, y: isReaction ? 0 : 380)
-                    }
-                    
-                        
+                Spacer()
+                    .frame(height: 130)
+                if reactionState == true {
+                    ReactionLottieView(jsonName:"goodReactionLottie")
+                        .frame(width: 390, height: 390)
+                } else {
+                    ReactionLottieView(jsonName:"badReactionLottie")
+                        .frame(width: 390, height: 390)
                 }
-                Image(reactionState ? "kingjung" : "eva")
-                    .resizable()
-                    .frame(width: 192, height:90)
-                    .padding(60)
                 Text("by Your Teammates") //리액션을 누를 사람의 이름 뜨는 곳
                     .font(.system(size:20))
                     .foregroundColor(.gray)
@@ -52,8 +33,8 @@ struct ReactionView: View {
                     .frame(width: 80, height: 80)
                     .clipShape(Circle())
                     .opacity(0)
-                
             }
+            .frame(height: 541)
         }
         
     }

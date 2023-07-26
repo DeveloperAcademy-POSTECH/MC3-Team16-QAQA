@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct QuestionView: View {
-//    @EnvironmentObject var timerModel: TimerModel
+    //    @EnvironmentObject var timerModel: TimerModel
     @EnvironmentObject var gameTimerModel: RealTimeGame
     @ObservedObject var game: RealTimeGame
     @State private var showHintModal = false
-//    @State var showTimerModal = false
+    //    @State var showTimerModal = false
     @State var showFinishModal = false
     @State var isShowingOutroView = false
     
@@ -45,7 +45,7 @@ struct QuestionView: View {
                             }
                             .onDisappear{
                                 gameTimerModel.isTimer.toggle()
-//                                game.showTimerModal = false
+                                //                                game.showTimerModal = false
                                 game.timerModalController()
                                 print("\(game.showTimerModal)")
                                 
@@ -93,76 +93,78 @@ struct QuestionView: View {
                                     Text("오늘의 주인공")
                                         .font(.custom("BMJUAOTF", size: 15))
                                     Text("\(game.topicUserName)")
-                                        .font(.custom("BMJUAOTF", size: 25))
+                                        .font(.custom("BMJUAOTF", size: 20))
                                     Spacer()
-                                        .frame(height: 10)
+                                        .frame(height: 15)
                                 }
                             }
-                              Image("questionQaqa")
+                            Image("questionQaqa")
                                 .resizable()
                                 .scaledToFill()
                                 .frame(width: 140)
-                                HintView()
+                            HintView()
                             Spacer()
                                 .frame(height: 30)
-                                HStack{
-                                    Button(action: { //reaaction button action
-                                        game.isGoodReaction = true // 킹정
-                                        withAnimation(.spring(response: 0.2,dampingFraction: 0.25,blendDuration: 0.0)){
-                                            game.playReaction.toggle()
-                                            game.pushGoodReaction()
-                                        }
-                                        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8, execute: {
-                                            withAnimation(.default){
-                                                game.playReaction.toggle()
-                                                game.pushGoodReaction()
-                                            }
-                                        })
-                                    }, label: { //킹정버튼
-                                        VStack(alignment:.center){
-                                                Image("reactionButton_Good")
-                                                    .resizable()
-                                                    .frame(width: 153, height: 138)
-                                                    .padding(.trailing ,10)
-//                                            Text("킹정")
-//                                                .font(.custom("BMJUAOTF", size: 20))
-//                                                .foregroundColor(Color("reactionGoodColor"))
-//                                                .bold()
-//                                                .padding(.trailing, 15)
-                                        }
-                                    })
-                                    Button(action: {
-                                        game.isGoodReaction = false
-                                        withAnimation(.spring(response: 0.2,dampingFraction: 0.25,blendDuration: 0.0)){
-                                            game.playReaction.toggle()
-                                            game.pushGoodReaction()
-                                        }
-                                        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8, execute: {
-                                            withAnimation(.default){
-                                                game.playReaction.toggle()
-                                                game.pushGoodReaction()
-                                            }
-                                        })//에바버튼 액션
-                                    }, label: { //에바버튼
-                                        VStack(alignment:.center){
-                                                Image("reactionButton_Bad")
-                                                    .resizable()
-                                                    .frame(width: 153, height: 138)
-                                                    .padding(.leading ,10)
-//                                            Text("에바")
-//                                                .font(.custom("BMJUAOTF", size: 20))
-//                                                .foregroundColor(Color("reactionQuestionColor"))
-//                                                .bold()
-//                                                .padding(.leading, 15)
-                                        }
-                                    })
-                                }
                         }
                     }
-                    //ReactionView
-                    ReactionView(game: RealTimeGame(),isReaction: $game.playReaction, reactionState: self.$game.isGoodReaction)
-                        .opacity(                                            game.playReaction ? 1 : 0)
+                        //ReactionView
+                        ReactionView(game: RealTimeGame(),isReaction: $game.playReaction, reactionState: self.$game.isGoodReaction)
+                            .opacity(game.playReaction ? 1 : 0)
                 }
+                
+                HStack{
+                    Button(action: { //reaaction button action
+                        game.isGoodReaction = true // 킹정
+                        withAnimation(.spring(response: 0.2, blendDuration: 0.0)){
+                            game.playReaction.toggle()
+                            game.pushGoodReaction()
+                        }
+                        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8, execute: {
+                            withAnimation(.default){
+                                game.playReaction.toggle()
+                                game.pushGoodReaction()
+                            }
+                        })
+                    }, label: { //킹정버튼
+                        VStack(alignment:.center){
+                            Image("reactionButton_Good")
+                                .resizable()
+                                .frame(width: 153, height: 138)
+                                .padding(.trailing ,10)
+                            //                                            Text("킹정")
+                            //                                                .font(.custom("BMJUAOTF", size: 20))
+                            //                                                .foregroundColor(Color("reactionGoodColor"))
+                            //                                                .bold()
+                            //                                                .padding(.trailing, 15)
+                        }
+                    })
+                    Button(action: {
+                        game.isGoodReaction = false
+                        withAnimation(.spring(response: 0.2, blendDuration: 0.0)){
+                            game.playReaction.toggle()
+                            game.pushGoodReaction()
+                        }
+                        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8, execute: {
+                            withAnimation(.default){
+                                game.playReaction.toggle()
+                                game.pushGoodReaction()
+                            }
+                        })//에바버튼 액션
+                    }, label: { //에바버튼
+                        VStack(alignment:.center){
+                            Image("reactionButton_Bad")
+                                .resizable()
+                                .frame(width: 153, height: 138)
+                                .padding(.leading ,10)
+                            //                                            Text("에바")
+                            //                                                .font(.custom("BMJUAOTF", size: 20))
+                            //                                                .foregroundColor(Color("reactionQuestionColor"))
+                            //                                                .bold()
+                            //                                                .padding(.leading, 15)
+                        }
+                    })
+                }
+                
             }
             .onAppear {
                 game.topicUserName = game.topicUserName // TODO: 안됨

@@ -40,6 +40,9 @@
 		C5C7E7F02A6F7134000A3CCC /* BMJUAOTF.otf in Resources */ = {isa = PBXBuildFile; fileRef = C5C7E7EF2A6F7134000A3CCC /* BMJUAOTF.otf */; };
 		C5C7E7F22A70B017000A3CCC /* ReactionLottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C7E7F12A70B017000A3CCC /* ReactionLottieView.swift */; };
 		C5C7E7F52A70BD5A000A3CCC /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = C5C7E7F42A70BD5A000A3CCC /* Lottie */; };
+		C5C7E7FD2A70C987000A3CCC /* badReactionLottie.json in Resources */ = {isa = PBXBuildFile; fileRef = C5C7E7FC2A70C987000A3CCC /* badReactionLottie.json */; };
+		C5C7E7FF2A70C98D000A3CCC /* goodReactionLottie.json in Resources */ = {isa = PBXBuildFile; fileRef = C5C7E7FE2A70C98D000A3CCC /* goodReactionLottie.json */; };
+		C5C7E8012A70CACD000A3CCC /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C7E8002A70CACD000A3CCC /* LoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +81,9 @@
 		C5C7E7EC2A6F5F07000A3CCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C5C7E7EF2A6F7134000A3CCC /* BMJUAOTF.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BMJUAOTF.otf; sourceTree = "<group>"; };
 		C5C7E7F12A70B017000A3CCC /* ReactionLottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionLottieView.swift; sourceTree = "<group>"; };
+		C5C7E7FC2A70C987000A3CCC /* badReactionLottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = badReactionLottie.json; sourceTree = "<group>"; };
+		C5C7E7FE2A70C98D000A3CCC /* goodReactionLottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = goodReactionLottie.json; sourceTree = "<group>"; };
+		C5C7E8002A70CACD000A3CCC /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +129,9 @@
 				C5C61B982A5E583C00FB8854 /* HintView.swift */,
 				602BD3022A6456BF00F9E345 /* ReactionView.swift */,
 				C5C7E7F12A70B017000A3CCC /* ReactionLottieView.swift */,
+				C5C7E8002A70CACD000A3CCC /* LoadingView.swift */,
+				C5C7E7FC2A70C987000A3CCC /* badReactionLottie.json */,
+				C5C7E7FE2A70C98D000A3CCC /* goodReactionLottie.json */,
 			);
 			path = Question;
 			sourceTree = "<group>";
@@ -367,7 +376,9 @@
 			files = (
 				B87998592A5BACBF00167597 /* Preview Assets.xcassets in Resources */,
 				B87998562A5BACBF00167597 /* Assets.xcassets in Resources */,
+				C5C7E7FD2A70C987000A3CCC /* badReactionLottie.json in Resources */,
 				C5C7E7F02A6F7134000A3CCC /* BMJUAOTF.otf in Resources */,
+				C5C7E7FF2A70C98D000A3CCC /* goodReactionLottie.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,6 +394,7 @@
 				B87998542A5BACBE00167597 /* HomeView.swift in Sources */,
 				C5C7E7F22A70B017000A3CCC /* ReactionLottieView.swift in Sources */,
 				60EB42822A5ED99E0030286C /* TimerModel.swift in Sources */,
+				C5C7E8012A70CACD000A3CCC /* LoadingView.swift in Sources */,
 				C59F5A092A60F657007608AD /* HintState.swift in Sources */,
 				60EB42802A5ED78A0030286C /* TimerModalView.swift in Sources */,
 				60EB42792A5E437C0030286C /* TimerView.swift in Sources */,
