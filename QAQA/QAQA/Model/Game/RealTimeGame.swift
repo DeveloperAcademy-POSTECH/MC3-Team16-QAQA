@@ -33,7 +33,7 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
     @Published var topicUserName: String = "TopicUserName"
 
 
-    // 타이머 모델 변수
+    // 타이머 변수
     @Published var countMin = 10
     @Published var countSecond = 0
     @Published var showTimerModal = false
@@ -237,58 +237,48 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
         }
     }
     
-    func displayTime(_ isCount:Bool = true) -> some View{ //아규먼트 값이 true면은 카운트가 되는 시간이고(TimerView에 적용) false면은 단순히 TimerModel에서 변수만 받아와서 시간만 표기하는 함수(TimerModalView에 적용), .onReceive를 실행하는냐 아니냐의 차이
-        if isCount == true { // TODO: 코드 수정
+    func displayTime(_ isCount: Bool) -> String { //아규먼트 값이 true면은 카운트가 되는 시간이고(TimerView에 적용) false면은 단순히 TimerModel에서 변수만 받아와서 시간만 표기하는 함수(TimerModalView에 적용), .onReceive를 실행하는냐 아니냐의 차이
+        if (isCount) {
             if countSecond < 10 {
-                return  Text("\(self.countMin):0\(countSecond)")
-                    .onReceive(timer , perform: {(_) in
-                        if self.isTimer {
-                            if self.countSecond == 0 {
-                                if self.countMin == 0 {
-                                    self.isTimer = false
-                                    self.endMatch()
-                                    self.reportProgress()
-                                    return
-                                }
-                                self.countMin -= 1
-                                self.countSecond = 59
-                            }
-                            else {
-                                self.countSecond -= 1
-                            }
+                return  String("\(countMin):0\(countSecond)")
+                if isTimer {
+                    if countSecond == 0 {
+                        if countMin == 0 {
+                            isTimer = false
+                            endMatch()
+                            reportProgress()
                         }
-                    })
+                        countMin -= 1
+                        countSecond = 59
+                    }
+                    else {
+                        countSecond -= 1
+                    }
+                }
             }
-            else
-            {
-                return  Text("\(countMin):\(countSecond)")
-                    .onReceive(timer , perform: {(_) in
-                        if self.isTimer {
-                            if self.countSecond == 0 {
-                                if self.countMin == 0 {
-                                    self.isTimer = false
-                                    self.endMatch()
-                                    self.reportProgress()
-                                    return
-                                }
-                                self.countMin -= 1
-                                self.countSecond = 59
-                            }
-                            else {
-                                self.countSecond -= 1
-                            }
+            else {
+                return  String("\(countMin):\(countSecond)")
+                if isTimer {
+                    if countSecond == 0 {
+                        if countMin == 0 {
+                            isTimer = false
+                            endMatch()
+                            reportProgress()
                         }
-                    })
+                        countMin -= 1
+                        countSecond = 59
+                    }
+                    else {
+                        countSecond -= 1
+                    }
+                }
             }
         } else {
             if countSecond < 10 {
-                return  Text("\(self.countMin):0\(countSecond)")
-                    .onReceive(timer , perform: { _ in })
+                return  String("\(countMin):0\(countSecond)")
             }
-            else
-            {
-                return  Text("\(countMin):\(countSecond)")
-                    .onReceive(timer , perform: { _ in })
+            else {
+                return  String("\(countMin):\(countSecond)")
             }
         }
     }
