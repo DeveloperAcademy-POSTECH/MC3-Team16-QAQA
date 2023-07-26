@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		602BD2F92A602A3600F9E345 /* ReactionModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602BD2F82A602A3600F9E345 /* ReactionModifier.swift */; };
+		602BD3032A6456BF00F9E345 /* ReactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602BD3022A6456BF00F9E345 /* ReactionView.swift */; };
+		602BD3092A67E86600F9E345 /* FinishModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602BD3082A67E86600F9E345 /* FinishModalView.swift */; };
 		60EB42792A5E437C0030286C /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EB42782A5E437C0030286C /* TimerView.swift */; };
 		60EB427B2A5E44880030286C /* UIScreen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EB427A2A5E44880030286C /* UIScreen+Extension.swift */; };
 		60EB42802A5ED78A0030286C /* TimerModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EB427F2A5ED78A0030286C /* TimerModalView.swift */; };
@@ -18,12 +21,12 @@
 		AA9741ED2A6EC0290027DE48 /* Content_test.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9741EC2A6EC0290027DE48 /* Content_test.swift */; };
 		AA9CD3FC2A643B3F00B9A030 /* HapticTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9CD3FB2A643B3F00B9A030 /* HapticTestView.swift */; };
 		AA9CD3FE2A643B6200B9A030 /* HapticFeedbackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9CD3FD2A643B6200B9A030 /* HapticFeedbackManager.swift */; };
+		B81CFC862A6901B20012FA5A /* RealTimeGame+GKMatchDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81CFC852A6901B20012FA5A /* RealTimeGame+GKMatchDelegate.swift */; };
 		B87998522A5BACBE00167597 /* QAQAApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87998512A5BACBE00167597 /* QAQAApp.swift */; };
 		B87998542A5BACBE00167597 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87998532A5BACBE00167597 /* HomeView.swift */; };
 		B87998562A5BACBF00167597 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B87998552A5BACBF00167597 /* Assets.xcassets */; };
 		B87998592A5BACBF00167597 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B87998582A5BACBF00167597 /* Preview Assets.xcassets */; };
-		B8B506832A5CF4FA00B3EAED /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B506822A5CF4FA00B3EAED /* ViewModel.swift */; };
-		B8B506852A5CF50400B3EAED /* RealTimeGame+GKMatchDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B506842A5CF50400B3EAED /* RealTimeGame+GKMatchDelegate.swift */; };
+		B8B506832A5CF4FA00B3EAED /* HintViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B506822A5CF4FA00B3EAED /* HintViewModel.swift */; };
 		B8B5068A2A5D00BE00B3EAED /* RealTimeGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B506892A5D00BE00B3EAED /* RealTimeGame.swift */; };
 		B8B5068D2A5D019900B3EAED /* RealTimeGame+Friends.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B5068C2A5D019900B3EAED /* RealTimeGame+Friends.swift */; };
 		B8B5068F2A5D01C700B3EAED /* RealTimeGame+GKMatchmakerViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B5068E2A5D01C700B3EAED /* RealTimeGame+GKMatchmakerViewControllerDelegate.swift */; };
@@ -32,9 +35,24 @@
 		B8B506992A5E2C9500B3EAED /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B506982A5E2C9500B3EAED /* Color+Extension.swift */; };
 		B8B5069B2A5E3C1C00B3EAED /* RealTimeGame+GKLocalPlayerListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B5069A2A5E3C1C00B3EAED /* RealTimeGame+GKLocalPlayerListener.swift */; };
 		B8B5069D2A5E42D600B3EAED /* RealTimeGame+MatchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B5069C2A5E42D600B3EAED /* RealTimeGame+MatchData.swift */; };
+		B8F5747F2A63B4860028A46A /* OutroInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F5747E2A63B4860028A46A /* OutroInfoView.swift */; };
+		B8F574812A63BAB90028A46A /* OutroEndingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F574802A63BAB90028A46A /* OutroEndingView.swift */; };
+		B8F574872A63D3800028A46A /* OutroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F574862A63D3800028A46A /* OutroViewModel.swift */; };
+		B8F574892A6440CF0028A46A /* OutroCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F574882A6440CF0028A46A /* OutroCardView.swift */; };
+		B8F5748C2A64C8D30028A46A /* OutroCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F5748B2A64C8D30028A46A /* OutroCardModel.swift */; };
+		B8F574902A64DDF80028A46A /* TopicUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F5748F2A64DDF80028A46A /* TopicUserModel.swift */; };
+		C59F5A072A60F3B6007608AD /* HintModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59F5A062A60F3B6007608AD /* HintModel.swift */; };
+		C59F5A092A60F657007608AD /* HintState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59F5A082A60F657007608AD /* HintState.swift */; };
+		C5C61B992A5E583C00FB8854 /* HintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C61B982A5E583C00FB8854 /* HintView.swift */; };
+		C5C7E7F02A6F7134000A3CCC /* BMJUAOTF.otf in Resources */ = {isa = PBXBuildFile; fileRef = C5C7E7EF2A6F7134000A3CCC /* BMJUAOTF.otf */; };
+		C5C7E7F22A70B017000A3CCC /* ReactionLottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C7E7F12A70B017000A3CCC /* ReactionLottieView.swift */; };
+		C5C7E7F52A70BD5A000A3CCC /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = C5C7E7F42A70BD5A000A3CCC /* Lottie */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		602BD2F82A602A3600F9E345 /* ReactionModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionModifier.swift; sourceTree = "<group>"; };
+		602BD3022A6456BF00F9E345 /* ReactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionView.swift; sourceTree = "<group>"; };
+		602BD3082A67E86600F9E345 /* FinishModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishModalView.swift; sourceTree = "<group>"; };
 		60EB42782A5E437C0030286C /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		60EB427A2A5E44880030286C /* UIScreen+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extension.swift"; sourceTree = "<group>"; };
 		60EB427F2A5ED78A0030286C /* TimerModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModalView.swift; sourceTree = "<group>"; };
@@ -46,13 +64,13 @@
 		AA9741EC2A6EC0290027DE48 /* Content_test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content_test.swift; sourceTree = "<group>"; };
 		AA9CD3FB2A643B3F00B9A030 /* HapticTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticTestView.swift; sourceTree = "<group>"; };
 		AA9CD3FD2A643B6200B9A030 /* HapticFeedbackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedbackManager.swift; sourceTree = "<group>"; };
+		B81CFC852A6901B20012FA5A /* RealTimeGame+GKMatchDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RealTimeGame+GKMatchDelegate.swift"; sourceTree = "<group>"; };
 		B879984E2A5BACBE00167597 /* QAQA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QAQA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B87998512A5BACBE00167597 /* QAQAApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QAQAApp.swift; sourceTree = "<group>"; };
-		B87998532A5BACBE00167597 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		B87998532A5BACBE00167597 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = Home/HomeView.swift; sourceTree = "<group>"; };
 		B87998552A5BACBF00167597 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B87998582A5BACBF00167597 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		B8B506822A5CF4FA00B3EAED /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		B8B506842A5CF50400B3EAED /* RealTimeGame+GKMatchDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealTimeGame+GKMatchDelegate.swift"; sourceTree = "<group>"; };
+		B8B506822A5CF4FA00B3EAED /* HintViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintViewModel.swift; sourceTree = "<group>"; };
 		B8B506882A5CFDAA00B3EAED /* QAQA.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QAQA.entitlements; sourceTree = "<group>"; };
 		B8B506892A5D00BE00B3EAED /* RealTimeGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealTimeGame.swift; sourceTree = "<group>"; };
 		B8B5068C2A5D019900B3EAED /* RealTimeGame+Friends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealTimeGame+Friends.swift"; sourceTree = "<group>"; };
@@ -62,6 +80,18 @@
 		B8B506982A5E2C9500B3EAED /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		B8B5069A2A5E3C1C00B3EAED /* RealTimeGame+GKLocalPlayerListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealTimeGame+GKLocalPlayerListener.swift"; sourceTree = "<group>"; };
 		B8B5069C2A5E42D600B3EAED /* RealTimeGame+MatchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealTimeGame+MatchData.swift"; sourceTree = "<group>"; };
+		B8F5747E2A63B4860028A46A /* OutroInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutroInfoView.swift; sourceTree = "<group>"; };
+		B8F574802A63BAB90028A46A /* OutroEndingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutroEndingView.swift; sourceTree = "<group>"; };
+		B8F574862A63D3800028A46A /* OutroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutroViewModel.swift; sourceTree = "<group>"; };
+		B8F574882A6440CF0028A46A /* OutroCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutroCardView.swift; sourceTree = "<group>"; };
+		B8F5748B2A64C8D30028A46A /* OutroCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutroCardModel.swift; sourceTree = "<group>"; };
+		B8F5748F2A64DDF80028A46A /* TopicUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicUserModel.swift; sourceTree = "<group>"; };
+		C59F5A062A60F3B6007608AD /* HintModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintModel.swift; sourceTree = "<group>"; };
+		C59F5A082A60F657007608AD /* HintState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintState.swift; sourceTree = "<group>"; };
+		C5C61B982A5E583C00FB8854 /* HintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintView.swift; sourceTree = "<group>"; };
+		C5C7E7EC2A6F5F07000A3CCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C5C7E7EF2A6F7134000A3CCC /* BMJUAOTF.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BMJUAOTF.otf; sourceTree = "<group>"; };
+		C5C7E7F12A70B017000A3CCC /* ReactionLottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionLottieView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,12 +99,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5C7E7F52A70BD5A000A3CCC /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		602BD2F72A602A1B00F9E345 /* ReactionModifier */ = {
+			isa = PBXGroup;
+			children = (
+				602BD2F82A602A3600F9E345 /* ReactionModifier.swift */,
+			);
+			path = ReactionModifier;
+			sourceTree = "<group>";
+		};
 		60EB427C2A5ED5490030286C /* UIScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -86,7 +125,6 @@
 		60EB42832A5F94840030286C /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				B87998532A5BACBE00167597 /* HomeView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -94,9 +132,11 @@
 		60EB42842A5F948B0030286C /* Question */ = {
 			isa = PBXGroup;
 			children = (
-				60EB42782A5E437C0030286C /* TimerView.swift */,
-				60EB427F2A5ED78A0030286C /* TimerModalView.swift */,
 				B8B506942A5D2B2600B3EAED /* QuestionView.swift */,
+				602BD3082A67E86600F9E345 /* FinishModalView.swift */,
+				C5C61B982A5E583C00FB8854 /* HintView.swift */,
+				602BD3022A6456BF00F9E345 /* ReactionView.swift */,
+				C5C7E7F12A70B017000A3CCC /* ReactionLottieView.swift */,
 			);
 			path = Question;
 			sourceTree = "<group>";
@@ -141,6 +181,7 @@
 		B87998502A5BACBE00167597 /* QAQA */ = {
 			isa = PBXGroup;
 			children = (
+				C5C7E7EC2A6F5F07000A3CCC /* Info.plist */,
 				B8B506882A5CFDAA00B3EAED /* QAQA.entitlements */,
 				B87998632A5BB3C400167597 /* Utils */,
 				B87998622A5BB3B200167597 /* Resources */,
@@ -164,8 +205,11 @@
 		B879985F2A5BB39700167597 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B8F5747D2A63B3C20028A46A /* Outro */,
+				C5C7E7E62A676A06000A3CCC /* Timer */,
 				60EB42842A5F948B0030286C /* Question */,
 				60EB42832A5F94840030286C /* Home */,
+				B87998532A5BACBE00167597 /* HomeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -173,7 +217,8 @@
 		B87998602A5BB39C00167597 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				B8B506822A5CF4FA00B3EAED /* ViewModel.swift */,
+				B8F574862A63D3800028A46A /* OutroViewModel.swift */,
+				B8B506822A5CF4FA00B3EAED /* HintViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -181,8 +226,10 @@
 		B87998612A5BB3A900167597 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B8F5748A2A64C8C20028A46A /* Outro */,
+				C5C7E7E82A676A34000A3CCC /* Question */,
+				C5C7E7E72A676A2C000A3CCC /* Timer */,
 				B8B506962A5E276300B3EAED /* Game */,
-				60EB42812A5ED99E0030286C /* TimerModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -200,6 +247,8 @@
 			children = (
 				AA9741E52A6EBF5C0027DE48 /* Gyroscopes */,
 				AA9CD3FA2A643AFC00B9A030 /* HapticManager */,
+				C5C7E7E92A6F5D6F000A3CCC /* Font */,
+				602BD2F72A602A1B00F9E345 /* ReactionModifier */,
 				60EB427C2A5ED5490030286C /* UIScreen */,
 				B8B506972A5E2C7600B3EAED /* Color */,
 				B8B5068B2A5D013100B3EAED /* GameCenter */,
@@ -210,7 +259,7 @@
 		B8B5068B2A5D013100B3EAED /* GameCenter */ = {
 			isa = PBXGroup;
 			children = (
-				B8B506842A5CF50400B3EAED /* RealTimeGame+GKMatchDelegate.swift */,
+				B81CFC852A6901B20012FA5A /* RealTimeGame+GKMatchDelegate.swift */,
 				B8B5068C2A5D019900B3EAED /* RealTimeGame+Friends.swift */,
 				B8B5068E2A5D01C700B3EAED /* RealTimeGame+GKMatchmakerViewControllerDelegate.swift */,
 				B8B506902A5D01F000B3EAED /* RealTimeGame+GKGameCenterViewController.swift */,
@@ -224,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				B8B506892A5D00BE00B3EAED /* RealTimeGame.swift */,
+				B8F5748F2A64DDF80028A46A /* TopicUserModel.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -234,6 +284,58 @@
 				B8B506982A5E2C9500B3EAED /* Color+Extension.swift */,
 			);
 			path = Color;
+			sourceTree = "<group>";
+		};
+		B8F5747D2A63B3C20028A46A /* Outro */ = {
+			isa = PBXGroup;
+			children = (
+				B8F5747E2A63B4860028A46A /* OutroInfoView.swift */,
+				B8F574802A63BAB90028A46A /* OutroEndingView.swift */,
+				B8F574882A6440CF0028A46A /* OutroCardView.swift */,
+			);
+			path = Outro;
+			sourceTree = "<group>";
+		};
+		B8F5748A2A64C8C20028A46A /* Outro */ = {
+			isa = PBXGroup;
+			children = (
+				B8F5748B2A64C8D30028A46A /* OutroCardModel.swift */,
+			);
+			path = Outro;
+			sourceTree = "<group>";
+		};
+		C5C7E7E62A676A06000A3CCC /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				60EB42782A5E437C0030286C /* TimerView.swift */,
+				60EB427F2A5ED78A0030286C /* TimerModalView.swift */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		C5C7E7E72A676A2C000A3CCC /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				60EB42812A5ED99E0030286C /* TimerModel.swift */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		C5C7E7E82A676A34000A3CCC /* Question */ = {
+			isa = PBXGroup;
+			children = (
+				C59F5A062A60F3B6007608AD /* HintModel.swift */,
+				C59F5A082A60F657007608AD /* HintState.swift */,
+			);
+			path = Question;
+			sourceTree = "<group>";
+		};
+		C5C7E7E92A6F5D6F000A3CCC /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				C5C7E7EF2A6F7134000A3CCC /* BMJUAOTF.otf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,6 +354,9 @@
 			dependencies = (
 			);
 			name = QAQA;
+			packageProductDependencies = (
+				C5C7E7F42A70BD5A000A3CCC /* Lottie */,
+			);
 			productName = QAQA;
 			productReference = B879984E2A5BACBE00167597 /* QAQA.app */;
 			productType = "com.apple.product-type.application";
@@ -280,6 +385,9 @@
 				Base,
 			);
 			mainGroup = B87998452A5BACBE00167597;
+			packageReferences = (
+				C5C7E7F32A70BD5A000A3CCC /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = B879984F2A5BACBE00167597 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -296,6 +404,7 @@
 			files = (
 				B87998592A5BACBF00167597 /* Preview Assets.xcassets in Resources */,
 				B87998562A5BACBF00167597 /* Assets.xcassets in Resources */,
+				C5C7E7F02A6F7134000A3CCC /* BMJUAOTF.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,29 +416,46 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA3192DC2A64EFC30098573D /* HapticMotion.swift in Sources */,
+				C59F5A072A60F3B6007608AD /* HintModel.swift in Sources */,
+				C5C61B992A5E583C00FB8854 /* HintView.swift in Sources */,
+				B87998542A5BACBE00167597 /* HomeView.swift in Sources */,
+				C5C7E7F22A70B017000A3CCC /* ReactionLottieView.swift in Sources */,
 				60EB42822A5ED99E0030286C /* TimerModel.swift in Sources */,
+				C59F5A092A60F657007608AD /* HintState.swift in Sources */,
 				60EB42802A5ED78A0030286C /* TimerModalView.swift in Sources */,
 				AA9741EB2A6EBFCE0027DE48 /* BallContainerView.swift in Sources */,
 				60EB42792A5E437C0030286C /* TimerView.swift in Sources */,
 				B8B5068F2A5D01C700B3EAED /* RealTimeGame+GKMatchmakerViewControllerDelegate.swift in Sources */,
 				B87998542A5BACBE00167597 /* HomeView.swift in Sources */,
 				AA9CD3FC2A643B3F00B9A030 /* HapticTestView.swift in Sources */,
+				B8F574902A64DDF80028A46A /* TopicUserModel.swift in Sources */,
+				602BD3092A67E86600F9E345 /* FinishModalView.swift in Sources */,
+				B8F574892A6440CF0028A46A /* OutroCardView.swift in Sources */,
 				B8B506912A5D01F000B3EAED /* RealTimeGame+GKGameCenterViewController.swift in Sources */,
+				B8F5748C2A64C8D30028A46A /* OutroCardModel.swift in Sources */,
 				B8B506952A5D2B2600B3EAED /* QuestionView.swift in Sources */,
 				B8B5069D2A5E42D600B3EAED /* RealTimeGame+MatchData.swift in Sources */,
-				B8B506832A5CF4FA00B3EAED /* ViewModel.swift in Sources */,
+				B8F574812A63BAB90028A46A /* OutroEndingView.swift in Sources */,
+				B81CFC862A6901B20012FA5A /* RealTimeGame+GKMatchDelegate.swift in Sources */,
+				B8B506832A5CF4FA00B3EAED /* HintViewModel.swift in Sources */,
+				B8B506832A5CF4FA00B3EAED /* HintViewModel.swift in Sources */,
 				B8B5068D2A5D019900B3EAED /* RealTimeGame+Friends.swift in Sources */,
 				AA9741E72A6EBF8F0027DE48 /* Ball.swift in Sources */,
 				B8B5069B2A5E3C1C00B3EAED /* RealTimeGame+GKLocalPlayerListener.swift in Sources */,
-				B87998522A5BACBE00167597 /* QAQAApp.swift in Sources */,
 				AA9741E92A6EBFAA0027DE48 /* GyroscopeManager.swift in Sources */,
 				B8B506852A5CF50400B3EAED /* RealTimeGame+GKMatchDelegate.swift in Sources */,
+				B8F5747F2A63B4860028A46A /* OutroInfoView.swift in Sources */,
+				B8B5069B2A5E3C1C00B3EAED /* RealTimeGame+GKLocalPlayerListener.swift in Sources */,
+				B87998522A5BACBE00167597 /* QAQAApp.swift in Sources */,
+				602BD3032A6456BF00F9E345 /* ReactionView.swift in Sources */,
 				60EB427B2A5E44880030286C /* UIScreen+Extension.swift in Sources */,
+				B8F574872A63D3800028A46A /* OutroViewModel.swift in Sources */,
 				B8B5068A2A5D00BE00B3EAED /* RealTimeGame.swift in Sources */,
 				AA9CD3FE2A643B6200B9A030 /* HapticFeedbackManager.swift in Sources */,
 				B8B506992A5E2C9500B3EAED /* Color+Extension.swift in Sources */,
 				B8B506852A5CF50400B3EAED /* RealTimeGame+GKMatchDelegate.swift in Sources */,
 				AA9741ED2A6EC0290027DE48 /* Content_test.swift in Sources */,
+				602BD2F92A602A3600F9E345 /* ReactionModifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,7 +512,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -440,7 +566,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -462,6 +588,7 @@
 				DEVELOPMENT_TEAM = 82Q43H4UQQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = QAQA/Info.plist;
 				INFOPLIST_KEY_NSGKFriendListUsageDescription = "Accessing your friends to identify them during gameplay.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -469,7 +596,7 @@
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = gamekit;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -495,6 +622,7 @@
 				DEVELOPMENT_TEAM = 82Q43H4UQQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = QAQA/Info.plist;
 				INFOPLIST_KEY_NSGKFriendListUsageDescription = "Accessing your friends to identify them during gameplay.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -502,7 +630,7 @@
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = gamekit;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -538,6 +666,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C5C7E7F32A70BD5A000A3CCC /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C5C7E7F42A70BD5A000A3CCC /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C5C7E7F32A70BD5A000A3CCC /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B87998462A5BACBE00167597 /* Project object */;
 }

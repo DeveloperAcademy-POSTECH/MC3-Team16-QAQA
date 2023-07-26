@@ -10,26 +10,12 @@ import GameKit
 import SwiftUI
 
 extension RealTimeGame: GKMatchDelegate {
-    /// Handles a connected, disconnected, or unknown player state.
-    /// - Tag:didChange
     func match(_ match: GKMatch, player: GKPlayer, didChange state: GKPlayerConnectionState) {
         switch state {
         case .connected:
             print("\(player.displayName) Connected")
-            
-            // For automatch, set the opponent and load their avatar.
             if match.expectedPlayerCount == 0 {
                 opponent = match.players[0]
-                
-                // Load the opponent's avatar.
-                opponent?.loadPhoto(for: GKPlayer.PhotoSize.small) { (image, error) in
-                    if let image {
-                        self.opponentAvatar = Image(uiImage: image)
-                    }
-                    if let error {
-                        print("Error: \(error.localizedDescription).")
-                    }
-                }
             }
         case .disconnected:
             print("\(player.displayName) Disconnected")
@@ -38,13 +24,29 @@ extension RealTimeGame: GKMatchDelegate {
         }
     }
     
-    /// Handles an error during the matchmaking process.
     func match(_ match: GKMatch, didFailWithError error: Error?) {
         print("\n\nMatch object fails with error: \(error!.localizedDescription)")
     }
 
-    /// Reinvites a player when they disconnect from the match.
     func match(_ match: GKMatch, shouldReinviteDisconnectedPlayer player: GKPlayer) -> Bool {
         return false
+    }
+    
+    func match(_ match: GKMatch, didReceive data: Data, fromRemotePlayer player: GKPlayer) {
+        let gameData = decode(matchData: data)
+        
+        if let score = gameData?.score {
+            opponentScore = score
+        } else if (gameData?.outcome) != nil {
+            gameIsEnd = true
+        } else if let reaction = gameData?.isPlayingReaction, let reactionState = gameData?.isGoodReaction {
+            withAnimation(.spring(response: 0.2,dampingFraction: 0.25,blendDuration: 0.0)){
+                playReaction = reaction
+                isGoodReaction = reactionState
+            }
+        } else if let timerModal = gameData?.showTimerModal, let timer = gameData?.isTimer {
+            showTimerModal = timerModal
+            isTimer = timer
+        }
     }
 }
