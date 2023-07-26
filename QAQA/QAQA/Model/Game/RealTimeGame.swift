@@ -47,7 +47,7 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
     @Published var countMin = 10
     @Published var countSecond = 0
     @Published var showTimerModal = false
-    @Published var isCloseModal = false
+//    @Published var isCloseModal = false
     @Published var isTimer = true
     @Published var timer = Timer.publish(every: 1.0, on: .main, in: .common).autoconnect()
 //    @Published var
@@ -378,7 +378,7 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
     
     func timerModalController() {
     do {
-        let data = encode(showTimerModal: showTimerModal, isTimer: isTimer, isCloseModal: isCloseModal)// TODO: - Encode가 뭐하는 애임??
+        let data = encode(showTimerModal: showTimerModal, isTimer: isTimer)// TODO: - Encode가 뭐하는 애임??
         try myMatch?.sendData(toAllPlayers: data!, with: GKMatch.SendDataMode.unreliable)
     } catch {
         print("Error: \(error.localizedDescription).")

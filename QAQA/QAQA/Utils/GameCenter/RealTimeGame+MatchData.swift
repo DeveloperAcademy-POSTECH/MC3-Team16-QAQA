@@ -20,7 +20,7 @@ struct GameData: Codable {
     var isGoodReaction: Bool?
     var showTimerModal: Bool?
     var isTimer: Bool?
-    var isCloseModal: Bool?
+//    var isCloseModal: Bool?
 }
 
 extension RealTimeGame {
@@ -28,8 +28,8 @@ extension RealTimeGame {
     // MARK: Codable Game Data
     //TimerModal
     
-    func encode(showTimerModal:Bool, isTimer: Bool, isCloseModal: Bool) -> Data? {
-        let gameData = GameData(matchName: matchName, playerName: GKLocalPlayer.local.displayName, showTimerModal: showTimerModal, isTimer: isTimer, isCloseModal: isCloseModal)
+    func encode(showTimerModal:Bool, isTimer: Bool) -> Data? {
+        let gameData = GameData(matchName: matchName, playerName: GKLocalPlayer.local.displayName, showTimerModal: showTimerModal, isTimer: isTimer)
         return encode(gameData: gameData)
     }
     
