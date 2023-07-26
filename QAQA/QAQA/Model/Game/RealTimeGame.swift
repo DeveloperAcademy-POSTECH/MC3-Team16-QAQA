@@ -9,26 +9,21 @@ import Foundation
 import GameKit
 import SwiftUI
 
-/// - Tag:RealTimeGame
 @MainActor
 class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
-    
-    // The local player's friends, if they grant access.
+
     @Published var friends: [Friend] = []
-    
-    // The game interface state.
+
     @Published var matchAvailable = false
     @Published var playingGame = false
     @Published var myMatch: GKMatch? = nil
     @Published var automatch = false
     
-    // Outcomes of the game for notifing players.
     // 공유될 변수
     @Published var gameIsEnd = false
     @Published var playReaction = false
     @Published var isGoodReaction = false
-    
-    // The match information.
+
     @Published var myAvatar = Image(systemName: "person.crop.circle")
     @Published var opponent: GKPlayer? = nil
     @Published var myScore = 0
@@ -36,81 +31,60 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
     
     // TopicUser
     @Published var topicUserName: String = "TopicUserName"
-    
-    /// The name of the match.
+
     var matchName: String {
         "\(opponentName) Match"
     }
-    
-    /// The local player's name.
+
     var myName: String {
         GKLocalPlayer.local.displayName
     }
-    
-    /// The opponent's name.
+
     var opponentName: String {
         opponent?.displayName ?? "Invitation Pending"
     }
-    
-    /// The root view controller of the window.
-    var rootViewController: UIViewController? { // root View Controller
+
+    var rootViewController: UIViewController? {
         let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
         return windowScene?.windows.first?.rootViewController
     }
 
-    /// Authenticates the local player, initiates a multiplayer game, and adds the access point.
-    /// - Tag:authenticatePlayer
     func authenticatePlayer() {
-        // Set the authentication handler that GameKit invokes.
         GKLocalPlayer.local.authenticateHandler = { viewController, error in
             if let viewController = viewController {
-                // If the view controller is non-nil, present it to the player so they can
-                // perform some necessary action to complete authentication.
                 self.rootViewController?.present(viewController, animated: true) { }
                 return
             }
             if let error {
-                // If you can’t authenticate the player, disable Game Center features in your game.
                 print("Error: \(error.localizedDescription).")
                 return
             }
             
-            // A value of nil for viewController indicates successful authentication, and you can access
-            // local player properties.
-            
-            // Load the local player's avatar.
             GKLocalPlayer.local.loadPhoto(for: GKPlayer.PhotoSize.small) { image, error in
                 if let image {
                     self.myAvatar = Image(uiImage: image)
                 }
                 if let error {
-                    // Handle an error if it occurs.
                     print("Error: \(error.localizedDescription).")
                 }
             }
 
-            // Register for real-time invitations from other players.
             GKLocalPlayer.local.register(self)
             
-            // Add an access point to the interface.
             GKAccessPoint.shared.location = .topTrailing
             GKAccessPoint.shared.showHighlights = true
             GKAccessPoint.shared.isActive = true
-            
-            // Enable the Start Game button.
+
             self.matchAvailable = true
         }
     }
     
-    /// Starts the matchmaking process where GameKit finds a player for the match.
-    /// - Tag:findPlayer
-    func findPlayer() async { // 플레이어 찾는 함수
+    func findPlayer() async {
         let request = GKMatchRequest()
         request.minPlayers = 2
         request.maxPlayers = 6
         let match: GKMatch
         
-        // Start automatch.
         do {
             match = try await GKMatchmaker.shared().findMatch(for: request)
         } catch {
@@ -118,68 +92,47 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
             return
         }
 
-        // Start the game, although the automatch player hasn't connected yet.
         if !playingGame {
             startMyMatchWith(match: match)
         }
 
-        // Stop automatch.
         GKMatchmaker.shared().finishMatchmaking(for: match)
         automatch = false
     }
     
-    /// Presents the matchmaker interface where the local player selects and sends an invitation to another player.
-    /// - Tag:choosePlayer
-    func choosePlayer() { // 플레이어 선택하는 함수
-        // Create a match request.
-        let request = GKMatchRequest() // real-time or turn-based match를 위한 파라미터들을 캡슐화한 object
-        request.minPlayers = 2 // 최소, 최대 플레이어 수 지정 (여기서 지정해줘야함)
+    func choosePlayer() {
+        let request = GKMatchRequest()
+        request.minPlayers = 2
         request.maxPlayers = 6
-        
-        // Present the interface where the player selects opponents and starts the game.
-        // GKMatchmakerViewController는 플레이어가 상대를 선택하고, 게임을 시작하는 인터페이스를 보여줍니다.
-        // 위에서 만든 request 를 이 뷰컨트롤러에 전달합니다.
+
         if let viewController = GKMatchmakerViewController(matchRequest: request) {
-            viewController.matchmakerDelegate = self // 딜리게이트 설정
-            rootViewController?.present(viewController, animated: true) { } // animated true로 해서, rootViewController에 게임뷰컨트롤러를 전달합니다.
+            viewController.matchmakerDelegate = self
+            rootViewController?.present(viewController, animated: true) { }
         }
     }
     
     // 게임 시작과 끝내는 부분
-    
-    // 게임 시작!!
-    // match는 리얼타임매치를 나타내는 object입니다.
-    /// - Tag:startMyMatchWith
     func startMyMatchWith(match: GKMatch) {
-        GKAccessPoint.shared.isActive = false // TODO: ??
-        playingGame = true // playingGame 부울값을 true로
-        myMatch = match // myMatch는 GKMatch를 전달
+        GKAccessPoint.shared.isActive = false
+        playingGame = true
+        myMatch = match
         myMatch?.delegate = self
         
-        // 오토매치일 때, 아바타를 로드하기 전에 상대가 매치에 연결되었는지를 확인합니다.
-        if myMatch?.expectedPlayerCount == 0 { // 초대받은 플레이어가 모두 연결된 경우
-            opponent = myMatch?.players[0] // 내 매치의 0번째 플레이어를 opponent로 둡니다. - 임의로 두는 것임.. 스코어 기록하려면 이거 구조를 아예 바꿔줘야할 듯??
+        if myMatch?.expectedPlayerCount == 0 {
+            opponent = myMatch?.players[0]
             createRandomTopicUser(match: myMatch!)
         }
-            
-        // Increment the achievement to play 10 games.
         reportProgress()
     }
-    
-    /// Takes the player's turn.
-    /// - Tag:takeAction
+
     func takeAction() {
-        // Take your turn by incrementing the counter.
-        // 차례대로 counter 를 증가시킵니다.
         myScore += 1
         
-        // 점수가 10점 이상이거나 최고점에 도달하면 게임에서 이기게 됩니다.
         if (myScore - opponentScore == 10) || (myScore == 100) {
 //            endMatch()
             return
         }
         
-        // 그렇지 않으면 다른 플레이어에게 게임 데이터를 전송합니다.
         do {
             let data = encode(score: myScore)
             try myMatch?.sendData(toAllPlayers: data!, with: GKMatch.SendDataMode.unreliable)
@@ -188,14 +141,11 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
         }
     }
     
-    /// Quits a match and saves the game data.
-    /// - Tag:endMatch
     func endMatch() {
         let opponentOutcome = opponentScore > myScore ? "won" : "lost"
 
-        // Notify the opponent that they won or lost, depending on the score.
         do {
-            let data = encode(outcome: opponentOutcome) // TODO: - Encode가 뭐하는 애임??
+            let data = encode(outcome: opponentOutcome)
             try myMatch?.sendData(toAllPlayers: data!, with: GKMatch.SendDataMode.unreliable)
         } catch {
             print("Error: \(error.localizedDescription).")
@@ -203,8 +153,6 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
         gameIsEnd = true
     }
 
-    /// Saves the local player's score.
-    /// - Tag:saveScore
     func saveScore() {
         GKLeaderboard.submitScore(myScore, context: 0, player: GKLocalPlayer.local,
             leaderboardIDs: ["123"]) { error in
@@ -214,9 +162,7 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
         }
     }
 
-//    /// Resets a match after players reach an outcome or cancel the game.
     func resetMatch() {
-        // Reset the game data.
         playingGame = false
         myMatch?.disconnect()
         myMatch?.delegate = nil
@@ -225,34 +171,25 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
         GKAccessPoint.shared.isActive = true
         gameIsEnd = false
 
-        // Reset the score.
         myScore = 0
         opponentScore = 0
     }
 
-    // Rewarding players with achievements.
-
-    // 로컬 플레이어의 성과를 보고하는 함수입니다.
     func reportProgress() {
         GKAchievement.loadAchievements(completionHandler: { (achievements: [GKAchievement]?, error: Error?) in
-            let achievementID = "1234" // achievementID를 임의로 생성해줍니다.
+            let achievementID = "1234"
             var achievement: GKAchievement? = nil
 
-            // 존재하는 성과를 찾는 코드입니다.
             achievement = achievements?.first(where: { $0.identifier == achievementID })
 
-            // 존재하지 않으면, 새로운 achievement를 생성합니다.
             if achievement == nil {
                 achievement = GKAchievement(identifier: achievementID)
             }
 
-            // Create an array containing the achievement.
             let achievementsToReport: [GKAchievement] = [achievement!]
 
-            // 플레이어가 달성한 성과를 나타내는 백분율 값입니다.
             achievement?.percentComplete = achievement!.percentComplete + 10.0
 
-            // 게임센터에 프로그레스를 보고합니다.
             GKAchievement.report(achievementsToReport, withCompletionHandler: {(error: Error?) in
                 if let error {
                     print("Error: \(error.localizedDescription).")
@@ -276,7 +213,7 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
     
     func pushGoodReaction() {
         do {
-            let data = encode(playReaction: playReaction, isGoodReaction: isGoodReaction) // TODO: - Encode가 뭐하는 애임??
+            let data = encode(playReaction: playReaction, isGoodReaction: isGoodReaction)
             try myMatch?.sendData(toAllPlayers: data!, with: GKMatch.SendDataMode.unreliable)
         } catch {
             print("Error: \(error.localizedDescription).")
