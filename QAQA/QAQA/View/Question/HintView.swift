@@ -20,9 +20,13 @@ struct HintView: View {
                 .foregroundColor(Color("hintViewYellow"))
                 .frame(width: 358, height: 332)
             VStack{
+                Spacer()
+                    .frame(height: 25)
                 Text("궁금한 질문을 골라보세요!")
                     .font(.custom("BMJUAOTF", size: 15))
                     .foregroundColor(Color("hintViewOrange"))
+                Spacer()
+                    .frame(height: 16)
                 Picker("HintMode", selection: $selectedHint) {
                     Text("??")
                     Text("재미").tag(HintState.fun)
@@ -38,6 +42,8 @@ struct HintView: View {
                         randomSeriousQuestion = hintViewModel.createRandomSeriousHints()
                     }
                 })
+                Spacer()
+                    .frame(height: 30)
                 switch selectedHint {
                 case .fun :
                     Text("\(randomFunQuestion)")
@@ -45,13 +51,17 @@ struct HintView: View {
                         .frame(width: 320, height: 120)
                         .minimumScaleFactor(0.5)
                         .multilineTextAlignment(.center)
+                        .lineSpacing(7)
                 case .serious :
                     Text("\(randomSeriousQuestion)")
                         .font(.custom("BMJUAOTF", size: 25))
                         .frame(width: 320, height: 120)
                         .minimumScaleFactor(0.5)
                         .multilineTextAlignment(.center)
+                        .lineSpacing(7)
                 }
+                Spacer()
+                    .frame(height: 25)
                 Button {
                     switch selectedHint {
                     case .fun :
@@ -62,9 +72,11 @@ struct HintView: View {
                 } label: {
                     Image("randomHintButton")
                         .resizable()
-                        .aspectRatio(contentMode: .fit)
+                        .scaledToFill()
                         .frame(width: 223)
                 }
+                Spacer()
+                    .frame(height: 25)
             }
             .frame(width: 358, height: 332)
         }

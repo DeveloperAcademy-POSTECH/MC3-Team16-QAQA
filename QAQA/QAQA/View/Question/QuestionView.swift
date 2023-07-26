@@ -74,23 +74,25 @@ struct QuestionView: View {
                         .frame(width: 16)
                 } //Timer와 끝내기 버튼
                 ZStack{ //QuestionView의 메인 내용과 ReactionView를 ZStack으로 쌓아놓기
-                    VStack{ //QuestionView의 메인 내용(프로필과 질문버튼, 리액션버튼)
+                    VStack (spacing: 0) { //QuestionView의 메인 내용(프로필과 질문버튼, 리액션버튼)
                         Group {
                             ZStack{
                                 Image("questionBubble")
                                     .resizable()
-                                    .aspectRatio(contentMode: .fill)
+                                    .scaledToFill()
                                     .frame(width: 211)
                                 VStack{
                                     Text("오늘의 주인공")
                                         .font(.custom("BMJUAOTF", size: 15))
                                     Text("\(userName)")
                                         .font(.custom("BMJUAOTF", size: 25))
+                                    Spacer()
+                                        .frame(height: 10)
                                 }
                             }
                               Image("questionQaqa")
                                 .resizable()
-                                .aspectRatio(contentMode: .fill)
+                                .scaledToFill()
                                 .frame(width: 140)
                                 HintView()
                             Spacer()
