@@ -84,10 +84,6 @@ struct QuestionView: View {
                         Group {
                             Spacer()
                                 .frame(height: 10)
-                            Text("\(game.topicUserName)")
-                                .font(.system(size: 24, weight: .bold))
-                            Spacer()
-                                .frame(height: 24)
                             ZStack{
                                 Image("questionBubble")
                                     .resizable()
@@ -96,7 +92,7 @@ struct QuestionView: View {
                                 VStack{
                                     Text("오늘의 주인공")
                                         .font(.custom("BMJUAOTF", size: 15))
-                                    Text("\(userName)")
+                                    Text("\(game.topicUserName)")
                                         .font(.custom("BMJUAOTF", size: 25))
                                     Spacer()
                                         .frame(height: 10)
