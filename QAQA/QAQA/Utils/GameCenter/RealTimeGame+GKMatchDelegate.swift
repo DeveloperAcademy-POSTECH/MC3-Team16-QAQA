@@ -47,6 +47,10 @@ extension RealTimeGame: GKMatchDelegate {
         } else if let timerModal = gameData?.showTimerModal, let timer = gameData?.isTimer {
             showTimerModal = timerModal
             isTimer = timer
+        } else if let min = gameData?.countMin, let second = gameData?.countSecond {
+            countMin = min
+            countSecond = second
         }
+        
     }
 }

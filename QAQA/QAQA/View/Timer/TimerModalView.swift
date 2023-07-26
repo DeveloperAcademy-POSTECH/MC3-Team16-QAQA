@@ -17,7 +17,8 @@ struct TimerModalView: View {
     @State var restartButtonColor: Color = Color.blue.opacity(0.8)
     var body: some View {
         VStack(alignment: .center){
-            Text(gameTimerModel.displayTime(false))
+            Text((gameTimerModel.countSecond < 10) ? "\(gameTimerModel.countMin):0\(gameTimerModel.countSecond)" : "\(gameTimerModel.countMin):\(gameTimerModel.countSecond)")
+//            TimerView(gameTimerModel: _gameTimerModel, game: game, isShowingOutroView: QuestionView(game: game).$isShowingOutroView, fontSize: 70)
                 .font(.system(size: 70))
                 .fontWeight(.bold)
                 .foregroundColor(.black)

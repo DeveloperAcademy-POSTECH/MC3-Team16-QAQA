@@ -237,49 +237,28 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
         }
     }
     
-    func displayTime(_ isCount: Bool) -> String { //아규먼트 값이 true면은 카운트가 되는 시간이고(TimerView에 적용) false면은 단순히 TimerModel에서 변수만 받아와서 시간만 표기하는 함수(TimerModalView에 적용), .onReceive를 실행하는냐 아니냐의 차이
-        if (isCount) {
-            if countSecond < 10 {
-                return  String("\(countMin):0\(countSecond)")
-                if isTimer {
-                    if countSecond == 0 {
-                        if countMin == 0 {
-                            isTimer = false
-                            endMatch()
-                            reportProgress()
-                        }
-                        countMin -= 1
-                        countSecond = 59
-                    }
-                    else {
-                        countSecond -= 1
-                    }
-                }
+    func timerNumberCount() {
+        do {
+            let data = encode(countMin: countMin, countSecond: countSecond)
+            try myMatch?.sendData(toAllPlayers: data!, with: GKMatch.SendDataMode.unreliable)
+        } catch {
+            print("Error: \(error.localizedDescription).")
+        }
+    }
+    
+    func displayTime() {
+        if countSecond == 0 {
+            if countMin == 0 {
+                isTimer = false
+                endMatch()
+                reportProgress()
+                return
             }
-            else {
-                return  String("\(countMin):\(countSecond)")
-                if isTimer {
-                    if countSecond == 0 {
-                        if countMin == 0 {
-                            isTimer = false
-                            endMatch()
-                            reportProgress()
-                        }
-                        countMin -= 1
-                        countSecond = 59
-                    }
-                    else {
-                        countSecond -= 1
-                    }
-                }
-            }
-        } else {
-            if countSecond < 10 {
-                return  String("\(countMin):0\(countSecond)")
-            }
-            else {
-                return  String("\(countMin):\(countSecond)")
-            }
+            countMin -= 1
+            countSecond = 59
+        }
+        else {
+            countSecond -= 1
         }
     }
 }

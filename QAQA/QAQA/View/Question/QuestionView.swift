@@ -25,7 +25,6 @@ struct QuestionView: View {
                     Spacer()
                         .frame(width: 20)
                     Button {
-                        game.isTimer.toggle()
                         game.showTimerModal = true  // action
                         game.timerModalController()
                     } label: {
@@ -41,10 +40,10 @@ struct QuestionView: View {
                             .presentationCornerRadius(32)
                             .padding(.top, 30)
                             .onAppear{
-                                gameTimerModel.isTimer.toggle()
+                                game.isTimer.toggle()
                             }
                             .onDisappear{
-                                gameTimerModel.isTimer.toggle()
+                                game.isTimer = true
 //                                game.showTimerModal = false
                                 game.timerModalController()
                                 print("\(game.showTimerModal)")

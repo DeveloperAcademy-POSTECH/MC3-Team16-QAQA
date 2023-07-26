@@ -18,10 +18,16 @@ struct GameData: Codable {
     var isGoodReaction: Bool?
     var showTimerModal: Bool?
     var isTimer: Bool?
+    var countMin: Int?
+    var countSecond: Int?
 }
 
 extension RealTimeGame {
     //TimerModal
+    func encode(countMin: Int, countSecond: Int) -> Data? {
+        let gameData = GameData(matchName: matchName, playerName: GKLocalPlayer.local.displayName, countMin: countMin, countSecond: countSecond)
+        return encode(gameData: gameData)
+    }
     
     func encode(showTimerModal:Bool, isTimer: Bool) -> Data? {
         let gameData = GameData(matchName: matchName, playerName: GKLocalPlayer.local.displayName, showTimerModal: showTimerModal, isTimer: isTimer)
