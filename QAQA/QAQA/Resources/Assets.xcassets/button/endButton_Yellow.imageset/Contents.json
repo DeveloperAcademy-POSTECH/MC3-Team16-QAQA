@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "badButton.png",
+      "filename" : "endButton_Yellow.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "badButton 1.png",
+      "filename" : "endButton_Yellow@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "badButton 2.png",
+      "filename" : "endButton_Yellow@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

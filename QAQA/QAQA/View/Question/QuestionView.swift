@@ -33,7 +33,7 @@ struct QuestionView: View {
                             .font(.system(size: 20))
                             .foregroundColor(.white)
                             .padding(15)
-                            .background(Circle().foregroundColor(Color("pauseButtonYellow")))
+                            .background(Circle().foregroundColor(.pauseButtonYellow))
                     }
                     .sheet(isPresented: $game.showTimerModal){
                         TimerModalView(gameTimerModel: _gameTimerModel, game: RealTimeGame())
@@ -58,7 +58,7 @@ struct QuestionView: View {
                     Button{
                         showFinishModal.toggle()
                     } label: {
-                        Image("endButton")
+                        Image("endButton_Yellow")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 80)

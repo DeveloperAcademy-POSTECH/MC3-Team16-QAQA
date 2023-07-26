@@ -6,12 +6,12 @@
       "scale" : "1x"
     },
     {
-      "filename" : "randomHintButton 1.png",
+      "filename" : "randomHintButton@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "randomHintButton 2.png",
+      "filename" : "randomHintButton@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

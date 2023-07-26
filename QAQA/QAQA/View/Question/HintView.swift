@@ -17,14 +17,14 @@ struct HintView: View {
     var body: some View {
         ZStack{
             RoundedRectangle(cornerRadius: 20)
-                .foregroundColor(Color("hintViewYellow"))
+                .foregroundColor(.hintViewYellow)
                 .frame(width: 358, height: 332)
             VStack{
                 Spacer()
                     .frame(height: 25)
                 Text("궁금한 질문을 골라보세요!")
                     .font(.custom("BMJUAOTF", size: 15))
-                    .foregroundColor(Color("hintViewOrange"))
+                    .foregroundColor(.hintViewOrange)
                 Spacer()
                     .frame(height: 16)
                 Picker("HintMode", selection: $selectedHint) {
