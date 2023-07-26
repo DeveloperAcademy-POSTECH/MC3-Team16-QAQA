@@ -67,6 +67,9 @@ extension RealTimeGame: GKMatchDelegate {
                 playReaction = reaction
                 isGoodReaction = reactionState
             }
+        } else if let timerModal = gameData?.showTimerModal, let timer = gameData?.isTimer {
+            showTimerModal = timerModal
+            isTimer = timer
         }
     }
 }
