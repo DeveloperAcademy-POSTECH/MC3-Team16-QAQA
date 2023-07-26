@@ -8,6 +8,5 @@
 import Foundation
 
 enum SoundOption: String {
-    case kingjung
-    case eva
+    case kingjung, eva, eva2
 }
