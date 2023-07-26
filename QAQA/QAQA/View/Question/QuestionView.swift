@@ -107,9 +107,11 @@ struct QuestionView: View {
                                 .frame(height: 30)
                         }
                     }
+                  
                         //ReactionView
                         ReactionView(game: RealTimeGame(),isReaction: $game.playReaction, reactionState: self.$game.isGoodReaction)
                             .opacity(game.playReaction ? 1 : 0)
+        
                 }
                 
                 HStack{
