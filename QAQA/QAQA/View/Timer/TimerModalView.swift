@@ -30,8 +30,7 @@ struct TimerModalView: View {
             Button(action: {
 //                timerModel.isTimer.toggle()
 //                gameTimerModel.showTimerModal.toggle()
-                presentation.wrappedValue.dismiss()
-                print("\(game.showTimerModal)")
+                    presentation.wrappedValue.dismiss()
             }, label: {
                 ZStack{
                     RoundedRectangle(cornerRadius: 20)
@@ -44,8 +43,8 @@ struct TimerModalView: View {
             })
             .padding(.bottom,paddingHeight * 0.3)
             .onChange(of: game.showTimerModal, perform: { _ in
-                game.timerModalController()
                 presentation.wrappedValue.dismiss()
+                game.timerModalController()
             })
         }
         

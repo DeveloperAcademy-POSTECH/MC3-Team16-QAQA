@@ -43,7 +43,7 @@ struct QuestionView: View {
                             }
                             .onDisappear{
                                 gameTimerModel.isTimer.toggle()
-                                game.showTimerModal = false 
+//                                game.showTimerModal = false
                                 game.timerModalController()
                                 print("\(game.showTimerModal)")
                                 
