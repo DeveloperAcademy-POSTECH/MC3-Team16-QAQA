@@ -14,7 +14,6 @@ struct QuestionView: View {
     @State private var showHintModal = false
 //    @State var showTimerModal = false
     @State var showFinishModal = false
-    @State private var userName = "UserName"
     @State var isShowingOutroView = false
     
     var body: some View {
@@ -85,7 +84,7 @@ struct QuestionView: View {
                         Group{
                             Spacer()
                                 .frame(height: 10)
-                            Text("\(userName)")
+                            Text("\(game.topicUserName)")
                                 .font(.system(size: 24, weight: .bold))
                             Spacer()
                                 .frame(height: 24)
@@ -176,7 +175,7 @@ struct QuestionView: View {
                 }
             }
             .onAppear {
-                userName = game.topicUserName // TODO: 안됨
+                game.topicUserName = game.topicUserName // TODO: 안됨
             }
             if (game.gameIsEnd) {
                 OutroEndingView(game: game,  isShowingOutroView: $isShowingOutroView)

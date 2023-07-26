@@ -20,7 +20,7 @@ struct TimerView: View {
     var body: some View {
         ZStack{
             VStack(spacing: 10 * timerSizeMultiplier){
-                gameTimerModel.displayTime()
+                Text(gameTimerModel.displayTime(true))
                     .font(.system(size: 30 * timerSizeMultiplier).bold())
                     .frame(width: width * timerSizeMultiplier, height: height * timerSizeMultiplier)
                     .foregroundColor(.black)

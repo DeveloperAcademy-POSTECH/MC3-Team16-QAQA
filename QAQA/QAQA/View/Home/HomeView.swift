@@ -33,7 +33,7 @@ struct HomeView: View {
             Image("homeQuokka")
             Spacer()
             Button { // 플레이어 선택 -> 플레이어 초대, 오토매칭
-                if game.automatch { // TODO: 이거 없어도 되는건가??
+                if game.automatch {
                     // Turn automatch off.
                     GKMatchmaker.shared().cancel()
                     game.automatch = false
@@ -65,7 +65,6 @@ struct HomeView: View {
                     gameTimerModel.countSecond = 0
                     gameTimerModel.isTimer = true
                 }
-                
         }
     }
 }

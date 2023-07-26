@@ -17,7 +17,7 @@ struct TimerModalView: View {
     @State var restartButtonColor: Color = Color.blue.opacity(0.8)
     var body: some View {
         VStack(alignment: .center){
-            gameTimerModel.displayTime(false)
+            Text(gameTimerModel.displayTime(false))
                 .font(.system(size: 70))
                 .fontWeight(.bold)
                 .foregroundColor(.black)
@@ -47,8 +47,6 @@ struct TimerModalView: View {
                 game.timerModalController()
             })
         }
-        
-        
     }
 }
 
