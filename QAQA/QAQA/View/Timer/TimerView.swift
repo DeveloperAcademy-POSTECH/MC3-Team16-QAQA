@@ -21,7 +21,7 @@ struct TimerView: View {
         ZStack{
             VStack(spacing: 10 * timerSizeMultiplier){
                 Text(gameTimerModel.displayTime(true))
-                    .font(.system(size: 30 * timerSizeMultiplier).bold())
+                    .font(.custom("BMJUAOTF", size: 30 * timerSizeMultiplier))
                     .frame(width: width * timerSizeMultiplier, height: height * timerSizeMultiplier)
                     .foregroundColor(.black)
                     .onChange(of: gameTimerModel.countSecond, perform: { _ in

@@ -15,66 +15,70 @@ struct HintView: View {
     @State private var randomSeriousQuestion : String = "질문 뽑기 버튼을 눌러보세요!"
     
     var body: some View {
-        
-        VStack{
-            Spacer()
-                .frame(height: 20)
-            Picker("HintMode", selection: $selectedHint) {
-                ForEach(HintState.allCases) { hintMode in
-                    Text(hintMode.rawValue.capitalized)
+        ZStack{
+            RoundedRectangle(cornerRadius: 20)
+                .foregroundColor(Color("hintViewYellow"))
+                .frame(width: 358, height: 332)
+            VStack{
+                Spacer()
+                    .frame(height: 25)
+                Text("궁금한 질문을 골라보세요!")
+                    .font(.custom("BMJUAOTF", size: 15))
+                    .foregroundColor(Color("hintViewOrange"))
+                Spacer()
+                    .frame(height: 16)
+                Picker("HintMode", selection: $selectedHint) {
+                    Text("??")
+                    Text("재미").tag(HintState.fun)
+                    Text("진지").tag(HintState.serious)
                 }
-            }
-            .frame(width: 250)
-            .pickerStyle(.segmented)
-            .onChange(of: selectedHint, perform: { _ in
+                .frame(width: 250)
+                .pickerStyle(.segmented)
+                .onChange(of: selectedHint, perform: { _ in
+                    switch selectedHint {
+                    case .fun :
+                        randomFunQuestion = hintViewModel.createRandomFunHints()
+                    case .serious :
+                        randomSeriousQuestion = hintViewModel.createRandomSeriousHints()
+                    }
+                })
+                Spacer()
+                    .frame(height: 30)
                 switch selectedHint {
                 case .fun :
-                    randomFunQuestion = hintViewModel.createRandomFunHints()
+                    Text("\(randomFunQuestion)")
+                        .font(.custom("BMJUAOTF", size: 25))
+                        .frame(width: 320, height: 120)
+                        .minimumScaleFactor(0.5)
+                        .multilineTextAlignment(.center)
+                        .lineSpacing(7)
                 case .serious :
-                    randomSeriousQuestion = hintViewModel.createRandomSeriousHints()
+                    Text("\(randomSeriousQuestion)")
+                        .font(.custom("BMJUAOTF", size: 25))
+                        .frame(width: 320, height: 120)
+                        .minimumScaleFactor(0.5)
+                        .multilineTextAlignment(.center)
+                        .lineSpacing(7)
                 }
-            })
-            .padding()
-            
-            Spacer()
-                .frame(height: 62)
-            
-            switch selectedHint {
-            case .fun :
-                Text("\(randomFunQuestion)")
-                    .font(.system(size: 32, weight: .bold))
-                    .frame(width: 327, height: 114)
-                    .minimumScaleFactor(0.5)
-                    .multilineTextAlignment(.center)
-            case .serious :
-                Text("\(randomSeriousQuestion)")
-                    .font(.system(size: 32, weight: .bold))
-                    .frame(width: 327, height: 114)
-                    .minimumScaleFactor(0.5)
-                    .multilineTextAlignment(.center)
-            }
-            Spacer()
-                .frame(height: 65)
-            Button(action: {
-                switch selectedHint {
-                case .fun :
-                    randomFunQuestion = hintViewModel.createRandomFunHints()
-                case .serious :
-                    randomSeriousQuestion = hintViewModel.createRandomSeriousHints()
+                Spacer()
+                    .frame(height: 25)
+                Button {
+                    switch selectedHint {
+                    case .fun :
+                        randomFunQuestion = hintViewModel.createRandomFunHints()
+                    case .serious :
+                        randomSeriousQuestion = hintViewModel.createRandomSeriousHints()
+                    }
+                } label: {
+                    Image("randomHintButton")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 223)
                 }
-            }) {
-                HStack {
-                    Image(systemName: "dice.fill")
-                    Text("질문 뽑기")
-                } .font(.system(size: 20, weight: .bold))
-                    .foregroundColor(.white)
-                    .padding([.leading, .trailing], 30)
-                    .padding([.top, .bottom], 14)
-                    .background(Color(red: 0, green: 0.64, blue: 1))
-                    .cornerRadius(16)
+                Spacer()
+                    .frame(height: 25)
             }
-            Spacer()
-                .frame(height: 24)
+            .frame(width: 358, height: 332)
         }
     }
 }

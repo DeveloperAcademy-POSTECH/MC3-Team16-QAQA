@@ -19,18 +19,21 @@ struct QuestionView: View {
     var body: some View {
         ZStack {
             VStack{
+                Spacer()
+                    .frame(width: 16)
                 HStack{
                     Spacer()
-                        .frame(width: 16)
+                        .frame(width: 20)
                     Button {
                         game.isTimer.toggle()
                         game.showTimerModal = true  // action
                         game.timerModalController()
                     } label: {
-                        Image(systemName: "pause.fill" )
-                            .foregroundColor(Color("pauseTextColor"))
+                        Image(systemName: "pause.fill")
+                            .font(.system(size: 20))
+                            .foregroundColor(.white)
                             .padding(15)
-                            .background(Circle().foregroundColor(Color("pauseButtonColor")))
+                            .background(Circle().foregroundColor(Color("pauseButtonYellow")))
                     }
                     .sheet(isPresented: $game.showTimerModal){
                         TimerModalView(gameTimerModel: _gameTimerModel, game: RealTimeGame())
@@ -51,17 +54,14 @@ struct QuestionView: View {
                     TimerView(game: game, isShowingOutroView: $isShowingOutroView, width:100)
                         .environmentObject(gameTimerModel)
                     Spacer()
+                        .frame(width: 130)
                     Button{
                         showFinishModal.toggle()
                     } label: {
-                        ZStack{
-                            RoundedRectangle(cornerRadius: 12)
-                                .foregroundColor(Color("finishButtonColor"))
-                                .frame(width: 77, height: 44)
-                            Text("끝내기")
-                                .foregroundColor(.red)
-                                .bold()
-                        }
+                        Image("endButton")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 80)
                     }
                     .sheet(isPresented: $showFinishModal, content: {
                         FinishModalView(isShowingOutroView: $isShowingOutroView, game: game) //TODO: View 바꾸기
@@ -80,26 +80,31 @@ struct QuestionView: View {
                         .frame(width: 16)
                 } //Timer와 끝내기 버튼
                 ZStack{ //QuestionView의 메인 내용과 ReactionView를 ZStack으로 쌓아놓기
-                    VStack{ //QuestionView의 메인 내용(프로필과 질문버튼, 리액션버튼)
-                        Group{
+                    VStack (spacing: 0) { //QuestionView의 메인 내용(프로필과 질문버튼, 리액션버튼)
+                        Group {
                             Spacer()
                                 .frame(height: 10)
-                            Text("\(game.topicUserName)")
-                                .font(.system(size: 24, weight: .bold))
-                            Spacer()
-                                .frame(height: 24)
                             ZStack{
-                                RoundedRectangle(cornerRadius: 40)
-                                    .foregroundColor(.gray.opacity(0.1))
-                                    .frame(width: 361, height: 400)
-                                HintView()
+                                Image("questionBubble")
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 211)
+                                VStack{
+                                    Text("오늘의 주인공")
+                                        .font(.custom("BMJUAOTF", size: 15))
+                                    Text("\(game.topicUserName)")
+                                        .font(.custom("BMJUAOTF", size: 25))
+                                    Spacer()
+                                        .frame(height: 10)
+                                }
                             }
+                              Image("questionQaqa")
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 140)
+                                HintView()
                             Spacer()
                                 .frame(height: 30)
-                            ZStack{
-                                RoundedRectangle(cornerRadius: 103)
-                                    .foregroundColor(.gray.opacity(0.1))
-                                    .frame(width: 393, height: 206)
                                 HStack{
                                     Button(action: { //reaaction button action
                                         game.isGoodReaction = true // 킹정
@@ -115,22 +120,15 @@ struct QuestionView: View {
                                         })
                                     }, label: { //킹정버튼
                                         VStack(alignment:.center){
-                                            ZStack{
-                                                Image("greenButton")
+                                                Image("reactionButton_Good")
                                                     .resizable()
                                                     .frame(width: 153, height: 138)
                                                     .padding(.trailing ,10)
-                                                Image("star")
-                                                    .resizable()
-                                                    .frame(width:64, height: 61)
-                                                    .padding(.trailing,10)
-                                                    .padding(.bottom, 15)
-                                            }
-                                            Text("킹정")
-                                                .font(.system(size: 20))
-                                                .foregroundColor(Color("reactionGoodColor"))
-                                                .bold()
-                                                .padding(.trailing, 15)
+//                                            Text("킹정")
+//                                                .font(.custom("BMJUAOTF", size: 20))
+//                                                .foregroundColor(Color("reactionGoodColor"))
+//                                                .bold()
+//                                                .padding(.trailing, 15)
                                         }
                                     })
                                     Button(action: {
@@ -147,26 +145,18 @@ struct QuestionView: View {
                                         })//에바버튼 액션
                                     }, label: { //에바버튼
                                         VStack(alignment:.center){
-                                            ZStack{
-                                                Image("orangeButton")
+                                                Image("reactionButton_Bad")
                                                     .resizable()
                                                     .frame(width: 153, height: 138)
                                                     .padding(.leading ,10)
-                                                Image("questionMark")
-                                                    .resizable()
-                                                    .frame(width:64, height: 61)
-                                                    .padding(.leading,10)
-                                                    .padding(.bottom, 15)
-                                            }
-                                            Text("에바")
-                                                .font(.system(size: 20))
-                                                .foregroundColor(Color("reactionQuestionColor"))
-                                                .bold()
-                                                .padding(.leading, 15)
+//                                            Text("에바")
+//                                                .font(.custom("BMJUAOTF", size: 20))
+//                                                .foregroundColor(Color("reactionQuestionColor"))
+//                                                .bold()
+//                                                .padding(.leading, 15)
                                         }
                                     })
                                 }
-                            }
                         }
                     }
                     //ReactionView
