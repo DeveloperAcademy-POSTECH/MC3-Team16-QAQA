@@ -8,16 +8,11 @@
 import Foundation
 import AVKit
 
-class SoundSetting: ObservableObject {
-    static let instance = SoundSetting()
+class ReactionSoundViewModel: ObservableObject {
+    private var reactionSoundModel = ReactionSoundModel()
     
     var player: AVAudioPlayer?
-    
-//    enum SoundOption: String {
-//        case kingjung
-//        case eva
-//    }
-    
+
     func playSound(sound: SoundOption) {
         guard let url = Bundle.main.url(forResource: sound.rawValue, withExtension: ".mp3") else {
             return }
@@ -27,5 +22,11 @@ class SoundSetting: ObservableObject {
         } catch _ {
             print("오류 발생")
         }
+    }
+    func createRandomEvaReactionSounds() -> SoundOption {
+        return reactionSoundModel.reactionEvaSounds.randomElement()!
+    }
+    func createRandomKingjungReactionSounds() -> SoundOption {
+        return reactionSoundModel.reactionKingjungSounds.randomElement()!
     }
 }

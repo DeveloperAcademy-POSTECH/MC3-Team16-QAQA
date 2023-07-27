@@ -44,6 +44,15 @@
 		C5C282B32A7169430027416D /* eva4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C5C282B22A7169430027416D /* eva4.mp3 */; };
 		C5C282B52A71695D0027416D /* eva5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C5C282B42A71695D0027416D /* eva5.mp3 */; };
 		C5C282B72A71696E0027416D /* eva6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C5C282B62A71696E0027416D /* eva6.mp3 */; };
+		C5C282C12A71F7820027416D /* kingjung5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C5C282B82A71F7820027416D /* kingjung5.mp3 */; };
+		C5C282C22A71F7820027416D /* kingjung7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C5C282B92A71F7820027416D /* kingjung7.mp3 */; };
+		C5C282C32A71F7820027416D /* kingjung3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C5C282BA2A71F7820027416D /* kingjung3.mp3 */; };
+		C5C282C42A71F7820027416D /* kingjung6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C5C282BB2A71F7820027416D /* kingjung6.mp3 */; };
+		C5C282C52A71F7820027416D /* kingjung4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C5C282BC2A71F7820027416D /* kingjung4.mp3 */; };
+		C5C282C62A71F7820027416D /* kingjung8.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C5C282BD2A71F7820027416D /* kingjung8.mp3 */; };
+		C5C282C72A71F7820027416D /* kingjung9.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C5C282BE2A71F7820027416D /* kingjung9.mp3 */; };
+		C5C282C82A71F7820027416D /* kingjung2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C5C282BF2A71F7820027416D /* kingjung2.mp3 */; };
+		C5C282C92A71F7820027416D /* kingjung10.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C5C282C02A71F7820027416D /* kingjung10.mp3 */; };
 		C5C61B992A5E583C00FB8854 /* HintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C61B982A5E583C00FB8854 /* HintView.swift */; };
 		C5C7E7F02A6F7134000A3CCC /* BMJUAOTF.otf in Resources */ = {isa = PBXBuildFile; fileRef = C5C7E7EF2A6F7134000A3CCC /* BMJUAOTF.otf */; };
 		C5C7E7F22A70B017000A3CCC /* ReactionLottie.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C7E7F12A70B017000A3CCC /* ReactionLottie.swift */; };
@@ -93,6 +102,15 @@
 		C5C282B22A7169430027416D /* eva4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = eva4.mp3; sourceTree = "<group>"; };
 		C5C282B42A71695D0027416D /* eva5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = eva5.mp3; sourceTree = "<group>"; };
 		C5C282B62A71696E0027416D /* eva6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = eva6.mp3; sourceTree = "<group>"; };
+		C5C282B82A71F7820027416D /* kingjung5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = kingjung5.mp3; sourceTree = "<group>"; };
+		C5C282B92A71F7820027416D /* kingjung7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = kingjung7.mp3; sourceTree = "<group>"; };
+		C5C282BA2A71F7820027416D /* kingjung3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = kingjung3.mp3; sourceTree = "<group>"; };
+		C5C282BB2A71F7820027416D /* kingjung6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = kingjung6.mp3; sourceTree = "<group>"; };
+		C5C282BC2A71F7820027416D /* kingjung4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = kingjung4.mp3; sourceTree = "<group>"; };
+		C5C282BD2A71F7820027416D /* kingjung8.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = kingjung8.mp3; sourceTree = "<group>"; };
+		C5C282BE2A71F7820027416D /* kingjung9.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = kingjung9.mp3; sourceTree = "<group>"; };
+		C5C282BF2A71F7820027416D /* kingjung2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = kingjung2.mp3; sourceTree = "<group>"; };
+		C5C282C02A71F7820027416D /* kingjung10.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = kingjung10.mp3; sourceTree = "<group>"; };
 		C5C61B982A5E583C00FB8854 /* HintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintView.swift; sourceTree = "<group>"; };
 		C5C7E7EC2A6F5F07000A3CCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C5C7E7EF2A6F7134000A3CCC /* BMJUAOTF.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BMJUAOTF.otf; sourceTree = "<group>"; };
@@ -346,6 +364,15 @@
 				C5C282B42A71695D0027416D /* eva5.mp3 */,
 				C5C282B62A71696E0027416D /* eva6.mp3 */,
 				C5C7E8052A715FF8000A3CCC /* kingjung.mp3 */,
+				C5C282BF2A71F7820027416D /* kingjung2.mp3 */,
+				C5C282BA2A71F7820027416D /* kingjung3.mp3 */,
+				C5C282BC2A71F7820027416D /* kingjung4.mp3 */,
+				C5C282B82A71F7820027416D /* kingjung5.mp3 */,
+				C5C282BB2A71F7820027416D /* kingjung6.mp3 */,
+				C5C282B92A71F7820027416D /* kingjung7.mp3 */,
+				C5C282BD2A71F7820027416D /* kingjung8.mp3 */,
+				C5C282BE2A71F7820027416D /* kingjung9.mp3 */,
+				C5C282C02A71F7820027416D /* kingjung10.mp3 */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -414,16 +441,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5C282C72A71F7820027416D /* kingjung9.mp3 in Resources */,
 				C5C282AF2A71691A0027416D /* eva2.mp3 in Resources */,
+				C5C282C82A71F7820027416D /* kingjung2.mp3 in Resources */,
+				C5C282C12A71F7820027416D /* kingjung5.mp3 in Resources */,
 				C5C282B12A7169340027416D /* eva3.mp3 in Resources */,
 				B87998592A5BACBF00167597 /* Preview Assets.xcassets in Resources */,
 				C5C282B52A71695D0027416D /* eva5.mp3 in Resources */,
+				C5C282C92A71F7820027416D /* kingjung10.mp3 in Resources */,
 				C5C282B72A71696E0027416D /* eva6.mp3 in Resources */,
+				C5C282C62A71F7820027416D /* kingjung8.mp3 in Resources */,
 				B87998562A5BACBF00167597 /* Assets.xcassets in Resources */,
 				C5C7E7FD2A70C987000A3CCC /* badReactionLottie.json in Resources */,
 				C5C7E7F02A6F7134000A3CCC /* BMJUAOTF.otf in Resources */,
+				C5C282C22A71F7820027416D /* kingjung7.mp3 in Resources */,
+				C5C282C42A71F7820027416D /* kingjung6.mp3 in Resources */,
 				C5C7E8062A715FF8000A3CCC /* kingjung.mp3 in Resources */,
+				C5C282C52A71F7820027416D /* kingjung4.mp3 in Resources */,
 				C5C7E7FF2A70C98D000A3CCC /* goodReactionLottie.json in Resources */,
+				C5C282C32A71F7820027416D /* kingjung3.mp3 in Resources */,
 				C5C282B32A7169430027416D /* eva4.mp3 in Resources */,
 				C5C282AD2A7165060027416D /* eva.mp3 in Resources */,
 			);

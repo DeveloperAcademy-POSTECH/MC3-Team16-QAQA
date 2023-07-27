@@ -9,6 +9,7 @@ import SwiftUI
 
 struct QuestionView: View {
     //    @EnvironmentObject var timerModel: TimerModel
+    @StateObject private var reactionSoundViewModel = ReactionSoundViewModel()
     @EnvironmentObject var gameTimerModel: RealTimeGame
     @ObservedObject var game: RealTimeGame
     @State private var showHintModal = false
@@ -100,7 +101,7 @@ struct QuestionView: View {
                 
                 HStack{
                     Button(action: { //reaction button action
-                        SoundSetting.instance.playSound(sound: .kingjung)
+                        reactionSoundViewModel.playSound(sound: reactionSoundViewModel.createRandomKingjungReactionSounds())
                         game.isGoodReaction = true // 킹정
                         withAnimation(.spring(response: 0.2, blendDuration: 0.0)){
                             game.playReaction.toggle()
@@ -126,7 +127,7 @@ struct QuestionView: View {
                         }
                     })
                     Button(action: {
-                        SoundSetting.instance.playSound(sound: .eva)
+                        reactionSoundViewModel.playSound(sound: reactionSoundViewModel.createRandomEvaReactionSounds())
                         game.isGoodReaction = false
                         withAnimation(.spring(response: 0.2, blendDuration: 0.0)){
                             game.playReaction.toggle()
