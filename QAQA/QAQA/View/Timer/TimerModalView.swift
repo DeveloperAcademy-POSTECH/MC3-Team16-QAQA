@@ -17,18 +17,24 @@ struct TimerModalView: View {
 //    @State var restartButtonColor: Color = Color.blue.opacity(0.8)
     
     var body: some View {
-        VStack(alignment: .center) {
-
-            Text("잠깐 정지!")
-                .font(.custom("BMJUAOTF", size: 40))
-            Spacer()
-                .frame(height: 5)
-            Text("터치 시 재개됩니다")
-                .font(.custom("BMJUAOTF", size: 23))
-            Image("pauseQaqa")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 322)
+        ZStack {
+            Color.black
+                .opacity(0.6)
+                .ignoresSafeArea()
+            VStack(alignment: .center) {
+                Text("잠깐 정지!")
+                    .font(.custom("BMJUAOTF", size: 40))
+                    .foregroundColor(.white)
+                Spacer()
+                    .frame(height: 5)
+                Text("터치 시 재개됩니다")
+                    .font(.custom("BMJUAOTF", size: 23))
+                    .foregroundColor(.white)
+                Image("pauseQaqa")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 322)
+            }
         }
     }
 }

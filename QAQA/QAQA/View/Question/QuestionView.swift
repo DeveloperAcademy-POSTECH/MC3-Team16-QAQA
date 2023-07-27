@@ -35,25 +35,6 @@ struct QuestionView: View {
                             .padding(15)
                             .background(Circle().foregroundColor(.pauseButtonYellow))
                     }
-                    .sheet(isPresented: $game.showTimerModal){
-                        TimerModalView()
-                            .presentationBackground(.clear)
-                            .presentationDetents([.height(257)])
-                            .padding(.top, 30)
-//                            .onTapGesture {
-//                                showTimerModal = false
-//                            }
-                            .onAppear{
-                                gameTimerModel.isTimer.toggle()
-                            }
-                            .onDisappear{
-                                gameTimerModel.isTimer.toggle()
-                                //                                game.showTimerModal = false
-                                game.timerModalController()
-                                print("\(game.showTimerModal)")
-                                
-                            }
-                    }
                     TimerView(game: game, isShowingOutroView: $isShowingOutroView, width:100)
                         .environmentObject(gameTimerModel)
                     Spacer()
@@ -178,6 +159,11 @@ struct QuestionView: View {
             }
             if (game.gameIsEnd) {
                 OutroEndingView(game: game,  isShowingOutroView: $isShowingOutroView)
+            } else if game.showTimerModal == true {
+                TimerModalView()
+                    .onTapGesture {
+                        game.showTimerModal = false
+                    }
             }
         }
     }
