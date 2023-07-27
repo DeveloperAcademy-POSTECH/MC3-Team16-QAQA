@@ -26,8 +26,8 @@ struct QuestionView: View {
                     Spacer()
                         .frame(width: 20)
                     Button {
-                        game.isTimer.toggle()
                         game.showTimerModal = true  // action
+                        game.isTimer.toggle()
                         game.timerModalController()
                     } label: {
                         Image(systemName: "pause.fill")
@@ -164,6 +164,8 @@ struct QuestionView: View {
                 TimerModalView()
                     .onTapGesture {
                         game.showTimerModal = false
+                        game.isTimer = true
+                        game.timerModalController()
                     }
             }
         }
