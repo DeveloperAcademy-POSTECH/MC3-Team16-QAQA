@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "randomHintButton.png",
+      "filename" : "endButton_Yellow.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "randomHintButton@2x.png",
+      "filename" : "endButton_Yellow@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "randomHintButton@3x.png",
+      "filename" : "endButton_Yellow@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
