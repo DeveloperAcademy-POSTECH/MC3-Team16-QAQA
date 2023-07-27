@@ -18,10 +18,10 @@ struct ReactionView: View {
                 Spacer()
                     .frame(height: 130)
                 if reactionState == true {
-                    ReactionLottie(jsonName:"goodReactionLottie")
+                    ReactionLottieView(jsonName:"goodReactionLottie")
                         .frame(width: 390, height: 390)
                 } else {
-                    ReactionLottie(jsonName:"badReactionLottie")
+                    ReactionLottieView(jsonName:"badReactionLottie")
                         .frame(width: 390, height: 390)
                 }
                 Text("by Your Teammates") //리액션을 누를 사람의 이름 뜨는 곳

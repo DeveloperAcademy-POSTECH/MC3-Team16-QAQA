@@ -1,5 +1,5 @@
 //
-//ReactionLottie.swift
+//ReactionLottieView.swift
 //QAQA
 //
 //Created by 김혜린 on 2023/07/26.
@@ -8,7 +8,7 @@ import Lottie
 import SwiftUI
 import UIKit
 
-struct ReactionLottie: UIViewRepresentable {
+struct ReactionLottieView: UIViewRepresentable {
     var name : String
     var loopMode: LottieLoopMode
     
@@ -18,7 +18,7 @@ struct ReactionLottie: UIViewRepresentable {
         self.loopMode = loopMode
     }
     
-    func makeUIView(context: UIViewRepresentableContext<ReactionLottie>) -> UIView {
+    func makeUIView(context: UIViewRepresentableContext<ReactionLottieView>) -> UIView {
         let view = UIView(frame: .zero)
         let animationView = LottieAnimationView()
         animationView.animation = LottieAnimation.named(name)
@@ -35,7 +35,7 @@ struct ReactionLottie: UIViewRepresentable {
         return view
     }
     
-    func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<ReactionLottie>) {
+    func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<ReactionLottieView>) {
         // do nothing
     }
     
@@ -43,6 +43,6 @@ struct ReactionLottie: UIViewRepresentable {
 
 struct ReactionLottie_Previews: PreviewProvider {
     static var previews: some View {
-        ReactionLottie()
+        ReactionLottieView()
     }
 }
