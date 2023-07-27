@@ -119,11 +119,6 @@ struct QuestionView: View {
                                 .resizable()
                                 .frame(width: 153, height: 138)
                                 .padding(.trailing ,10)
-                            //                                            Text("킹정")
-                            //                                                .font(.custom("BMJUAOTF", size: 20))
-                            //                                                .foregroundColor(Color("reactionGoodColor"))
-                            //                                                .bold()
-                            //                                                .padding(.trailing, 15)
                         }
                     })
                     Button(action: {
@@ -145,11 +140,6 @@ struct QuestionView: View {
                                 .resizable()
                                 .frame(width: 153, height: 138)
                                 .padding(.leading ,10)
-                            //                                            Text("에바")
-                            //                                                .font(.custom("BMJUAOTF", size: 20))
-                            //                                                .foregroundColor(Color("reactionQuestionColor"))
-                            //                                                .bold()
-                            //                                                .padding(.leading, 15)
                         }
                     })
                 }
