@@ -6,12 +6,12 @@
       "scale" : "1x"
     },
     {
-      "filename" : "reactionButton_Good 1.png",
+      "filename" : "reactionButton_Good@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "reactionButton_Good 2.png",
+      "filename" : "reactionButton_Good@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
