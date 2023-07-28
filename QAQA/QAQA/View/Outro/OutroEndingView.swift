@@ -14,7 +14,6 @@ struct OutroEndingView: View {
     @Binding var isShowingOutroView: Bool
     
     @State private var isShowingInfoView = true
-    @State private var userName = "웃쾌마" //오늘의 주인공 username
     @State private var reactionNum = 24
     
     var body: some View {
@@ -24,7 +23,7 @@ struct OutroEndingView: View {
                 Group {
                     Spacer()
                         .frame(height: 61)
-                    Text("\(userName)")
+                    Text("\(game.topicUserName)")
                         .font(.custom("BMJUAOTF", size: 40))
                         .foregroundColor(.outroViewYellow)
                     Spacer()
