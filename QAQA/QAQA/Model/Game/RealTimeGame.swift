@@ -219,7 +219,7 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
         topicUserName = allUserName.randomElement()!
     }
     
-    func pushGoodReaction() {
+    func pushReaction() {
         do {
             let data = encode(playReaction: playReaction, isGoodReaction: isGoodReaction)
             try myMatch?.sendData(toAllPlayers: data!, with: GKMatch.SendDataMode.unreliable)

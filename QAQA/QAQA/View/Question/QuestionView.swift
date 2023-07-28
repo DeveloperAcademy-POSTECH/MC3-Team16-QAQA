@@ -105,12 +105,12 @@ struct QuestionView: View {
                         game.isGoodReaction = true // 킹정
                         withAnimation(.spring(response: 0.2, blendDuration: 0.0)){
                             game.playReaction.toggle()
-                            game.pushGoodReaction()
+                            game.pushReaction()
                         }
                         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8, execute: {
                             withAnimation(.default){
                                 game.playReaction.toggle()
-                                game.pushGoodReaction()
+                                game.pushReaction()
                             }
                         })
                     }, label: { //킹정버튼
@@ -126,12 +126,12 @@ struct QuestionView: View {
                         game.isGoodReaction = false
                         withAnimation(.spring(response: 0.2, blendDuration: 0.0)){
                             game.playReaction.toggle()
-                            game.pushGoodReaction()
+                            game.pushReaction()
                         }
                         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8, execute: {
                             withAnimation(.default){
                                 game.playReaction.toggle()
-                                game.pushGoodReaction()
+                                game.pushReaction()
                             }
                         })//에바버튼 액션
                     }, label: { //에바버튼
