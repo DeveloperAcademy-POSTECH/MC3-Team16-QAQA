@@ -13,18 +13,17 @@ struct OutroEndingView: View {
     @ObservedObject var game: RealTimeGame
     
     @Binding var isShowingOutroView: Bool
+    @State var animateGaugeBar = false
     
     @State private var isShowingInfoView = true
-    @State private var reactionNum = 24
-//    @State private var totalKingjung: CGFloat = 10
-//    @State private var totalEva: CGFloat = 10
-//    @Binding var totalReaction: Int
+//    @State private var reactionNum = 24
     
-//    @State private var kingjungWidth: CGFloat = 0
-    //  = CGFloat((totalKingjung/totalReaction)*360
-//    @State private var evaWidth: CGFloat = 0
-    // = CGFloat((totalEva/totalReaction)*360
     
+    private let duration = 3.0
+      @State var isAnimated = false
+    @State var defaultKingjungWidth = 30.0
+    @State var defaultEvaWidth = 30.0
+    @State var defaultSpacerWidth = 300.0
     
     var body: some View {
         ZStack {
@@ -55,21 +54,37 @@ struct OutroEndingView: View {
                         .foregroundColor(.outroViewGaugeGray)
                     HStack {
                         RoundedRectangle(cornerRadius: 15)
-                            .frame(width: outroEndingViewModel.calculateKingjungWidth(), height: 40, alignment: .leading)
+                            .frame(width: defaultKingjungWidth, height: 40, alignment: .leading)
                             .foregroundColor(.yellow)
                         Spacer()
-                            .frame(width: outroEndingViewModel.calculateSpacerWidth())
+                            .frame(width: defaultSpacerWidth)
                         RoundedRectangle(cornerRadius: 15)
-                            .frame(width: outroEndingViewModel.calculateEvaWidth(), height: 40)
-//                            .frame(width: CGFloat((totalEva/totalReaction)*360), height: 40)
+                            .frame(width: defaultEvaWidth, height: 40)
                             .foregroundColor(.green)
                     }
+//                    .onAppear {
+//
+//                                }
                 }
                 Spacer()
                     .frame(height: 23)
                 OutroResultCardView()
                 Spacer()
                     .frame(height: 73)
+                Button {
+                    isAnimated.toggle()
+                    withAnimation{
+                        defaultKingjungWidth = outroEndingViewModel.calculateKingjungWidth()
+                       }
+                    withAnimation{
+                        defaultEvaWidth = outroEndingViewModel.calculateEvaWidth()
+                       }
+                    withAnimation{
+                        defaultSpacerWidth = outroEndingViewModel.calculateSpacerWidth()
+                       }
+                } label: {
+                    Text("button")
+                }
                 Button {
                     game.resetMatch()
                     game.saveScore()
