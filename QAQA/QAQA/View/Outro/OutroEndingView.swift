@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct OutroEndingView: View {
+    @StateObject private var outroEndingViewModel = OutroEndingViewModel()
     @StateObject private var outroViewModel = OutroViewModel()
     @ObservedObject var game: RealTimeGame
     
@@ -15,9 +16,15 @@ struct OutroEndingView: View {
     
     @State private var isShowingInfoView = true
     @State private var reactionNum = 24
-    @State private var totalKingjung = 10
-    @State private var totalEva = 10
-    @Binding var totalReaction: Int
+//    @State private var totalKingjung: CGFloat = 10
+//    @State private var totalEva: CGFloat = 10
+//    @Binding var totalReaction: Int
+    
+//    @State private var kingjungWidth: CGFloat = 0
+    //  = CGFloat((totalKingjung/totalReaction)*360
+//    @State private var evaWidth: CGFloat = 0
+    // = CGFloat((totalEva/totalReaction)*360
+    
     
     var body: some View {
         ZStack {
@@ -48,12 +55,13 @@ struct OutroEndingView: View {
                         .foregroundColor(.outroViewGaugeGray)
                     HStack {
                         RoundedRectangle(cornerRadius: 15)
-                            .frame(width: CGFloat((totalKingjung/totalReaction))*360, height: 40, alignment: .leading)
+                            .frame(width: outroEndingViewModel.calculateKingjungWidth(), height: 40, alignment: .leading)
                             .foregroundColor(.yellow)
                         Spacer()
-                            .frame(width: 300)
+                            .frame(width: outroEndingViewModel.calculateSpacerWidth())
                         RoundedRectangle(cornerRadius: 15)
-                            .frame(width: CGFloat((totalEva/totalReaction))*360, height: 40)
+                            .frame(width: outroEndingViewModel.calculateEvaWidth(), height: 40)
+//                            .frame(width: CGFloat((totalEva/totalReaction)*360), height: 40)
                             .foregroundColor(.green)
                     }
                 }
@@ -82,11 +90,15 @@ struct OutroEndingView: View {
                     }
             }
         }
+//        .onAppear {
+//            kingjungWidth = CGFloat((totalKingjung/totalReaction)*360)
+//            evaWidth = CGFloat((totalEva/totalReaction)*360)
+//        }
     }
 }
 
 struct OutroEndingView_Previews: PreviewProvider {
     static var previews: some View {
-        OutroEndingView(game: RealTimeGame(), isShowingOutroView: .constant(false), totalReaction: .constant(0))
+        OutroEndingView(game: RealTimeGame(), isShowingOutroView: .constant(false))
     }
 }

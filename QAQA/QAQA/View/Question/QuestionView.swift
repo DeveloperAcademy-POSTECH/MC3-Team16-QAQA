@@ -163,7 +163,7 @@ struct QuestionView: View {
                 game.topicUserName = game.topicUserName // TODO: 안됨
             }
             if (game.gameIsEnd) {
-                OutroEndingView(game: game,  isShowingOutroView: $isShowingOutroView, totalReaction: .constant(0))
+                OutroEndingView(game: game,  isShowingOutroView: $isShowingOutroView)
             } else if game.showTimerModal == true {
                 TimerModalView()
                     .onTapGesture {
