@@ -14,48 +14,55 @@ struct OutroEndingView: View {
     @Binding var isShowingOutroView: Bool
     
     @State private var isShowingInfoView = true
-    @State private var userName = "웃쾌마"
+    @State private var userName = "웃쾌마" //오늘의 주인공 username
     @State private var reactionNum = 24
     
     var body: some View {
         ZStack {
             Color.white
             VStack {
-                Spacer()
-                    .frame(height: 63)
-                Text("\(userName) 님이")
-                    .font(.system(size: 20))
-                    .foregroundColor(.gray)
-                Spacer()
-                    .frame(height: 16)
-                Text("\(reactionNum)")
-                    .font(.system(size: 80))
-                    .fontWeight(.bold)
-                Spacer()
-                    .frame(height: 8)
-                Text("개의 반응을 받았어요!")
-                    .font(.system(size: 24))
-                    .fontWeight(.semibold)
-                    .foregroundColor(.gray)
-                Spacer()
-                ScrollView(.horizontal, showsIndicators: false) {
-                    makeCardViews()
-                    // TODO: 자동 스크롤 효과
+                Group {
+                    Spacer()
+                        .frame(height: 61)
+                    Text("\(userName)")
+                        .font(.custom("BMJUAOTF", size: 40))
+                        .foregroundColor(.outroViewYellow)
+                    Spacer()
+                        .frame(height: 10)
+                    Text("오늘 받은 반응이에요!")
+                        .font(.custom("BMJUAOTF", size: 17))
+                        .foregroundColor(.outroViewGray)
+                    Spacer()
+                        .frame(height: 21)
+                    Image("outroQaqa")
+                        .resizable()
+                        .frame(width: 318, height: 284)
+                    Spacer()
+                        .frame(height: 20)
                 }
+                RoundedRectangle(cornerRadius: 15)
+                    .frame(width: 358, height: 40)
+                    .foregroundColor(.outroViewGaugeGray)
                 Spacer()
-                    .frame(height: 10)
+                    .frame(height: 23)
+                OutroResultCardView()
+                Spacer()
+                    .frame(height: 53)
+                
+                //                ScrollView(.horizontal, showsIndicators: false) {
+                //                    makeCardViews()
+                //                    // TODO: 자동 스크롤 효과
+                //                }
+                
                 Button {
                     game.resetMatch()
                     game.saveScore()
                     isShowingOutroView.toggle()
                 } label: {
-                    Text("수고하셨습니다!")
-                        .foregroundColor(.white)
-                        .padding([.top, .bottom], 20)
-                        .frame(maxWidth: .infinity)
-                        .background(RoundedRectangle(cornerRadius: 16))
-                }.padding(.bottom, 16)
-                    .padding([.leading, .trailing], 16)
+                    Image("backToHomeButton_Yellow")
+                        .resizable()
+                        .frame(width: 358, height: 53)
+                }
                 
             }
             if (isShowingInfoView) { // TODO: animation
