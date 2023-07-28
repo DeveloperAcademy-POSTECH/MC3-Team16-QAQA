@@ -35,7 +35,6 @@
 		B8F5747F2A63B4860028A46A /* OutroInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F5747E2A63B4860028A46A /* OutroInfoView.swift */; };
 		B8F574812A63BAB90028A46A /* OutroEndingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F574802A63BAB90028A46A /* OutroEndingView.swift */; };
 		B8F574872A63D3800028A46A /* OutroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F574862A63D3800028A46A /* OutroViewModel.swift */; };
-		B8F574892A6440CF0028A46A /* OutroCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F574882A6440CF0028A46A /* OutroCardView.swift */; };
 		B8F5748C2A64C8D30028A46A /* OutroCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F5748B2A64C8D30028A46A /* OutroCardModel.swift */; };
 		B8F574902A64DDF80028A46A /* TopicUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F5748F2A64DDF80028A46A /* TopicUserModel.swift */; };
 		C59F5A072A60F3B6007608AD /* HintModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59F5A062A60F3B6007608AD /* HintModel.swift */; };
@@ -57,6 +56,7 @@
 		C5C282C72A71F7820027416D /* kingjung9.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C5C282BE2A71F7820027416D /* kingjung9.mp3 */; };
 		C5C282C82A71F7820027416D /* kingjung2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C5C282BF2A71F7820027416D /* kingjung2.mp3 */; };
 		C5C282C92A71F7820027416D /* kingjung10.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C5C282C02A71F7820027416D /* kingjung10.mp3 */; };
+		C5C282CC2A73465F0027416D /* OutroResultCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C282CB2A73465F0027416D /* OutroResultCardView.swift */; };
 		C5C61B992A5E583C00FB8854 /* HintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C61B982A5E583C00FB8854 /* HintView.swift */; };
 		C5C7E7F02A6F7134000A3CCC /* BMJUAOTF.otf in Resources */ = {isa = PBXBuildFile; fileRef = C5C7E7EF2A6F7134000A3CCC /* BMJUAOTF.otf */; };
 		C5C7E7F22A70B017000A3CCC /* ReactionLottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C7E7F12A70B017000A3CCC /* ReactionLottieView.swift */; };
@@ -97,7 +97,6 @@
 		B8F5747E2A63B4860028A46A /* OutroInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutroInfoView.swift; sourceTree = "<group>"; };
 		B8F574802A63BAB90028A46A /* OutroEndingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutroEndingView.swift; sourceTree = "<group>"; };
 		B8F574862A63D3800028A46A /* OutroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutroViewModel.swift; sourceTree = "<group>"; };
-		B8F574882A6440CF0028A46A /* OutroCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutroCardView.swift; sourceTree = "<group>"; };
 		B8F5748B2A64C8D30028A46A /* OutroCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutroCardModel.swift; sourceTree = "<group>"; };
 		B8F5748F2A64DDF80028A46A /* TopicUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicUserModel.swift; sourceTree = "<group>"; };
 		C59F5A062A60F3B6007608AD /* HintModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintModel.swift; sourceTree = "<group>"; };
@@ -119,6 +118,7 @@
 		C5C282BE2A71F7820027416D /* kingjung9.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = kingjung9.mp3; sourceTree = "<group>"; };
 		C5C282BF2A71F7820027416D /* kingjung2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = kingjung2.mp3; sourceTree = "<group>"; };
 		C5C282C02A71F7820027416D /* kingjung10.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = kingjung10.mp3; sourceTree = "<group>"; };
+		C5C282CB2A73465F0027416D /* OutroResultCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutroResultCardView.swift; sourceTree = "<group>"; };
 		C5C61B982A5E583C00FB8854 /* HintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintView.swift; sourceTree = "<group>"; };
 		C5C7E7EC2A6F5F07000A3CCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C5C7E7EF2A6F7134000A3CCC /* BMJUAOTF.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BMJUAOTF.otf; sourceTree = "<group>"; };
@@ -318,7 +318,7 @@
 			children = (
 				B8F5747E2A63B4860028A46A /* OutroInfoView.swift */,
 				B8F574802A63BAB90028A46A /* OutroEndingView.swift */,
-				B8F574882A6440CF0028A46A /* OutroCardView.swift */,
+				C5C282CB2A73465F0027416D /* OutroResultCardView.swift */,
 			);
 			path = Outro;
 			sourceTree = "<group>";
@@ -514,13 +514,13 @@
 				B87998542A5BACBE00167597 /* HomeView.swift in Sources */,
 				B8F574902A64DDF80028A46A /* TopicUserModel.swift in Sources */,
 				602BD3092A67E86600F9E345 /* FinishModalView.swift in Sources */,
-				B8F574892A6440CF0028A46A /* OutroCardView.swift in Sources */,
 				B8B506912A5D01F000B3EAED /* RealTimeGame+GKGameCenterViewController.swift in Sources */,
 				B8F5748C2A64C8D30028A46A /* OutroCardModel.swift in Sources */,
 				B8B506952A5D2B2600B3EAED /* QuestionView.swift in Sources */,
 				B8B5069D2A5E42D600B3EAED /* RealTimeGame+MatchData.swift in Sources */,
 				B8F574812A63BAB90028A46A /* OutroEndingView.swift in Sources */,
 				B81CFC862A6901B20012FA5A /* RealTimeGame+GKMatchDelegate.swift in Sources */,
+				C5C282CC2A73465F0027416D /* OutroResultCardView.swift in Sources */,
 				B8B506832A5CF4FA00B3EAED /* HintViewModel.swift in Sources */,
 				B8B506832A5CF4FA00B3EAED /* HintViewModel.swift in Sources */,
 				B8B5068D2A5D019900B3EAED /* RealTimeGame+Friends.swift in Sources */,
@@ -678,6 +678,7 @@
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = gamekit;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -712,6 +713,7 @@
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = gamekit;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
