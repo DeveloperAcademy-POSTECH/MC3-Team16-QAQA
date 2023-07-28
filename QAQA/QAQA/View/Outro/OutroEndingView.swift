@@ -16,11 +16,11 @@ struct OutroEndingView: View {
     @State var animateGaugeBar = false
     
     @State private var isShowingInfoView = true
-//    @State private var reactionNum = 24
+    //    @State private var reactionNum = 24
     
     
-    private let duration = 3.0
-      @State var isAnimated = false
+    private let duration = 1.3
+    @State var isAnimated = false
     @State var defaultKingjungWidth = 30.0
     @State var defaultEvaWidth = 30.0
     @State var defaultSpacerWidth = 300.0
@@ -62,29 +62,25 @@ struct OutroEndingView: View {
                             .frame(width: defaultEvaWidth, height: 40)
                             .foregroundColor(.green)
                     }
-//                    .onAppear {
-//
-//                                }
+                } .onAppear() {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.3) {
+                        isAnimated.toggle()
+                        withAnimation(.easeOut(duration: duration)){
+                            defaultKingjungWidth = outroEndingViewModel.calculateKingjungWidth()
+                        }
+                        withAnimation(.easeOut(duration: duration)){
+                            defaultEvaWidth = outroEndingViewModel.calculateEvaWidth()
+                        }
+                        withAnimation(.easeOut(duration: duration)){
+                            defaultSpacerWidth = outroEndingViewModel.calculateSpacerWidth()
+                        }
+                    }
                 }
                 Spacer()
                     .frame(height: 23)
                 OutroResultCardView()
                 Spacer()
                     .frame(height: 73)
-                Button {
-                    isAnimated.toggle()
-                    withAnimation{
-                        defaultKingjungWidth = outroEndingViewModel.calculateKingjungWidth()
-                       }
-                    withAnimation{
-                        defaultEvaWidth = outroEndingViewModel.calculateEvaWidth()
-                       }
-                    withAnimation{
-                        defaultSpacerWidth = outroEndingViewModel.calculateSpacerWidth()
-                       }
-                } label: {
-                    Text("button")
-                }
                 Button {
                     game.resetMatch()
                     game.saveScore()
@@ -105,15 +101,12 @@ struct OutroEndingView: View {
                     }
             }
         }
-//        .onAppear {
-//            kingjungWidth = CGFloat((totalKingjung/totalReaction)*360)
-//            evaWidth = CGFloat((totalEva/totalReaction)*360)
-//        }
+     
     }
-}
-
-struct OutroEndingView_Previews: PreviewProvider {
-    static var previews: some View {
-        OutroEndingView(game: RealTimeGame(), isShowingOutroView: .constant(false))
+    
+    struct OutroEndingView_Previews: PreviewProvider {
+        static var previews: some View {
+            OutroEndingView(game: RealTimeGame(), isShowingOutroView: .constant(false))
+        }
     }
 }
