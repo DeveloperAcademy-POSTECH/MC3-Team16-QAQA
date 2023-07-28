@@ -15,6 +15,9 @@ struct OutroEndingView: View {
     
     @State private var isShowingInfoView = true
     @State private var reactionNum = 24
+    @State private var totalKingjung = 10
+    @State private var totalEva = 10
+    @Binding var totalReaction: Int
     
     var body: some View {
         ZStack {
@@ -22,7 +25,7 @@ struct OutroEndingView: View {
             VStack {
                 Group {
                     Spacer()
-                        .frame(height: 61)
+                        .frame(height: 40)
                     Text("\(game.topicUserName)")
                         .font(.custom("BMJUAOTF", size: 40))
                         .foregroundColor(.outroViewYellow)
@@ -39,14 +42,26 @@ struct OutroEndingView: View {
                     Spacer()
                         .frame(height: 20)
                 }
-                RoundedRectangle(cornerRadius: 15)
-                    .frame(width: 358, height: 40)
-                    .foregroundColor(.outroViewGaugeGray)
+                ZStack (alignment: .leading){
+                    RoundedRectangle(cornerRadius: 15)
+                        .frame(width: 360, height: 40)
+                        .foregroundColor(.outroViewGaugeGray)
+                    HStack {
+                        RoundedRectangle(cornerRadius: 15)
+                            .frame(width: CGFloat((totalKingjung/totalReaction))*360, height: 40, alignment: .leading)
+                            .foregroundColor(.yellow)
+                        Spacer()
+                            .frame(width: 300)
+                        RoundedRectangle(cornerRadius: 15)
+                            .frame(width: CGFloat((totalEva/totalReaction))*360, height: 40)
+                            .foregroundColor(.green)
+                    }
+                }
                 Spacer()
                     .frame(height: 23)
                 OutroResultCardView()
                 Spacer()
-                    .frame(height: 53)
+                    .frame(height: 73)
                 Button {
                     game.resetMatch()
                     game.saveScore()
@@ -72,6 +87,6 @@ struct OutroEndingView: View {
 
 struct OutroEndingView_Previews: PreviewProvider {
     static var previews: some View {
-        OutroEndingView(game: RealTimeGame(), isShowingOutroView: .constant(false))
+        OutroEndingView(game: RealTimeGame(), isShowingOutroView: .constant(false), totalReaction: .constant(0))
     }
 }
