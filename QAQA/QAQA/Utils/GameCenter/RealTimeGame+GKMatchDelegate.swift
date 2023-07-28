@@ -40,7 +40,10 @@ extension RealTimeGame: GKMatchDelegate {
         } else if (gameData?.outcome) != nil {
             gameIsEnd = true
         } else if let reaction = gameData?.isPlayingReaction, let reactionState = gameData?.isGoodReaction {
-            withAnimation(.spring(response: 0.2,dampingFraction: 0.25,blendDuration: 0.0)){
+            withAnimation(
+                .default
+//                .spring(response: 0.2,dampingFraction: 0.25,blendDuration: 0.0) ___ 띠용 애니메이션 해제
+            ){
                 playReaction = reaction
                 isGoodReaction = reactionState
             }
