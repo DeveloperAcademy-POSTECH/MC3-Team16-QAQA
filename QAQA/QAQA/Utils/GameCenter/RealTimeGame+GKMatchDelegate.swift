@@ -39,10 +39,11 @@ extension RealTimeGame: GKMatchDelegate {
             opponentScore = score
         } else if (gameData?.outcome) != nil {
             gameIsEnd = true
-        } else if let reaction = gameData?.isPlayingReaction, let reactionState = gameData?.isGoodReaction {
+        } else if let reaction = gameData?.isPlayingReaction, let reactionState = gameData?.isGoodReaction, let allReactionScore = gameData?.reactionScore {
             withAnimation(.spring(response: 0.2,dampingFraction: 0.25,blendDuration: 0.0)){
                 playReaction = reaction
                 isGoodReaction = reactionState
+                reactionScore = allReactionScore
             }
         } else if let timerModal = gameData?.showTimerModal, let timer = gameData?.isTimer {
             showTimerModal = timerModal
@@ -51,6 +52,5 @@ extension RealTimeGame: GKMatchDelegate {
             countMin = min
             countSecond = second
         }
-        
     }
 }

@@ -103,6 +103,7 @@ struct QuestionView: View {
                     Button(action: { //reaction button action
                         reactionSoundViewModel.playSound(sound: reactionSoundViewModel.createRandomKingjungReactionSounds())
                         game.isGoodReaction = true // 킹정
+                        game.reactionScore += 1
                         withAnimation(.spring(response: 0.2, blendDuration: 0.0)){
                             game.playReaction.toggle()
                             game.pushReaction()
@@ -124,6 +125,7 @@ struct QuestionView: View {
                     Button(action: {
                         reactionSoundViewModel.playSound(sound: reactionSoundViewModel.createRandomEvaReactionSounds())
                         game.isGoodReaction = false
+                        game.reactionScore += 1
                         withAnimation(.spring(response: 0.2, blendDuration: 0.0)){
                             game.playReaction.toggle()
                             game.pushReaction()
