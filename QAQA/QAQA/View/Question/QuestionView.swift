@@ -12,6 +12,8 @@ struct QuestionView: View {
     @StateObject private var reactionSoundViewModel = ReactionSoundViewModel()
     @EnvironmentObject var gameTimerModel: RealTimeGame
     @ObservedObject var game: RealTimeGame
+    
+    
     @State private var showHintModal = false
 //        @State var showTimerModal = false
     @State var showFinishModal = false
@@ -106,11 +108,17 @@ struct QuestionView: View {
                         withAnimation(.spring(response: 0.2, blendDuration: 0.0)){
                             game.playReaction.toggle()
                             game.pushGoodReaction()
+                            //햅틱부분
+                            game.callSuccessHaptics()
+                            //햅틱부분
                         }
                         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8, execute: {
                             withAnimation(.default){
                                 game.playReaction.toggle()
                                 game.pushGoodReaction()
+                                //햅틱부분
+                                game.callSuccessHaptics()
+                                //햅틱부분
                             }
                         })
                     }, label: { //킹정버튼
@@ -119,11 +127,6 @@ struct QuestionView: View {
                                 .resizable()
                                 .frame(width: 153, height: 138)
                                 .padding(.trailing ,10)
-                            //                                            Text("킹정")
-                            //                                                .font(.custom("BMJUAOTF", size: 20))
-                            //                                                .foregroundColor(Color("reactionGoodColor"))
-                            //                                                .bold()
-                            //                                                .padding(.trailing, 15)
                         }
                     })
                     Button(action: {
@@ -132,11 +135,17 @@ struct QuestionView: View {
                         withAnimation(.spring(response: 0.2, blendDuration: 0.0)){
                             game.playReaction.toggle()
                             game.pushGoodReaction()
+                            //햅틱부분
+                            game.callErrorHaptics()
+                            //햅틱부분
                         }
                         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8, execute: {
                             withAnimation(.default){
                                 game.playReaction.toggle()
                                 game.pushGoodReaction()
+                                //햅틱부분
+                                game.callErrorHaptics()
+                                //햅틱부분
                             }
                         })//에바버튼 액션
                     }, label: { //에바버튼
@@ -145,11 +154,6 @@ struct QuestionView: View {
                                 .resizable()
                                 .frame(width: 153, height: 138)
                                 .padding(.leading ,10)
-                            //                                            Text("에바")
-                            //                                                .font(.custom("BMJUAOTF", size: 20))
-                            //                                                .foregroundColor(Color("reactionQuestionColor"))
-                            //                                                .bold()
-                            //                                                .padding(.leading, 15)
                         }
                     })
                 }

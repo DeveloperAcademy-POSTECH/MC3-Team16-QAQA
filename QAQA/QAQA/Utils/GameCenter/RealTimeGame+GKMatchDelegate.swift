@@ -27,7 +27,7 @@ extension RealTimeGame: GKMatchDelegate {
     func match(_ match: GKMatch, didFailWithError error: Error?) {
         print("\n\nMatch object fails with error: \(error!.localizedDescription)")
     }
-
+    
     func match(_ match: GKMatch, shouldReinviteDisconnectedPlayer player: GKPlayer) -> Bool {
         return false
     }
@@ -52,5 +52,22 @@ extension RealTimeGame: GKMatchDelegate {
             countSecond = second
         }
         
+        //햅틱부분
+        else if let wasSuccessCalled = gameData?.wasSuccessCalledHaptics, wasSuccessCalled {
+            triggerSuccessHaptic()
+        } else if let wasErrorCalled = gameData?.wasErrorCalledHaptics, wasErrorCalled {
+            triggerErrorHaptic()
+        }
     }
+    
+    func triggerSuccessHaptic() {
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.success)
+    }
+
+    func triggerErrorHaptic() {
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.error)
+    }
+    //햅틱부분
 }
