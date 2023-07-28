@@ -39,6 +39,11 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
     @Published var showTimerModal = false
     @Published var isTimer = true
     @Published var timer = Timer.publish(every: 1.0, on: .main, in: .common).autoconnect()
+    
+    //햅틱부분
+    @Published var wasSuccessCalledHaptics = false // new field
+    @Published var wasErrorCalledHaptics = false // new field
+    //햅틱부분
 
     var matchName: String {
         "\(opponentName) Match"
@@ -261,5 +266,28 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
             countSecond -= 1
         }
     }
+    //햅틱부분
+    func callSuccessHaptics() {
+        do {
+            let data = encode(wasSuccessCalledHaptics: true)
+            let generator = UINotificationFeedbackGenerator()
+            generator.notificationOccurred(.success)
+            try myMatch?.sendData(toAllPlayers: data!, with: GKMatch.SendDataMode.unreliable)
+        } catch {
+            print("Error: \(error.localizedDescription).")
+        }
+    }
+
+    func callErrorHaptics() {
+        do {
+            let data = encode(wasErrorCalledHaptics: true)
+            let generator = UINotificationFeedbackGenerator()
+            generator.notificationOccurred(.error)
+            try myMatch?.sendData(toAllPlayers: data!, with: GKMatch.SendDataMode.unreliable)
+        } catch {
+            print("Error: \(error.localizedDescription).")
+        }
+    }
+    //햅틱부분
 }
 
