@@ -48,12 +48,6 @@ struct OutroEndingView: View {
                 OutroResultCardView()
                 Spacer()
                     .frame(height: 53)
-                
-                //                ScrollView(.horizontal, showsIndicators: false) {
-                //                    makeCardViews()
-                //                    // TODO: 자동 스크롤 효과
-                //                }
-                
                 Button {
                     game.resetMatch()
                     game.saveScore()
@@ -74,19 +68,6 @@ struct OutroEndingView: View {
                     }
             }
         }
-    }
-}
-
-extension OutroEndingView {
-    private func makeCardViews() -> some View {
-        HStack {
-            ForEach(outroViewModel.cardModels) { model in
-                OutroCardView(text: model.cardText, profile: model.cardProfile, username: model.cardUserName, isShowingCrown: model.isShowingCrown)
-                    .padding(.trailing, 20)
-            }
-        }
-        .padding([.leading, .trailing], 16)
-        .padding([.top, .bottom], 70)
     }
 }
 
