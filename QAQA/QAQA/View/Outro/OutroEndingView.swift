@@ -19,7 +19,7 @@ struct OutroEndingView: View {
     //    @State private var reactionNum = 24
     
     
-    private let duration = 1.3
+    private let duration = 1.0
     @State var isAnimated = false
     @State var defaultKingjungWidth = 30.0
     @State var defaultEvaWidth = 30.0
@@ -51,16 +51,34 @@ struct OutroEndingView: View {
                 ZStack (alignment: .leading){
                     RoundedRectangle(cornerRadius: 15)
                         .frame(width: 360, height: 40)
-                        .foregroundColor(.outroViewGaugeGray)
+                        .foregroundColor(.outroGaugeGray)
                     HStack {
-                        RoundedRectangle(cornerRadius: 15)
-                            .frame(width: defaultKingjungWidth, height: 40, alignment: .leading)
-                            .foregroundColor(.yellow)
+                        ZStack{
+                            RoundedRectangle(cornerRadius: 15)
+                                .frame(width: defaultKingjungWidth, height: 40, alignment: .leading)
+                                .foregroundColor(.outroGaugeYellow)
+                            VStack (alignment: .leading){
+                                RoundedRectangle(cornerRadius: 6)
+                                    .frame(width: (defaultKingjungWidth-20), height: 8, alignment: .leading)
+                                    .foregroundColor(.outroGaugeLightYellow)
+                                Spacer()
+                                    .frame(height: 15)
+                            }
+                        }
                         Spacer()
                             .frame(width: defaultSpacerWidth)
-                        RoundedRectangle(cornerRadius: 15)
-                            .frame(width: defaultEvaWidth, height: 40)
-                            .foregroundColor(.green)
+                        ZStack{
+                            RoundedRectangle(cornerRadius: 15)
+                                .frame(width: defaultEvaWidth, height: 40, alignment: .leading)
+                                .foregroundColor(.outroGaugeGreen)
+                            VStack (alignment: .leading){
+                                RoundedRectangle(cornerRadius: 6)
+                                    .frame(width: (defaultEvaWidth-20), height: 8, alignment: .leading)
+                                    .foregroundColor(.outroGaugeLightGreen)
+                                Spacer()
+                                    .frame(height: 15)
+                            }
+                        }
                     }
                 } .onAppear() {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.3) {
