@@ -50,6 +50,9 @@ extension RealTimeGame: GKMatchDelegate {
         } else if let min = gameData?.countMin, let second = gameData?.countSecond {
             countMin = min
             countSecond = second
+        } else if let bomb = gameData?.isBombAppear, let randomUserName = gameData?.topicUserName {
+            isBombAppear = bomb
+            topicUserName = randomUserName
         }
         
         //햅틱부분

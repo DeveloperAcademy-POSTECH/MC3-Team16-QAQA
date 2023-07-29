@@ -59,11 +59,23 @@ struct HomeView: View {
         }
         // Display the game interface if a match is ongoing.
         .fullScreenCover(isPresented: $game.playingGame) {
-            QuestionView(game:game)
+//            QuestionView(game:game)
+//                .onAppear(){
+//                    gameTimerModel.countMin = 10
+//                    gameTimerModel.countSecond = 0
+//                    gameTimerModel.isTimer = true
+//                }
+            TestingIntroGame(game: game)
                 .onAppear(){
-                    gameTimerModel.countMin = 10
-                    gameTimerModel.countSecond = 0
-                    gameTimerModel.isTimer = true
+//                    game.createRandomTopicUser(match: game.myMatch!)
+                    game.bombTransport()
+                    if game.myName == game.topicUserName {
+                        game.isBombPresent = true
+                        
+                    } else {
+                        game.isBombPresent = false
+                        
+                    }
                 }
         }
     }

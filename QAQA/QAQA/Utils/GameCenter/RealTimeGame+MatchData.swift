@@ -24,6 +24,8 @@ struct GameData: Codable {
     var wasSuccessCalledHaptics: Bool? // new field
     var wasErrorCalledHaptics: Bool? // new field
     //햅틱부분
+    var isBombAppear: Bool?
+    var topicUserName: String?
 }
 
 extension RealTimeGame {
@@ -35,6 +37,10 @@ extension RealTimeGame {
     
     func encode(showTimerModal:Bool, isTimer: Bool) -> Data? {
         let gameData = GameData(matchName: matchName, playerName: GKLocalPlayer.local.displayName, showTimerModal: showTimerModal, isTimer: isTimer)
+        return encode(gameData: gameData)
+    }
+    func encode(isBombAppear: Bool, topicUserName: String) -> Data? {
+        let gameData = GameData(matchName: matchName, playerName: GKLocalPlayer.local.displayName, isBombAppear: isBombAppear, topicUserName: topicUserName)
         return encode(gameData: gameData)
     }
     
