@@ -41,6 +41,7 @@
 		C59F5A092A60F657007608AD /* HintState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59F5A082A60F657007608AD /* HintState.swift */; };
 		C5AADBCF2A73B71C002FD2D9 /* OutroEndingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AADBCE2A73B71C002FD2D9 /* OutroEndingModel.swift */; };
 		C5AADBD12A73B7FA002FD2D9 /* OutroEndingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AADBD02A73B7FA002FD2D9 /* OutroEndingViewModel.swift */; };
+		C5AADBD42A750DF1002FD2D9 /* introResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AADBD32A750DF1002FD2D9 /* introResultView.swift */; };
 		C5C282A82A7163410027416D /* ReactionSoundViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C282A72A7163410027416D /* ReactionSoundViewModel.swift */; };
 		C5C282AB2A71641C0027416D /* ReactionSoundModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C282AA2A71641C0027416D /* ReactionSoundModel.swift */; };
 		C5C282AD2A7165060027416D /* eva.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C5C282AC2A7165060027416D /* eva.mp3 */; };
@@ -105,6 +106,7 @@
 		C59F5A082A60F657007608AD /* HintState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintState.swift; sourceTree = "<group>"; };
 		C5AADBCE2A73B71C002FD2D9 /* OutroEndingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutroEndingModel.swift; sourceTree = "<group>"; };
 		C5AADBD02A73B7FA002FD2D9 /* OutroEndingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutroEndingViewModel.swift; sourceTree = "<group>"; };
+		C5AADBD32A750DF1002FD2D9 /* introResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = introResultView.swift; sourceTree = "<group>"; };
 		C5C282A72A7163410027416D /* ReactionSoundViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionSoundViewModel.swift; sourceTree = "<group>"; };
 		C5C282AA2A71641C0027416D /* ReactionSoundModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionSoundModel.swift; sourceTree = "<group>"; };
 		C5C282AC2A7165060027416D /* eva.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = eva.mp3; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 		B879985F2A5BB39700167597 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C5AADBD32A750DF1002FD2D9 /* introResultView.swift */,
 				B8F5747D2A63B3C20028A46A /* Outro */,
 				C5C7E7E62A676A06000A3CCC /* Timer */,
 				60EB42842A5F948B0030286C /* Question */,
@@ -531,6 +534,7 @@
 				B8B506832A5CF4FA00B3EAED /* HintViewModel.swift in Sources */,
 				C5AADBD12A73B7FA002FD2D9 /* OutroEndingViewModel.swift in Sources */,
 				B8B5068D2A5D019900B3EAED /* RealTimeGame+Friends.swift in Sources */,
+				C5AADBD42A750DF1002FD2D9 /* introResultView.swift in Sources */,
 				AA9741E72A6EBF8F0027DE48 /* Ball.swift in Sources */,
 				B8B5069B2A5E3C1C00B3EAED /* RealTimeGame+GKLocalPlayerListener.swift in Sources */,
 				AA9741E92A6EBFAA0027DE48 /* GyroscopeManager.swift in Sources */,
