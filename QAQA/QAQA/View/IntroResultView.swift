@@ -1,5 +1,5 @@
 //
-//  introResultView.swift
+//  IntroResultView.swift
 //  QAQA
 //
 //  Created by 김혜린 on 2023/07/29.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct introResultView: View {
+struct IntroResultView: View {
     
     @ObservedObject var game: RealTimeGame
     
@@ -49,8 +49,8 @@ struct introResultView: View {
 
 }
 
-struct introResultView_Previews: PreviewProvider {
+struct IntroResultView_Previews: PreviewProvider {
     static var previews: some View {
-        introResultView(game:RealTimeGame())
+        IntroResultView(game:RealTimeGame())
     }
 }
