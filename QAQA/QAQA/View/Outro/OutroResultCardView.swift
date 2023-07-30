@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct OutroResultCardView: View {
-    
+    @ObservedObject var game: RealTimeGame
     @State private var totalReaction = 100
     
     var body: some View {
@@ -20,7 +20,7 @@ struct OutroResultCardView: View {
                 VStack {
                     Spacer()
                         .frame(height: 25)
-                    Text("\(totalReaction)")
+                    Text("\(game.reactionScore)")
                         .font(.custom("BMJUAOTF", size: 30))
                         .foregroundColor(.black)
                     Spacer()
@@ -76,6 +76,6 @@ struct OutroResultCardView: View {
 
 struct OutroResultCardView_Previews: PreviewProvider {
     static var previews: some View {
-        OutroResultCardView()
+        OutroResultCardView(game: RealTimeGame())
     }
 }
