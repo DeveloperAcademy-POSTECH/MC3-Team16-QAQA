@@ -15,7 +15,7 @@ struct QuestionView: View {
     
     
     @State private var showHintModal = false
-//        @State var showTimerModal = false
+    //        @State var showTimerModal = false
     @State var showFinishModal = false
     @State var isShowingOutroView = false
     
@@ -94,27 +94,32 @@ struct QuestionView: View {
                                 .frame(height: 30)
                         }
                     }
-                  
-                        //ReactionView
-                        ReactionView(game: RealTimeGame(),isReaction: $game.playReaction, reactionState: self.$game.isGoodReaction)
-                            .opacity(game.playReaction ? 1 : 0)
-        
+                    
+                    //ReactionView
+                    ReactionView(game: RealTimeGame(),isReaction: $game.playReaction, reactionState: self.$game.isGoodReaction)
+                        .opacity(game.playReaction ? 1 : 0)
+                    
                 }
                 
                 HStack{
                     Button(action: { //reaction button action
-                        reactionSoundViewModel.playSound(sound: reactionSoundViewModel.createRandomKingjungReactionSounds())
-                        game.isGoodReaction = true // 킹정
-                        withAnimation(.spring(response: 0.2, blendDuration: 0.0)){
-                            game.playReaction.toggle()
-                            game.pushGoodReaction()
-                            //햅틱부분
-                            game.callSuccessHaptics()
-                            //햅틱부분
+                        if game.playReaction == false {
+                            reactionSoundViewModel.playSound(sound: reactionSoundViewModel.createRandomKingjungReactionSounds())
+                            game.isGoodReaction = true // 킹정
+                            withAnimation(
+                                .default
+//                                .spring(response: 0.2, blendDuration: 0.0)___띠용 애니메이션 해제
+                            ){
+                                game.playReaction = true
+                                game.pushGoodReaction()
+                                //햅틱부분
+                                game.callSuccessHaptics()
+                                //햅틱부분
+                            }
                         }
                         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8, execute: {
                             withAnimation(.default){
-                                game.playReaction.toggle()
+                                game.playReaction = false
                                 game.pushGoodReaction()
                                 //햅틱부분
                                 game.callSuccessHaptics()
@@ -130,18 +135,24 @@ struct QuestionView: View {
                         }
                     })
                     Button(action: {
-                        reactionSoundViewModel.playSound(sound: reactionSoundViewModel.createRandomEvaReactionSounds())
-                        game.isGoodReaction = false
-                        withAnimation(.spring(response: 0.2, blendDuration: 0.0)){
-                            game.playReaction.toggle()
-                            game.pushGoodReaction()
-                            //햅틱부분
-                            game.callErrorHaptics()
-                            //햅틱부분
+                        if game.playReaction == false {
+                            reactionSoundViewModel.playSound(sound: reactionSoundViewModel.createRandomEvaReactionSounds())
+                            game.isGoodReaction = false // 에바
+                            withAnimation(
+                                .default
+//                                .spring(response: 0.2, blendDuration: 0.0)___띠용 애니메이션 해제
+                            ){
+                                game.playReaction = true
+                                game.pushGoodReaction()
+                                //햅틱부분
+                                game.callErrorHaptics()
+                                //햅틱부분
+                                
+                            }
                         }
                         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8, execute: {
                             withAnimation(.default){
-                                game.playReaction.toggle()
+                                game.playReaction = false
                                 game.pushGoodReaction()
                                 //햅틱부분
                                 game.callErrorHaptics()
