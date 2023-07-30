@@ -8,15 +8,18 @@
 import Foundation
 
 class OutroEndingViewModel: ObservableObject {
-    private var outroEndingModel = OutroEndingModel()
+//    private var outroEndingModel = OutroEndingModel()
     
-    func calculateKingjungWidth() -> CGFloat {
-        return (outroEndingModel.totalKingjung/outroEndingModel.totalReaction)*360
+    func calculateKingjungWidth(kingjung: CGFloat, total: CGFloat) -> CGFloat {
+//        return (outroEndingModel.totalKingjung/outroEndingModel.totalReaction)*360
+        return (kingjung/total)*360
     }
-    func calculateEvaWidth() -> CGFloat {
-        return (outroEndingModel.totalEva/outroEndingModel.totalReaction)*360
+    func calculateEvaWidth(eva: CGFloat, total: CGFloat) -> CGFloat {
+        return (eva/total)*360
+//        return (outroEndingModel.totalEva/outroEndingModel.totalReaction)*360
     }
-    func calculateSpacerWidth() -> CGFloat {
-        return 360-(calculateKingjungWidth()+calculateEvaWidth())
+    func calculateSpacerWidth(kingjung: CGFloat, eva: CGFloat, total: CGFloat) -> CGFloat {
+//        return 360-(calculateKingjungWidth()+calculateEvaWidth())
+        return 360 - ((kingjung/total)*360 + (eva/total)*360)
     }
 }

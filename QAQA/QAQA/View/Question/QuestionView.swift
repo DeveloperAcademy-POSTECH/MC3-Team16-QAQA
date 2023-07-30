@@ -106,6 +106,7 @@ struct QuestionView: View {
                         if game.playReaction == false {
                             reactionSoundViewModel.playSound(sound: reactionSoundViewModel.createRandomKingjungReactionSounds())
                             game.isGoodReaction = true // 킹정
+                            game.allKingjungScore += 1
                             game.reactionScore += 1
                             withAnimation(
                                 .default
@@ -136,6 +137,7 @@ struct QuestionView: View {
                         if game.playReaction == false {
                             reactionSoundViewModel.playSound(sound: reactionSoundViewModel.createRandomEvaReactionSounds())
                             game.isGoodReaction = false // 에바
+                            game.allEvaScore += 1
                             game.reactionScore += 1
                             withAnimation(
                                 .default

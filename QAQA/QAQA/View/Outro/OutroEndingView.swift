@@ -84,13 +84,13 @@ struct OutroEndingView: View {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.3) {
                         isAnimated.toggle()
                         withAnimation(.easeOut(duration: duration)){
-                            defaultKingjungWidth = outroEndingViewModel.calculateKingjungWidth()
+                            defaultKingjungWidth = outroEndingViewModel.calculateKingjungWidth(kingjung: CGFloat(game.allKingjungScore), total: CGFloat(game.reactionScore))
                         }
                         withAnimation(.easeOut(duration: duration)){
-                            defaultEvaWidth = outroEndingViewModel.calculateEvaWidth()
+                            defaultEvaWidth = outroEndingViewModel.calculateEvaWidth(eva: CGFloat(game.allEvaScore), total: CGFloat(game.reactionScore))
                         }
                         withAnimation(.easeOut(duration: duration)){
-                            defaultSpacerWidth = outroEndingViewModel.calculateSpacerWidth()
+                            defaultSpacerWidth = outroEndingViewModel.calculateSpacerWidth(kingjung: CGFloat(game.allKingjungScore), eva: CGFloat(game.allEvaScore), total: CGFloat(game.reactionScore))
                         }
                     }
                 }
