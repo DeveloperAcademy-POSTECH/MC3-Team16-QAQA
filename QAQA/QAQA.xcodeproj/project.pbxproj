@@ -14,13 +14,10 @@
 		60EB427B2A5E44880030286C /* UIScreen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EB427A2A5E44880030286C /* UIScreen+Extension.swift */; };
 		60EB42802A5ED78A0030286C /* TimerModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EB427F2A5ED78A0030286C /* TimerModalView.swift */; };
 		60EB42822A5ED99E0030286C /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EB42812A5ED99E0030286C /* TimerModel.swift */; };
-		AA3192DC2A64EFC30098573D /* HapticMotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3192DB2A64EFC30098573D /* HapticMotion.swift */; };
 		AA9741E72A6EBF8F0027DE48 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9741E62A6EBF8F0027DE48 /* Ball.swift */; };
 		AA9741E92A6EBFAA0027DE48 /* GyroscopeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9741E82A6EBFAA0027DE48 /* GyroscopeManager.swift */; };
 		AA9741EB2A6EBFCE0027DE48 /* BallContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9741EA2A6EBFCE0027DE48 /* BallContainerView.swift */; };
 		AA9741ED2A6EC0290027DE48 /* Content_test.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9741EC2A6EC0290027DE48 /* Content_test.swift */; };
-		AA9CD3FC2A643B3F00B9A030 /* HapticTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9CD3FB2A643B3F00B9A030 /* HapticTestView.swift */; };
-		AA9CD3FE2A643B6200B9A030 /* HapticFeedbackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9CD3FD2A643B6200B9A030 /* HapticFeedbackManager.swift */; };
 		B81CFC862A6901B20012FA5A /* RealTimeGame+GKMatchDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81CFC852A6901B20012FA5A /* RealTimeGame+GKMatchDelegate.swift */; };
 		B87998522A5BACBE00167597 /* QAQAApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87998512A5BACBE00167597 /* QAQAApp.swift */; };
 		B87998542A5BACBE00167597 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87998532A5BACBE00167597 /* HomeView.swift */; };
@@ -38,11 +35,13 @@
 		B8F5747F2A63B4860028A46A /* OutroInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F5747E2A63B4860028A46A /* OutroInfoView.swift */; };
 		B8F574812A63BAB90028A46A /* OutroEndingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F574802A63BAB90028A46A /* OutroEndingView.swift */; };
 		B8F574872A63D3800028A46A /* OutroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F574862A63D3800028A46A /* OutroViewModel.swift */; };
-		B8F574892A6440CF0028A46A /* OutroCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F574882A6440CF0028A46A /* OutroCardView.swift */; };
 		B8F5748C2A64C8D30028A46A /* OutroCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F5748B2A64C8D30028A46A /* OutroCardModel.swift */; };
 		B8F574902A64DDF80028A46A /* TopicUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F5748F2A64DDF80028A46A /* TopicUserModel.swift */; };
 		C59F5A072A60F3B6007608AD /* HintModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59F5A062A60F3B6007608AD /* HintModel.swift */; };
 		C59F5A092A60F657007608AD /* HintState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59F5A082A60F657007608AD /* HintState.swift */; };
+		C5AADBCF2A73B71C002FD2D9 /* OutroEndingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AADBCE2A73B71C002FD2D9 /* OutroEndingModel.swift */; };
+		C5AADBD12A73B7FA002FD2D9 /* OutroEndingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AADBD02A73B7FA002FD2D9 /* OutroEndingViewModel.swift */; };
+		C5AADBD42A750DF1002FD2D9 /* IntroResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AADBD32A750DF1002FD2D9 /* IntroResultView.swift */; };
 		C5C282A82A7163410027416D /* ReactionSoundViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C282A72A7163410027416D /* ReactionSoundViewModel.swift */; };
 		C5C282AB2A71641C0027416D /* ReactionSoundModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C282AA2A71641C0027416D /* ReactionSoundModel.swift */; };
 		C5C282AD2A7165060027416D /* eva.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C5C282AC2A7165060027416D /* eva.mp3 */; };
@@ -60,6 +59,7 @@
 		C5C282C72A71F7820027416D /* kingjung9.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C5C282BE2A71F7820027416D /* kingjung9.mp3 */; };
 		C5C282C82A71F7820027416D /* kingjung2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C5C282BF2A71F7820027416D /* kingjung2.mp3 */; };
 		C5C282C92A71F7820027416D /* kingjung10.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C5C282C02A71F7820027416D /* kingjung10.mp3 */; };
+		C5C282CC2A73465F0027416D /* OutroResultCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C282CB2A73465F0027416D /* OutroResultCardView.swift */; };
 		C5C61B992A5E583C00FB8854 /* HintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C61B982A5E583C00FB8854 /* HintView.swift */; };
 		C5C7E7F02A6F7134000A3CCC /* BMJUAOTF.otf in Resources */ = {isa = PBXBuildFile; fileRef = C5C7E7EF2A6F7134000A3CCC /* BMJUAOTF.otf */; };
 		C5C7E7F22A70B017000A3CCC /* ReactionLottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C7E7F12A70B017000A3CCC /* ReactionLottieView.swift */; };
@@ -77,13 +77,10 @@
 		60EB427A2A5E44880030286C /* UIScreen+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extension.swift"; sourceTree = "<group>"; };
 		60EB427F2A5ED78A0030286C /* TimerModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModalView.swift; sourceTree = "<group>"; };
 		60EB42812A5ED99E0030286C /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
-		AA3192DB2A64EFC30098573D /* HapticMotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticMotion.swift; sourceTree = "<group>"; };
 		AA9741E62A6EBF8F0027DE48 /* Ball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
 		AA9741E82A6EBFAA0027DE48 /* GyroscopeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GyroscopeManager.swift; sourceTree = "<group>"; };
 		AA9741EA2A6EBFCE0027DE48 /* BallContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallContainerView.swift; sourceTree = "<group>"; };
 		AA9741EC2A6EC0290027DE48 /* Content_test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content_test.swift; sourceTree = "<group>"; };
-		AA9CD3FB2A643B3F00B9A030 /* HapticTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticTestView.swift; sourceTree = "<group>"; };
-		AA9CD3FD2A643B6200B9A030 /* HapticFeedbackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedbackManager.swift; sourceTree = "<group>"; };
 		B81CFC852A6901B20012FA5A /* RealTimeGame+GKMatchDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RealTimeGame+GKMatchDelegate.swift"; sourceTree = "<group>"; };
 		B879984E2A5BACBE00167597 /* QAQA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QAQA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B87998512A5BACBE00167597 /* QAQAApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QAQAApp.swift; sourceTree = "<group>"; };
@@ -103,11 +100,13 @@
 		B8F5747E2A63B4860028A46A /* OutroInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutroInfoView.swift; sourceTree = "<group>"; };
 		B8F574802A63BAB90028A46A /* OutroEndingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutroEndingView.swift; sourceTree = "<group>"; };
 		B8F574862A63D3800028A46A /* OutroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutroViewModel.swift; sourceTree = "<group>"; };
-		B8F574882A6440CF0028A46A /* OutroCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutroCardView.swift; sourceTree = "<group>"; };
 		B8F5748B2A64C8D30028A46A /* OutroCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutroCardModel.swift; sourceTree = "<group>"; };
 		B8F5748F2A64DDF80028A46A /* TopicUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicUserModel.swift; sourceTree = "<group>"; };
 		C59F5A062A60F3B6007608AD /* HintModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintModel.swift; sourceTree = "<group>"; };
 		C59F5A082A60F657007608AD /* HintState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintState.swift; sourceTree = "<group>"; };
+		C5AADBCE2A73B71C002FD2D9 /* OutroEndingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutroEndingModel.swift; sourceTree = "<group>"; };
+		C5AADBD02A73B7FA002FD2D9 /* OutroEndingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutroEndingViewModel.swift; sourceTree = "<group>"; };
+		C5AADBD32A750DF1002FD2D9 /* IntroResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroResultView.swift; sourceTree = "<group>"; };
 		C5C282A72A7163410027416D /* ReactionSoundViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionSoundViewModel.swift; sourceTree = "<group>"; };
 		C5C282AA2A71641C0027416D /* ReactionSoundModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionSoundModel.swift; sourceTree = "<group>"; };
 		C5C282AC2A7165060027416D /* eva.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = eva.mp3; sourceTree = "<group>"; };
@@ -125,6 +124,7 @@
 		C5C282BE2A71F7820027416D /* kingjung9.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = kingjung9.mp3; sourceTree = "<group>"; };
 		C5C282BF2A71F7820027416D /* kingjung2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = kingjung2.mp3; sourceTree = "<group>"; };
 		C5C282C02A71F7820027416D /* kingjung10.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = kingjung10.mp3; sourceTree = "<group>"; };
+		C5C282CB2A73465F0027416D /* OutroResultCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutroResultCardView.swift; sourceTree = "<group>"; };
 		C5C61B982A5E583C00FB8854 /* HintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintView.swift; sourceTree = "<group>"; };
 		C5C7E7EC2A6F5F07000A3CCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C5C7E7EF2A6F7134000A3CCC /* BMJUAOTF.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BMJUAOTF.otf; sourceTree = "<group>"; };
@@ -192,16 +192,6 @@
 			path = Gyroscopes;
 			sourceTree = "<group>";
 		};
-		AA9CD3FA2A643AFC00B9A030 /* HapticManager */ = {
-			isa = PBXGroup;
-			children = (
-				AA9CD3FB2A643B3F00B9A030 /* HapticTestView.swift */,
-				AA9CD3FD2A643B6200B9A030 /* HapticFeedbackManager.swift */,
-				AA3192DB2A64EFC30098573D /* HapticMotion.swift */,
-			);
-			path = HapticManager;
-			sourceTree = "<group>";
-		};
 		B87998452A5BACBE00167597 = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +235,7 @@
 		B879985F2A5BB39700167597 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C5AADBD32A750DF1002FD2D9 /* IntroResultView.swift */,
 				B8F5747D2A63B3C20028A46A /* Outro */,
 				C5C7E7E62A676A06000A3CCC /* Timer */,
 				60EB42842A5F948B0030286C /* Question */,
@@ -260,6 +251,7 @@
 				B8F574862A63D3800028A46A /* OutroViewModel.swift */,
 				B8B506822A5CF4FA00B3EAED /* HintViewModel.swift */,
 				C5C282A72A7163410027416D /* ReactionSoundViewModel.swift */,
+				C5AADBD02A73B7FA002FD2D9 /* OutroEndingViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -290,7 +282,6 @@
 			children = (
 				C5C7E8022A715FD6000A3CCC /* Sounds */,
 				AA9741E52A6EBF5C0027DE48 /* Gyroscopes */,
-				AA9CD3FA2A643AFC00B9A030 /* HapticManager */,
 				C5C7E7E92A6F5D6F000A3CCC /* Font */,
 				602BD2F72A602A1B00F9E345 /* ReactionModifier */,
 				60EB427C2A5ED5490030286C /* UIScreen */,
@@ -335,7 +326,7 @@
 			children = (
 				B8F5747E2A63B4860028A46A /* OutroInfoView.swift */,
 				B8F574802A63BAB90028A46A /* OutroEndingView.swift */,
-				B8F574882A6440CF0028A46A /* OutroCardView.swift */,
+				C5C282CB2A73465F0027416D /* OutroResultCardView.swift */,
 			);
 			path = Outro;
 			sourceTree = "<group>";
@@ -344,6 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				B8F5748B2A64C8D30028A46A /* OutroCardModel.swift */,
+				C5AADBCE2A73B71C002FD2D9 /* OutroEndingModel.swift */,
 			);
 			path = Outro;
 			sourceTree = "<group>";
@@ -517,7 +509,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA3192DC2A64EFC30098573D /* HapticMotion.swift in Sources */,
 				C59F5A072A60F3B6007608AD /* HintModel.swift in Sources */,
 				C5C61B992A5E583C00FB8854 /* HintView.swift in Sources */,
 				B87998542A5BACBE00167597 /* HomeView.swift in Sources */,
@@ -530,22 +521,24 @@
 				60EB42792A5E437C0030286C /* TimerView.swift in Sources */,
 				B8B5068F2A5D01C700B3EAED /* RealTimeGame+GKMatchmakerViewControllerDelegate.swift in Sources */,
 				B87998542A5BACBE00167597 /* HomeView.swift in Sources */,
-				AA9CD3FC2A643B3F00B9A030 /* HapticTestView.swift in Sources */,
 				B8F574902A64DDF80028A46A /* TopicUserModel.swift in Sources */,
 				602BD3092A67E86600F9E345 /* FinishModalView.swift in Sources */,
-				B8F574892A6440CF0028A46A /* OutroCardView.swift in Sources */,
 				B8B506912A5D01F000B3EAED /* RealTimeGame+GKGameCenterViewController.swift in Sources */,
 				B8F5748C2A64C8D30028A46A /* OutroCardModel.swift in Sources */,
 				B8B506952A5D2B2600B3EAED /* QuestionView.swift in Sources */,
 				B8B5069D2A5E42D600B3EAED /* RealTimeGame+MatchData.swift in Sources */,
 				B8F574812A63BAB90028A46A /* OutroEndingView.swift in Sources */,
 				B81CFC862A6901B20012FA5A /* RealTimeGame+GKMatchDelegate.swift in Sources */,
+				C5C282CC2A73465F0027416D /* OutroResultCardView.swift in Sources */,
 				B8B506832A5CF4FA00B3EAED /* HintViewModel.swift in Sources */,
 				B8B506832A5CF4FA00B3EAED /* HintViewModel.swift in Sources */,
+				C5AADBD12A73B7FA002FD2D9 /* OutroEndingViewModel.swift in Sources */,
 				B8B5068D2A5D019900B3EAED /* RealTimeGame+Friends.swift in Sources */,
+				C5AADBD42A750DF1002FD2D9 /* IntroResultView.swift in Sources */,
 				AA9741E72A6EBF8F0027DE48 /* Ball.swift in Sources */,
 				B8B5069B2A5E3C1C00B3EAED /* RealTimeGame+GKLocalPlayerListener.swift in Sources */,
 				AA9741E92A6EBFAA0027DE48 /* GyroscopeManager.swift in Sources */,
+				C5AADBCF2A73B71C002FD2D9 /* OutroEndingModel.swift in Sources */,
 				B8F5747F2A63B4860028A46A /* OutroInfoView.swift in Sources */,
 				B8B5069B2A5E3C1C00B3EAED /* RealTimeGame+GKLocalPlayerListener.swift in Sources */,
 				B87998522A5BACBE00167597 /* QAQAApp.swift in Sources */,
@@ -553,7 +546,6 @@
 				60EB427B2A5E44880030286C /* UIScreen+Extension.swift in Sources */,
 				B8F574872A63D3800028A46A /* OutroViewModel.swift in Sources */,
 				B8B5068A2A5D00BE00B3EAED /* RealTimeGame.swift in Sources */,
-				AA9CD3FE2A643B6200B9A030 /* HapticFeedbackManager.swift in Sources */,
 				B8B506992A5E2C9500B3EAED /* Color+Extension.swift in Sources */,
 				C5C282AB2A71641C0027416D /* ReactionSoundModel.swift in Sources */,
 				AA9741ED2A6EC0290027DE48 /* Content_test.swift in Sources */,
@@ -698,6 +690,7 @@
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = gamekit;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -732,6 +725,7 @@
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = gamekit;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

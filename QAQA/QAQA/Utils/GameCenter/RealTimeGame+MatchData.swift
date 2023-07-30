@@ -21,6 +21,10 @@ struct GameData: Codable {
     var countMin: Int?
     var countSecond: Int?
     var reactionScore: Int?
+    //햅틱부분
+    var wasSuccessCalledHaptics: Bool? // new field
+    var wasErrorCalledHaptics: Bool? // new field
+    //햅틱부분
 }
 
 extension RealTimeGame {
@@ -62,6 +66,18 @@ extension RealTimeGame {
             return nil
         }
     }
+    
+    //햅틱부분
+    func encode(wasSuccessCalledHaptics: Bool) -> Data? {
+        let gameData = GameData(matchName: matchName, playerName: GKLocalPlayer.local.displayName, wasSuccessCalledHaptics: wasSuccessCalledHaptics)
+        return encode(gameData: gameData)
+    }
+
+    func encode(wasErrorCalledHaptics: Bool) -> Data? {
+        let gameData = GameData(matchName: matchName, playerName: GKLocalPlayer.local.displayName, wasErrorCalledHaptics: wasErrorCalledHaptics)
+        return encode(gameData: gameData)
+    }
+    //햅틱부분
     
     func decode(matchData: Data) -> GameData? {
         return try? PropertyListDecoder().decode(GameData.self, from: matchData)

@@ -10,8 +10,8 @@ import SwiftUI
 struct HintView: View {
     
     @StateObject private var hintViewModel = HintViewModel()
-    @State private var selectedHint: HintState = .gettoknow
-    @State private var randomGettoknowQuestion : String = "질문 뽑기 버튼을 눌러보세요!"
+    @State private var selectedHint: HintState = .getToKnow
+    @State private var randomGetToKnowQuestion : String = "질문 뽑기 버튼을 눌러보세요!"
     @State private var randomFunQuestion : String = "질문 뽑기 버튼을 눌러보세요!"
     @State private var randomSeriousQuestion : String = "질문 뽑기 버튼을 눌러보세요!"
     
@@ -29,7 +29,7 @@ struct HintView: View {
                 Spacer()
                     .frame(height: 16)
                 Picker("HintMode", selection: $selectedHint) {
-                    Text("알아가기").tag(HintState.gettoknow)
+                    Text("알아가기").tag(HintState.getToKnow)
                     Text("재미").tag(HintState.fun)
                     Text("진지").tag(HintState.serious)
                 }
@@ -37,8 +37,8 @@ struct HintView: View {
                 .pickerStyle(.segmented)
                 .onChange(of: selectedHint, perform: { _ in
                     switch selectedHint {
-                    case .gettoknow :
-                        randomGettoknowQuestion = hintViewModel.createRandomGettoknowHints()
+                    case .getToKnow :
+                        randomGetToKnowQuestion = hintViewModel.createRandomGetToKnowHints()
                     case .fun :
                         randomFunQuestion = hintViewModel.createRandomFunHints()
                     case .serious :
@@ -48,8 +48,8 @@ struct HintView: View {
                 Spacer()
                     .frame(height: 30)
                 switch selectedHint {
-                case .gettoknow :
-                    Text("\(randomGettoknowQuestion)")
+                case .getToKnow :
+                    Text("\(randomGetToKnowQuestion)")
                         .font(.custom("BMJUAOTF", size: 25))
                         .frame(width: 320, height: 120)
                         .minimumScaleFactor(0.5)
@@ -74,9 +74,9 @@ struct HintView: View {
                     .frame(height: 25)
                 Button {
                     switch selectedHint {
-                    case .gettoknow :
-                        randomGettoknowQuestion =
-                        hintViewModel.createRandomGettoknowHints()
+                    case .getToKnow :
+                        randomGetToKnowQuestion =
+                        hintViewModel.createRandomGetToKnowHints()
                     case .fun :
                         randomFunQuestion = hintViewModel.createRandomFunHints()
                     case .serious :

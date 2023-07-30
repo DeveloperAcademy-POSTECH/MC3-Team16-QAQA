@@ -9,7 +9,7 @@ import Foundation
 
 class HintModel: ObservableObject {
     
-    let gettoknowHints = ["좋아하는 음식",
+    let getToKnowHints = ["좋아하는 음식",
                           "좋아하는 옷/스타일",
                           "취미",
                           "언제 행복한가",

@@ -27,7 +27,7 @@ extension RealTimeGame: GKMatchDelegate {
     func match(_ match: GKMatch, didFailWithError error: Error?) {
         print("\n\nMatch object fails with error: \(error!.localizedDescription)")
     }
-
+    
     func match(_ match: GKMatch, shouldReinviteDisconnectedPlayer player: GKPlayer) -> Bool {
         return false
     }
@@ -40,7 +40,10 @@ extension RealTimeGame: GKMatchDelegate {
         } else if (gameData?.outcome) != nil {
             gameIsEnd = true
         } else if let reaction = gameData?.isPlayingReaction, let reactionState = gameData?.isGoodReaction, let allReactionScore = gameData?.reactionScore {
-            withAnimation(.spring(response: 0.2,dampingFraction: 0.25,blendDuration: 0.0)){
+            withAnimation(
+                .default
+//                .spring(response: 0.2,dampingFraction: 0.25,blendDuration: 0.0) ___ 띠용 애니메이션 해제
+            ){
                 playReaction = reaction
                 isGoodReaction = reactionState
                 reactionScore = allReactionScore
@@ -52,5 +55,24 @@ extension RealTimeGame: GKMatchDelegate {
             countMin = min
             countSecond = second
         }
+        
+        //햅틱부분
+        else if let wasSuccessCalled = gameData?.wasSuccessCalledHaptics, wasSuccessCalled {
+            triggerSuccessHaptic()
+        } else if let wasErrorCalled = gameData?.wasErrorCalledHaptics, wasErrorCalled {
+            triggerErrorHaptic()
+        }
+        print(reactionScore)
     }
+    
+    func triggerSuccessHaptic() {
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.success)
+    }
+
+    func triggerErrorHaptic() {
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.error)
+    }
+    //햅틱부분
 }
