@@ -8,6 +8,6 @@
 import Foundation
 
 enum HintState: String, CaseIterable, Identifiable {
-    case gettoknow, fun, serious
+    case getToKnow, fun, serious
     var id: Self { self }
 }

@@ -8,14 +8,22 @@
 import SwiftUI
 
 struct OutroEndingView: View {
+    @StateObject private var outroEndingViewModel = OutroEndingViewModel()
     @StateObject private var outroViewModel = OutroViewModel()
     @ObservedObject var game: RealTimeGame
     
     @Binding var isShowingOutroView: Bool
+    @State var animateGaugeBar = false
     
     @State private var isShowingInfoView = true
-    @State private var userName = "웃쾌마" //오늘의 주인공 username
-    @State private var reactionNum = 24
+    //    @State private var reactionNum = 24
+    
+    
+    private let duration = 1.0
+    @State var isAnimated = false
+    @State var defaultKingjungWidth = 30.0
+    @State var defaultEvaWidth = 30.0
+    @State var defaultSpacerWidth = 300.0
     
     var body: some View {
         ZStack {
@@ -23,8 +31,8 @@ struct OutroEndingView: View {
             VStack {
                 Group {
                     Spacer()
-                        .frame(height: 61)
-                    Text("\(userName)")
+                        .frame(height: 40)
+                    Text("\(game.topicUserName)")
                         .font(.custom("BMJUAOTF", size: 40))
                         .foregroundColor(.outroViewYellow)
                     Spacer()
@@ -40,14 +48,57 @@ struct OutroEndingView: View {
                     Spacer()
                         .frame(height: 20)
                 }
-                RoundedRectangle(cornerRadius: 15)
-                    .frame(width: 358, height: 40)
-                    .foregroundColor(.outroViewGaugeGray)
+                ZStack (alignment: .leading){
+                    RoundedRectangle(cornerRadius: 15)
+                        .frame(width: 360, height: 40)
+                        .foregroundColor(.outroGaugeGray)
+                    HStack {
+                        ZStack{
+                            RoundedRectangle(cornerRadius: 15)
+                                .frame(width: defaultKingjungWidth, height: 40, alignment: .leading)
+                                .foregroundColor(.outroGaugeYellow)
+                            VStack (alignment: .leading){
+                                RoundedRectangle(cornerRadius: 6)
+                                    .frame(width: (defaultKingjungWidth-20), height: 8, alignment: .leading)
+                                    .foregroundColor(.outroGaugeLightYellow)
+                                Spacer()
+                                    .frame(height: 15)
+                            }
+                        }
+                        Spacer()
+                            .frame(width: defaultSpacerWidth)
+                        ZStack{
+                            RoundedRectangle(cornerRadius: 15)
+                                .frame(width: defaultEvaWidth, height: 40, alignment: .leading)
+                                .foregroundColor(.outroGaugeGreen)
+                            VStack (alignment: .leading){
+                                RoundedRectangle(cornerRadius: 6)
+                                    .frame(width: (defaultEvaWidth-20), height: 8, alignment: .leading)
+                                    .foregroundColor(.outroGaugeLightGreen)
+                                Spacer()
+                                    .frame(height: 15)
+                            }
+                        }
+                    }
+                } .onAppear() {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.3) {
+                        isAnimated.toggle()
+                        withAnimation(.easeOut(duration: duration)){
+                            defaultKingjungWidth = outroEndingViewModel.calculateKingjungWidth()
+                        }
+                        withAnimation(.easeOut(duration: duration)){
+                            defaultEvaWidth = outroEndingViewModel.calculateEvaWidth()
+                        }
+                        withAnimation(.easeOut(duration: duration)){
+                            defaultSpacerWidth = outroEndingViewModel.calculateSpacerWidth()
+                        }
+                    }
+                }
                 Spacer()
                     .frame(height: 23)
                 OutroResultCardView()
                 Spacer()
-                    .frame(height: 53)
+                    .frame(height: 73)
                 Button {
                     game.resetMatch()
                     game.saveScore()
@@ -68,11 +119,12 @@ struct OutroEndingView: View {
                     }
             }
         }
+     
     }
-}
-
-struct OutroEndingView_Previews: PreviewProvider {
-    static var previews: some View {
-        OutroEndingView(game: RealTimeGame(), isShowingOutroView: .constant(false))
+    
+    struct OutroEndingView_Previews: PreviewProvider {
+        static var previews: some View {
+            OutroEndingView(game: RealTimeGame(), isShowingOutroView: .constant(false))
+        }
     }
 }
