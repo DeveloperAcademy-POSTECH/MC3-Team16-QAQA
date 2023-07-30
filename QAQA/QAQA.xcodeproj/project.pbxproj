@@ -14,6 +14,7 @@
 		60EB427B2A5E44880030286C /* UIScreen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EB427A2A5E44880030286C /* UIScreen+Extension.swift */; };
 		60EB42802A5ED78A0030286C /* TimerModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EB427F2A5ED78A0030286C /* TimerModalView.swift */; };
 		60EB42822A5ED99E0030286C /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EB42812A5ED99E0030286C /* TimerModel.swift */; };
+		60FBCFBC2A74E2820028BCD5 /* TestingIntroGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBCFBB2A74E2820028BCD5 /* TestingIntroGame.swift */; };
 		AA9741E72A6EBF8F0027DE48 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9741E62A6EBF8F0027DE48 /* Ball.swift */; };
 		AA9741E92A6EBFAA0027DE48 /* GyroscopeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9741E82A6EBFAA0027DE48 /* GyroscopeManager.swift */; };
 		AA9741EB2A6EBFCE0027DE48 /* BallContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9741EA2A6EBFCE0027DE48 /* BallContainerView.swift */; };
@@ -74,6 +75,7 @@
 		60EB427A2A5E44880030286C /* UIScreen+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extension.swift"; sourceTree = "<group>"; };
 		60EB427F2A5ED78A0030286C /* TimerModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModalView.swift; sourceTree = "<group>"; };
 		60EB42812A5ED99E0030286C /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
+		60FBCFBB2A74E2820028BCD5 /* TestingIntroGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingIntroGame.swift; sourceTree = "<group>"; };
 		AA9741E62A6EBF8F0027DE48 /* Ball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
 		AA9741E82A6EBFAA0027DE48 /* GyroscopeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GyroscopeManager.swift; sourceTree = "<group>"; };
 		AA9741EA2A6EBFCE0027DE48 /* BallContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallContainerView.swift; sourceTree = "<group>"; };
@@ -175,6 +177,14 @@
 			path = Question;
 			sourceTree = "<group>";
 		};
+		60FBCFBA2A74E2640028BCD5 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				60FBCFBB2A74E2820028BCD5 /* TestingIntroGame.swift */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 		AA9741E52A6EBF5C0027DE48 /* Gyroscopes */ = {
 			isa = PBXGroup;
 			children = (
@@ -229,6 +239,7 @@
 		B879985F2A5BB39700167597 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				60FBCFBA2A74E2640028BCD5 /* Test */,
 				B8F5747D2A63B3C20028A46A /* Outro */,
 				C5C7E7E62A676A06000A3CCC /* Timer */,
 				60EB42842A5F948B0030286C /* Question */,
@@ -526,6 +537,7 @@
 				B8B5068D2A5D019900B3EAED /* RealTimeGame+Friends.swift in Sources */,
 				AA9741E72A6EBF8F0027DE48 /* Ball.swift in Sources */,
 				B8B5069B2A5E3C1C00B3EAED /* RealTimeGame+GKLocalPlayerListener.swift in Sources */,
+				60FBCFBC2A74E2820028BCD5 /* TestingIntroGame.swift in Sources */,
 				AA9741E92A6EBFAA0027DE48 /* GyroscopeManager.swift in Sources */,
 				B8F5747F2A63B4860028A46A /* OutroInfoView.swift in Sources */,
 				B8B5069B2A5E3C1C00B3EAED /* RealTimeGame+GKLocalPlayerListener.swift in Sources */,
