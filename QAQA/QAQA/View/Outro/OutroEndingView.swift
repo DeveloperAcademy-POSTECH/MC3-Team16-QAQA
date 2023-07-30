@@ -9,7 +9,6 @@ import SwiftUI
 
 struct OutroEndingView: View {
     @StateObject private var outroEndingViewModel = OutroEndingViewModel()
-    @StateObject private var outroViewModel = OutroViewModel()
     @ObservedObject var game: RealTimeGame
     
     @Binding var isShowingOutroView: Bool
