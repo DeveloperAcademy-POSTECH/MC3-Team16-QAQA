@@ -12,9 +12,10 @@ struct BeginQuestionModalView: View {
         VStack{
             Text("질문 폭격")
             HStack{
-                Text("alarm.fill")
+                Image(systemName: "alarm.fill")
                 Text("10분")
             }
+            Image("")
         }
     }
 }
