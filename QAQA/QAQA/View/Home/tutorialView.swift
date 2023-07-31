@@ -20,6 +20,7 @@ struct tutorialView: View {
                 .tag(3)
             
         }
+        .ignoresSafeArea()
         .animation(.easeInOut, value: pageNum)
         .transition(.slide)
         .tabViewStyle(.page(indexDisplayMode: .never))
@@ -135,7 +136,7 @@ struct ThirdOnBoardingView: View {
                 }
             }
             if (isShowingHomeView) {
-                HomeView()
+                    HomeView()
             }
         }
     }

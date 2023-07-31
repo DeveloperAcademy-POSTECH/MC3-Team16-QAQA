@@ -19,6 +19,7 @@ struct HomeView: View {
         
             ZStack {
                 Color(red: 1, green: 0.8, blue: 0.3)
+                    .ignoresSafeArea()
                   
                 
                 
@@ -66,7 +67,6 @@ struct HomeView: View {
                         
                     }
             }
-//            .ignoresSafeArea()
         }
     }
 

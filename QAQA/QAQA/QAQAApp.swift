@@ -14,10 +14,10 @@ struct QAQAApp: App {
     
     var body: some Scene {
         WindowGroup {
-            if isOnboarding {
+            if isOnboarding == true {
                 tutorialView()
             } else {
-//                HomeView(isShowingHomeView: <#Binding<Bool>#>)
+                HomeView()
             }
         }
     }
