@@ -108,6 +108,7 @@ struct QuestionView: View {
                             game.isGoodReaction = true // 킹정
                             game.allKingjungScore += 1
                             game.reactionScore += 1
+                            game.myKingjungScore += 1
                             withAnimation(
                                 .default
 //                                .spring(response: 0.2, blendDuration: 0.0)___띠용 애니메이션 해제
@@ -139,6 +140,7 @@ struct QuestionView: View {
                             game.isGoodReaction = false // 에바
                             game.allEvaScore += 1
                             game.reactionScore += 1
+                            game.myEvaScore += 1
                             withAnimation(
                                 .default
 //                                .spring(response: 0.2, blendDuration: 0.0)___띠용 애니메이션 해제

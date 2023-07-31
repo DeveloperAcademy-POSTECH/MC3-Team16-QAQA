@@ -56,6 +56,10 @@ extension RealTimeGame: GKMatchDelegate {
         } else if let min = gameData?.countMin, let second = gameData?.countSecond {
             countMin = min
             countSecond = second
+        } else if let playerName = gameData?.playerName, let playerKingjungScore = gameData?.myKingjungScore, let playerEvaScore = gameData?.myEvaScore {
+            reactionScoreList.append((playerName, playerKingjungScore, playerEvaScore))
+            kingjungKing = reactionScoreList.sorted(by: { $0.1 > $1.1 }).first?.0 ?? "None" // 0이면 에바킹 킹정킹을 - 으로
+            evaKing = reactionScoreList.sorted(by: { $0.2 > $1.2 }).first?.0 ?? "None"
         }
         
         //햅틱부분
@@ -64,8 +68,12 @@ extension RealTimeGame: GKMatchDelegate {
         } else if let wasErrorCalled = gameData?.wasErrorCalledHaptics, wasErrorCalled {
             triggerErrorHaptic()
         }
-        print("kingjung: \(allKingjungScore)")
-        print("eva: \(allEvaScore)")
+        if allEvaScore == 0 {
+            evaKing = "-"
+        }
+        if allKingjungScore == 0 {
+            kingjungKing = "-"
+        }
     }
     
     func triggerSuccessHaptic() {
