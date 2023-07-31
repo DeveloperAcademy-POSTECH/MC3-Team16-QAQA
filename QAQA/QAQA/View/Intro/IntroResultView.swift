@@ -10,6 +10,7 @@ import SwiftUI
 struct IntroResultView: View {
     
     @ObservedObject var game: RealTimeGame
+    @State var showBeginQuestionModal = false
     
     var body: some View {
         ZStack{
@@ -39,10 +40,19 @@ struct IntroResultView: View {
                     .frame(width: 202)
                 Spacer()
                     .frame(height: 159)
-                Image("nextButton")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 358)
+                Button{
+                    showBeginQuestionModal.toggle()
+                } label: {
+                    Image("nextButton")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 358)
+                }
+                .sheet(isPresented: $showBeginQuestionModal, content: {
+                    BeginQuestionModalView(game: game)
+                        .presentationDetents([.medium])
+                        .presentationCornerRadius(20)
+                })
             }
         }
     }

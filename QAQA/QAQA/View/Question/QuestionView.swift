@@ -53,7 +53,7 @@ struct QuestionView: View {
                     .sheet(isPresented: $showFinishModal, content: {
                         FinishModalView(isShowingOutroView: $isShowingOutroView, game: game) //TODO: View 바꾸기
                             .presentationDetents([.height(257)])
-                            .presentationCornerRadius(32)
+                            .presentationCornerRadius(20)
                             .padding(.top, 44)
                             .padding([.leading, .trailing], 16)
                             .onAppear{

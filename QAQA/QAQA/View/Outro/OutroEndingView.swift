@@ -36,7 +36,7 @@ struct OutroEndingView: View {
                         .frame(height: 10)
                     Text("오늘 받은 반응이에요!")
                         .font(.custom("BMJUAOTF", size: 17))
-                        .foregroundColor(.outroViewGray)
+                        .foregroundColor(.outroViewLightGray)
                     Spacer()
                         .frame(height: 21)
                     Image("outroQaqa")

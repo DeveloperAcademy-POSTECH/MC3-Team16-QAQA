@@ -175,7 +175,6 @@
 				C5C61B982A5E583C00FB8854 /* HintView.swift */,
 				602BD3022A6456BF00F9E345 /* ReactionView.swift */,
 				C5C7E7F12A70B017000A3CCC /* ReactionLottieView.swift */,
-				C5AADBD62A764DDB002FD2D9 /* BeginQuestionModalView.swift */,
 			);
 			path = Question;
 			sourceTree = "<group>";
@@ -341,6 +340,7 @@
 			isa = PBXGroup;
 			children = (
 				C5AADBD32A750DF1002FD2D9 /* IntroResultView.swift */,
+				C5AADBD62A764DDB002FD2D9 /* BeginQuestionModalView.swift */,
 			);
 			path = Intro;
 			sourceTree = "<group>";
