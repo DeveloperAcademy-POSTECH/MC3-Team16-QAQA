@@ -103,7 +103,7 @@ struct OutroEndingView: View {
                 }
             }
             if (isShowingInfoView) {
-                OutroInfoView()
+                OutroInfoView(game: game)
                     .onAppear() {
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
                             isShowingInfoView.toggle()
