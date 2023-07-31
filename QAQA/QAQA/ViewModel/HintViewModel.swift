@@ -10,8 +10,8 @@ import Foundation
 class HintViewModel: ObservableObject {
     private var hintModel = HintModel()
     
-    func createRandomGettoknowHints() -> String {
-        return hintModel.gettoknowHints.randomElement()!
+    func createRandomGetToKnowHints() -> String {
+        return hintModel.getToKnowHints.randomElement()!
     }
     func createRandomFunHints() -> String {
         return hintModel.funHints.randomElement()!

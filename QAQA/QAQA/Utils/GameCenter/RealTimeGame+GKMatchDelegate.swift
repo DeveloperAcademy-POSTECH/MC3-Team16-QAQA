@@ -39,10 +39,16 @@ extension RealTimeGame: GKMatchDelegate {
             opponentScore = score
         } else if (gameData?.outcome) != nil {
             gameIsEnd = true
-        } else if let reaction = gameData?.isPlayingReaction, let reactionState = gameData?.isGoodReaction {
-            withAnimation(.spring(response: 0.2,dampingFraction: 0.25,blendDuration: 0.0)){
+        } else if let reaction = gameData?.isPlayingReaction, let reactionState = gameData?.isGoodReaction, let allReactionScore = gameData?.reactionScore, let kingjungScore = gameData?.allKingjuncScore, let evaScore = gameData?.allEvaScore {
+            withAnimation(
+                .default
+//                .spring(response: 0.2,dampingFraction: 0.25,blendDuration: 0.0) ___ 띠용 애니메이션 해제
+            ){
                 playReaction = reaction
                 isGoodReaction = reactionState
+                reactionScore = allReactionScore
+                allKingjungScore = kingjungScore
+                allEvaScore = evaScore
             }
         } else if let timerModal = gameData?.showTimerModal, let timer = gameData?.isTimer {
             showTimerModal = timerModal
@@ -50,6 +56,10 @@ extension RealTimeGame: GKMatchDelegate {
         } else if let min = gameData?.countMin, let second = gameData?.countSecond {
             countMin = min
             countSecond = second
+        } else if let playerName = gameData?.playerName, let playerKingjungScore = gameData?.myKingjungScore, let playerEvaScore = gameData?.myEvaScore {
+            reactionScoreList.append((playerName, playerKingjungScore, playerEvaScore))
+            kingjungKing = reactionScoreList.sorted(by: { $0.1 > $1.1 }).first?.0 ?? "None" // 0이면 에바킹 킹정킹을 - 으로
+            evaKing = reactionScoreList.sorted(by: { $0.2 > $1.2 }).first?.0 ?? "None"
         } else if let bomb = gameData?.isBombAppear, let randomUserName = gameData?.topicUserName {
             isBombAppear = bomb
             topicUserName = randomUserName
@@ -60,6 +70,12 @@ extension RealTimeGame: GKMatchDelegate {
             triggerSuccessHaptic()
         } else if let wasErrorCalled = gameData?.wasErrorCalledHaptics, wasErrorCalled {
             triggerErrorHaptic()
+        }
+        if allEvaScore == 0 {
+            evaKing = "-"
+        }
+        if allKingjungScore == 0 {
+            kingjungKing = "-"
         }
     }
     

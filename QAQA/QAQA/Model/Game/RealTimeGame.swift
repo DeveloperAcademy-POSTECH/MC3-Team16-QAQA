@@ -32,6 +32,15 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
     // TopicUser
     @Published var topicUserName: String = "TopicUserName"
     
+    // Reaction Score
+    @Published var reactionScore = 0
+    @Published var allKingjungScore = 0
+    @Published var allEvaScore = 0
+    @Published var myKingjungScore = 0
+    @Published var myEvaScore = 0
+    @Published var reactionScoreList: [(String, Int, Int)] = [] // 이름, 킹정수, 에바수
+    @Published var kingjungKing = ""
+    @Published var evaKing = ""
 
     // 타이머 변수
     @Published var countMin = 10
@@ -138,22 +147,6 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
         }
         reportProgress()
     }
-
-    func takeAction() {
-        myScore += 1
-        
-        if (myScore - opponentScore == 10) || (myScore == 100) {
-//            endMatch()
-            return
-        }
-        
-        do {
-            let data = encode(score: myScore)
-            try myMatch?.sendData(toAllPlayers: data!, with: GKMatch.SendDataMode.unreliable)
-        } catch {
-            print("Error: \(error.localizedDescription).")
-        }
-    }
     
     func endMatch() {
         let opponentOutcome = opponentScore > myScore ? "won" : "lost"
@@ -187,6 +180,15 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
 
         myScore = 0
         opponentScore = 0
+        
+        reactionScore = 0
+        allKingjungScore = 0
+        allEvaScore = 0
+        myKingjungScore = 0
+        myEvaScore = 0
+        reactionScoreList = [] // 이름, 킹정수, 에바수
+        
+        // 리액션 수 및 다른 변수들 초기화
     }
 
     func reportProgress() {
@@ -227,11 +229,19 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
         topicUserName = allUserName.randomElement()!
     }
     
- 
-    
-    func pushGoodReaction() {
+    func pushReaction() {
         do {
-            let data = encode(playReaction: playReaction, isGoodReaction: isGoodReaction)
+            let data = encode(playReaction: playReaction, isGoodReaction: isGoodReaction, reactionScore: reactionScore, allKingjungScore: allKingjungScore, allEvaScore: allEvaScore)
+            try myMatch?.sendData(toAllPlayers: data!, with: GKMatch.SendDataMode.unreliable)
+        } catch {
+            print("Error: \(error.localizedDescription).")
+        }
+    }
+    
+    func rankReactionKing() {
+        reactionScoreList.append((myName, myKingjungScore, myEvaScore))
+        do {
+            let data = encode(playerName: GKLocalPlayer.local.displayName, myKingjungScore: myKingjungScore, myEvaScore: myEvaScore)
             try myMatch?.sendData(toAllPlayers: data!, with: GKMatch.SendDataMode.unreliable)
         } catch {
             print("Error: \(error.localizedDescription).")
