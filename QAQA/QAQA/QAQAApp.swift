@@ -15,7 +15,8 @@ struct QAQAApp: App {
     var body: some Scene {
         WindowGroup {
             if isOnboarding == true {
-                tutorialView()
+                tutorialView(isOnboarding: $isOnboarding)
+
             } else {
                 HomeView()
             }

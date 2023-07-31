@@ -10,13 +10,15 @@ import SwiftUI
 struct tutorialView: View {
     
     @State private var pageNum = 1
+    @Binding var isOnboarding: Bool
+    
     var body: some View {
         TabView(selection: $pageNum) {
             FirstOnBoardingView(pageNum: $pageNum)
                 .tag(1)
             SecondOnBoardingView(pageNum: $pageNum)
                 .tag(2)
-            ThirdOnBoardingView()
+            ThirdOnBoardingView(isOnboarding: $isOnboarding)
                 .tag(3)
             
         }
@@ -105,6 +107,7 @@ struct SecondOnBoardingView: View {
 struct ThirdOnBoardingView: View {
     
     @State var isShowingHomeView = false
+    @Binding var isOnboarding: Bool
     
     var body: some View {
         ZStack {
@@ -125,6 +128,7 @@ struct ThirdOnBoardingView: View {
                     .padding(.bottom, 32)
                 Button {
                     isShowingHomeView.toggle()
+                    isOnboarding = false
                 } label: {
                     ZStack {
                         Image("tutorialViewButton_Yellow")
@@ -145,6 +149,6 @@ struct ThirdOnBoardingView: View {
 
 struct tutorialView_Previews: PreviewProvider {
     static var previews: some View {
-        tutorialView()
+        tutorialView(isOnboarding: .constant(false))
     }
 }
