@@ -111,7 +111,6 @@ struct QuestionView: View {
                             game.myKingjungScore += 1
                             withAnimation(
                                 .default
-//                                .spring(response: 0.2, blendDuration: 0.0)___띠용 애니메이션 해제
                             ){
                                 game.playReaction = true
                                 game.pushReaction()
@@ -143,7 +142,6 @@ struct QuestionView: View {
                             game.myEvaScore += 1
                             withAnimation(
                                 .default
-//                                .spring(response: 0.2, blendDuration: 0.0)___띠용 애니메이션 해제
                             ){
                                 game.playReaction = true
                                 game.pushReaction()
@@ -171,7 +169,7 @@ struct QuestionView: View {
                 
             }
             .onAppear {
-                game.topicUserName = game.topicUserName // TODO: 안됨
+                game.topicUserName = game.topicUserName
             }
             if (game.gameIsEnd) {
                 OutroEndingView(game: game,  isShowingOutroView: $isShowingOutroView)

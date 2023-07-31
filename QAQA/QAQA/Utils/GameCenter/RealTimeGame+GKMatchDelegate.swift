@@ -40,7 +40,6 @@ extension RealTimeGame: GKMatchDelegate {
         } else if let reaction = gameData?.isPlayingReaction, let reactionState = gameData?.isKingjungReaction, let allReactionScore = gameData?.reactionScore, let kingjungScore = gameData?.allKingjuncScore, let evaScore = gameData?.allEvaScore {
             withAnimation(
                 .default
-//                .spring(response: 0.2,dampingFraction: 0.25,blendDuration: 0.0) ___ 띠용 애니메이션 해제
             ){
                 playReaction = reaction
                 isKingjungReaction = reactionState
@@ -56,7 +55,7 @@ extension RealTimeGame: GKMatchDelegate {
             countSecond = second
         } else if let playerName = gameData?.playerName, let playerKingjungScore = gameData?.myKingjungScore, let playerEvaScore = gameData?.myEvaScore {
             reactionScoreList.append((playerName, playerKingjungScore, playerEvaScore))
-            kingjungKing = reactionScoreList.sorted(by: { $0.1 > $1.1 }).first?.0 ?? "None" // 0이면 에바킹 킹정킹을 - 으로
+            kingjungKing = reactionScoreList.sorted(by: { $0.1 > $1.1 }).first?.0 ?? "None"
             evaKing = reactionScoreList.sorted(by: { $0.2 > $1.2 }).first?.0 ?? "None"
         }
         
