@@ -14,3 +14,11 @@ struct Content_test: View {
         BallContainerView(gyroscopeManager: gyroManager)
     }
 }
+
+
+struct Content_test_Previews: PreviewProvider {
+    static var previews: some View {
+        Content_test()
+        
+    }
+}
