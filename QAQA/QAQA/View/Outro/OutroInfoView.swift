@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct OutroInfoView: View {
+    @ObservedObject var game: RealTimeGame
+    
     var body: some View {
         ZStack{
             Color.white
@@ -29,11 +31,14 @@ struct OutroInfoView: View {
                     .frame(width: 202)
             }
         }
+        .onAppear {
+            game.rankReactionKing()
+        }
     }
 }
 
 struct OutroInfoView_Previews: PreviewProvider {
     static var previews: some View {
-        OutroInfoView()
+        OutroInfoView(game: RealTimeGame())
     }
 }

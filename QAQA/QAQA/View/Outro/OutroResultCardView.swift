@@ -39,7 +39,7 @@ struct OutroResultCardView: View {
                 VStack {
                     Spacer()
                         .frame(height: 25)
-                    Text("킹정킹") //킹정킹 username
+                    Text("\(game.kingjungKing)") //킹정킹 username
                         .font(.custom("BMJUAOTF", size: 30))
                         .foregroundColor(.black)
                     Spacer()
@@ -58,7 +58,7 @@ struct OutroResultCardView: View {
                 VStack {
                     Spacer()
                         .frame(height: 25)
-                    Text("에바킹") //에바킹 username
+                    Text("\(game.evaKing)") //에바킹 username
                         .font(.custom("BMJUAOTF", size: 30))
                         .foregroundColor(.black)
                     Spacer()
