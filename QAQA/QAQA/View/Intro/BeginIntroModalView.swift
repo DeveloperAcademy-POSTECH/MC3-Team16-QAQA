@@ -1,21 +1,19 @@
 //
-//  BeginQuestionModalView.swift
+//  BeginIntroModalView.swift
 //  QAQA
 //
-//  Created by 김혜린 on 2023/07/30.
+//  Created by 김혜린 on 2023/07/31.
 //
 
 import SwiftUI
 
-struct BeginQuestionModalView: View {
-    
-    @ObservedObject var game: RealTimeGame
+struct BeginIntroModalView: View {
     
     var body: some View {
         VStack(spacing: 0){
             Spacer()
                 .frame(height: 22)
-            Text("질문 폭격")
+            Text("미니 게임")
                 .font(.custom("BMJUAOTF", size: 14))
                 .foregroundColor(.gray)
             Spacer()
@@ -32,31 +30,24 @@ struct BeginQuestionModalView: View {
             }
             Spacer()
                 .frame(height: 9)
-            Image("beginQuestionModalQaqa")
+            Image("beginIntroModalQaqa")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 162)
             Spacer()
-                .frame(height: 9)
+                .frame(height: 17)
             Group {
-                Text("이제 \(game.topicUserName)에게 질문폭격을 해볼 차례에요! 준비됐나요?")
+                Text("질문하기 전 잠깐!\n몸풀기 게임을 즐겨볼까요?\n폭탄을 돌려서 오늘의 주인공을 뽑아요!")
                     .font(.custom("BMJUAOTF", size: 18))
                     .foregroundColor(.black)
                     .multilineTextAlignment(.center)
-                    .frame(width: 200)
+                    .frame(width: 350)
                     .lineSpacing(5)
-                Spacer()
-                    .frame(height: 13)
-                Text("소리와 함께 하면 더 즐겁게 즐길 수 있어요!")
-                    .font(.custom("BMJUAOTF", size: 15))
-                    .foregroundColor(.outroViewLightGray)
-                    .multilineTextAlignment(.center)
-                    .frame(width: 288)
                 Spacer()
                     .frame(height: 24)
             }
             Button {
-           
+           // 시작하기 버튼 액션 (연결 필요)
             } label: {
                 Image("startButton")
                     .resizable()
@@ -67,8 +58,8 @@ struct BeginQuestionModalView: View {
     }
 }
 
-struct BeginQuestionModalView_Previews: PreviewProvider {
+struct BeginIntroModalView_Previews: PreviewProvider {
     static var previews: some View {
-        BeginQuestionModalView(game:RealTimeGame())
+        BeginIntroModalView()
     }
 }
