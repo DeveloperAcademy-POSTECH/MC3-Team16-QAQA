@@ -35,9 +35,7 @@ extension RealTimeGame: GKMatchDelegate {
     func match(_ match: GKMatch, didReceive data: Data, fromRemotePlayer player: GKPlayer) {
         let gameData = decode(matchData: data)
         
-        if let score = gameData?.score {
-            opponentScore = score
-        } else if (gameData?.outcome) != nil {
+        if (gameData?.outcome) != nil {
             gameIsEnd = true
         } else if let reaction = gameData?.isPlayingReaction, let reactionState = gameData?.isKingjungReaction, let allReactionScore = gameData?.reactionScore, let kingjungScore = gameData?.allKingjuncScore, let evaScore = gameData?.allEvaScore {
             withAnimation(

@@ -12,19 +12,20 @@ import SwiftUI
 struct GameData: Codable {
     var matchName: String
     var playerName: String
-    var score: Int?
     var outcome: String?
+    // Reaction
     var isPlayingReaction: Bool?
     var isKingjungReaction: Bool?
-    var showTimerModal: Bool?
-    var isTimer: Bool?
-    var countMin: Int?
-    var countSecond: Int?
     var reactionScore: Int?
     var allKingjuncScore: Int?
     var allEvaScore: Int?
     var myKingjungScore: Int?
     var myEvaScore: Int?
+    // Timer
+    var showTimerModal: Bool?
+    var isTimer: Bool?
+    var countMin: Int?
+    var countSecond: Int?
     //햅틱부분
     var wasSuccessCalledHaptics: Bool? // new field
     var wasErrorCalledHaptics: Bool? // new field
@@ -53,13 +54,8 @@ extension RealTimeGame {
         return encode(gameData: gameData)
     }
 
-    func encode(score: Int) -> Data? {
-        let gameData = GameData(matchName: matchName, playerName: GKLocalPlayer.local.displayName, score: score, outcome: nil)
-        return encode(gameData: gameData)
-    }
-
     func encode(outcome: String) -> Data? {
-        let gameData = GameData(matchName: matchName, playerName: GKLocalPlayer.local.displayName, score: nil, outcome: outcome)
+        let gameData = GameData(matchName: matchName, playerName: GKLocalPlayer.local.displayName, outcome: outcome)
         return encode(gameData: gameData)
     }
 

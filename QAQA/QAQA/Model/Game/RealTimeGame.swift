@@ -27,7 +27,6 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
     @Published var myAvatar = Image(systemName: "person.crop.circle")
     @Published var opponent: GKPlayer? = nil
     @Published var myScore = 0
-    @Published var opponentScore = 0
     
     // TopicUser
     @Published var topicUserName: String = "TopicUserName"
@@ -148,7 +147,7 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
     }
     
     func endMatch() {
-        let opponentOutcome = opponentScore > myScore ? "won" : "lost"
+        let opponentOutcome = "won"
 
         do {
             let data = encode(outcome: opponentOutcome)
@@ -178,7 +177,6 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
         gameIsEnd = false
 
         myScore = 0
-        opponentScore = 0
         
         reactionScore = 0
         allKingjungScore = 0
@@ -186,8 +184,6 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
         myKingjungScore = 0
         myEvaScore = 0
         reactionScoreList = [] // 이름, 킹정수, 에바수
-        
-        // 리액션 수 및 다른 변수들 초기화
     }
 
     func reportProgress() {
