@@ -66,17 +66,7 @@ struct HomeView: View {
 //                    gameTimerModel.isTimer = true
 //                }
             TestingIntroGame(game: game)
-                .onAppear(){
-//                    game.createRandomTopicUser(match: game.myMatch!)
-                    game.bombTransport()
-                    if game.myName == game.topicUserName {
-                        game.isBombPresent = true
-                        
-                    } else {
-                        game.isBombPresent = false
-                        
-                    }
-                }
+             
         }
     }
 }
