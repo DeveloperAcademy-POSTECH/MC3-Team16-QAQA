@@ -31,7 +31,11 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
     
     // TopicUser
     @Published var topicUserName: String = "TopicUserName"
-
+    
+    // Reaction Score
+    @Published var reactionScore = 0
+    @Published var allKingjungScore = 0
+    @Published var allEvaScore = 0
 
     // 타이머 변수
     @Published var countMin = 10
@@ -224,9 +228,9 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
         topicUserName = allUserName.randomElement()!
     }
     
-    func pushGoodReaction() {
+    func pushReaction() {
         do {
-            let data = encode(playReaction: playReaction, isGoodReaction: isGoodReaction)
+            let data = encode(playReaction: playReaction, isGoodReaction: isGoodReaction, reactionScore: reactionScore, allKingjungScore: allKingjungScore, allEvaScore: allEvaScore)
             try myMatch?.sendData(toAllPlayers: data!, with: GKMatch.SendDataMode.unreliable)
         } catch {
             print("Error: \(error.localizedDescription).")

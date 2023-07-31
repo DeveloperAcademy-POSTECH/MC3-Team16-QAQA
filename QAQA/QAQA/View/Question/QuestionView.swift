@@ -106,12 +106,14 @@ struct QuestionView: View {
                         if game.playReaction == false {
                             reactionSoundViewModel.playSound(sound: reactionSoundViewModel.createRandomKingjungReactionSounds())
                             game.isGoodReaction = true // 킹정
+                            game.allKingjungScore += 1
+                            game.reactionScore += 1
                             withAnimation(
                                 .default
 //                                .spring(response: 0.2, blendDuration: 0.0)___띠용 애니메이션 해제
                             ){
                                 game.playReaction = true
-                                game.pushGoodReaction()
+                                game.pushReaction()
                                 //햅틱부분
                                 game.callSuccessHaptics()
                                 //햅틱부분
@@ -119,11 +121,8 @@ struct QuestionView: View {
                         }
                         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8, execute: {
                             withAnimation(.default){
-                                game.playReaction = false
-                                game.pushGoodReaction()
-                                //햅틱부분
-                                game.callSuccessHaptics()
-                                //햅틱부분
+                                game.playReaction.toggle()
+                                game.pushReaction()
                             }
                         })
                     }, label: { //킹정버튼
@@ -138,12 +137,14 @@ struct QuestionView: View {
                         if game.playReaction == false {
                             reactionSoundViewModel.playSound(sound: reactionSoundViewModel.createRandomEvaReactionSounds())
                             game.isGoodReaction = false // 에바
+                            game.allEvaScore += 1
+                            game.reactionScore += 1
                             withAnimation(
                                 .default
 //                                .spring(response: 0.2, blendDuration: 0.0)___띠용 애니메이션 해제
                             ){
                                 game.playReaction = true
-                                game.pushGoodReaction()
+                                game.pushReaction()
                                 //햅틱부분
                                 game.callErrorHaptics()
                                 //햅틱부분
@@ -152,11 +153,8 @@ struct QuestionView: View {
                         }
                         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8, execute: {
                             withAnimation(.default){
-                                game.playReaction = false
-                                game.pushGoodReaction()
-                                //햅틱부분
-                                game.callErrorHaptics()
-                                //햅틱부분
+                                game.playReaction.toggle()
+                                game.pushReaction()
                             }
                         })//에바버튼 액션
                     }, label: { //에바버튼

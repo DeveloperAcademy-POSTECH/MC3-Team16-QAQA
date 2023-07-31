@@ -36,7 +36,6 @@ struct ReactionView: View {
             }
             .frame(height: 541)
         }
-        
     }
 }
 

@@ -39,13 +39,16 @@ extension RealTimeGame: GKMatchDelegate {
             opponentScore = score
         } else if (gameData?.outcome) != nil {
             gameIsEnd = true
-        } else if let reaction = gameData?.isPlayingReaction, let reactionState = gameData?.isGoodReaction {
+        } else if let reaction = gameData?.isPlayingReaction, let reactionState = gameData?.isGoodReaction, let allReactionScore = gameData?.reactionScore, let kingjungScore = gameData?.allKingjuncScore, let evaScore = gameData?.allEvaScore {
             withAnimation(
                 .default
 //                .spring(response: 0.2,dampingFraction: 0.25,blendDuration: 0.0) ___ 띠용 애니메이션 해제
             ){
                 playReaction = reaction
                 isGoodReaction = reactionState
+                reactionScore = allReactionScore
+                allKingjungScore = kingjungScore
+                allEvaScore = evaScore
             }
         } else if let timerModal = gameData?.showTimerModal, let timer = gameData?.isTimer {
             showTimerModal = timerModal
@@ -61,6 +64,8 @@ extension RealTimeGame: GKMatchDelegate {
         } else if let wasErrorCalled = gameData?.wasErrorCalledHaptics, wasErrorCalled {
             triggerErrorHaptic()
         }
+        print("kingjung: \(allKingjungScore)")
+        print("eva: \(allEvaScore)")
     }
     
     func triggerSuccessHaptic() {
