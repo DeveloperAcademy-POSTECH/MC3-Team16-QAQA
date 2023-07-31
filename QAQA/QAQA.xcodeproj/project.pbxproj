@@ -34,7 +34,6 @@
 		B8B5069D2A5E42D600B3EAED /* RealTimeGame+MatchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B5069C2A5E42D600B3EAED /* RealTimeGame+MatchData.swift */; };
 		B8F5747F2A63B4860028A46A /* OutroInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F5747E2A63B4860028A46A /* OutroInfoView.swift */; };
 		B8F574812A63BAB90028A46A /* OutroEndingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F574802A63BAB90028A46A /* OutroEndingView.swift */; };
-		B8F5748C2A64C8D30028A46A /* OutroCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F5748B2A64C8D30028A46A /* OutroCardModel.swift */; };
 		B8F574902A64DDF80028A46A /* TopicUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F5748F2A64DDF80028A46A /* TopicUserModel.swift */; };
 		C59F5A072A60F3B6007608AD /* HintModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59F5A062A60F3B6007608AD /* HintModel.swift */; };
 		C59F5A092A60F657007608AD /* HintState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59F5A082A60F657007608AD /* HintState.swift */; };
@@ -97,7 +96,6 @@
 		B8B5069C2A5E42D600B3EAED /* RealTimeGame+MatchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealTimeGame+MatchData.swift"; sourceTree = "<group>"; };
 		B8F5747E2A63B4860028A46A /* OutroInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutroInfoView.swift; sourceTree = "<group>"; };
 		B8F574802A63BAB90028A46A /* OutroEndingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutroEndingView.swift; sourceTree = "<group>"; };
-		B8F5748B2A64C8D30028A46A /* OutroCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutroCardModel.swift; sourceTree = "<group>"; };
 		B8F5748F2A64DDF80028A46A /* TopicUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicUserModel.swift; sourceTree = "<group>"; };
 		C59F5A062A60F3B6007608AD /* HintModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintModel.swift; sourceTree = "<group>"; };
 		C59F5A082A60F657007608AD /* HintState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintState.swift; sourceTree = "<group>"; };
@@ -329,7 +327,6 @@
 		B8F5748A2A64C8C20028A46A /* Outro */ = {
 			isa = PBXGroup;
 			children = (
-				B8F5748B2A64C8D30028A46A /* OutroCardModel.swift */,
 			);
 			path = Outro;
 			sourceTree = "<group>";
@@ -518,7 +515,6 @@
 				B8F574902A64DDF80028A46A /* TopicUserModel.swift in Sources */,
 				602BD3092A67E86600F9E345 /* FinishModalView.swift in Sources */,
 				B8B506912A5D01F000B3EAED /* RealTimeGame+GKGameCenterViewController.swift in Sources */,
-				B8F5748C2A64C8D30028A46A /* OutroCardModel.swift in Sources */,
 				B8B506952A5D2B2600B3EAED /* QuestionView.swift in Sources */,
 				B8B5069D2A5E42D600B3EAED /* RealTimeGame+MatchData.swift in Sources */,
 				B8F574812A63BAB90028A46A /* OutroEndingView.swift in Sources */,
