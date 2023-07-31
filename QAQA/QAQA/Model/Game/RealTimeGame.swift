@@ -216,12 +216,12 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
         })
     }
     
-    func createRandomTopicUser(match: GKMatch, isMyNameExclude: Bool = false) {
+    func createRandomTopicUser(match: GKMatch, isMyNameExcluded: Bool = false) {
         var allUserName: [String] = []
         for player in match.players {
             allUserName.append(player.displayName)
         }
-        if isMyNameExclude == false{
+        if isMyNameExcluded == false {
             allUserName.append(myName)
         }
         topicUserName = allUserName.randomElement()!
