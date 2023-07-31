@@ -96,7 +96,7 @@ struct QuestionView: View {
                     }
                     
                     //ReactionView
-                    ReactionView(game: RealTimeGame(),isReaction: $game.playReaction, reactionState: self.$game.isGoodReaction)
+                    ReactionView(game: RealTimeGame(),isReaction: $game.playReaction, reactionState: self.$game.isKingjungReaction)
                         .opacity(game.playReaction ? 1 : 0)
                     
                 }
@@ -105,7 +105,7 @@ struct QuestionView: View {
                     Button(action: { //reaction button action
                         if game.playReaction == false {
                             reactionSoundViewModel.playSound(sound: reactionSoundViewModel.createRandomKingjungReactionSounds())
-                            game.isGoodReaction = true // 킹정
+                            game.isKingjungReaction = true // 킹정
                             game.allKingjungScore += 1
                             game.reactionScore += 1
                             game.myKingjungScore += 1
@@ -137,7 +137,7 @@ struct QuestionView: View {
                     Button(action: {
                         if game.playReaction == false {
                             reactionSoundViewModel.playSound(sound: reactionSoundViewModel.createRandomEvaReactionSounds())
-                            game.isGoodReaction = false // 에바
+                            game.isKingjungReaction = false // 에바
                             game.allEvaScore += 1
                             game.reactionScore += 1
                             game.myEvaScore += 1

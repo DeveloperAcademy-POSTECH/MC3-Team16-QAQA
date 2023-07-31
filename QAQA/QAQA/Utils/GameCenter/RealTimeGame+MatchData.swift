@@ -15,7 +15,7 @@ struct GameData: Codable {
     var score: Int?
     var outcome: String?
     var isPlayingReaction: Bool?
-    var isGoodReaction: Bool?
+    var isKingjungReaction: Bool?
     var showTimerModal: Bool?
     var isTimer: Bool?
     var countMin: Int?
@@ -43,8 +43,8 @@ extension RealTimeGame {
         return encode(gameData: gameData)
     }
     
-    func encode(playReaction: Bool, isGoodReaction: Bool, reactionScore: Int, allKingjungScore: Int, allEvaScore: Int) -> Data? {
-        let gameData = GameData(matchName: matchName, playerName: GKLocalPlayer.local.displayName, isPlayingReaction: playReaction, isGoodReaction: isGoodReaction, reactionScore: reactionScore, allKingjuncScore: allKingjungScore, allEvaScore: allEvaScore)
+    func encode(playReaction: Bool, isKingjungReaction: Bool, reactionScore: Int, allKingjungScore: Int, allEvaScore: Int) -> Data? {
+        let gameData = GameData(matchName: matchName, playerName: GKLocalPlayer.local.displayName, isPlayingReaction: playReaction, isKingjungReaction: isKingjungReaction, reactionScore: reactionScore, allKingjuncScore: allKingjungScore, allEvaScore: allEvaScore)
         return encode(gameData: gameData)
     }
     
