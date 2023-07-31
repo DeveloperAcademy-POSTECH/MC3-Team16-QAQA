@@ -24,15 +24,6 @@ struct ReactionView: View {
                     ReactionLottieView(jsonName:"badReactionLottie")
                         .frame(width: 390, height: 390)
                 }
-                Text("by Your Teammates") //리액션을 누를 사람의 이름 뜨는 곳
-                    .font(.system(size:20))
-                    .foregroundColor(.gray)
-                    .opacity(0)
-                game.myAvatar
-                    .resizable()
-                    .frame(width: 80, height: 80)
-                    .clipShape(Circle())
-                    .opacity(0)
             }
             .frame(height: 541)
         }
