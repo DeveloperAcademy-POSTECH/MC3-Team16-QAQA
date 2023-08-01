@@ -22,6 +22,8 @@ struct QuestionView: View {
     
     var body: some View {
         ZStack {
+            Color.white
+                .ignoresSafeArea()
             VStack{
                 Spacer()
                     .frame(width: 16)

@@ -54,6 +54,9 @@ struct IntroResultView: View {
                     BeginQuestionModalView(game: RealTimeGame(), isShowingQuestionView: IntroResultView(game:RealTimeGame()).$isShowingQuestionView)
                         .presentationDetents([.medium])
                         .presentationCornerRadius(20)
+                        .onDisappear {
+                            isShowingQuestionView.toggle()
+                        }
                 })
             }
             if isShowingQuestionView == true {
