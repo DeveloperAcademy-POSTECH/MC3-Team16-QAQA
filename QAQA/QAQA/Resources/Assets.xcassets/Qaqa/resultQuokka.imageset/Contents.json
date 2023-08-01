@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "crown.fill.png",
+      "filename" : "resultQuokka.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "crown.fill@2x.png",
+      "filename" : "resultQuokka@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "crown.fill@3x.png",
+      "filename" : "resultQuokka@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
