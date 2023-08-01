@@ -36,7 +36,7 @@ struct BallContainerView: View {
     // 배경 이미지를 나타내는 변수입니다.
     @State private var gyroBackgroundImage: String = "back_1"
     // 랜덤한 시간 간격을 나타내는 변수입니다.
-    @State private var gyroRandomTime: Double = 10
+    @State private var gyroRandomTime: Double = 60 //플레이타임
 //    @State private var gyroRandomTime: Double = Double.random(in: 10...20)
     // 랜덤한 시간 간격을 관리하는 타이머입니다.
     @State private var gyroRandomTimer: Timer? = nil
@@ -160,28 +160,33 @@ struct BallContainerView: View {
                                             self.successHaptics()
                                             self.gyroCountdownTimer?.invalidate()
                                             self.gyroCountdown = 0
-                                            
+                                            game.createRandomTopicUser(match: game.myMatch!, isMyNameExcluded: true)
+                                            game.isBombAppear.toggle()
+                                            game.bombTransport()
                                             gyroBackgroundColor = Color.purple
         //                                            self.gyroBallImage = "smile_1"
         //                                            self.gyroBackgroundImage = "sky_1"
+                                            
+                                            self.gyroBallPosition = CGPoint(
+                                                x: CGFloat.random(in: 50...(geometry.size.width - 50)),
+                                                y: CGFloat.random(in: 50...(geometry.size.height - 50))
+                                            )
+                                    if game.isBombPresent{
+                                        self.circlePosition = CGPoint(
+                                            x: CGFloat.random(in: 50...(geometry.size.width - 50)),
+                                            y: CGFloat.random(in: 50...(geometry.size.height - 50))
+                                        )
+                                    }
                                             
                                             // 공을 숨기고 0.5초 후에 랜덤한 위치에 재생성합니다.
         //                                            self.isBallVisible = false
                                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
         //                                                self.gyroCircleImage = "success_1"
         //                                                self.isBallVisible = true
-                                                game.createRandomTopicUser(match: game.myMatch!, isMyNameExcluded: true)
-                                                game.isBombAppear.toggle()
-                                                game.bombTransport()
+                                               
                                                 
-                                                        self.gyroBallPosition = CGPoint(
-                                                            x: CGFloat.random(in: 50...(geometry.size.width - 50)),
-                                                            y: CGFloat.random(in: 50...(geometry.size.height - 50))
-                                                        )
-                                                        self.circlePosition = CGPoint(
-                                                            x: CGFloat.random(in: 50...(geometry.size.width - 50)),
-                                                            y: CGFloat.random(in: 50...(geometry.size.height - 50))
-                                                        )
+                                             
+                                                        
                                                 
                                                 
                                             }
