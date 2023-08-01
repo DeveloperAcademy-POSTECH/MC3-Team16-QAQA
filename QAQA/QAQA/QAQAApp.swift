@@ -9,11 +9,17 @@ import SwiftUI
 
 @main
 struct QAQAApp: App {
+    
+   @AppStorage("isOnboarding") var isOnboarding: Bool = true
+    
     var body: some Scene {
         WindowGroup {
-            HomeView()
-                .environmentObject(TimerModel())
-                .environmentObject(RealTimeGame())
+            if isOnboarding == true {
+                TutorialView(isOnboarding: $isOnboarding)
+
+            } else {
+                HomeView()
+            }
         }
     }
 }
