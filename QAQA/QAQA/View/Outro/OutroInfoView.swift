@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct OutroInfoView: View {
+    @ObservedObject var game: RealTimeGame
+    
     var body: some View {
         ZStack{
             Color.white
-            VStack(spacing: 0){
+            VStack(spacing: 0) {
                 ZStack{
                     Image("questionBubble")
-                    VStack{
+                    VStack {
                         Text("질문 끝!")
                             .font(.custom("BMJUAOTF", size: 53))
                         Spacer()
@@ -29,11 +31,14 @@ struct OutroInfoView: View {
                     .frame(width: 202)
             }
         }
+        .onAppear {
+            game.rankReactionKing()
+        }
     }
 }
 
 struct OutroInfoView_Previews: PreviewProvider {
     static var previews: some View {
-        OutroInfoView()
+        OutroInfoView(game: RealTimeGame())
     }
 }

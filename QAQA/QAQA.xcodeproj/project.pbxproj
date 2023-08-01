@@ -34,12 +34,10 @@
 		B8B5069D2A5E42D600B3EAED /* RealTimeGame+MatchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B5069C2A5E42D600B3EAED /* RealTimeGame+MatchData.swift */; };
 		B8F5747F2A63B4860028A46A /* OutroInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F5747E2A63B4860028A46A /* OutroInfoView.swift */; };
 		B8F574812A63BAB90028A46A /* OutroEndingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F574802A63BAB90028A46A /* OutroEndingView.swift */; };
-		B8F574872A63D3800028A46A /* OutroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F574862A63D3800028A46A /* OutroViewModel.swift */; };
 		B8F5748C2A64C8D30028A46A /* OutroCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F5748B2A64C8D30028A46A /* OutroCardModel.swift */; };
 		B8F574902A64DDF80028A46A /* TopicUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F5748F2A64DDF80028A46A /* TopicUserModel.swift */; };
 		C59F5A072A60F3B6007608AD /* HintModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59F5A062A60F3B6007608AD /* HintModel.swift */; };
 		C59F5A092A60F657007608AD /* HintState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59F5A082A60F657007608AD /* HintState.swift */; };
-		C5AADBCF2A73B71C002FD2D9 /* OutroEndingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AADBCE2A73B71C002FD2D9 /* OutroEndingModel.swift */; };
 		C5AADBD12A73B7FA002FD2D9 /* OutroEndingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AADBD02A73B7FA002FD2D9 /* OutroEndingViewModel.swift */; };
 		C5AADBD42A750DF1002FD2D9 /* IntroResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AADBD32A750DF1002FD2D9 /* IntroResultView.swift */; };
 		C5B712732A764FBF009C9433 /* tutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B712722A764FBF009C9433 /* tutorialView.swift */; };
@@ -100,12 +98,10 @@
 		B8B5069C2A5E42D600B3EAED /* RealTimeGame+MatchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealTimeGame+MatchData.swift"; sourceTree = "<group>"; };
 		B8F5747E2A63B4860028A46A /* OutroInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutroInfoView.swift; sourceTree = "<group>"; };
 		B8F574802A63BAB90028A46A /* OutroEndingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutroEndingView.swift; sourceTree = "<group>"; };
-		B8F574862A63D3800028A46A /* OutroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutroViewModel.swift; sourceTree = "<group>"; };
 		B8F5748B2A64C8D30028A46A /* OutroCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutroCardModel.swift; sourceTree = "<group>"; };
 		B8F5748F2A64DDF80028A46A /* TopicUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicUserModel.swift; sourceTree = "<group>"; };
 		C59F5A062A60F3B6007608AD /* HintModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintModel.swift; sourceTree = "<group>"; };
 		C59F5A082A60F657007608AD /* HintState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintState.swift; sourceTree = "<group>"; };
-		C5AADBCE2A73B71C002FD2D9 /* OutroEndingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutroEndingModel.swift; sourceTree = "<group>"; };
 		C5AADBD02A73B7FA002FD2D9 /* OutroEndingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutroEndingViewModel.swift; sourceTree = "<group>"; };
 		C5AADBD32A750DF1002FD2D9 /* IntroResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroResultView.swift; sourceTree = "<group>"; };
 		C5B712722A764FBF009C9433 /* tutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tutorialView.swift; sourceTree = "<group>"; };
@@ -251,7 +247,6 @@
 		B87998602A5BB39C00167597 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				B8F574862A63D3800028A46A /* OutroViewModel.swift */,
 				B8B506822A5CF4FA00B3EAED /* HintViewModel.swift */,
 				C5C282A72A7163410027416D /* ReactionSoundViewModel.swift */,
 				C5AADBD02A73B7FA002FD2D9 /* OutroEndingViewModel.swift */,
@@ -338,7 +333,6 @@
 			isa = PBXGroup;
 			children = (
 				B8F5748B2A64C8D30028A46A /* OutroCardModel.swift */,
-				C5AADBCE2A73B71C002FD2D9 /* OutroEndingModel.swift */,
 			);
 			path = Outro;
 			sourceTree = "<group>";
@@ -542,13 +536,11 @@
 				AA9741E72A6EBF8F0027DE48 /* Ball.swift in Sources */,
 				B8B5069B2A5E3C1C00B3EAED /* RealTimeGame+GKLocalPlayerListener.swift in Sources */,
 				AA9741E92A6EBFAA0027DE48 /* GyroscopeManager.swift in Sources */,
-				C5AADBCF2A73B71C002FD2D9 /* OutroEndingModel.swift in Sources */,
 				B8F5747F2A63B4860028A46A /* OutroInfoView.swift in Sources */,
 				B8B5069B2A5E3C1C00B3EAED /* RealTimeGame+GKLocalPlayerListener.swift in Sources */,
 				B87998522A5BACBE00167597 /* QAQAApp.swift in Sources */,
 				602BD3032A6456BF00F9E345 /* ReactionView.swift in Sources */,
 				60EB427B2A5E44880030286C /* UIScreen+Extension.swift in Sources */,
-				B8F574872A63D3800028A46A /* OutroViewModel.swift in Sources */,
 				B8B5068A2A5D00BE00B3EAED /* RealTimeGame.swift in Sources */,
 				B8B506992A5E2C9500B3EAED /* Color+Extension.swift in Sources */,
 				C5C282AB2A71641C0027416D /* ReactionSoundModel.swift in Sources */,

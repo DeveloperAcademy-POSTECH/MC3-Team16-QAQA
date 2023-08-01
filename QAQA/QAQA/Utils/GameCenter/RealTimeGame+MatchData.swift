@@ -20,6 +20,11 @@ struct GameData: Codable {
     var isTimer: Bool?
     var countMin: Int?
     var countSecond: Int?
+    var reactionScore: Int?
+    var allKingjuncScore: Int?
+    var allEvaScore: Int?
+    var myKingjungScore: Int?
+    var myEvaScore: Int?
     //햅틱부분
     var wasSuccessCalledHaptics: Bool? // new field
     var wasErrorCalledHaptics: Bool? // new field
@@ -38,8 +43,13 @@ extension RealTimeGame {
         return encode(gameData: gameData)
     }
     
-    func encode(playReaction: Bool, isGoodReaction: Bool) -> Data? {
-        let gameData = GameData(matchName: matchName, playerName: GKLocalPlayer.local.displayName, isPlayingReaction: playReaction, isGoodReaction: isGoodReaction)
+    func encode(playReaction: Bool, isGoodReaction: Bool, reactionScore: Int, allKingjungScore: Int, allEvaScore: Int) -> Data? {
+        let gameData = GameData(matchName: matchName, playerName: GKLocalPlayer.local.displayName, isPlayingReaction: playReaction, isGoodReaction: isGoodReaction, reactionScore: reactionScore, allKingjuncScore: allKingjungScore, allEvaScore: allEvaScore)
+        return encode(gameData: gameData)
+    }
+    
+    func encode(playerName: String, myKingjungScore: Int, myEvaScore: Int) -> Data? {
+        let gameData = GameData(matchName: matchName, playerName: GKLocalPlayer.local.displayName, myKingjungScore: myKingjungScore, myEvaScore: myEvaScore)
         return encode(gameData: gameData)
     }
 

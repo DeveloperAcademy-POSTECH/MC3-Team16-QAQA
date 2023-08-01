@@ -9,15 +9,12 @@ import SwiftUI
 
 struct OutroEndingView: View {
     @StateObject private var outroEndingViewModel = OutroEndingViewModel()
-    @StateObject private var outroViewModel = OutroViewModel()
     @ObservedObject var game: RealTimeGame
     
     @Binding var isShowingOutroView: Bool
     @State var animateGaugeBar = false
     
     @State private var isShowingInfoView = true
-    //    @State private var reactionNum = 24
-    
     
     private let duration = 1.0
     @State var isAnimated = false
@@ -84,19 +81,15 @@ struct OutroEndingView: View {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.3) {
                         isAnimated.toggle()
                         withAnimation(.easeOut(duration: duration)){
-                            defaultKingjungWidth = outroEndingViewModel.calculateKingjungWidth()
-                        }
-                        withAnimation(.easeOut(duration: duration)){
-                            defaultEvaWidth = outroEndingViewModel.calculateEvaWidth()
-                        }
-                        withAnimation(.easeOut(duration: duration)){
-                            defaultSpacerWidth = outroEndingViewModel.calculateSpacerWidth()
+                            defaultKingjungWidth = outroEndingViewModel.calculateKingjungWidth(kingjung: CGFloat(game.allKingjungScore), total: CGFloat(game.reactionScore))
+                            defaultEvaWidth = outroEndingViewModel.calculateEvaWidth(eva: CGFloat(game.allEvaScore), total: CGFloat(game.reactionScore))
+                            defaultSpacerWidth = outroEndingViewModel.calculateSpacerWidth(kingjung: CGFloat(game.allKingjungScore), eva: CGFloat(game.allEvaScore), total: CGFloat(game.reactionScore))
                         }
                     }
                 }
                 Spacer()
                     .frame(height: 23)
-                OutroResultCardView()
+                OutroResultCardView(game: game)
                 Spacer()
                     .frame(height: 73)
                 Button {
@@ -108,10 +101,9 @@ struct OutroEndingView: View {
                         .resizable()
                         .frame(width: 358, height: 53)
                 }
-                
             }
-            if (isShowingInfoView) { // TODO: animation
-                OutroInfoView()
+            if (isShowingInfoView) {
+                OutroInfoView(game: game)
                     .onAppear() {
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
                             isShowingInfoView.toggle()
