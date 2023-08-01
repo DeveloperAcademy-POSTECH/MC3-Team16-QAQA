@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "outroResultRectangle_Orange.png",
+      "filename" : "beginQuestionModalQaqa.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "outroResultRectangle_Orange@2x.png",
+      "filename" : "beginQuestionModalQaqa@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "outroResultRectangle_Orange@3x.png",
+      "filename" : "beginQuestionModalQaqa@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

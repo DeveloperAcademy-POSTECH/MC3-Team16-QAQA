@@ -24,12 +24,7 @@ struct OutroResultCardView: View {
                         .font(.custom("BMJUAOTF", size: 30))
                         .foregroundColor(.black)
                     Spacer()
-                        .frame(height: 27)
-                    Text("총 반응 수")
-                        .font(.custom("BMJUAOTF", size: 15))
-                        .foregroundColor(.white)
-                    Spacer()
-                        .frame(height: 5)
+                        .frame(height: 45)
                 }
             }
             ZStack {
@@ -43,12 +38,7 @@ struct OutroResultCardView: View {
                         .font(.custom("BMJUAOTF", size: 30))
                         .foregroundColor(.black)
                     Spacer()
-                        .frame(height: 27)
-                    Text("킹정킹")
-                        .font(.custom("BMJUAOTF", size: 15))
-                        .foregroundColor(.white)
-                    Spacer()
-                        .frame(height: 5)
+                        .frame(height: 45)
                 }
             }
             ZStack {
@@ -62,12 +52,7 @@ struct OutroResultCardView: View {
                         .font(.custom("BMJUAOTF", size: 30))
                         .foregroundColor(.black)
                     Spacer()
-                        .frame(height: 27)
-                    Text("에바킹")
-                        .font(.custom("BMJUAOTF", size: 15))
-                        .foregroundColor(.white)
-                    Spacer()
-                        .frame(height: 5)
+                        .frame(height: 45)
                 }
             }
         }

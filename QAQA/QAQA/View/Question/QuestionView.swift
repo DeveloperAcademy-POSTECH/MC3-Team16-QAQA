@@ -18,9 +18,12 @@ struct QuestionView: View {
     //        @State var showTimerModal = false
     @State var showFinishModal = false
     @State var isShowingOutroView = false
+    @Binding var isShowingQuestionView : Bool
     
     var body: some View {
         ZStack {
+            Color.white
+                .ignoresSafeArea()
             VStack{
                 Spacer()
                     .frame(width: 16)
@@ -53,7 +56,7 @@ struct QuestionView: View {
                     .sheet(isPresented: $showFinishModal, content: {
                         FinishModalView(isShowingOutroView: $isShowingOutroView, game: game) //TODO: View 바꾸기
                             .presentationDetents([.height(257)])
-                            .presentationCornerRadius(32)
+                            .presentationCornerRadius(20)
                             .padding(.top, 44)
                             .padding([.leading, .trailing], 16)
                             .onAppear{
@@ -96,7 +99,7 @@ struct QuestionView: View {
                     }
                     
                     //ReactionView
-                    ReactionView(game: RealTimeGame(),isReaction: $game.playReaction, reactionState: self.$game.isGoodReaction)
+                    ReactionView(game: game, isReaction: $game.playReaction, reactionState: self.$game.isGoodReaction)
                         .opacity(game.playReaction ? 1 : 0)
                     
                 }
@@ -174,7 +177,7 @@ struct QuestionView: View {
                 game.topicUserName = game.topicUserName // TODO: 안됨
             }
             if (game.gameIsEnd) {
-                OutroEndingView(game: game,  isShowingOutroView: $isShowingOutroView)
+                OutroEndingView(game: game, isShowingOutroView: $isShowingOutroView)
             } else if game.showTimerModal == true {
                 TimerModalView()
                     .onTapGesture {
@@ -189,7 +192,6 @@ struct QuestionView: View {
 
 struct QuestionView_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionView(game:RealTimeGame())
-            .environmentObject(RealTimeGame())
+        QuestionView(game:RealTimeGame(), isShowingQuestionView: .constant(false))
     }
 }

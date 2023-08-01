@@ -15,7 +15,7 @@ extension Color {
     static let outroGaugeLightGreen = Color("outroGaugeLightGreen")
     static let outroGaugeLightYellow = Color("outroGaugeLightYellow")
     static let outroGaugeYellow = Color("outroGaugeYellow")
-    static let outroViewGray = Color("outroViewGray")
+    static let outroViewLightGray = Color("outroViewLightGray")
     static let outroViewYellow = Color("outroViewYellow")
     static let pauseButtonYellow = Color("pauseButtonYellow")
     static let testBlue = Color("testBlue")
