@@ -15,35 +15,32 @@ struct HintView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            ZStack{
+            ZStack {
                 Image("questionBubble")
                     .resizable()
-                    .scaledToFill()
-                    .frame(width: 211)
+                    .scaledToFit()
+                    .padding([.leading, .trailing], 90)
                 VStack{
                     Text("오늘의 주인공")
                         .font(.custom("BMJUAOTF", size: 15))
                     Text("\(game.topicUserName)")
                         .font(.custom("BMJUAOTF", size: 20))
-                    Spacer()
-                        .frame(height: 15)
+                        .padding([.bottom], 15)
                 }
             }
             Image("questionQaqa")
                 .resizable()
-                .scaledToFill()
-                .frame(width: 140)
+                .scaledToFit()
+                .padding([.leading, .trailing], 125)
             ZStack{
                 RoundedRectangle(cornerRadius: 20)
                     .foregroundColor(.hintViewYellow)
-                VStack{
-                    Spacer()
-                        .frame(height: 25)
+                VStack(spacing: 0) {
                     Text("궁금한 질문을 골라보세요!")
                         .font(.custom("BMJUAOTF", size: 15))
                         .foregroundColor(.hintViewOrange)
-                    Spacer()
-                        .frame(height: 16)
+                        .padding([.top], 25)
+                        .padding([.bottom], 16)
                     Picker("HintMode", selection: $selectedHint) {
                         Text("알아가기").tag(HintState.getToKnow)
                         Text("재미").tag(HintState.fun)
@@ -67,15 +64,15 @@ struct HintView: View {
                     } label: {
                         Image("randomHintButton")
                             .resizable()
-                            .scaledToFill()
-                            .frame(width: 223, height: 51)
+                            .scaledToFit()
+                            .padding([.leading, .trailing], 68)
                     }
                     Spacer()
                         .frame(height: 25)
                 }
             }
-            .padding([.leading, .trailing], 16)
             .frame(height: 332)
+            .padding([.leading, .trailing], 16)
         }
     }
 }

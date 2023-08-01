@@ -21,10 +21,10 @@ struct QuestionView: View {
         ZStack {
             Color.white
                 .ignoresSafeArea()
-            VStack{
+            VStack {
                 Spacer()
                     .frame(height: 16)
-                HStack{
+                HStack {
                     Button {
                         game.showTimerModal = true
                         game.isTimer.toggle()
@@ -45,6 +45,7 @@ struct QuestionView: View {
                     } label: {
                         Image("endButton_Yellow")
                             .resizable()
+                            .scaledToFit()
                             .frame(width: 77)
                     }
                     .sheet(isPresented: $showFinishModal, content: {
@@ -60,23 +61,18 @@ struct QuestionView: View {
                 } //Timer와 끝내기 버튼
                 .padding([.leading, .trailing], 15)
                 ZStack{ //QuestionView의 메인 내용과 ReactionView를 ZStack으로 쌓아놓기
-                    VStack (spacing: 0) { //QuestionView의 메인 내용(프로필과 질문버튼, 리액션버튼)
-                            Spacer()
-//                                .frame(height: 10)
-                            HintView(game: game)
-                            Spacer()
-//                                .frame(height: 30)
+                    VStack (spacing: 0) {
+                        Spacer()
+                        HintView(game: game)
+                        Spacer()
                     }
-                    
                     //ReactionView
                     ReactionView(game: game,isReaction: $game.playReaction, isKingjungReaction: self.$game.isKingjungReaction)
                         .opacity(game.playReaction ? 1 : 0)
-                    
                 }
-                
-                HStack{
-                    Button(action: { //reaction button action
-                        if game.playReaction == false {
+                HStack { // Reaction Buttons
+                    Button(action: { // 킹정버튼
+                        if !game.playReaction {
                             reactionSoundViewModel.playSound(sound: reactionSoundViewModel.createRandomKingjungReactionSounds())
                             game.isKingjungReaction = true // 킹정
                             game.allKingjungScore += 1
@@ -87,9 +83,7 @@ struct QuestionView: View {
                             ){
                                 game.playReaction = true
                                 game.pushReaction()
-                                //햅틱부분
                                 game.callSuccessHaptics()
-                                //햅틱부분
                             }
                         }
                         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8, execute: {
@@ -98,18 +92,17 @@ struct QuestionView: View {
                                 game.pushReaction()
                             }
                         })
-                    }, label: { //킹정버튼
+                    }, label: {
                         VStack(alignment:.center){
                             Image("reactionButton_Good")
-                                .resizable()
-                                .frame(width: 153, height: 138)
-                                .padding(.trailing ,10)
+                                .scaledToFill()
                         }
                     })
-                    Button(action: {
-                        if game.playReaction == false {
+                    Spacer()
+                    Button(action: { // 에바 버튼
+                        if !game.playReaction {
                             reactionSoundViewModel.playSound(sound: reactionSoundViewModel.createRandomEvaReactionSounds())
-                            game.isKingjungReaction = false // 에바
+                            game.isKingjungReaction = false
                             game.allEvaScore += 1
                             game.reactionScore += 1
                             game.myEvaScore += 1
@@ -118,10 +111,7 @@ struct QuestionView: View {
                             ){
                                 game.playReaction = true
                                 game.pushReaction()
-                                //햅틱부분
                                 game.callErrorHaptics()
-                                //햅틱부분
-                                
                             }
                         }
                         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8, execute: {
@@ -129,24 +119,20 @@ struct QuestionView: View {
                                 game.playReaction.toggle()
                                 game.pushReaction()
                             }
-                        })//에바버튼 액션
-                    }, label: { //에바버튼
-                        VStack(alignment:.center){
+                        })
+                    }, label: {
+                        VStack(alignment:.center) {
                             Image("reactionButton_Bad")
-                                .resizable()
-                                .frame(width: 153, height: 138)
-                                .padding(.leading ,10)
+                                .scaledToFill()
                         }
                     })
                 }
-                
-            }
-            .onAppear {
-                game.topicUserName = game.topicUserName
+                .padding([.leading, .trailing], 37)
+                .padding([.bottom], 24)
             }
             if (game.gameIsEnd) {
                 OutroEndingView(game: game, isShowingOutroView: $isShowingOutroView)
-            } else if game.showTimerModal == true {
+            } else if (game.showTimerModal) {
                 TimerModalView()
                     .onTapGesture {
                         game.showTimerModal = false
