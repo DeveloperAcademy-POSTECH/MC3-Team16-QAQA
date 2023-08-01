@@ -11,6 +11,7 @@ struct IntroResultView: View {
     
     @ObservedObject var game: RealTimeGame
     @State var showBeginQuestionModal = false
+    @State var isShowingQuestionView = false
     
     var body: some View {
         ZStack{
@@ -49,10 +50,15 @@ struct IntroResultView: View {
                         .frame(width: 358)
                 }
                 .sheet(isPresented: $showBeginQuestionModal, content: {
-                    BeginQuestionModalView(game: game)
+                    BeginQuestionModalView(game: RealTimeGame(), isShowingQuestionView: IntroResultView(game:RealTimeGame()).$isShowingQuestionView)
                         .presentationDetents([.medium])
                         .presentationCornerRadius(20)
                 })
+            }
+            if isShowingQuestionView == true {
+                QuestionView(game: game, isShowingQuestionView: $isShowingQuestionView)
+            } else {
+                Text("no")
             }
         }
     }

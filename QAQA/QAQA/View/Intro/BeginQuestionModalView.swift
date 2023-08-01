@@ -9,7 +9,11 @@ import SwiftUI
 
 struct BeginQuestionModalView: View {
     
+    @Environment(\.presentationMode) var presentation
     @ObservedObject var game: RealTimeGame
+    @Binding var isShowingQuestionView : Bool
+
+    
     
     var body: some View {
         VStack(spacing: 0){
@@ -56,7 +60,9 @@ struct BeginQuestionModalView: View {
                     .frame(height: 24)
             }
             Button {
-           
+                isShowingQuestionView = true
+                presentation.wrappedValue.dismiss()
+                print(isShowingQuestionView)
             } label: {
                 Image("startButton")
                     .resizable()
@@ -69,6 +75,6 @@ struct BeginQuestionModalView: View {
 
 struct BeginQuestionModalView_Previews: PreviewProvider {
     static var previews: some View {
-        BeginQuestionModalView(game:RealTimeGame())
+        BeginQuestionModalView(game: RealTimeGame(), isShowingQuestionView: IntroResultView(game:RealTimeGame()).$isShowingQuestionView)
     }
 }
