@@ -34,6 +34,8 @@ struct GameData: Codable {
     var topicUserName: String?
     var isStartGame: Bool?
     var isShowResult: Bool?
+    // QuestionStart
+    var isStartQuestion: Bool?
 }
 
 extension RealTimeGame {
@@ -61,12 +63,12 @@ extension RealTimeGame {
         let gameData = GameData(matchName: matchName, playerName: GKLocalPlayer.local.displayName, myKingjungScore: myKingjungScore, myEvaScore: myEvaScore)
         return encode(gameData: gameData)
     }
-
+    
     func encode(outcome: String) -> Data? {
         let gameData = GameData(matchName: matchName, playerName: GKLocalPlayer.local.displayName, outcome: outcome)
         return encode(gameData: gameData)
     }
-
+    
     func encode(gameData: GameData) -> Data? {
         let encoder = PropertyListEncoder()
         encoder.outputFormat = .xml
@@ -85,7 +87,7 @@ extension RealTimeGame {
         let gameData = GameData(matchName: matchName, playerName: GKLocalPlayer.local.displayName, wasSuccessCalledHaptics: wasSuccessCalledHaptics)
         return encode(gameData: gameData)
     }
-
+    
     func encode(wasErrorCalledHaptics: Bool) -> Data? {
         let gameData = GameData(matchName: matchName, playerName: GKLocalPlayer.local.displayName, wasErrorCalledHaptics: wasErrorCalledHaptics)
         return encode(gameData: gameData)
@@ -94,5 +96,11 @@ extension RealTimeGame {
     
     func decode(matchData: Data) -> GameData? {
         return try? PropertyListDecoder().decode(GameData.self, from: matchData)
+    }
+    
+    // QuestionStart
+    func encode(isStartQuestion: Bool) -> Data? {
+        let gameData = GameData(matchName: matchName, playerName: GKLocalPlayer.local.displayName, isStartQuestion: isStartQuestion)
+        return encode(gameData: gameData)
     }
 }
