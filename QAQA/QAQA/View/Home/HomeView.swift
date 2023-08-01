@@ -59,14 +59,14 @@ struct HomeView: View {
         }
         // Display the game interface if a match is ongoing.
         .fullScreenCover(isPresented: $game.playingGame) {
-//            QuestionView(game:game)
-//                .onAppear(){
-//                    gameTimerModel.countMin = 10
-//                    gameTimerModel.countSecond = 0
-//                    gameTimerModel.isTimer = true
-//                }
+            QuestionView(game:game)
+                .onAppear(){
+                    gameTimerModel.countMin = 10
+                    gameTimerModel.countSecond = 0
+                    gameTimerModel.isTimer = true
+                }
 //            TestingIntroGame(game: game)
-            TestIntroStartView(game: game)
+//            TestIntroStartView(game: game)
              
         }
     }
