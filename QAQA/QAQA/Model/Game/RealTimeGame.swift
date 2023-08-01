@@ -53,7 +53,10 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
     @Published var wasSuccessCalledHaptics = false // new field
     @Published var wasErrorCalledHaptics = false // new field
     //햅틱부분
-
+    @Published var isBombAppear = false
+    @Published var isBombPresent = false
+    @Published var isStartGame = false
+    @Published var isShowResult = false
     var matchName: String {
         "\(opponentName) Match"
     }
@@ -217,12 +220,14 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
         })
     }
     
-    func createRandomTopicUser(match: GKMatch) {
+    func createRandomTopicUser(match: GKMatch, isMyNameExcluded: Bool = false) {
         var allUserName: [String] = []
         for player in match.players {
             allUserName.append(player.displayName)
         }
-        allUserName.append(myName)
+        if isMyNameExcluded == false {
+            allUserName.append(myName)
+        }
         topicUserName = allUserName.randomElement()!
     }
     
@@ -257,6 +262,15 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
     func timerNumberCount() {
         do {
             let data = encode(countMin: countMin, countSecond: countSecond)
+            try myMatch?.sendData(toAllPlayers: data!, with: GKMatch.SendDataMode.unreliable)
+        } catch {
+            print("Error: \(error.localizedDescription).")
+        }
+    }
+    
+    func bombTransport() {
+        do {
+            let data = encode(isBombAppear: isBombAppear, topicUserName: topicUserName, isStartGame: isStartGame, isShowResult: isShowResult)
             try myMatch?.sendData(toAllPlayers: data!, with: GKMatch.SendDataMode.unreliable)
         } catch {
             print("Error: \(error.localizedDescription).")

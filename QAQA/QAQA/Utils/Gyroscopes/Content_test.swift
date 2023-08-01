@@ -11,7 +11,7 @@ struct Content_test: View {
     @StateObject var gyroManager = GyroscopeManager()
 
     var body: some View {
-        BallContainerView(gyroscopeManager: gyroManager)
+        BallContainerView(game: RealTimeGame(), gyroscopeManager: gyroManager)
     }
 }
 
