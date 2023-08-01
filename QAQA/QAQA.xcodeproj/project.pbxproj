@@ -111,7 +111,7 @@
 		C59F5A062A60F3B6007608AD /* HintModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintModel.swift; sourceTree = "<group>"; };
 		C59F5A082A60F657007608AD /* HintState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintState.swift; sourceTree = "<group>"; };
 		C5AADBD02A73B7FA002FD2D9 /* OutroEndingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutroEndingViewModel.swift; sourceTree = "<group>"; };
-		C5AADBD32A750DF1002FD2D9 /* IntroResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroResultView.swift; sourceTree = "<group>"; };
+		C5AADBD32A750DF1002FD2D9 /* IntroResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IntroResultView.swift; path = QAQA/View/Intro/IntroResultView.swift; sourceTree = SOURCE_ROOT; };
 		C5AADBD62A764DDB002FD2D9 /* BeginQuestionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginQuestionModalView.swift; sourceTree = "<group>"; };
 		C5AADBD82A77510F002FD2D9 /* BeginIntroModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginIntroModalView.swift; sourceTree = "<group>"; };
 		C5B712722A764FBF009C9433 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
@@ -257,7 +257,6 @@
 			children = (
 				C5AADBD52A764D55002FD2D9 /* Intro */,
 				60FBCFBA2A74E2640028BCD5 /* Test */,
-				C5AADBD32A750DF1002FD2D9 /* IntroResultView.swift */,
 				B8F5747D2A63B3C20028A46A /* Outro */,
 				C5C7E7E62A676A06000A3CCC /* Timer */,
 				60EB42842A5F948B0030286C /* Question */,
@@ -362,9 +361,9 @@
 		C5AADBD52A764D55002FD2D9 /* Intro */ = {
 			isa = PBXGroup;
 			children = (
-				C5AADBD32A750DF1002FD2D9 /* IntroResultView.swift */,
 				C5AADBD62A764DDB002FD2D9 /* BeginQuestionModalView.swift */,
 				C5AADBD82A77510F002FD2D9 /* BeginIntroModalView.swift */,
+				C5AADBD32A750DF1002FD2D9 /* IntroResultView.swift */,
 			);
 			path = Intro;
 			sourceTree = "<group>";

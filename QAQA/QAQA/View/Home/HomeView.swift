@@ -12,63 +12,51 @@ struct HomeView: View {
     
     @StateObject private var game = RealTimeGame()
     @EnvironmentObject var gameTimerModel: RealTimeGame
-//    @Binding var isShowingHomeView : Bool
-
+    //    @Binding var isShowingHomeView : Bool
+    
     
     var body: some View {
         
-            ZStack {
-                Color(red: 1, green: 0.8, blue: 0.3)
-                    .ignoresSafeArea()
-                  
-                
-                
-                Image("homeViewImg")
-                    .resizable()
-                    .scaledToFit()
-                    .padding(.top, 50)
-                   
-                
-                VStack {
-                    Spacer()
-                    Button {
-                        // 플레이어 선택 -> 플레이어 초대, 오토매칭
-                        if game.automatch {
-                            // Turn automatch off.
-                            GKMatchmaker.shared().cancel()
-                            game.automatch = false
-                        }
-                        game.choosePlayer()
-                    } label: {
-                        ZStack {
-                            Image("homeViewButton_Green")
-                            Text("시작하기")
-                                .font(.custom("BMJUAOTF", size: 17))
-                                .foregroundColor(.black)
-                                .padding(.bottom, 5)
-                        }
+        ZStack {
+            Color(red: 1, green: 0.8, blue: 0.3)
+                .ignoresSafeArea()
+            
+            
+            
+            Image("homeViewImg")
+                .resizable()
+                .scaledToFit()
+                .padding(.top, 50)
+            
+            
+            VStack {
+                Spacer()
+                Button {
+                    // 플레이어 선택 -> 플레이어 초대, 오토매칭
+                    if game.automatch {
+                        // Turn automatch off.
+                        GKMatchmaker.shared().cancel()
+                        game.automatch = false
                     }
-                    .padding(54)
-                }
-            }
-            .ignoresSafeArea()
-            .onAppear {
-                if !game.playingGame {
-                    game.authenticatePlayer()
-                }
-            }
-            // Display the game interface if a match is ongoing.
-            .fullScreenCover(isPresented: $game.playingGame) {
-                QuestionView(game:game)
-                    .onAppear(){
-                        gameTimerModel.countMin = 10
-                        gameTimerModel.countSecond = 0
-                        gameTimerModel.isTimer = true
-                        
+                    game.choosePlayer()
+                } label: {
+                    ZStack {
+                        Image("homeViewButton_Green")
+                        Text("시작하기")
+                            .font(.custom("BMJUAOTF", size: 17))
+                            .foregroundColor(.black)
+                            .padding(.bottom, 5)
                     }
+                }
+                .padding(54)
             }
         }
-
+        .ignoresSafeArea()
+        .onAppear {
+            if !game.playingGame {
+                game.authenticatePlayer()
+            }
+        }
         // Display the game interface if a match is ongoing.
         .fullScreenCover(isPresented: $game.playingGame) {
             IntroResultView(game:game)
@@ -77,11 +65,12 @@ struct HomeView: View {
                     gameTimerModel.countSecond = 0
                     gameTimerModel.isTimer = true
                 }
-//            TestingIntroGame(game: game)
-//            TestIntroStartView(game: game)
-             
+            //            TestingIntroGame(game: game)
+            //            TestIntroStartView(game: game)
+            
         }
     }
+}
 
 
 
