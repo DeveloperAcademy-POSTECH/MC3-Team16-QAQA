@@ -60,9 +60,11 @@ extension RealTimeGame: GKMatchDelegate {
             reactionScoreList.append((playerName, playerKingjungScore, playerEvaScore))
             kingjungKing = reactionScoreList.sorted(by: { $0.1 > $1.1 }).first?.0 ?? "None" // 0이면 에바킹 킹정킹을 - 으로
             evaKing = reactionScoreList.sorted(by: { $0.2 > $1.2 }).first?.0 ?? "None"
-        } else if let bomb = gameData?.isBombAppear, let randomUserName = gameData?.topicUserName {
+        } else if let bomb = gameData?.isBombAppear, let randomUserName = gameData?.topicUserName, let startGame = gameData?.isStartGame, let showResult = gameData?.isShowResult {
             isBombAppear = bomb
             topicUserName = randomUserName
+            isStartGame = startGame
+            isShowResult = showResult
         }
         
         //햅틱부분

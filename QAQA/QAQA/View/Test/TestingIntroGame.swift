@@ -16,6 +16,7 @@ struct TestingIntroGame: View {
     
     var body: some View {
         ZStack{
+            Color.white.ignoresSafeArea()
             ZStack{
                 
                 Image(isExplode ? "boom_2" : "boom_1")
@@ -53,6 +54,11 @@ struct TestingIntroGame: View {
                 }
             })
             .onAppear(){
+                if game.myName == game.topicUserName {
+                    game.isBombPresent = true
+                } else {
+                    game.isBombPresent = false
+                }
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5.0, execute: {
                     if game.isBombAppear {
                         isExplode.toggle()
@@ -66,7 +72,7 @@ struct TestingIntroGame: View {
                 })
             }
             if isShowResult {
-                TestingResultView(game: game)
+                IntroResultView(game: game)
             }
         }
         

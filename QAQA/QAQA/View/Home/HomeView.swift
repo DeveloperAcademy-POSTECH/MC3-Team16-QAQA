@@ -65,7 +65,8 @@ struct HomeView: View {
 //                    gameTimerModel.countSecond = 0
 //                    gameTimerModel.isTimer = true
 //                }
-            TestingIntroGame(game: game)
+//            TestingIntroGame(game: game)
+            TestIntroStartView(game: game)
              
         }
     }

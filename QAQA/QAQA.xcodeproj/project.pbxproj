@@ -16,6 +16,7 @@
 		60EB42822A5ED99E0030286C /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EB42812A5ED99E0030286C /* TimerModel.swift */; };
 		60FBCFBC2A74E2820028BCD5 /* TestingIntroGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBCFBB2A74E2820028BCD5 /* TestingIntroGame.swift */; };
 		60FBCFBE2A773FB20028BCD5 /* TestingResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBCFBD2A773FB20028BCD5 /* TestingResultView.swift */; };
+		60FBCFC02A77DF5C0028BCD5 /* TestIntroStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBCFBF2A77DF5C0028BCD5 /* TestIntroStartView.swift */; };
 		AA9741E72A6EBF8F0027DE48 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9741E62A6EBF8F0027DE48 /* Ball.swift */; };
 		AA9741E92A6EBFAA0027DE48 /* GyroscopeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9741E82A6EBFAA0027DE48 /* GyroscopeManager.swift */; };
 		AA9741EB2A6EBFCE0027DE48 /* BallContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9741EA2A6EBFCE0027DE48 /* BallContainerView.swift */; };
@@ -79,6 +80,7 @@
 		60EB42812A5ED99E0030286C /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
 		60FBCFBB2A74E2820028BCD5 /* TestingIntroGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingIntroGame.swift; sourceTree = "<group>"; };
 		60FBCFBD2A773FB20028BCD5 /* TestingResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingResultView.swift; sourceTree = "<group>"; };
+		60FBCFBF2A77DF5C0028BCD5 /* TestIntroStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestIntroStartView.swift; sourceTree = "<group>"; };
 		AA9741E62A6EBF8F0027DE48 /* Ball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
 		AA9741E82A6EBFAA0027DE48 /* GyroscopeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GyroscopeManager.swift; sourceTree = "<group>"; };
 		AA9741EA2A6EBFCE0027DE48 /* BallContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallContainerView.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 			children = (
 				60FBCFBB2A74E2820028BCD5 /* TestingIntroGame.swift */,
 				60FBCFBD2A773FB20028BCD5 /* TestingResultView.swift */,
+				60FBCFBF2A77DF5C0028BCD5 /* TestIntroStartView.swift */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -557,6 +560,7 @@
 				B8B506992A5E2C9500B3EAED /* Color+Extension.swift in Sources */,
 				C5C282AB2A71641C0027416D /* ReactionSoundModel.swift in Sources */,
 				AA9741ED2A6EC0290027DE48 /* Content_test.swift in Sources */,
+				60FBCFC02A77DF5C0028BCD5 /* TestIntroStartView.swift in Sources */,
 				602BD2F92A602A3600F9E345 /* ReactionModifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -684,10 +688,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = QAQA/QAQA.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"QAQA/Preview Content\"";
-				DEVELOPMENT_TEAM = 82Q43H4UQQ;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = QAQA/Info.plist;
@@ -707,6 +712,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.epark.QAQA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -719,10 +725,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = QAQA/QAQA.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"QAQA/Preview Content\"";
-				DEVELOPMENT_TEAM = 82Q43H4UQQ;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = QAQA/Info.plist;
@@ -742,6 +749,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.epark.QAQA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
