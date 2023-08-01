@@ -9,49 +9,49 @@ import SwiftUI
 import GameKit
 
 struct HomeView: View {
+    
     @StateObject private var game = RealTimeGame()
     @EnvironmentObject var gameTimerModel: RealTimeGame
+    //    @Binding var isShowingHomeView : Bool
+    
     
     var body: some View {
-        VStack {
-            HStack {
-                VStack (alignment: .leading) {
-                    Spacer()
-                        .frame(height: 30)
-                    Text("QAQA")
-                        .font(.system(size: 42))
-                        .fontWeight(.bold)
-                        .padding(.bottom, 8)
-                    Text("팀 온보딩을 위한 10분 질문폭격!")
-                        .foregroundColor(.gray)
-                }
-                .padding(.leading, 16)
+        
+        ZStack {
+            Color(red: 1, green: 0.8, blue: 0.3)
+                .ignoresSafeArea()
+            
+            
+            
+            Image("homeViewImg")
+                .resizable()
+                .scaledToFit()
+                .padding(.top, 50)
+            
+            
+            VStack {
                 Spacer()
-            }
-            Spacer()
-                .frame(height: 66)
-            Image("homeQuokka")
-            Spacer()
-            Button { // 플레이어 선택 -> 플레이어 초대, 오토매칭
-                if game.automatch {
-                    // Turn automatch off.
-                    GKMatchmaker.shared().cancel()
-                    game.automatch = false
+                Button {
+                    // 플레이어 선택 -> 플레이어 초대, 오토매칭
+                    if game.automatch {
+                        // Turn automatch off.
+                        GKMatchmaker.shared().cancel()
+                        game.automatch = false
+                    }
+                    game.choosePlayer()
+                } label: {
+                    ZStack {
+                        Image("homeViewButton_Green")
+                        Text("시작하기")
+                            .font(.custom("BMJUAOTF", size: 17))
+                            .foregroundColor(.black)
+                            .padding(.bottom, 5)
+                    }
                 }
-                game.choosePlayer()
-            } label: {
-                Text("팀 찾기")
-                    .fontWeight(.bold)
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .foregroundColor(.white)
-                    .background(Color.testBlue)
-                    .cornerRadius(16)
+                .padding(54)
             }
-            .padding([.leading,.trailing], 16)
-            Spacer()
-                .frame(height: 18)
         }
+        .ignoresSafeArea()
         .onAppear {
             if !game.playingGame {
                 game.authenticatePlayer()
@@ -59,15 +59,20 @@ struct HomeView: View {
         }
         // Display the game interface if a match is ongoing.
         .fullScreenCover(isPresented: $game.playingGame) {
-            QuestionView(game:game)
+            IntroResultView(game:game)
                 .onAppear(){
                     gameTimerModel.countMin = 10
                     gameTimerModel.countSecond = 0
                     gameTimerModel.isTimer = true
                 }
+            //            TestingIntroGame(game: game)
+            //            TestIntroStartView(game: game)
+            
         }
     }
 }
+
+
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {

@@ -15,9 +15,12 @@ struct QuestionView: View {
     @State private var showHintModal = false
     @State var showFinishModal = false
     @State var isShowingOutroView = false
+    @Binding var isShowingQuestionView : Bool
     
     var body: some View {
         ZStack {
+            Color.white
+                .ignoresSafeArea()
             VStack{
                 Spacer()
                     .frame(width: 16)
@@ -166,7 +169,7 @@ struct QuestionView: View {
                 game.topicUserName = game.topicUserName
             }
             if (game.gameIsEnd) {
-                OutroEndingView(game: game,  isShowingOutroView: $isShowingOutroView)
+                OutroEndingView(game: game, isShowingOutroView: $isShowingOutroView)
             } else if game.showTimerModal == true {
                 TimerModalView()
                     .onTapGesture {
@@ -181,7 +184,6 @@ struct QuestionView: View {
 
 struct QuestionView_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionView(game:RealTimeGame())
-            .environmentObject(RealTimeGame())
+        QuestionView(game:RealTimeGame(), isShowingQuestionView: .constant(false))
     }
 }

@@ -57,6 +57,11 @@ extension RealTimeGame: GKMatchDelegate {
             reactionScoreList.append((playerName, playerKingjungScore, playerEvaScore))
             kingjungKing = reactionScoreList.sorted(by: { $0.1 > $1.1 }).first?.0 ?? "None"
             evaKing = reactionScoreList.sorted(by: { $0.2 > $1.2 }).first?.0 ?? "None"
+        } else if let bomb = gameData?.isBombAppear, let randomUserName = gameData?.topicUserName, let startGame = gameData?.isStartGame, let showResult = gameData?.isShowResult {
+            isBombAppear = bomb
+            topicUserName = randomUserName
+            isStartGame = startGame
+            isShowResult = showResult
         }
         else if let wasSuccessCalled = gameData?.wasSuccessCalledHaptics, wasSuccessCalled { // 햅틱
             triggerSuccessHaptic()
