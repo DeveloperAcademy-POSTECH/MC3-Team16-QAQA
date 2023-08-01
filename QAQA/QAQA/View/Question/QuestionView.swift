@@ -8,14 +8,11 @@
 import SwiftUI
 
 struct QuestionView: View {
-    //    @EnvironmentObject var timerModel: TimerModel
     @StateObject private var reactionSoundViewModel = ReactionSoundViewModel()
     @EnvironmentObject var gameTimerModel: RealTimeGame
     @ObservedObject var game: RealTimeGame
     
-    
     @State private var showHintModal = false
-    //        @State var showTimerModal = false
     @State var showFinishModal = false
     @State var isShowingOutroView = false
     

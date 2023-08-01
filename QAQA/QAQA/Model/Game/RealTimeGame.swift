@@ -274,8 +274,8 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
             countSecond -= 1
         }
     }
-    //햅틱부분
-    func callSuccessHaptics() {
+
+    func callSuccessHaptics() { // Haptic
         do {
             let data = encode(wasSuccessCalledHaptics: true)
             let generator = UINotificationFeedbackGenerator()
@@ -296,6 +296,5 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
             print("Error: \(error.localizedDescription).")
         }
     }
-    //햅틱부분
 }
 

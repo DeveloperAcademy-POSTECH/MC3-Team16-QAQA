@@ -58,9 +58,7 @@ extension RealTimeGame: GKMatchDelegate {
             kingjungKing = reactionScoreList.sorted(by: { $0.1 > $1.1 }).first?.0 ?? "None"
             evaKing = reactionScoreList.sorted(by: { $0.2 > $1.2 }).first?.0 ?? "None"
         }
-        
-        //햅틱부분
-        else if let wasSuccessCalled = gameData?.wasSuccessCalledHaptics, wasSuccessCalled {
+        else if let wasSuccessCalled = gameData?.wasSuccessCalledHaptics, wasSuccessCalled { // 햅틱
             triggerSuccessHaptic()
         } else if let wasErrorCalled = gameData?.wasErrorCalledHaptics, wasErrorCalled {
             triggerErrorHaptic()

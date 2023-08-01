@@ -36,14 +36,7 @@ struct HintView: View {
                 .frame(width: 250)
                 .pickerStyle(.segmented)
                 .onChange(of: selectedHint, perform: { _ in
-                    switch selectedHint {
-                    case .getToKnow :
-                        randomGetToKnowQuestion = hintViewModel.createRandomGetToKnowHints()
-                    case .fun :
-                        randomFunQuestion = hintViewModel.createRandomFunHints()
-                    case .serious :
-                        randomSeriousQuestion = hintViewModel.createRandomSeriousHints()
-                    }
+                    createRandomQuestion()
                 })
                 Spacer()
                     .frame(height: 30)
@@ -73,15 +66,7 @@ struct HintView: View {
                 Spacer()
                     .frame(height: 25)
                 Button {
-                    switch selectedHint {
-                    case .getToKnow :
-                        randomGetToKnowQuestion =
-                        hintViewModel.createRandomGetToKnowHints()
-                    case .fun :
-                        randomFunQuestion = hintViewModel.createRandomFunHints()
-                    case .serious :
-                        randomSeriousQuestion = hintViewModel.createRandomSeriousHints()
-                    }
+                    createRandomQuestion()
                 } label: {
                     Image("randomHintButton")
                         .resizable()
@@ -92,6 +77,20 @@ struct HintView: View {
                     .frame(height: 25)
             }
             .frame(width: 358, height: 332)
+        }
+    }
+}
+
+extension HintView {
+    func createRandomQuestion() {
+        switch selectedHint {
+        case .getToKnow :
+            randomGetToKnowQuestion =
+            hintViewModel.createRandomGetToKnowHints()
+        case .fun :
+            randomFunQuestion = hintViewModel.createRandomFunHints()
+        case .serious :
+            randomSeriousQuestion = hintViewModel.createRandomSeriousHints()
         }
     }
 }
