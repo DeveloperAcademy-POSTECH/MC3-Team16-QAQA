@@ -51,18 +51,13 @@ struct IntroResultView: View {
                         .frame(width: 358)
                 }
                 .sheet(isPresented: $showBeginQuestionModal, content: {
-                    BeginQuestionModalView(game: RealTimeGame(), isShowingQuestionView: IntroResultView(game:RealTimeGame()).$isShowingQuestionView)
+                    BeginQuestionModalView(game: game, isShowingQuestionView: $isShowingQuestionView)
                         .presentationDetents([.medium])
                         .presentationCornerRadius(20)
-                        .onDisappear {
-                            isShowingQuestionView.toggle()
-                        }
                 })
             }
             if isShowingQuestionView == true {
                 QuestionView(game: game, isShowingQuestionView: $isShowingQuestionView)
-            } else {
-                Text("no")
             }
         }
     }

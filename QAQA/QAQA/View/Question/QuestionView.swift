@@ -99,7 +99,7 @@ struct QuestionView: View {
                     }
                     
                     //ReactionView
-                    ReactionView(game: RealTimeGame(),isReaction: $game.playReaction, reactionState: self.$game.isGoodReaction)
+                    ReactionView(game: game, isReaction: $game.playReaction, reactionState: self.$game.isGoodReaction)
                         .opacity(game.playReaction ? 1 : 0)
                     
                 }
