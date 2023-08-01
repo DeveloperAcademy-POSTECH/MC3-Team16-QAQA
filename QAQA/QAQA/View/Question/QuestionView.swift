@@ -23,12 +23,10 @@ struct QuestionView: View {
                 .ignoresSafeArea()
             VStack{
                 Spacer()
-                    .frame(width: 16)
+                    .frame(height: 16)
                 HStack{
-                    Spacer()
-                        .frame(width: 20)
                     Button {
-                        game.showTimerModal = true  // action
+                        game.showTimerModal = true
                         game.isTimer.toggle()
                         game.timerModalController()
                     } label: {
@@ -38,17 +36,16 @@ struct QuestionView: View {
                             .padding(15)
                             .background(Circle().foregroundColor(.pauseButtonYellow))
                     }
-                    TimerView(game: game, isShowingOutroView: $isShowingOutroView, width:100)
+                    TimerView(game: game, isShowingOutroView: $isShowingOutroView)
                         .environmentObject(gameTimerModel)
+                        .padding([.leading], 14)
                     Spacer()
-                        .frame(width: 130)
                     Button{
                         showFinishModal.toggle()
                     } label: {
                         Image("endButton_Yellow")
                             .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 80)
+                            .frame(width: 77)
                     }
                     .sheet(isPresented: $showFinishModal, content: {
                         FinishModalView(isShowingOutroView: $isShowingOutroView, game: game)
@@ -60,36 +57,15 @@ struct QuestionView: View {
                                 game.isTimer.toggle()
                             }
                     })
-                    Spacer()
-                        .frame(width: 16)
                 } //Timer와 끝내기 버튼
+                .padding([.leading, .trailing], 15)
                 ZStack{ //QuestionView의 메인 내용과 ReactionView를 ZStack으로 쌓아놓기
                     VStack (spacing: 0) { //QuestionView의 메인 내용(프로필과 질문버튼, 리액션버튼)
-                        Group {
                             Spacer()
-                                .frame(height: 10)
-                            ZStack{
-                                Image("questionBubble")
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(width: 211)
-                                VStack{
-                                    Text("오늘의 주인공")
-                                        .font(.custom("BMJUAOTF", size: 15))
-                                    Text("\(game.topicUserName)")
-                                        .font(.custom("BMJUAOTF", size: 20))
-                                    Spacer()
-                                        .frame(height: 15)
-                                }
-                            }
-                            Image("questionQaqa")
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 140)
-                            HintView()
+//                                .frame(height: 10)
+                            HintView(game: game)
                             Spacer()
-                                .frame(height: 30)
-                        }
+//                                .frame(height: 30)
                     }
                     
                     //ReactionView
