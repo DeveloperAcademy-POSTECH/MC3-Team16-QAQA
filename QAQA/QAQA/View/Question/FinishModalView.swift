@@ -16,8 +16,8 @@ struct FinishModalView: View {
             Text("활동을 끝내시겠어요?")
                 .bold()
                 .font(.custom("BMJUAOTF", size: 28))
-            Spacer()
-                .frame(height: 19)
+                .padding([.top], 46)
+                .padding([.bottom], 19)
             Text("팀원들 모두 종료됩니다")
                 .foregroundColor(.gray)
                 .bold()
@@ -32,13 +32,11 @@ struct FinishModalView: View {
             } label: {
                 Image("finishButton_Red")
                     .resizable()
-                    .scaledToFit()
-                    .frame(width: 358)
+                    .frame(height: 53)
             }
-          
-        
+            .padding([.leading, .trailing], 16)
         }
-        
+        .presentationCornerRadius(32)
     }
 }
 

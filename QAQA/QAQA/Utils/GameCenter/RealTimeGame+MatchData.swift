@@ -12,19 +12,20 @@ import SwiftUI
 struct GameData: Codable {
     var matchName: String
     var playerName: String
-    var score: Int?
     var outcome: String?
+    // Reaction
     var isPlayingReaction: Bool?
-    var isGoodReaction: Bool?
-    var showTimerModal: Bool?
-    var isTimer: Bool?
-    var countMin: Int?
-    var countSecond: Int?
+    var isKingjungReaction: Bool?
     var reactionScore: Int?
     var allKingjuncScore: Int?
     var allEvaScore: Int?
     var myKingjungScore: Int?
     var myEvaScore: Int?
+    // Timer
+    var showTimerModal: Bool?
+    var isTimer: Bool?
+    var countMin: Int?
+    var countSecond: Int?
     //햅틱부분
     var wasSuccessCalledHaptics: Bool? // new field
     var wasErrorCalledHaptics: Bool? // new field
@@ -51,8 +52,8 @@ extension RealTimeGame {
         return encode(gameData: gameData)
     }
     
-    func encode(playReaction: Bool, isGoodReaction: Bool, reactionScore: Int, allKingjungScore: Int, allEvaScore: Int) -> Data? {
-        let gameData = GameData(matchName: matchName, playerName: GKLocalPlayer.local.displayName, isPlayingReaction: playReaction, isGoodReaction: isGoodReaction, reactionScore: reactionScore, allKingjuncScore: allKingjungScore, allEvaScore: allEvaScore)
+    func encode(playReaction: Bool, isKingjungReaction: Bool, reactionScore: Int, allKingjungScore: Int, allEvaScore: Int) -> Data? {
+        let gameData = GameData(matchName: matchName, playerName: GKLocalPlayer.local.displayName, isPlayingReaction: playReaction, isKingjungReaction: isKingjungReaction, reactionScore: reactionScore, allKingjuncScore: allKingjungScore, allEvaScore: allEvaScore)
         return encode(gameData: gameData)
     }
     
@@ -61,13 +62,8 @@ extension RealTimeGame {
         return encode(gameData: gameData)
     }
 
-    func encode(score: Int) -> Data? {
-        let gameData = GameData(matchName: matchName, playerName: GKLocalPlayer.local.displayName, score: score, outcome: nil)
-        return encode(gameData: gameData)
-    }
-
     func encode(outcome: String) -> Data? {
-        let gameData = GameData(matchName: matchName, playerName: GKLocalPlayer.local.displayName, score: nil, outcome: outcome)
+        let gameData = GameData(matchName: matchName, playerName: GKLocalPlayer.local.displayName, outcome: outcome)
         return encode(gameData: gameData)
     }
 

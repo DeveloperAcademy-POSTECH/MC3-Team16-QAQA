@@ -22,12 +22,11 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
     // 공유될 변수
     @Published var gameIsEnd = false
     @Published var playReaction = false
-    @Published var isGoodReaction = false
+    @Published var isKingjungReaction = false
 
     @Published var myAvatar = Image(systemName: "person.crop.circle")
     @Published var opponent: GKPlayer? = nil
     @Published var myScore = 0
-    @Published var opponentScore = 0
     
     // TopicUser
     @Published var topicUserName: String = "TopicUserName"
@@ -151,7 +150,7 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
     }
     
     func endMatch() {
-        let opponentOutcome = opponentScore > myScore ? "won" : "lost"
+        let opponentOutcome = "won"
 
         do {
             let data = encode(outcome: opponentOutcome)
@@ -181,7 +180,6 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
         gameIsEnd = false
 
         myScore = 0
-        opponentScore = 0
         
         reactionScore = 0
         allKingjungScore = 0
@@ -189,8 +187,6 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
         myKingjungScore = 0
         myEvaScore = 0
         reactionScoreList = [] // 이름, 킹정수, 에바수
-        
-        // 리액션 수 및 다른 변수들 초기화
     }
 
     func reportProgress() {
@@ -233,7 +229,7 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
     
     func pushReaction() {
         do {
-            let data = encode(playReaction: playReaction, isGoodReaction: isGoodReaction, reactionScore: reactionScore, allKingjungScore: allKingjungScore, allEvaScore: allEvaScore)
+            let data = encode(playReaction: playReaction, isKingjungReaction: isKingjungReaction, reactionScore: reactionScore, allKingjungScore: allKingjungScore, allEvaScore: allEvaScore)
             try myMatch?.sendData(toAllPlayers: data!, with: GKMatch.SendDataMode.unreliable)
         } catch {
             print("Error: \(error.localizedDescription).")
@@ -292,8 +288,8 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
             countSecond -= 1
         }
     }
-    //햅틱부분
-    func callSuccessHaptics() {
+
+    func callSuccessHaptics() { // Haptic
         do {
             let data = encode(wasSuccessCalledHaptics: true)
             let generator = UINotificationFeedbackGenerator()
@@ -314,6 +310,5 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
             print("Error: \(error.localizedDescription).")
         }
     }
-    //햅틱부분
 }
 

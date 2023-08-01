@@ -8,14 +8,11 @@
 import SwiftUI
 
 struct QuestionView: View {
-    //    @EnvironmentObject var timerModel: TimerModel
     @StateObject private var reactionSoundViewModel = ReactionSoundViewModel()
     @EnvironmentObject var gameTimerModel: RealTimeGame
     @ObservedObject var game: RealTimeGame
     
-    
     @State private var showHintModal = false
-    //        @State var showTimerModal = false
     @State var showFinishModal = false
     @State var isShowingOutroView = false
     @Binding var isShowingQuestionView : Bool
@@ -54,11 +51,8 @@ struct QuestionView: View {
                             .frame(width: 80)
                     }
                     .sheet(isPresented: $showFinishModal, content: {
-                        FinishModalView(isShowingOutroView: $isShowingOutroView, game: game) //TODO: View 바꾸기
+                        FinishModalView(isShowingOutroView: $isShowingOutroView, game: game)
                             .presentationDetents([.height(257)])
-                            .presentationCornerRadius(20)
-                            .padding(.top, 44)
-                            .padding([.leading, .trailing], 16)
                             .onAppear{
                                 game.isTimer.toggle()
                             }
@@ -99,7 +93,7 @@ struct QuestionView: View {
                     }
                     
                     //ReactionView
-                    ReactionView(game: game, isReaction: $game.playReaction, reactionState: self.$game.isGoodReaction)
+                    ReactionView(game: game,isReaction: $game.playReaction, isKingjungReaction: self.$game.isKingjungReaction)
                         .opacity(game.playReaction ? 1 : 0)
                     
                 }
@@ -108,13 +102,12 @@ struct QuestionView: View {
                     Button(action: { //reaction button action
                         if game.playReaction == false {
                             reactionSoundViewModel.playSound(sound: reactionSoundViewModel.createRandomKingjungReactionSounds())
-                            game.isGoodReaction = true // 킹정
+                            game.isKingjungReaction = true // 킹정
                             game.allKingjungScore += 1
                             game.reactionScore += 1
                             game.myKingjungScore += 1
                             withAnimation(
                                 .default
-//                                .spring(response: 0.2, blendDuration: 0.0)___띠용 애니메이션 해제
                             ){
                                 game.playReaction = true
                                 game.pushReaction()
@@ -140,13 +133,12 @@ struct QuestionView: View {
                     Button(action: {
                         if game.playReaction == false {
                             reactionSoundViewModel.playSound(sound: reactionSoundViewModel.createRandomEvaReactionSounds())
-                            game.isGoodReaction = false // 에바
+                            game.isKingjungReaction = false // 에바
                             game.allEvaScore += 1
                             game.reactionScore += 1
                             game.myEvaScore += 1
                             withAnimation(
                                 .default
-//                                .spring(response: 0.2, blendDuration: 0.0)___띠용 애니메이션 해제
                             ){
                                 game.playReaction = true
                                 game.pushReaction()
@@ -174,7 +166,7 @@ struct QuestionView: View {
                 
             }
             .onAppear {
-                game.topicUserName = game.topicUserName // TODO: 안됨
+                game.topicUserName = game.topicUserName
             }
             if (game.gameIsEnd) {
                 OutroEndingView(game: game, isShowingOutroView: $isShowingOutroView)
