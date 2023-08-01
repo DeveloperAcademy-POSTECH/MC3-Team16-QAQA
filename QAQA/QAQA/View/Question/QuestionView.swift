@@ -48,11 +48,8 @@ struct QuestionView: View {
                             .frame(width: 80)
                     }
                     .sheet(isPresented: $showFinishModal, content: {
-                        FinishModalView(isShowingOutroView: $isShowingOutroView, game: game) //TODO: View 바꾸기
+                        FinishModalView(isShowingOutroView: $isShowingOutroView, game: game)
                             .presentationDetents([.height(257)])
-                            .presentationCornerRadius(32)
-                            .padding(.top, 44)
-                            .padding([.leading, .trailing], 16)
                             .onAppear{
                                 game.isTimer.toggle()
                             }
