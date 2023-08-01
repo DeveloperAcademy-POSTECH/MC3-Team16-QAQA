@@ -10,8 +10,9 @@ import SwiftUI
 struct IntroResultView: View {
     
     @ObservedObject var game: RealTimeGame
-    @State var showBeginQuestionModal = false
-    @State var isShowingQuestionView = false
+//    @State var showBeginQuestionModal = false
+    
+//    @State var isShowingQuestionView = false
     
     var body: some View {
         ZStack{
@@ -43,21 +44,26 @@ struct IntroResultView: View {
                 Spacer()
                     .frame(height: 159)
                 Button{
-                    showBeginQuestionModal.toggle()
+                    game.isShowingBeginQuestionModal.toggle()
                 } label: {
                     Image("nextButton")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 358)
                 }
-                .sheet(isPresented: $showBeginQuestionModal, content: {
-                    BeginQuestionModalView(game: game, isShowingQuestionView: $isShowingQuestionView)
+                .sheet(isPresented: $game.isShowingBeginQuestionModal, content: {
+                    BeginQuestionModalView(game: game)
                         .presentationDetents([.medium])
                         .presentationCornerRadius(20)
+                        .onDisappear(){
+                            game.isStartQuestion = true
+                            game.startQuestion()
+                        }
                 })
             }
-            if isShowingQuestionView == true {
-                QuestionView(game: game, isShowingQuestionView: $isShowingQuestionView)
+//            if isShowingQuestionView == true {
+            if game.isStartQuestion == true {
+                QuestionView(game: game, isShowingQuestionView: $game.isStartQuestion)
             }
         }
     }

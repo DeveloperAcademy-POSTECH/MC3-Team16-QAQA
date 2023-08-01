@@ -36,6 +36,7 @@ struct GameData: Codable {
     var isShowResult: Bool?
     // QuestionStart
     var isStartQuestion: Bool?
+    var isShowingBeginQuestionModal: Bool?
 }
 
 extension RealTimeGame {
@@ -101,6 +102,11 @@ extension RealTimeGame {
     // QuestionStart
     func encode(isStartQuestion: Bool) -> Data? {
         let gameData = GameData(matchName: matchName, playerName: GKLocalPlayer.local.displayName, isStartQuestion: isStartQuestion)
+        return encode(gameData: gameData)
+    }
+    
+    func encode(isShowingBeginQuestionModal: Bool) -> Data? {
+        let gameData = GameData(matchName: matchName, playerName: GKLocalPlayer.local.displayName, isShowingBeginQuestionModal: isShowingBeginQuestionModal)
         return encode(gameData: gameData)
     }
 }
