@@ -1,5 +1,5 @@
 //
-//  tutorialView.swift
+//  TutorialView.swift
 //  QAQA
 //
 //  Created by 박진영 on 2023/07/30.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct tutorialView: View {
+struct TutorialView: View {
     
     @State private var pageNum = 1
     @Binding var isOnboarding: Bool
@@ -147,8 +147,8 @@ struct ThirdOnBoardingView: View {
 }
 
 
-struct tutorialView_Previews: PreviewProvider {
+struct TutorialView_Previews: PreviewProvider {
     static var previews: some View {
-        tutorialView(isOnboarding: .constant(false))
+        TutorialView(isOnboarding: .constant(false))
     }
 }
