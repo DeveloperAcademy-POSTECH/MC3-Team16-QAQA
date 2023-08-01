@@ -13,7 +13,6 @@
 		60EB42792A5E437C0030286C /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EB42782A5E437C0030286C /* TimerView.swift */; };
 		60EB427B2A5E44880030286C /* UIScreen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EB427A2A5E44880030286C /* UIScreen+Extension.swift */; };
 		60EB42802A5ED78A0030286C /* TimerModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EB427F2A5ED78A0030286C /* TimerModalView.swift */; };
-		60EB42822A5ED99E0030286C /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EB42812A5ED99E0030286C /* TimerModel.swift */; };
 		60FBCFBC2A74E2820028BCD5 /* TestingIntroGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBCFBB2A74E2820028BCD5 /* TestingIntroGame.swift */; };
 		60FBCFBE2A773FB20028BCD5 /* TestingResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBCFBD2A773FB20028BCD5 /* TestingResultView.swift */; };
 		60FBCFC02A77DF5C0028BCD5 /* TestIntroStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBCFBF2A77DF5C0028BCD5 /* TestIntroStartView.swift */; };
@@ -79,7 +78,6 @@
 		60EB42782A5E437C0030286C /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		60EB427A2A5E44880030286C /* UIScreen+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extension.swift"; sourceTree = "<group>"; };
 		60EB427F2A5ED78A0030286C /* TimerModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModalView.swift; sourceTree = "<group>"; };
-		60EB42812A5ED99E0030286C /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
 		60FBCFBB2A74E2820028BCD5 /* TestingIntroGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingIntroGame.swift; sourceTree = "<group>"; };
 		60FBCFBD2A773FB20028BCD5 /* TestingResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingResultView.swift; sourceTree = "<group>"; };
 		60FBCFBF2A77DF5C0028BCD5 /* TestIntroStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestIntroStartView.swift; sourceTree = "<group>"; };
@@ -394,7 +392,6 @@
 		C5C7E7E72A676A2C000A3CCC /* Timer */ = {
 			isa = PBXGroup;
 			children = (
-				60EB42812A5ED99E0030286C /* TimerModel.swift */,
 			);
 			path = Timer;
 			sourceTree = "<group>";
@@ -540,7 +537,6 @@
 				B87998542A5BACBE00167597 /* HomeView.swift in Sources */,
 				C5C7E7F22A70B017000A3CCC /* ReactionLottieView.swift in Sources */,
 				C5C282A82A7163410027416D /* ReactionSoundViewModel.swift in Sources */,
-				60EB42822A5ED99E0030286C /* TimerModel.swift in Sources */,
 				C59F5A092A60F657007608AD /* HintState.swift in Sources */,
 				60EB42802A5ED78A0030286C /* TimerModalView.swift in Sources */,
 				AA9741EB2A6EBFCE0027DE48 /* BallContainerView.swift in Sources */,
