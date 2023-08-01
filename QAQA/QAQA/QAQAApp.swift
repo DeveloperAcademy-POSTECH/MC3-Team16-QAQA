@@ -19,6 +19,7 @@ struct QAQAApp: App {
 
             } else {
                 HomeView()
+                    .environmentObject(RealTimeGame())
             }
         }
     }

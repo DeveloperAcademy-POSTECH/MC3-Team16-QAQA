@@ -62,7 +62,8 @@ struct BeginQuestionModalView: View {
             Button {
                 isShowingQuestionView = true
                 presentation.wrappedValue.dismiss()
-                print(isShowingQuestionView)
+                game.isStartQuestion.toggle()
+                game.startQuestion()
             } label: {
                 Image("startButton")
                     .resizable()
