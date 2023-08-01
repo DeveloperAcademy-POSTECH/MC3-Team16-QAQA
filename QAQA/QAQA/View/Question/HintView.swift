@@ -8,18 +8,14 @@
 import SwiftUI
 
 struct HintView: View {
-    
     @StateObject private var hintViewModel = HintViewModel()
     @State private var selectedHint: HintState = .getToKnow
-    @State private var randomGetToKnowQuestion : String = "질문 뽑기 버튼을 눌러보세요!"
-    @State private var randomFunQuestion : String = "질문 뽑기 버튼을 눌러보세요!"
-    @State private var randomSeriousQuestion : String = "질문 뽑기 버튼을 눌러보세요!"
+    @State private var questionText = "질문 뽑기 버튼을 눌러보세요!"
     
     var body: some View {
         ZStack{
             RoundedRectangle(cornerRadius: 20)
                 .foregroundColor(.hintViewYellow)
-                .frame(width: 358, height: 332)
             VStack{
                 Spacer()
                     .frame(height: 25)
@@ -33,51 +29,33 @@ struct HintView: View {
                     Text("재미").tag(HintState.fun)
                     Text("진지").tag(HintState.serious)
                 }
-                .frame(width: 250)
+                .padding([.leading, .trailing], 47)
                 .pickerStyle(.segmented)
                 .onChange(of: selectedHint, perform: { _ in
                     createRandomQuestion()
                 })
                 Spacer()
-                    .frame(height: 30)
-                switch selectedHint {
-                case .getToKnow :
-                    Text("\(randomGetToKnowQuestion)")
-                        .font(.custom("BMJUAOTF", size: 25))
-                        .frame(width: 320, height: 120)
-                        .minimumScaleFactor(0.5)
-                        .multilineTextAlignment(.center)
-                        .lineSpacing(7)
-                case .fun :
-                    Text("\(randomFunQuestion)")
-                        .font(.custom("BMJUAOTF", size: 25))
-                        .frame(width: 320, height: 120)
-                        .minimumScaleFactor(0.5)
-                        .multilineTextAlignment(.center)
-                        .lineSpacing(7)
-                case .serious :
-                    Text("\(randomSeriousQuestion)")
-                        .font(.custom("BMJUAOTF", size: 25))
-                        .frame(width: 320, height: 120)
-                        .minimumScaleFactor(0.5)
-                        .multilineTextAlignment(.center)
-                        .lineSpacing(7)
-                }
+                Text("\(questionText)")
+                    .font(.custom("BMJUAOTF", size: 25))
+                    .padding([.leading, .trailing], 19)
+                    .minimumScaleFactor(0.5)
+                    .multilineTextAlignment(.center)
+                    .lineSpacing(7)
                 Spacer()
-                    .frame(height: 25)
                 Button {
                     createRandomQuestion()
                 } label: {
                     Image("randomHintButton")
                         .resizable()
                         .scaledToFill()
-                        .frame(width: 223)
+                        .frame(width: 223, height: 51)
                 }
                 Spacer()
                     .frame(height: 25)
             }
-            .frame(width: 358, height: 332)
         }
+        .padding([.leading, .trailing], 16)
+        .frame(height: 332)
     }
 }
 
@@ -85,12 +63,11 @@ extension HintView {
     func createRandomQuestion() {
         switch selectedHint {
         case .getToKnow :
-            randomGetToKnowQuestion =
-            hintViewModel.createRandomGetToKnowHints()
+            questionText = hintViewModel.createRandomGetToKnowHints()
         case .fun :
-            randomFunQuestion = hintViewModel.createRandomFunHints()
+            questionText = hintViewModel.createRandomFunHints()
         case .serious :
-            randomSeriousQuestion = hintViewModel.createRandomSeriousHints()
+            questionText = hintViewModel.createRandomSeriousHints()
         }
     }
 }
