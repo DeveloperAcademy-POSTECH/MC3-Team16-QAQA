@@ -24,7 +24,7 @@ struct BeginIntroModalView: View {
                     .scaledToFit()
                     .frame(width: 24)
                     .foregroundColor(.outroGaugeGreen)
-                Text("10분")
+                Text("1분")
                     .font(.custom("BMJUAOTF", size: 30))
                     .foregroundColor(.outroGaugeGreen)
             }
