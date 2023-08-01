@@ -45,6 +45,7 @@ struct IntroResultView: View {
                     .frame(height: 159)
                 Button{
                     game.isShowingBeginQuestionModal.toggle()
+                    game.showBeginQuestionModal()
                 } label: {
                     Image("nextButton")
                         .resizable()
@@ -55,10 +56,6 @@ struct IntroResultView: View {
                     BeginQuestionModalView(game: game)
                         .presentationDetents([.medium])
                         .presentationCornerRadius(20)
-                        .onDisappear(){
-                            game.isStartQuestion = true
-                            game.startQuestion()
-                        }
                 })
             }
 //            if isShowingQuestionView == true {
