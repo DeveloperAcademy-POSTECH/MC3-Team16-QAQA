@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "bombQuokka.png",
+      "filename" : "homeViewImg.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "homeViewImg@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "homeViewImg@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
