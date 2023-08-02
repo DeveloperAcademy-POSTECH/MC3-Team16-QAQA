@@ -38,8 +38,8 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
     @Published var myKingjungScore = 0
     @Published var myEvaScore = 0
     @Published var reactionScoreList: [(String, Int, Int)] = [] // 이름, 킹정수, 에바수
-    @Published var kingjungKing = ""
-    @Published var evaKing = ""
+    @Published var kingjungKing = "-"
+    @Published var evaKing = "-"
 
     // 타이머 변수
     @Published var countMin = 10
