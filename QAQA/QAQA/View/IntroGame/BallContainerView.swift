@@ -260,13 +260,8 @@ struct BallContainerView: View {
                 })
                 .onAppear(){
                     changeImageWithCountdown()
-                    game.createRandomTopicUser(match: game.myMatch!)
                     game.bombTransport()
-//                    if game.myName == game.topicUserName {
-//                        game.isBombPresent = true
-//                    } else {
-//                        game.isBombPresent = false
-//                    }
+
                 }
                 if game.isShowResult{
                     IntroResultView(game: game)
