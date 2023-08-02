@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct BeginIntroModalView: View {
+    @ObservedObject var game: RealTimeGame
+    
+    @Environment(\.presentationMode) var presentation
     
     var body: some View {
         VStack(spacing: 0){
@@ -47,7 +50,16 @@ struct BeginIntroModalView: View {
                     .frame(height: 24)
             }
             Button {
-           // 시작하기 버튼 액션 (연결 필요)
+                game.createRandomTopicUser(match: game.myMatch!)
+                game.bombTransport()
+                if game.myName == game.topicUserName {
+                    game.isBombPresent = true
+                } else {
+                    game.isBombPresent = false
+                }
+                presentation.wrappedValue.dismiss()
+                
+                // 시작하기 버튼 액션 (연결 필요)
             } label: {
                 Image("startButton")
                     .resizable()
@@ -55,11 +67,12 @@ struct BeginIntroModalView: View {
                     .frame(width: 358)
             }
         }
+       
     }
 }
 
 struct BeginIntroModalView_Previews: PreviewProvider {
     static var previews: some View {
-        BeginIntroModalView()
+        BeginIntroModalView(game:RealTimeGame())
     }
 }

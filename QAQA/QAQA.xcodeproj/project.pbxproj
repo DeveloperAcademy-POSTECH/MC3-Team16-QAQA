@@ -10,6 +10,8 @@
 		602BD2F92A602A3600F9E345 /* ReactionModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602BD2F82A602A3600F9E345 /* ReactionModifier.swift */; };
 		602BD3032A6456BF00F9E345 /* ReactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602BD3022A6456BF00F9E345 /* ReactionView.swift */; };
 		602BD3092A67E86600F9E345 /* FinishModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602BD3082A67E86600F9E345 /* FinishModalView.swift */; };
+		6040A6B82A78E8E800B2A27E /* StartCountDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6040A6B72A78E8E800B2A27E /* StartCountDownView.swift */; };
+		6040A6BA2A78EEFE00B2A27E /* IntroGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6040A6B92A78EEFE00B2A27E /* IntroGameView.swift */; };
 		60EB42792A5E437C0030286C /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EB42782A5E437C0030286C /* TimerView.swift */; };
 		60EB427B2A5E44880030286C /* UIScreen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EB427A2A5E44880030286C /* UIScreen+Extension.swift */; };
 		60EB42802A5ED78A0030286C /* TimerModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EB427F2A5ED78A0030286C /* TimerModalView.swift */; };
@@ -76,6 +78,8 @@
 		602BD2F82A602A3600F9E345 /* ReactionModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionModifier.swift; sourceTree = "<group>"; };
 		602BD3022A6456BF00F9E345 /* ReactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionView.swift; sourceTree = "<group>"; };
 		602BD3082A67E86600F9E345 /* FinishModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishModalView.swift; sourceTree = "<group>"; };
+		6040A6B72A78E8E800B2A27E /* StartCountDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCountDownView.swift; sourceTree = "<group>"; };
+		6040A6B92A78EEFE00B2A27E /* IntroGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroGameView.swift; sourceTree = "<group>"; };
 		60EB42782A5E437C0030286C /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		60EB427A2A5E44880030286C /* UIScreen+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extension.swift"; sourceTree = "<group>"; };
 		60EB427F2A5ED78A0030286C /* TimerModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModalView.swift; sourceTree = "<group>"; };
@@ -160,6 +164,16 @@
 			path = ReactionModifier;
 			sourceTree = "<group>";
 		};
+		6040A6B62A78E8C400B2A27E /* IntroGame */ = {
+			isa = PBXGroup;
+			children = (
+				AA9741EA2A6EBFCE0027DE48 /* BallContainerView.swift */,
+				6040A6B72A78E8E800B2A27E /* StartCountDownView.swift */,
+				6040A6B92A78EEFE00B2A27E /* IntroGameView.swift */,
+			);
+			path = IntroGame;
+			sourceTree = "<group>";
+		};
 		60EB427C2A5ED5490030286C /* UIScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,7 +218,6 @@
 			children = (
 				AA9741E62A6EBF8F0027DE48 /* Ball.swift */,
 				AA9741E82A6EBFAA0027DE48 /* GyroscopeManager.swift */,
-				AA9741EA2A6EBFCE0027DE48 /* BallContainerView.swift */,
 				AA9741EC2A6EC0290027DE48 /* Content_test.swift */,
 			);
 			path = Gyroscopes;
@@ -253,6 +266,7 @@
 		B879985F2A5BB39700167597 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6040A6B62A78E8C400B2A27E /* IntroGame */,
 				C5AADBD52A764D55002FD2D9 /* Intro */,
 				60FBCFBA2A74E2640028BCD5 /* Test */,
 				B8F5747D2A63B3C20028A46A /* Outro */,
@@ -567,12 +581,14 @@
 				60FBCFBE2A773FB20028BCD5 /* TestingResultView.swift in Sources */,
 				60FBCFBC2A74E2820028BCD5 /* TestingIntroGame.swift in Sources */,
 				AA9741E92A6EBFAA0027DE48 /* GyroscopeManager.swift in Sources */,
+				6040A6BA2A78EEFE00B2A27E /* IntroGameView.swift in Sources */,
 				B8F5747F2A63B4860028A46A /* OutroInfoView.swift in Sources */,
 				B8B5069B2A5E3C1C00B3EAED /* RealTimeGame+GKLocalPlayerListener.swift in Sources */,
 				B87998522A5BACBE00167597 /* QAQAApp.swift in Sources */,
 				602BD3032A6456BF00F9E345 /* ReactionView.swift in Sources */,
 				60EB427B2A5E44880030286C /* UIScreen+Extension.swift in Sources */,
 				B8B5068A2A5D00BE00B3EAED /* RealTimeGame.swift in Sources */,
+				6040A6B82A78E8E800B2A27E /* StartCountDownView.swift in Sources */,
 				B8B506992A5E2C9500B3EAED /* Color+Extension.swift in Sources */,
 				C5C282AB2A71641C0027416D /* ReactionSoundModel.swift in Sources */,
 				AA9741ED2A6EC0290027DE48 /* Content_test.swift in Sources */,

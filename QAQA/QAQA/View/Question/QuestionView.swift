@@ -185,5 +185,6 @@ struct QuestionView: View {
 struct QuestionView_Previews: PreviewProvider {
     static var previews: some View {
         QuestionView(game:RealTimeGame(), isShowingQuestionView: .constant(false))
+            .environmentObject(RealTimeGame())
     }
 }
