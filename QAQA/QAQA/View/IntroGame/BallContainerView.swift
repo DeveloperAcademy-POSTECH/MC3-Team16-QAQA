@@ -77,7 +77,7 @@ struct BallContainerView: View {
                         .position(self.circlePosition == .zero ?
                                   CGPoint(x: geometry.size.width / 2, y: geometry.size.height / 2) :
                                     self.circlePosition)
-                    Text("지금 폭탄이 \(game.topicUserName)한테 있어요!/n\(game.myName)")
+                    Text("지금 폭탄이 \(game.topicUserName)한테 있어요!")
                         .font(.custom("BMJUAOTF", size: 30))
                         .offset(y: -70)
                     // Quokka 이미지
