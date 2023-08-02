@@ -61,7 +61,7 @@ struct BeginQuestionModalView: View {
             }
             Button {
 //                presentation.wrappedValue.dismiss()
-                game.isShowingBeginQuestionModal = false
+//                game.isShowingBeginQuestionModal = false
                 game.isStartQuestion.toggle()
                 game.startQuestion()
 //                isShowingQuestionView = true

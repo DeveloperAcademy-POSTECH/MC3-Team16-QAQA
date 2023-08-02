@@ -56,11 +56,17 @@ struct IntroResultView: View {
                     BeginQuestionModalView(game: game)
                         .presentationDetents([.medium])
                         .presentationCornerRadius(20)
+                        .onDisappear {
+                            game.isShowingBeginQuestionModal = false
+                        }
                 })
             }
 //            if isShowingQuestionView == true {
             if game.isStartQuestion == true {
-                QuestionView(game: game, isShowingQuestionView: $game.isStartQuestion)
+                QuestionView(game: game)
+                    .onAppear {
+                        game.isShowingBeginQuestionModal = false
+                    }
             }
         }
     }
@@ -69,6 +75,6 @@ struct IntroResultView: View {
 
 struct IntroResultView_Previews: PreviewProvider {
     static var previews: some View {
-        IntroResultView(game:RealTimeGame())
+       IntroResultView(game: RealTimeGame())
     }
 }

@@ -72,6 +72,12 @@ extension RealTimeGame: GKMatchDelegate {
             withAnimation(.spring(response: 0.2,dampingFraction: 0.25,blendDuration: 0.0)){
                 isStartQuestion = questionStart
             }
+        }
+        else if let questionStartModal = gameData?.isShowingBeginQuestionModal {
+            withAnimation(.spring(response: 0.2,dampingFraction: 0.25,blendDuration: 0.0)){
+                isShowingBeginQuestionModal = questionStartModal
+            }
+        }
             
             if allEvaScore == 0 {
                 evaKing = "-"
@@ -79,7 +85,8 @@ extension RealTimeGame: GKMatchDelegate {
             if allKingjungScore == 0 {
                 kingjungKing = "-"
             }
-        }
+    }
+       
         
         func triggerSuccessHaptic() {
             let generator = UINotificationFeedbackGenerator()
@@ -91,5 +98,4 @@ extension RealTimeGame: GKMatchDelegate {
             generator.notificationOccurred(.error)
         }
         //햅틱부분
-    }
 }
