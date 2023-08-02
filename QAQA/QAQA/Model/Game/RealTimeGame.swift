@@ -54,8 +54,9 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
     //햅틱부분
     @Published var isBombAppear = false
     @Published var isBombPresent = false
-    @Published var isStartGame = false
+    @Published var isStartGame = true 
     @Published var isShowResult = false
+    @Published var isShowCount = true
     
     // QuestionStart
     @Published var isStartQuestion = false
@@ -271,7 +272,7 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
     
     func bombTransport() {
         do {
-            let data = encode(isBombAppear: isBombAppear, topicUserName: topicUserName, isStartGame: isStartGame, isShowResult: isShowResult)
+            let data = encode(isBombAppear: isBombAppear, topicUserName: topicUserName, isStartGame: isStartGame, isShowResult: isShowResult, isShowCount: isShowCount)
             try myMatch?.sendData(toAllPlayers: data!, with: GKMatch.SendDataMode.unreliable)
         } catch {
             print("Error: \(error.localizedDescription).")

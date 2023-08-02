@@ -34,6 +34,7 @@ struct GameData: Codable {
     var topicUserName: String?
     var isStartGame: Bool?
     var isShowResult: Bool?
+    var isShowCount: Bool?
     // QuestionStart
     var isStartQuestion: Bool?
     var isShowingBeginQuestionModal: Bool?
@@ -50,8 +51,8 @@ extension RealTimeGame {
         let gameData = GameData(matchName: matchName, playerName: GKLocalPlayer.local.displayName, showTimerModal: showTimerModal, isTimer: isTimer)
         return encode(gameData: gameData)
     }
-    func encode(isBombAppear: Bool, topicUserName: String, isStartGame: Bool, isShowResult: Bool) -> Data? {
-        let gameData = GameData(matchName: matchName, playerName: GKLocalPlayer.local.displayName, isBombAppear: isBombAppear, topicUserName: topicUserName, isStartGame: isStartGame, isShowResult: isShowResult)
+    func encode(isBombAppear: Bool, topicUserName: String, isStartGame: Bool, isShowResult: Bool, isShowCount: Bool) -> Data? {
+        let gameData = GameData(matchName: matchName, playerName: GKLocalPlayer.local.displayName, isBombAppear: isBombAppear, topicUserName: topicUserName, isStartGame: isStartGame, isShowResult: isShowResult, isShowCount: isShowCount)
         return encode(gameData: gameData)
     }
     
