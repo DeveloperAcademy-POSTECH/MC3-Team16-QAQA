@@ -9,6 +9,8 @@ import SwiftUI
 
 struct OutroEndingView: View {
     @StateObject private var outroEndingViewModel = OutroEndingViewModel()
+    @StateObject private var reactionSoundViewModel = ReactionSoundViewModel()
+    
     @ObservedObject var game: RealTimeGame
     
     @Binding var isShowingOutroView: Bool
@@ -49,6 +51,7 @@ struct OutroEndingView: View {
                     RoundedRectangle(cornerRadius: 15)
                         .frame(width: 360, height: 40)
                         .foregroundColor(.outroGaugeGray)
+                    
                     HStack {
                         ZStack{
                             RoundedRectangle(cornerRadius: 15)
@@ -62,6 +65,7 @@ struct OutroEndingView: View {
                                     .frame(height: 15)
                             }
                         }
+                        
                         Spacer()
                             .frame(width: defaultSpacerWidth)
                         ZStack{
@@ -84,6 +88,9 @@ struct OutroEndingView: View {
                             defaultKingjungWidth = outroEndingViewModel.calculateKingjungWidth(kingjung: CGFloat(game.allKingjungScore), total: CGFloat(game.reactionScore))
                             defaultEvaWidth = outroEndingViewModel.calculateEvaWidth(eva: CGFloat(game.allEvaScore), total: CGFloat(game.reactionScore))
                             defaultSpacerWidth = outroEndingViewModel.calculateSpacerWidth(kingjung: CGFloat(game.allKingjungScore), eva: CGFloat(game.allEvaScore), total: CGFloat(game.reactionScore))
+                            
+                            reactionSoundViewModel.playSound(sound: reactionSoundViewModel.createGraphBubblePop(), loop: 0)
+                            
                         }
                     }
                 }
@@ -111,7 +118,7 @@ struct OutroEndingView: View {
                     }
             }
         }
-     
+        
     }
     
     struct OutroEndingView_Previews: PreviewProvider {
