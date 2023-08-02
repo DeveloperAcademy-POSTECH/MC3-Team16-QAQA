@@ -59,6 +59,7 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
     
     // QuestionStart
     @Published var isStartQuestion = false
+    @Published var isShowingBeginQuestionModal = false
     
     var matchName: String {
         "\(opponentName) Match"
@@ -323,5 +324,14 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
                 print("Error: \(error.localizedDescription).")
             }
         }
+    func showBeginQuestionModal() {
+            do {
+                let data = encode(isShowingBeginQuestionModal: isShowingBeginQuestionModal)
+                try myMatch?.sendData(toAllPlayers: data!, with: GKMatch.SendDataMode.unreliable)
+            } catch {
+                print("Error: \(error.localizedDescription).")
+            }
+        }
+    
     }
 

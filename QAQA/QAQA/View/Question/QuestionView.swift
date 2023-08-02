@@ -15,7 +15,7 @@ struct QuestionView: View {
     @State private var showHintModal = false
     @State var showFinishModal = false
     @State var isShowingOutroView = false
-    @Binding var isShowingQuestionView : Bool
+//    @Binding var isShowingQuestionView : Bool
     
     var body: some View {
         ZStack {
@@ -146,6 +146,6 @@ struct QuestionView: View {
 
 struct QuestionView_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionView(game:RealTimeGame(), isShowingQuestionView: .constant(false))
+        QuestionView(game:RealTimeGame())
     }
 }

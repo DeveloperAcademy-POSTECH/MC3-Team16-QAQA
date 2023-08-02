@@ -41,7 +41,7 @@ struct TimerView: View {
 
 struct TimerView_Previews: PreviewProvider {
     static var previews: some View {
-        TimerView( game: RealTimeGame(), isShowingOutroView: QuestionView(game: RealTimeGame(), isShowingQuestionView: IntroResultView(game:RealTimeGame()).$isShowingQuestionView).$isShowingOutroView)
+        TimerView( game: RealTimeGame(), isShowingOutroView: .constant(false))
             .environmentObject(RealTimeGame())
            
     }
