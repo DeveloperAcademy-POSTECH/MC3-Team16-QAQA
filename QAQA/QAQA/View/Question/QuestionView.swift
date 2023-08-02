@@ -15,7 +15,6 @@ struct QuestionView: View {
     @State private var showHintModal = false
     @State var showFinishModal = false
     @State var isShowingOutroView = false
-//    @Binding var isShowingQuestionView : Bool
     
     var body: some View {
         ZStack {

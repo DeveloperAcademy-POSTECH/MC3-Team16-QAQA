@@ -10,9 +10,6 @@ import SwiftUI
 struct IntroResultView: View {
     
     @ObservedObject var game: RealTimeGame
-//    @State var showBeginQuestionModal = false
-    
-//    @State var isShowingQuestionView = false
     
     var body: some View {
         ZStack{
@@ -61,7 +58,6 @@ struct IntroResultView: View {
                         }
                 })
             }
-//            if isShowingQuestionView == true {
             if game.isStartQuestion == true {
                 QuestionView(game: game)
                     .onAppear {

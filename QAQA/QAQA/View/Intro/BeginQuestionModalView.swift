@@ -11,7 +11,6 @@ struct BeginQuestionModalView: View {
     
     @Environment(\.presentationMode) var presentation
     @ObservedObject var game: RealTimeGame
-//    @Binding var isShowingQuestionView : Bool
 
     
     
@@ -60,11 +59,8 @@ struct BeginQuestionModalView: View {
                     .frame(height: 24)
             }
             Button {
-//                presentation.wrappedValue.dismiss()
-//                game.isShowingBeginQuestionModal = false
                 game.isStartQuestion.toggle()
                 game.startQuestion()
-//                isShowingQuestionView = true
             } label: {
                 Image("startButton")
                     .resizable()
