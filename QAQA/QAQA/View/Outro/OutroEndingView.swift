@@ -18,7 +18,7 @@ struct OutroEndingView: View {
     
     private let duration = 1.0
     @State var isAnimated = false
-    @State var defaultKingjungWidth = 30.0
+    @State var defaultKingjungWidth = 60.0
     @State var defaultEvaWidth = 30.0
     @State var defaultSpacerWidth = 300.0
     
@@ -47,7 +47,7 @@ struct OutroEndingView: View {
                 }
                 ZStack (alignment: .leading) {
                     RoundedRectangle(cornerRadius: 15)
-                        .frame(height: 40)
+                        .frame(width: 360, height: 40)
                         .foregroundColor(.outroGaugeGray)
                     if (game.reactionScore != 0) {
                         HStack {
@@ -80,7 +80,6 @@ struct OutroEndingView: View {
                         }
                     }
                 }
-                .padding([.leading, .trailing], 16)
                 .onAppear() {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.3) {
                         isAnimated.toggle()

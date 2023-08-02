@@ -21,7 +21,7 @@ struct OutroResultCardView: View {
                     Spacer()
                         .frame(height: 25)
                     Text("\(game.reactionScore)")
-                        .font(.custom("BMJUAOTF", size: 30))
+                        .font(.custom("BMJUAOTF", size: 25))
                         .foregroundColor(.black)
                     Spacer()
                         .frame(height: 45)
@@ -35,7 +35,7 @@ struct OutroResultCardView: View {
                     Spacer()
                         .frame(height: 25)
                     Text("\(game.kingjungKing)") //킹정킹 username
-                        .font(.custom("BMJUAOTF", size: 30))
+                        .font(.custom("BMJUAOTF", size: 25))
                         .foregroundColor(.black)
                     Spacer()
                         .frame(height: 45)
@@ -49,13 +49,14 @@ struct OutroResultCardView: View {
                     Spacer()
                         .frame(height: 25)
                     Text("\(game.evaKing)") //에바킹 username
-                        .font(.custom("BMJUAOTF", size: 30))
+                        .font(.custom("BMJUAOTF", size: 25))
                         .foregroundColor(.black)
                     Spacer()
                         .frame(height: 45)
                 }
             }
         }
+        .padding([.leading, .trailing], 16)
     }
 }
 
