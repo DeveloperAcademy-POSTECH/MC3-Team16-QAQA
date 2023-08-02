@@ -10,8 +10,9 @@ import SwiftUI
 struct IntroResultView: View {
     
     @ObservedObject var game: RealTimeGame
-    @State var showBeginQuestionModal = false
-    @State var isShowingQuestionView = false
+//    @State var showBeginQuestionModal = false
+    
+//    @State var isShowingQuestionView = false
     
     var body: some View {
         ZStack{
@@ -43,21 +44,29 @@ struct IntroResultView: View {
                 Spacer()
                     .frame(height: 159)
                 Button{
-                    showBeginQuestionModal.toggle()
+                    game.isShowingBeginQuestionModal.toggle()
+                    game.showBeginQuestionModal()
                 } label: {
                     Image("nextButton")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 358)
                 }
-                .sheet(isPresented: $showBeginQuestionModal, content: {
-                    BeginQuestionModalView(game: game, isShowingQuestionView: $isShowingQuestionView)
+                .sheet(isPresented: $game.isShowingBeginQuestionModal, content: {
+                    BeginQuestionModalView(game: game)
                         .presentationDetents([.medium])
                         .presentationCornerRadius(20)
+                        .onDisappear {
+                            game.isShowingBeginQuestionModal = false
+                        }
                 })
             }
-            if isShowingQuestionView == true {
-                QuestionView(game: game, isShowingQuestionView: $isShowingQuestionView)
+//            if isShowingQuestionView == true {
+            if game.isStartQuestion == true {
+                QuestionView(game: game)
+                    .onAppear {
+                        game.isShowingBeginQuestionModal = false
+                    }
             }
         }
     }
@@ -66,6 +75,6 @@ struct IntroResultView: View {
 
 struct IntroResultView_Previews: PreviewProvider {
     static var previews: some View {
-        IntroResultView(game:RealTimeGame())
+       IntroResultView(game: RealTimeGame())
     }
 }

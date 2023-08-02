@@ -69,22 +69,34 @@ extension RealTimeGame: GKMatchDelegate {
         } else if let wasErrorCalled = gameData?.wasErrorCalledHaptics, wasErrorCalled {
             triggerErrorHaptic()
         }
-        if allEvaScore == 0 {
-            evaKing = "-"
+        else if let questionStart = gameData?.isStartQuestion {
+            withAnimation(.spring(response: 0.2,dampingFraction: 0.25,blendDuration: 0.0)){
+                isStartQuestion = questionStart
+            }
         }
-        if allKingjungScore == 0 {
-            kingjungKing = "-"
+        else if let questionStartModal = gameData?.isShowingBeginQuestionModal {
+            withAnimation(.spring(response: 0.2,dampingFraction: 0.25,blendDuration: 0.0)){
+                isShowingBeginQuestionModal = questionStartModal
+            }
         }
+            
+            if allEvaScore == 0 {
+                evaKing = "-"
+            }
+            if allKingjungScore == 0 {
+                kingjungKing = "-"
+            }
     }
-    
-    func triggerSuccessHaptic() {
-        let generator = UINotificationFeedbackGenerator()
-        generator.notificationOccurred(.success)
-    }
-
-    func triggerErrorHaptic() {
-        let generator = UINotificationFeedbackGenerator()
-        generator.notificationOccurred(.error)
-    }
-    //햅틱부분
+       
+        
+        func triggerSuccessHaptic() {
+            let generator = UINotificationFeedbackGenerator()
+            generator.notificationOccurred(.success)
+        }
+        
+        func triggerErrorHaptic() {
+            let generator = UINotificationFeedbackGenerator()
+            generator.notificationOccurred(.error)
+        }
+        //햅틱부분
 }

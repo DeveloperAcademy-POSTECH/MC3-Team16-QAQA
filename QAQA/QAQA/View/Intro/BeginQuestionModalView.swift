@@ -11,7 +11,7 @@ struct BeginQuestionModalView: View {
     
     @Environment(\.presentationMode) var presentation
     @ObservedObject var game: RealTimeGame
-    @Binding var isShowingQuestionView : Bool
+//    @Binding var isShowingQuestionView : Bool
 
     
     
@@ -60,9 +60,11 @@ struct BeginQuestionModalView: View {
                     .frame(height: 24)
             }
             Button {
-                isShowingQuestionView = true
-                presentation.wrappedValue.dismiss()
-                print(isShowingQuestionView)
+//                presentation.wrappedValue.dismiss()
+//                game.isShowingBeginQuestionModal = false
+                game.isStartQuestion.toggle()
+                game.startQuestion()
+//                isShowingQuestionView = true
             } label: {
                 Image("startButton")
                     .resizable()
@@ -75,6 +77,6 @@ struct BeginQuestionModalView: View {
 
 struct BeginQuestionModalView_Previews: PreviewProvider {
     static var previews: some View {
-        BeginQuestionModalView(game: RealTimeGame(), isShowingQuestionView: IntroResultView(game:RealTimeGame()).$isShowingQuestionView)
+        BeginQuestionModalView(game: RealTimeGame())
     }
 }

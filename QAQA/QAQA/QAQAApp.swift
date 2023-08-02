@@ -14,11 +14,12 @@ struct QAQAApp: App {
     
     var body: some Scene {
         WindowGroup {
-            if isOnboarding == true {
+            if (isOnboarding) {
                 TutorialView(isOnboarding: $isOnboarding)
 
             } else {
                 HomeView()
+                    .environmentObject(RealTimeGame())
             }
         }
     }

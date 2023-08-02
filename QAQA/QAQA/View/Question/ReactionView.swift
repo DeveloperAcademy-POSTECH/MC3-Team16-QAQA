@@ -15,8 +15,6 @@ struct ReactionView: View {
         ZStack{
             Color.white
             VStack{
-                Spacer()
-                    .frame(height: 130)
                 if (isKingjungReaction) {
                     ReactionLottieView(jsonName:"goodReactionLottie")
                         .frame(width: 390, height: 390)
