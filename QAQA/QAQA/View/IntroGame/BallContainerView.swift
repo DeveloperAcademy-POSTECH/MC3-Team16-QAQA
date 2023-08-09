@@ -83,7 +83,7 @@ struct BallContainerView: View {
                                     self.circlePosition)
                     Text("지금 폭탄이 \(game.topicUserName)한테 있어요!")
                         .font(.custom("BMJUAOTF", size: 30))
-                        .offset(y: -70)
+                        .offset(y: -200)
                     // Quokka 이미지
                     // 공의 움직임을 업데이트하는 타이머를 설정합니다.
                     
