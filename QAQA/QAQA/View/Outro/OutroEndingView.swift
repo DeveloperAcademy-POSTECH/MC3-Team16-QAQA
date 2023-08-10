@@ -47,44 +47,45 @@ struct OutroEndingView: View {
                     Spacer()
                         .frame(height: 20)
                 }
-                ZStack (alignment: .leading){
+                ZStack (alignment: .leading) {
                     RoundedRectangle(cornerRadius: 15)
                         .frame(width: 360, height: 40)
                         .foregroundColor(.outroGaugeGray)
-                    
-                    HStack {
-                        ZStack{
-                            RoundedRectangle(cornerRadius: 15)
-                                .frame(width: defaultKingjungWidth, height: 40, alignment: .leading)
-                                .foregroundColor(.outroGaugeYellow)
-                            VStack (alignment: .leading){
-                                RoundedRectangle(cornerRadius: 6)
-                                    .frame(width: (defaultKingjungWidth-20), height: 8, alignment: .leading)
-                                    .foregroundColor(.outroGaugeLightYellow)
-                                Spacer()
-                                    .frame(height: 15)
+                    if (game.reactionScore != 0) {
+                        HStack {
+                            ZStack { // 킹정 비율
+                                RoundedRectangle(cornerRadius: 15)
+                                    .frame(width: defaultKingjungWidth, height: 40, alignment: .leading)
+                                    .foregroundColor(.outroGaugeYellow)
+                                VStack (alignment: .leading){
+                                    RoundedRectangle(cornerRadius: 6)
+                                        .frame(width: (defaultKingjungWidth-20), height: 8, alignment: .leading)
+                                        .foregroundColor(.outroGaugeLightYellow)
+                                    Spacer()
+                                        .frame(height: 15)
+                                }
                             }
-                        }
-                        
-                        Spacer()
-                            .frame(width: defaultSpacerWidth)
-                        ZStack{
-                            RoundedRectangle(cornerRadius: 15)
-                                .frame(width: defaultEvaWidth, height: 40, alignment: .leading)
-                                .foregroundColor(.outroGaugeGreen)
-                            VStack (alignment: .leading){
-                                RoundedRectangle(cornerRadius: 6)
-                                    .frame(width: (defaultEvaWidth-20), height: 8, alignment: .leading)
-                                    .foregroundColor(.outroGaugeLightGreen)
-                                Spacer()
-                                    .frame(height: 15)
+                            Spacer()
+                                .frame(width: defaultSpacerWidth)
+                            ZStack { // 에바 비율
+                                RoundedRectangle(cornerRadius: 15)
+                                    .frame(width: defaultEvaWidth, height: 40, alignment: .leading)
+                                    .foregroundColor(.outroGaugeGreen)
+                                VStack (alignment: .leading){
+                                    RoundedRectangle(cornerRadius: 6)
+                                        .frame(width: (defaultEvaWidth-20), height: 8, alignment: .leading)
+                                        .foregroundColor(.outroGaugeLightGreen)
+                                    Spacer()
+                                        .frame(height: 15)
+                                }
                             }
                         }
                     }
-                } .onAppear() {
+                }
+                .onAppear() {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.3) {
                         isAnimated.toggle()
-                        withAnimation(.easeOut(duration: duration)){
+                        withAnimation(.easeOut(duration: duration)) {
                             defaultKingjungWidth = outroEndingViewModel.calculateKingjungWidth(kingjung: CGFloat(game.allKingjungScore), total: CGFloat(game.reactionScore))
                             defaultEvaWidth = outroEndingViewModel.calculateEvaWidth(eva: CGFloat(game.allEvaScore), total: CGFloat(game.reactionScore))
                             defaultSpacerWidth = outroEndingViewModel.calculateSpacerWidth(kingjung: CGFloat(game.allKingjungScore), eva: CGFloat(game.allEvaScore), total: CGFloat(game.reactionScore))

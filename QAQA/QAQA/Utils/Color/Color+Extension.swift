@@ -19,4 +19,5 @@ extension Color {
     static let outroViewYellow = Color("outroViewYellow")
     static let pauseButtonYellow = Color("pauseButtonYellow")
     static let testBlue = Color("testBlue")
+    static let backgroundYellow = Color("backgroundYellow")
 }

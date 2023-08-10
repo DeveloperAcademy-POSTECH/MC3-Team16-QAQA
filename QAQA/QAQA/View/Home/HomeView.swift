@@ -18,17 +18,13 @@ struct HomeView: View {
     var body: some View {
         
         ZStack {
-            Color(red: 1, green: 0.8, blue: 0.3)
+            Color.backgroundYellow
                 .ignoresSafeArea()
-            
-            
-            
             Image("homeViewImg")
                 .resizable()
                 .scaledToFit()
-                .padding(.top, 50)
-            
-            
+                .ignoresSafeArea()
+                .padding(.top, 93)
             VStack {
                 Spacer()
                 Button {
