@@ -18,6 +18,11 @@
 		60FBCFBC2A74E2820028BCD5 /* TestingIntroGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBCFBB2A74E2820028BCD5 /* TestingIntroGame.swift */; };
 		60FBCFBE2A773FB20028BCD5 /* TestingResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBCFBD2A773FB20028BCD5 /* TestingResultView.swift */; };
 		60FBCFC02A77DF5C0028BCD5 /* TestIntroStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBCFBF2A77DF5C0028BCD5 /* TestIntroStartView.swift */; };
+		AA3B3CAC2A79EB50003997C9 /* boom_bgm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AA3B3CA72A79EB4F003997C9 /* boom_bgm.mp3 */; };
+		AA3B3CAD2A79EB50003997C9 /* graph_meet.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AA3B3CA82A79EB4F003997C9 /* graph_meet.mp3 */; };
+		AA3B3CAE2A79EB50003997C9 /* boom_create.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AA3B3CA92A79EB4F003997C9 /* boom_create.mp3 */; };
+		AA3B3CAF2A79EB50003997C9 /* boom_fanfare.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AA3B3CAA2A79EB4F003997C9 /* boom_fanfare.mp3 */; };
+		AA3B3CB02A79EB50003997C9 /* graph_bubble_pop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AA3B3CAB2A79EB4F003997C9 /* graph_bubble_pop.mp3 */; };
 		AA9741E72A6EBF8F0027DE48 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9741E62A6EBF8F0027DE48 /* Ball.swift */; };
 		AA9741E92A6EBFAA0027DE48 /* GyroscopeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9741E82A6EBFAA0027DE48 /* GyroscopeManager.swift */; };
 		AA9741EB2A6EBFCE0027DE48 /* BallContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9741EA2A6EBFCE0027DE48 /* BallContainerView.swift */; };
@@ -85,6 +90,11 @@
 		60FBCFBB2A74E2820028BCD5 /* TestingIntroGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingIntroGame.swift; sourceTree = "<group>"; };
 		60FBCFBD2A773FB20028BCD5 /* TestingResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingResultView.swift; sourceTree = "<group>"; };
 		60FBCFBF2A77DF5C0028BCD5 /* TestIntroStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestIntroStartView.swift; sourceTree = "<group>"; };
+		AA3B3CA72A79EB4F003997C9 /* boom_bgm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = boom_bgm.mp3; sourceTree = "<group>"; };
+		AA3B3CA82A79EB4F003997C9 /* graph_meet.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = graph_meet.mp3; sourceTree = "<group>"; };
+		AA3B3CA92A79EB4F003997C9 /* boom_create.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = boom_create.mp3; sourceTree = "<group>"; };
+		AA3B3CAA2A79EB4F003997C9 /* boom_fanfare.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = boom_fanfare.mp3; sourceTree = "<group>"; };
+		AA3B3CAB2A79EB4F003997C9 /* graph_bubble_pop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = graph_bubble_pop.mp3; sourceTree = "<group>"; };
 		AA9741E62A6EBF8F0027DE48 /* Ball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
 		AA9741E82A6EBFAA0027DE48 /* GyroscopeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GyroscopeManager.swift; sourceTree = "<group>"; };
 		AA9741EA2A6EBFCE0027DE48 /* BallContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallContainerView.swift; sourceTree = "<group>"; };
@@ -430,6 +440,11 @@
 		C5C7E8022A715FD6000A3CCC /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				AA3B3CA72A79EB4F003997C9 /* boom_bgm.mp3 */,
+				AA3B3CA92A79EB4F003997C9 /* boom_create.mp3 */,
+				AA3B3CAA2A79EB4F003997C9 /* boom_fanfare.mp3 */,
+				AA3B3CAB2A79EB4F003997C9 /* graph_bubble_pop.mp3 */,
+				AA3B3CA82A79EB4F003997C9 /* graph_meet.mp3 */,
 				C5C282AC2A7165060027416D /* eva.mp3 */,
 				C5C282AE2A71691A0027416D /* eva2.mp3 */,
 				C5C282B02A7169340027416D /* eva3.mp3 */,
@@ -515,9 +530,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5C282C72A71F7820027416D /* kingjung9.mp3 in Resources */,
+				AA3B3CAD2A79EB50003997C9 /* graph_meet.mp3 in Resources */,
 				C5C282AF2A71691A0027416D /* eva2.mp3 in Resources */,
 				C5C282C82A71F7820027416D /* kingjung2.mp3 in Resources */,
 				C5C282C12A71F7820027416D /* kingjung5.mp3 in Resources */,
+				AA3B3CB02A79EB50003997C9 /* graph_bubble_pop.mp3 in Resources */,
 				C5C282B12A7169340027416D /* eva3.mp3 in Resources */,
 				B87998592A5BACBF00167597 /* Preview Assets.xcassets in Resources */,
 				C5C282B52A71695D0027416D /* eva5.mp3 in Resources */,
@@ -532,7 +549,10 @@
 				C5C7E8062A715FF8000A3CCC /* kingjung.mp3 in Resources */,
 				C5C282C52A71F7820027416D /* kingjung4.mp3 in Resources */,
 				C5C7E7FF2A70C98D000A3CCC /* goodReactionLottie.json in Resources */,
+				AA3B3CAC2A79EB50003997C9 /* boom_bgm.mp3 in Resources */,
 				C5C282C32A71F7820027416D /* kingjung3.mp3 in Resources */,
+				AA3B3CAE2A79EB50003997C9 /* boom_create.mp3 in Resources */,
+				AA3B3CAF2A79EB50003997C9 /* boom_fanfare.mp3 in Resources */,
 				C5C282B32A7169430027416D /* eva4.mp3 in Resources */,
 				C5C282AD2A7165060027416D /* eva.mp3 in Resources */,
 			);
