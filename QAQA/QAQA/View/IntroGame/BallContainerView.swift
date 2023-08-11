@@ -36,7 +36,7 @@ struct BallContainerView: View {
     // 배경 이미지를 나타내는 변수입니다.
     @State private var gyroBackgroundImage: String = "back_1"
     // 랜덤한 시간 간격을 나타내는 변수입니다.
-    @State private var gyroRandomTime: Double = 30 //플레이타임
+    @State private var gyroRandomTime: Double = 10 //플레이타임
     //    @State private var gyroRandomTime: Double = Double.random(in: 10...20)
     // 랜덤한 시간 간격을 관리하는 타이머입니다.
     @State private var gyroRandomTimer: Timer? = nil
@@ -260,6 +260,7 @@ struct BallContainerView: View {
                 })
                 .onAppear(){
                     changeImageWithCountdown()
+                    game.isBombAppear.toggle()
                     game.bombTransport()
 
                 }

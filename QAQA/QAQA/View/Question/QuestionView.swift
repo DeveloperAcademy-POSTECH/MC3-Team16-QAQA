@@ -37,7 +37,7 @@ struct QuestionView: View {
                             .background(Circle().foregroundColor(.pauseButtonYellow))
                     }
                     TimerView(game: game, isShowingOutroView: $isShowingOutroView)
-                        .environmentObject(gameTimerModel)
+//                        .environmentObject(gameTimerModel)
                         .padding([.leading], 14)
                     Spacer()
                     Button{

@@ -46,7 +46,7 @@ class RealTimeGame: NSObject, GKGameCenterControllerDelegate, ObservableObject {
     @Published var countSecond = 0
     @Published var showTimerModal = false
     @Published var isTimer = true
-    @Published var timer = Timer.publish(every: 1.0, on: .main, in: .common).autoconnect()
+    @Published var timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
     
     //햅틱부분
     @Published var wasSuccessCalledHaptics = false // new field
