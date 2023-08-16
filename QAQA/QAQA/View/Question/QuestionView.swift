@@ -36,9 +36,14 @@ struct QuestionView: View {
                             .padding(15)
                             .background(Circle().foregroundColor(.pauseButtonYellow))
                     }
-                    TimerView(game: game, isShowingOutroView: $isShowingOutroView)
-//                        .environmentObject(gameTimerModel)
-                        .padding([.leading], 14)
+                    if game.topicUserName == game.myName {
+                        TimerView(game: game, isShowingOutroView: $isShowingOutroView)
+    //                        .environmentObject(gameTimerModel)
+                            .padding([.leading], 14)
+                    } else {
+                        TimerNoCountView(game: game, isShowingOutroView: $isShowingOutroView)
+                    }
+                    
                     Spacer()
                     Button{
                         showFinishModal.toggle()
