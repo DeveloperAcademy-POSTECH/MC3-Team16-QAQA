@@ -67,8 +67,6 @@ struct BallContainerView: View {
                     Image(game.isBombPresent ? self.gyroBackgroundImage : "sky_1")
                         .resizable()
                         .edgesIgnoringSafeArea(.all)
-                    
-                    
                     // 원을 그립니다.
                     Image(self.gyroCircleImage)
                         .resizable()
@@ -191,12 +189,6 @@ struct BallContainerView: View {
                                                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                                                     //                                                self.gyroCircleImage = "success_1"
                                                     //                                                self.isBallVisible = true
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
                                                 }
                                                 // 2초 후에 공의 이미지와 배경 이미지를 원래대로 돌리고, 랜덤 시간 간격을 재설정합니다.
                                                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
@@ -225,18 +217,9 @@ struct BallContainerView: View {
                                         gyroCircleLineWidth = 2
                                     }
                                 }
-                                
-                               
-                                
-                                
-                                
                             }
                             // 타이머를 실행합니다.
                             RunLoop.current.add(timer, forMode: .common)
-                            
-                            
-                            
-                            
                         }
                     
                     // 원 안에 머물러 있는 시간을 화면에 표시합니다.
@@ -249,7 +232,6 @@ struct BallContainerView: View {
                     }
                 }
                 //boomQuokka가 나타나는 카운트다운을 시작합니다.
-                
                 .onChange(of: game.isBombAppear, perform: { _ in
                     game.bombTransport()
                     if game.myName == game.topicUserName {
@@ -258,16 +240,27 @@ struct BallContainerView: View {
                         game.isBombPresent = false
                     }
                 })
-                .onAppear(){
+                .onAppear{
+                    if game.myName == game.topicUserName {
+                        game.isBombPresent = true
+                    } else {
+                        game.isBombPresent = false
+                    }
                     changeImageWithCountdown()
-                    game.isBombAppear.toggle()
-                    game.bombTransport()
-
+              
+//                    if game.myName == game.topicUserName {
+//                        game.isBombPresent = true
+//                    } else {
+//                        game.isBombPresent = false
+//                    }
+                   
+//                    game.isBombAppear.toggle()
+//                    game.bombTransport()
                 }
                 if game.isShowResult{
                     IntroResultView(game: game)
                 }
-            }
+            }//ZStack 끝
         }
     }
     

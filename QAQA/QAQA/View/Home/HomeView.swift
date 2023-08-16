@@ -62,6 +62,7 @@ struct HomeView: View {
 //                    gameTimerModel.isTimer = true
 //                }
             //            TestingIntroGame(game: game)
+//                        BallContainerView(game: game, gyroscopeManager: GyroscopeManager())
                         IntroGameView(game: game, gyroscopeMAnager: GyroscopeManager())
             
         }

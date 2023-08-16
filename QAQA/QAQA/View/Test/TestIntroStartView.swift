@@ -34,8 +34,8 @@ struct TestIntroStartView: View {
     }
 }
 
-struct TestIntroStartView_Previews: PreviewProvider {
-    static var previews: some View {
-        TestIntroStartView(game: RealTimeGame())
-    }
-}
+//struct TestIntroStartView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TestIntroStartView(game: RealTimeGame())
+//    }
+//}
