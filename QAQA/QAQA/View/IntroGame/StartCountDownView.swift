@@ -25,7 +25,8 @@ struct StartCountDownView: View {
                 Text("\(game.countSecond)")
                     .font(.custom("BMJUAOTF", size: 150))
                     .foregroundColor(.white)
-                    .padding(.top, 42)
+                    .padding(.top, 10)
+                    .padding(.bottom, 350)
                     .onReceive(game.timer, perform: { _ in
                         if game.countSecond > 0 && game.isTimer {
                             game.countSecond -= 1
@@ -33,6 +34,7 @@ struct StartCountDownView: View {
                             game.isShowCount = false 
                         }
                     })
+                
             }
         }//zstack 끝
         .sheet(isPresented: $game.isStartGame, content: {

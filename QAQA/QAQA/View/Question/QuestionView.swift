@@ -78,7 +78,7 @@ struct QuestionView: View {
                 HStack { // Reaction Buttons
                     Button(action: { // 킹정버튼
                         if !game.playReaction {
-                            reactionSoundViewModel.playSound(sound: reactionSoundViewModel.createRandomKingjungReactionSounds())
+                            reactionSoundViewModel.playSound(sound: reactionSoundViewModel.createRandomKingjungReactionSounds(), loop: 0)
                             game.isKingjungReaction = true // 킹정
                             game.allKingjungScore += 1
                             game.reactionScore += 1
@@ -106,7 +106,7 @@ struct QuestionView: View {
                     Spacer()
                     Button(action: { // 에바 버튼
                         if !game.playReaction {
-                            reactionSoundViewModel.playSound(sound: reactionSoundViewModel.createRandomEvaReactionSounds())
+                            reactionSoundViewModel.playSound(sound: reactionSoundViewModel.createRandomEvaReactionSounds(), loop: 0)
                             game.isKingjungReaction = false
                             game.allEvaScore += 1
                             game.reactionScore += 1

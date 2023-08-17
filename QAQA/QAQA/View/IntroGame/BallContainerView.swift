@@ -13,6 +13,8 @@ struct BallContainerView: View {
     @ObservedObject var game: RealTimeGame
     @ObservedObject var gyroscopeManager: GyroscopeManager
     
+    @StateObject private var reactionSoundViewModel = ReactionSoundViewModel()
+    
     // 공의 현재 위치를 나타내는 변수입니다.
     @State private var gyroBallPosition: CGPoint = .zero
     // 공의 현재 속도를 나타내는 변수입니다.
@@ -36,7 +38,7 @@ struct BallContainerView: View {
     // 배경 이미지를 나타내는 변수입니다.
     @State private var gyroBackgroundImage: String = "back_1"
     // 랜덤한 시간 간격을 나타내는 변수입니다.
-    @State private var gyroRandomTime: Double = 10 //플레이타임
+    @State private var gyroRandomTime: Double = 60 //플레이타임
     //    @State private var gyroRandomTime: Double = Double.random(in: 10...20)
     // 랜덤한 시간 간격을 관리하는 타이머입니다.
     @State private var gyroRandomTimer: Timer? = nil
@@ -67,6 +69,10 @@ struct BallContainerView: View {
                     Image(game.isBombPresent ? self.gyroBackgroundImage : "sky_1")
                         .resizable()
                         .edgesIgnoringSafeArea(.all)
+                        .onAppear{
+                            reactionSoundViewModel.playSound(sound: reactionSoundViewModel.createBoomBgm())
+                        }
+                    
                     // 원을 그립니다.
                     Image(self.gyroCircleImage)
                         .resizable()
@@ -77,18 +83,11 @@ struct BallContainerView: View {
                                     self.circlePosition)
                     Text("지금 폭탄이 \(game.topicUserName)한테 있어요!")
                         .font(.custom("BMJUAOTF", size: 30))
-                        .offset(y: -70)
+                        .offset(y: -200)
                     // Quokka 이미지
                     // 공의 움직임을 업데이트하는 타이머를 설정합니다.
                     
-                    if game.isBombPresent {
-                        Image("boomQuokka")
-                            .resizable()
-                            .frame(width: 450, height: 450)
-                            .position(x: geometry.size.width - 225, y: geometry.size.height - 225)
-                            .opacity(quokkaOpacity)
-                        
-                    }
+
                     Ball(gyroImage: self.$gyroBallImage)
                         .opacity(game.isBombPresent ? 1.0 : 0.0)  // 공의 가시성을 설정합니다.
                         .position(self.gyroBallPosition == .zero ?
@@ -105,6 +104,7 @@ struct BallContainerView: View {
                                 // 랜덤 타이머가 실행될 때마다 공의 이미지와 배경 이미지를 변경하고, 햅틱 피드백을 제공합니다.
                                 // 폭탄이 터진 후의 액션
                                 self.gyroBallImage = "boom_2"
+                                reactionSoundViewModel.playSound(sound: reactionSoundViewModel.createBoomFanfare(), loop: 0)
                                 self.gyroBackgroundImage = "back_2"
                                 self.successHaptics()
                                 
@@ -189,6 +189,7 @@ struct BallContainerView: View {
                                                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                                                     //                                                self.gyroCircleImage = "success_1"
                                                     //                                                self.isBallVisible = true
+                                                    
                                                 }
                                                 // 2초 후에 공의 이미지와 배경 이미지를 원래대로 돌리고, 랜덤 시간 간격을 재설정합니다.
                                                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
@@ -217,9 +218,11 @@ struct BallContainerView: View {
                                         gyroCircleLineWidth = 2
                                     }
                                 }
+                                
                             }
                             // 타이머를 실행합니다.
                             RunLoop.current.add(timer, forMode: .common)
+                            
                         }
                     
                     // 원 안에 머물러 있는 시간을 화면에 표시합니다.
@@ -227,9 +230,19 @@ struct BallContainerView: View {
                         Text("\(gyroCountdown)")
                             .opacity(game.isBombPresent ? 1 : 0)
                             .font(.system(size: 50, weight: .bold))  // 폰트 크기를 50으로, 볼드체로 변경합니다.
-                            .foregroundColor(.white)
+                            .foregroundColor(.gray)
                             .position(x: geometry.size.width / 2, y: geometry.size.height / 2)
                     }
+                    
+                    if game.isBombPresent {
+                        Image("boomQuokka")
+                            .resizable()
+                            .frame(width: 450, height: 450)
+                            .position(x: geometry.size.width - 225, y: geometry.size.height - 225)
+                            .opacity(quokkaOpacity)
+                        
+                    }
+                    
                 }
                 //boomQuokka가 나타나는 카운트다운을 시작합니다.
                 .onChange(of: game.isBombAppear, perform: { _ in
