@@ -12,6 +12,7 @@
 		602BD3092A67E86600F9E345 /* FinishModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602BD3082A67E86600F9E345 /* FinishModalView.swift */; };
 		6040A6B82A78E8E800B2A27E /* StartCountDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6040A6B72A78E8E800B2A27E /* StartCountDownView.swift */; };
 		6040A6BA2A78EEFE00B2A27E /* IntroGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6040A6B92A78EEFE00B2A27E /* IntroGameView.swift */; };
+		6040A6BC2A8CB92A00B2A27E /* TimerNoCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6040A6BB2A8CB92A00B2A27E /* TimerNoCountView.swift */; };
 		60EB42792A5E437C0030286C /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EB42782A5E437C0030286C /* TimerView.swift */; };
 		60EB427B2A5E44880030286C /* UIScreen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EB427A2A5E44880030286C /* UIScreen+Extension.swift */; };
 		60EB42802A5ED78A0030286C /* TimerModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EB427F2A5ED78A0030286C /* TimerModalView.swift */; };
@@ -84,6 +85,7 @@
 		602BD3082A67E86600F9E345 /* FinishModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishModalView.swift; sourceTree = "<group>"; };
 		6040A6B72A78E8E800B2A27E /* StartCountDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCountDownView.swift; sourceTree = "<group>"; };
 		6040A6B92A78EEFE00B2A27E /* IntroGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroGameView.swift; sourceTree = "<group>"; };
+		6040A6BB2A8CB92A00B2A27E /* TimerNoCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerNoCountView.swift; sourceTree = "<group>"; };
 		60EB42782A5E437C0030286C /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		60EB427A2A5E44880030286C /* UIScreen+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extension.swift"; sourceTree = "<group>"; };
 		60EB427F2A5ED78A0030286C /* TimerModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModalView.swift; sourceTree = "<group>"; };
@@ -409,6 +411,7 @@
 			children = (
 				60EB42782A5E437C0030286C /* TimerView.swift */,
 				60EB427F2A5ED78A0030286C /* TimerModalView.swift */,
+				6040A6BB2A8CB92A00B2A27E /* TimerNoCountView.swift */,
 			);
 			path = Timer;
 			sourceTree = "<group>";
@@ -592,6 +595,7 @@
 				C5AADBD12A73B7FA002FD2D9 /* OutroEndingViewModel.swift in Sources */,
 				B8B5068D2A5D019900B3EAED /* RealTimeGame+Friends.swift in Sources */,
 				C5AADBD42A750DF1002FD2D9 /* IntroResultView.swift in Sources */,
+				6040A6BC2A8CB92A00B2A27E /* TimerNoCountView.swift in Sources */,
 				AA9741E72A6EBF8F0027DE48 /* Ball.swift in Sources */,
 				B8B5069B2A5E3C1C00B3EAED /* RealTimeGame+GKLocalPlayerListener.swift in Sources */,
 				60FBCFBE2A773FB20028BCD5 /* TestingResultView.swift in Sources */,

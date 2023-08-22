@@ -36,7 +36,7 @@ struct StartCountDownView: View {
                     })
                 
             }
-        }
+        }//zstack 끝
         .sheet(isPresented: $game.isStartGame, content: {
             BeginIntroModalView(game:game)
                 .presentationDetents([.height(511)])

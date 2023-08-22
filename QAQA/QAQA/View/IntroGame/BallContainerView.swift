@@ -245,7 +245,6 @@ struct BallContainerView: View {
                     
                 }
                 //boomQuokka가 나타나는 카운트다운을 시작합니다.
-                
                 .onChange(of: game.isBombAppear, perform: { _ in
                     game.bombTransport()
                     if game.myName == game.topicUserName {
@@ -254,20 +253,27 @@ struct BallContainerView: View {
                         game.isBombPresent = false
                     }
                 })
-                .onAppear(){
+                .onAppear{
+                    if game.myName == game.topicUserName {
+                        game.isBombPresent = true
+                    } else {
+                        game.isBombPresent = false
+                    }
                     changeImageWithCountdown()
-                    game.createRandomTopicUser(match: game.myMatch!)
-                    game.bombTransport()
+              
 //                    if game.myName == game.topicUserName {
 //                        game.isBombPresent = true
 //                    } else {
 //                        game.isBombPresent = false
 //                    }
+                   
+//                    game.isBombAppear.toggle()
+//                    game.bombTransport()
                 }
                 if game.isShowResult{
                     IntroResultView(game: game)
                 }
-            }
+            }//ZStack 끝
         }
     }
     
